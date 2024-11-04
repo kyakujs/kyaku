@@ -1,0 +1,38 @@
+{
+  "name": "@kyakujs/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vinxi build",
+    "clean": "git clean -xdf .cache .turbo node_modules",
+    "dev": "vinxi dev",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path .prettierignore",
+    "lint": "eslint",
+    "start": "vinxi start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "^1.78.3",
+    "@tanstack/router-devtools": "^1.78.3",
+    "@tanstack/start": "^1.78.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vinxi": "^0.4.3"
+  },
+  "devDependencies": {
+    "@kyakujs/eslint-config": "workspace:*",
+    "@kyakujs/prettier-config": "workspace:*",
+    "@kyakujs/tailwind-config": "workspace:*",
+    "@kyakujs/tsconfig": "workspace:*",
+    "@types/node": "^22.8.7",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vite-tsconfig-paths": "^5.1.0"
+  },
+  "prettier": "@kyakujs/prettier-config"
+}

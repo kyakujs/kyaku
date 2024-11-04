@@ -1,0 +1,33 @@
+{
+  "name": "@kyakujs/eslint-config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./base": "./base.js",
+    "./react": "./react.js"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@eslint/compat": "^1.2.2",
+    "@tanstack/eslint-plugin-router": "^1.77.7",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-turbo": "^2.2.3",
+    "typescript-eslint": "^8.13.0"
+  },
+  "devDependencies": {
+    "@kyakujs/prettier-config": "workspace:*",
+    "@kyakujs/tsconfig": "workspace:*",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "prettier": "@kyakujs/prettier-config"
+}
