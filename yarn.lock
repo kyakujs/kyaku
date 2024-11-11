@@ -8123,10 +8123,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.0.0-alpha.31, tailwindcss@npm:next":
+"tailwindcss@npm:4.0.0-alpha.31":
   version: 4.0.0-alpha.31
   resolution: "tailwindcss@npm:4.0.0-alpha.31"
   checksum: 10c0/9040f5e3d5d330e93eb174bb00bb762eacfd84c07297d07162b6d8811667b49ebee21218eac9860cc2c5dbd860bc1d0b6dda48d56a297b727c97cdf2d6878b7a
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:next":
+  version: 4.0.0-alpha.32
+  resolution: "tailwindcss@npm:4.0.0-alpha.32"
+  checksum: 10c0/9a6763e19c6cd897372330ddcc1c8b6d5b921f64e9b322d1c2008e8032f786830fc92c00fc56867c44dd55a5c5b20bf3435b09814ac66bc34315aec5325c35d0
   languageName: node
   linkType: hard
 
