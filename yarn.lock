@@ -8200,10 +8200,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.0.0-alpha.31, tailwindcss@npm:next":
+"tailwindcss@npm:4.0.0-alpha.31":
   version: 4.0.0-alpha.31
   resolution: "tailwindcss@npm:4.0.0-alpha.31"
   checksum: 10c0/9040f5e3d5d330e93eb174bb00bb762eacfd84c07297d07162b6d8811667b49ebee21218eac9860cc2c5dbd860bc1d0b6dda48d56a297b727c97cdf2d6878b7a
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:next":
+  version: 4.0.0-beta.2
+  resolution: "tailwindcss@npm:4.0.0-beta.2"
+  checksum: 10c0/520432cd07b1f95149bddc4465eb2bcaafb190ce60c5549b8f2cc337d1b2f959ce5c1932dfb01316de0a38e916278d692c5f90076e85e5570bf72836ef9bcef4
   languageName: node
   linkType: hard
 
