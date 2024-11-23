@@ -11,6 +11,10 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 10
     groups:
+      tailwindcss:
+        patterns:
+          - "@tailwindcss/postcss"
+          - "tailwindcss"
       tanstack-start:
         patterns:
           - "@tanstack/eslint-plugin-router"
