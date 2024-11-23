@@ -22,6 +22,9 @@ yarn-error.log*
 # Turbo
 .turbo
 
+# typescript
+dist/
+
 # Vinxi
 .vinxi
 .output
