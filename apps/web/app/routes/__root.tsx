@@ -63,7 +63,7 @@ function RootComponent() {
 
 function RootDocument({ children }: PropsWithChildren) {
   return (
-    <html suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Meta />
       </head>
