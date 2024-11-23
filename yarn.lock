@@ -40,7 +40,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.22.11, @babel/core@npm:^7.23.7, @babel/core@npm:^7.24.0, @babel/core@npm:^7.25.2, @babel/core@npm:^7.25.7, @babel/core@npm:^7.26.0":
+"@babel/core@npm:^7.22.11, @babel/core@npm:^7.23.7, @babel/core@npm:^7.25.2, @babel/core@npm:^7.25.7, @babel/core@npm:^7.26.0":
   version: 7.26.0
   resolution: "@babel/core@npm:7.26.0"
   dependencies:
@@ -63,7 +63,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/generator@npm:^7.23.6, @babel/generator@npm:^7.25.9, @babel/generator@npm:^7.26.0, @babel/generator@npm:^7.26.2":
+"@babel/generator@npm:^7.25.9, @babel/generator@npm:^7.26.0, @babel/generator@npm:^7.26.2":
   version: 7.26.2
   resolution: "@babel/generator@npm:7.26.2"
   dependencies:
@@ -150,7 +150,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.22.16, @babel/parser@npm:^7.23.5, @babel/parser@npm:^7.23.6, @babel/parser@npm:^7.24.0, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.25.9, @babel/parser@npm:^7.26.0, @babel/parser@npm:^7.26.2":
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.22.16, @babel/parser@npm:^7.23.5, @babel/parser@npm:^7.23.6, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.25.9, @babel/parser@npm:^7.26.0, @babel/parser@npm:^7.26.2":
   version: 7.26.2
   resolution: "@babel/parser@npm:7.26.2"
   dependencies:
@@ -223,7 +223,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.23.7, @babel/traverse@npm:^7.24.0, @babel/traverse@npm:^7.25.9":
+"@babel/traverse@npm:^7.23.7, @babel/traverse@npm:^7.25.9":
   version: 7.25.9
   resolution: "@babel/traverse@npm:7.25.9"
   dependencies:
@@ -238,7 +238,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.20.7, @babel/types@npm:^7.22.17, @babel/types@npm:^7.23.6, @babel/types@npm:^7.24.0, @babel/types@npm:^7.25.4, @babel/types@npm:^7.25.7, @babel/types@npm:^7.25.9, @babel/types@npm:^7.26.0":
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.20.7, @babel/types@npm:^7.22.17, @babel/types@npm:^7.23.6, @babel/types@npm:^7.25.4, @babel/types@npm:^7.25.7, @babel/types@npm:^7.25.9, @babel/types@npm:^7.26.0":
   version: 7.26.0
   resolution: "@babel/types@npm:7.26.0"
   dependencies:
@@ -1058,15 +1058,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ianvs/prettier-plugin-sort-imports@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.3.1"
+"@ianvs/prettier-plugin-sort-imports@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.4.0"
   dependencies:
-    "@babel/core": "npm:^7.24.0"
-    "@babel/generator": "npm:^7.23.6"
-    "@babel/parser": "npm:^7.24.0"
-    "@babel/traverse": "npm:^7.24.0"
-    "@babel/types": "npm:^7.24.0"
+    "@babel/generator": "npm:^7.26.2"
+    "@babel/parser": "npm:^7.26.2"
+    "@babel/traverse": "npm:^7.25.9"
+    "@babel/types": "npm:^7.26.0"
     semver: "npm:^7.5.2"
   peerDependencies:
     "@vue/compiler-sfc": 2.7.x || 3.x
@@ -1074,7 +1073,7 @@ __metadata:
   peerDependenciesMeta:
     "@vue/compiler-sfc":
       optional: true
-  checksum: 10c0/2e997fe88da3b6d8288b83aa708afde427e48be55d432dd1657ef8d28a9eb1c329afdf331f46bcfb1f3ce26d3f335598814512902e4644414b4d0ba47b9c416b
+  checksum: 10c0/8578ae3de4c965e59196388c2ce5d06cb16cbb445c3ba9ce301cf167facfdf9049cfcc343cacc3e383e2bda051b73c1620c8d18812decf1a3a17acacc1dee61b
   languageName: node
   linkType: hard
 
@@ -1175,7 +1174,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/prettier-config@workspace:tooling/prettier"
   dependencies:
-    "@ianvs/prettier-plugin-sort-imports": "npm:^4.3.1"
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.0"
     "@kyakujs/tsconfig": "workspace:*"
     prettier: "npm:^3.3.3"
     prettier-plugin-tailwindcss: "npm:^0.6.9"
