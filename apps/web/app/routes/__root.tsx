@@ -5,25 +5,29 @@ import {
   Outlet,
   ScrollRestoration,
 } from "@tanstack/react-router";
-import { Body, Head, Html, Meta, Scripts } from "@tanstack/start";
+import { Meta, Scripts } from "@tanstack/start";
 
 import { RouterDevtools } from "~/libs/router";
 import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRoute({
-  meta: () => [
-    {
-      charSet: "utf-8",
-    },
-    {
-      name: "viewport",
-      content: "width=device-width, initial-scale=1",
-    },
-    {
-      title: "Kyaku",
-    },
-  ],
-  links: () => [{ rel: "stylesheet", href: appCss }],
+  head: () => {
+    return {
+      meta: [
+        {
+          charSet: "utf-8",
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+        {
+          title: "Kyaku",
+        },
+      ],
+      links: [{ rel: "stylesheet", href: appCss }],
+    };
+  },
   component: RootComponent,
   errorComponent: ErrorComponent,
   pendingComponent: PendingComponent,
@@ -59,16 +63,16 @@ function RootComponent() {
 
 function RootDocument({ children }: PropsWithChildren) {
   return (
-    <Html>
-      <Head>
+    <html suppressHydrationWarning>
+      <head>
         <Meta />
-      </Head>
-      <Body>
+      </head>
+      <body>
         {children}
         <RouterDevtools position="bottom-right" />
         <ScrollRestoration />
         <Scripts />
-      </Body>
-    </Html>
+      </body>
+    </html>
   );
 }
