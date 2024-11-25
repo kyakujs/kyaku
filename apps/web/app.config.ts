@@ -15,4 +15,16 @@ export default defineConfig({
   tsr: {
     generatedRouteTree: "app/route-tree.gen.ts",
   },
+  react: {
+    babel: {
+      plugins: [
+        [
+          "babel-plugin-react-compiler",
+          {
+            target: "19",
+          },
+        ],
+      ],
+    },
+  },
 });
