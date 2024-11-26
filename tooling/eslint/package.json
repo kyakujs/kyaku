@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@eslint/compat": "^1.2.3",
-    "@tanstack/eslint-plugin-router": "^1.82.2",
+    "@tanstack/eslint-plugin-router": "^1.82.12",
     "babel-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
