@@ -13,9 +13,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.82.2",
-    "@tanstack/router-devtools": "^1.82.2",
-    "@tanstack/start": "^1.82.6",
+    "@tanstack/react-router": "^1.82.12",
+    "@tanstack/router-devtools": "^1.82.12",
+    "@tanstack/start": "^1.82.12",
     "react": "^19.0.0-rc.1",
     "react-dom": "^19.0.0-rc.1",
     "vinxi": "^0.4.3"
