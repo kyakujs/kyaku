@@ -1246,7 +1246,7 @@ __metadata:
     eslint-plugin-react-compiler: "npm:19.0.0-beta-df7b47d-20241124"
     eslint-plugin-react-hooks: "npm:^5.0.0"
     eslint-plugin-turbo: "npm:^2.3.2"
-    prettier: "npm:^3.3.3"
+    prettier: "npm:^3.4.1"
     typescript: "npm:^5.7.2"
     typescript-eslint: "npm:^8.16.0"
   languageName: unknown
@@ -1258,7 +1258,7 @@ __metadata:
   dependencies:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.0"
     "@kyakujs/tsconfig": "workspace:*"
-    prettier: "npm:^3.3.3"
+    prettier: "npm:^3.4.1"
     prettier-plugin-tailwindcss: "npm:^0.6.9"
     typescript: "npm:^5.7.2"
   languageName: unknown
@@ -1271,7 +1271,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@tailwindcss/postcss": "npm:next"
     postcss: "npm:^8.4.49"
-    prettier: "npm:^3.3.3"
+    prettier: "npm:^3.4.1"
     tailwindcss: "npm:next"
   languageName: unknown
   linkType: soft
@@ -1298,7 +1298,7 @@ __metadata:
     "@types/react-dom": "npm:types-react-dom@rc"
     "@vitejs/plugin-react": "npm:^4.3.3"
     eslint: "npm:^9.15.0"
-    prettier: "npm:^3.3.3"
+    prettier: "npm:^3.4.1"
     react: "npm:^19.0.0-rc.1"
     react-dom: "npm:^19.0.0-rc.1"
     typescript: "npm:^5.7.2"
@@ -7278,6 +7278,15 @@ __metadata:
   bin:
     prettier: bin/prettier.cjs
   checksum: 10c0/b85828b08e7505716324e4245549b9205c0cacb25342a030ba8885aba2039a115dbcf75a0b7ca3b37bc9d101ee61fab8113fc69ca3359f2a226f1ecc07ad2e26
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "prettier@npm:3.4.1"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/2d6cc3101ad9de72b49c59339480b0983e6ff6742143da0c43f476bf3b5ef88ede42ebd9956d7a0a8fa59f7a5990e8ef03c9ad4c37f7e4c9e5db43ee0853156c
   languageName: node
   linkType: hard
 
