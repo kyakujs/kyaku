@@ -1282,6 +1282,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@kyakujs/ui@workspace:*, @kyakujs/ui@workspace:packages/ui":
+  version: 0.0.0-use.local
+  resolution: "@kyakujs/ui@workspace:packages/ui"
+  dependencies:
+    "@kyakujs/eslint-config": "workspace:*"
+    "@kyakujs/prettier-config": "workspace:*"
+    "@kyakujs/tailwind-config": "workspace:*"
+    "@kyakujs/tsconfig": "workspace:*"
+    "@radix-ui/react-slot": "npm:^1.1.0"
+    "@types/react": "npm:types-react@rc"
+    class-variance-authority: "npm:^0.7.1"
+    eslint: "npm:^9.16.0"
+    prettier: "npm:^3.4.1"
+    react: "npm:^19.0.0-rc.1"
+    tailwind-merge: "npm:^2.5.5"
+    typescript: "npm:^5.7.2"
+  peerDependencies:
+    react: ^19.0.0-rc.1
+  languageName: unknown
+  linkType: soft
+
 "@kyakujs/web@workspace:apps/web":
   version: 0.0.0-use.local
   resolution: "@kyakujs/web@workspace:apps/web"
@@ -1290,6 +1311,8 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
+    "@kyakujs/ui": "workspace:*"
+    "@tailwindcss/vite": "npm:next"
     "@tanstack/react-router": "npm:^1.85.5"
     "@tanstack/router-devtools": "npm:^1.85.5"
     "@tanstack/start": "npm:^1.85.5"
@@ -1571,6 +1594,34 @@ __metadata:
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
   checksum: 10c0/5bd7576bb1b38a47a7fc7b51ac9f38748e772beebc56200450c4a817d712232b8f1d3ef70532c80840243c657d491cf6a6be1e3a214cff907645819fdc34aadd
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-compose-refs@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@radix-ui/react-compose-refs@npm:1.1.0"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/7e18706084397d9458ca3473d8565b10691da06f6499a78edbcc4bd72cde08f62e91120658d17d58c19fc39d6b1dffe0133cc4535c8f5fce470abd478f6107e5
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@radix-ui/react-slot@npm:1.1.0"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:1.1.0"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/a2e8bfb70c440506dd84a1a274f9a8bc433cca37ceae275e53552c9122612e3837744d7fc6f113d6ef1a11491aa914f4add71d76de41cb6d4db72547a8e261ae
   languageName: node
   linkType: hard
 
@@ -2030,6 +2081,21 @@ __metadata:
     postcss: "npm:^8.4.41"
     tailwindcss: "npm:4.0.0-beta.4"
   checksum: 10c0/1a53d512935a7f7738bbfe48d321e59da707222530017e43cdb6b125671bc826e24195a171207fa2b779f2691a0f11bfafa60fc112d5500104d31f82b400c1dc
+  languageName: node
+  linkType: hard
+
+"@tailwindcss/vite@npm:next":
+  version: 4.0.0-beta.4
+  resolution: "@tailwindcss/vite@npm:4.0.0-beta.4"
+  dependencies:
+    "@tailwindcss/node": "npm:4.0.0-beta.4"
+    "@tailwindcss/oxide": "npm:4.0.0-beta.4"
+    lightningcss: "npm:^1.26.0"
+    svelte-preprocess: "npm:^6.0.2"
+    tailwindcss: "npm:4.0.0-beta.4"
+  peerDependencies:
+    vite: ^5.2.0
+  checksum: 10c0/516545c9b589820eba9059cd6224249d3612c1eca0e054dea83154a55e2e25bca52868871c9cec9946e805c7ebe36d3dcef8c92d1a95588b6ea7bd82e7de9a81
   languageName: node
   linkType: hard
 
@@ -3309,6 +3375,15 @@ __metadata:
   dependencies:
     consola: "npm:^3.2.3"
   checksum: 10c0/d26ad82a9a4a8858c7e149d90b878a3eceecd4cfd3e2ed3cd5f9a06212e451fb4f8cbe0fa39a3acb1b3e8f18e22db8ee5def5829384bad50e823d4b301609b48
+  languageName: node
+  linkType: hard
+
+"class-variance-authority@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "class-variance-authority@npm:0.7.1"
+  dependencies:
+    clsx: "npm:^2.1.1"
+  checksum: 10c0/0f438cea22131808b99272de0fa933c2532d5659773bfec0c583de7b3f038378996d3350683426b8e9c74a6286699382106d71fbec52f0dd5fbb191792cccb5b
   languageName: node
   linkType: hard
 
@@ -8250,10 +8325,57 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svelte-preprocess@npm:^6.0.2":
+  version: 6.0.3
+  resolution: "svelte-preprocess@npm:6.0.3"
+  peerDependencies:
+    "@babel/core": ^7.10.2
+    coffeescript: ^2.5.1
+    less: ^3.11.3 || ^4.0.0
+    postcss: ^7 || ^8
+    postcss-load-config: ">=3"
+    pug: ^3.0.0
+    sass: ^1.26.8
+    stylus: ">=0.55"
+    sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
+    svelte: ^4.0.0 || ^5.0.0-next.100 || ^5.0.0
+    typescript: ^5.0.0
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    coffeescript:
+      optional: true
+    less:
+      optional: true
+    postcss:
+      optional: true
+    postcss-load-config:
+      optional: true
+    pug:
+      optional: true
+    sass:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    typescript:
+      optional: true
+  checksum: 10c0/ee6d92f0ae9b00830cae764ce7c286b83e52f142fb617a932bd81f09b4b29c8b2c02ef5e4b6bbade9729cc7c65f7fef55e1a366758766b15a06538df1e55e8ce
+  languageName: node
+  linkType: hard
+
 "system-architecture@npm:^0.1.0":
   version: 0.1.0
   resolution: "system-architecture@npm:0.1.0"
   checksum: 10c0/1969974ea5d31a9ac7c38f2657cfe8255b36f9e1d5ba3c58cb84c24fbeedf562778b8511f18a0abe6d70ae90148cfcaf145ecf26e37c0a53a3829076f3238cbb
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^2.5.5":
+  version: 2.5.5
+  resolution: "tailwind-merge@npm:2.5.5"
+  checksum: 10c0/32614dd2b4ddd4fab070d5ec569e6da00e2b34269b9ac2f2ff16733cef29a076c8e2210fbfc1904d7983a8fdb6b3e63d18ca117645f21b12ca7bcf8fe3507241
   languageName: node
   linkType: hard
 

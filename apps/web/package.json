@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@kyakujs/ui": "workspace:*",
     "@tanstack/react-router": "^1.85.5",
     "@tanstack/router-devtools": "^1.85.5",
     "@tanstack/start": "^1.85.5",
@@ -25,6 +26,7 @@
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
+    "@tailwindcss/vite": "next",
     "@types/node": "^22.10.1",
     "@types/react": "npm:types-react@rc",
     "@types/react-dom": "npm:types-react-dom@rc",

@@ -1,0 +1,46 @@
+{
+  "name": "@kyakujs/ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "types": "./dist/src/*.d.ts",
+      "default": [
+        "./src/*.tsx"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.1",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "@kyakujs/eslint-config": "workspace:*",
+    "@kyakujs/prettier-config": "workspace:*",
+    "@kyakujs/tailwind-config": "workspace:*",
+    "@kyakujs/tsconfig": "workspace:*",
+    "@types/react": "npm:types-react@rc",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.1",
+    "react": "^19.0.0-rc.1",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0-rc.1"
+  },
+  "prettier": "@kyakujs/prettier-config"
+}
