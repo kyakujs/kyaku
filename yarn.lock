@@ -1315,7 +1315,7 @@ __metadata:
     "@tailwindcss/vite": "npm:next"
     "@tanstack/react-router": "npm:^1.85.5"
     "@tanstack/router-devtools": "npm:^1.85.5"
-    "@tanstack/start": "npm:^1.85.5"
+    "@tanstack/start": "npm:^1.85.7"
     "@types/node": "npm:^22.10.1"
     "@types/react": "npm:types-react@rc"
     "@types/react-dom": "npm:types-react-dom@rc"
@@ -2247,9 +2247,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/start@npm:^1.85.5":
-  version: 1.85.5
-  resolution: "@tanstack/start@npm:1.85.5"
+"@tanstack/start@npm:^1.85.7":
+  version: 1.85.7
+  resolution: "@tanstack/start@npm:1.85.7"
   dependencies:
     "@tanstack/react-cross-context": "npm:^1.85.3"
     "@tanstack/react-router": "npm:^1.85.5"
@@ -2270,7 +2270,7 @@ __metadata:
   peerDependencies:
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10c0/2eade1fb2db2911138f8a86cdcb9365a83964bd53e2ff0d8b23e65d5a968f1cf0c0c624bd3c438cbe05284a82e60649f09e8b23f6b6643c6511e4413e1de24ff
+  checksum: 10c0/a117d96c49b60584b24565c4b12d4356656361a383cc9c11bdbcdfb89070e3ad9a704fe773dbe35b75bd230072f2717bd1f4887e54f3f13ea329d948c24d1704
   languageName: node
   linkType: hard
 
