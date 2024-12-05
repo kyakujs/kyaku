@@ -1246,7 +1246,7 @@ __metadata:
     eslint-plugin-react-compiler: "npm:19.0.0-beta-df7b47d-20241124"
     eslint-plugin-react-hooks: "npm:^5.0.0"
     eslint-plugin-turbo: "npm:^2.3.3"
-    prettier: "npm:^3.4.1"
+    prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.2"
     typescript-eslint: "npm:^8.17.0"
   languageName: unknown
@@ -1258,7 +1258,7 @@ __metadata:
   dependencies:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.0"
     "@kyakujs/tsconfig": "workspace:*"
-    prettier: "npm:^3.4.1"
+    prettier: "npm:^3.4.2"
     prettier-plugin-tailwindcss: "npm:^0.6.9"
     typescript: "npm:^5.7.2"
   languageName: unknown
@@ -1271,7 +1271,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@tailwindcss/postcss": "npm:next"
     postcss: "npm:^8.4.49"
-    prettier: "npm:^3.4.1"
+    prettier: "npm:^3.4.2"
     tailwindcss: "npm:next"
   languageName: unknown
   linkType: soft
@@ -1294,7 +1294,7 @@ __metadata:
     "@types/react": "npm:types-react@rc"
     class-variance-authority: "npm:^0.7.1"
     eslint: "npm:^9.16.0"
-    prettier: "npm:^3.4.1"
+    prettier: "npm:^3.4.2"
     react: "npm:^19.0.0-rc.1"
     tailwind-merge: "npm:^2.5.5"
     typescript: "npm:^5.7.2"
@@ -1321,7 +1321,7 @@ __metadata:
     "@types/react-dom": "npm:types-react-dom@rc"
     "@vitejs/plugin-react": "npm:^4.3.4"
     eslint: "npm:^9.16.0"
-    prettier: "npm:^3.4.1"
+    prettier: "npm:^3.4.2"
     react: "npm:^19.0.0-rc.1"
     react-dom: "npm:^19.0.0-rc.1"
     typescript: "npm:^5.7.2"
@@ -7322,6 +7322,15 @@ __metadata:
   bin:
     prettier: bin/prettier.cjs
   checksum: 10c0/2d6cc3101ad9de72b49c59339480b0983e6ff6742143da0c43f476bf3b5ef88ede42ebd9956d7a0a8fa59f7a5990e8ef03c9ad4c37f7e4c9e5db43ee0853156c
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.4.2":
+  version: 3.4.2
+  resolution: "prettier@npm:3.4.2"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/99e076a26ed0aba4ebc043880d0f08bbb8c59a4c6641cdee6cdadf2205bdd87aa1d7823f50c3aea41e015e99878d37c58d7b5f0e663bba0ef047f94e36b96446
   languageName: node
   linkType: hard
 
