@@ -19,7 +19,7 @@
     "@tanstack/start": "^1.86.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "vinxi": "^0.4.3"
+    "vinxi": "^0.5.1"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
