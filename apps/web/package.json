@@ -29,7 +29,7 @@
     "@tailwindcss/vite": "next",
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.16.0",
     "prettier": "^3.4.2",
