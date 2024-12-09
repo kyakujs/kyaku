@@ -1077,7 +1077,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
     "@tanstack/eslint-plugin-router": "npm:^1.85.3"
-    babel-plugin-react-compiler: "npm:19.0.0-beta-df7b47d-20241124"
+    babel-plugin-react-compiler: "npm:19.0.0-beta-37ed2a7-20241206"
     eslint: "npm:^9.16.0"
     eslint-plugin-import: "npm:^2.31.0"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
@@ -2924,12 +2924,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-react-compiler@npm:19.0.0-beta-df7b47d-20241124":
-  version: 19.0.0-beta-df7b47d-20241124
-  resolution: "babel-plugin-react-compiler@npm:19.0.0-beta-df7b47d-20241124"
+"babel-plugin-react-compiler@npm:19.0.0-beta-37ed2a7-20241206":
+  version: 19.0.0-beta-37ed2a7-20241206
+  resolution: "babel-plugin-react-compiler@npm:19.0.0-beta-37ed2a7-20241206"
   dependencies:
     "@babel/types": "npm:^7.19.0"
-  checksum: 10c0/d5132730c5503f2d93b07da68f443c73b22dbff8fc312d0472782b4860f72eb814b34b115823e7debe4dee9f43cf676857e9213656d9857e00309327da464c55
+  checksum: 10c0/0b4b5ecf8bbd0805cf9f5d54c20e7fd6e269be0c1623aa2efde2b8d12ba2c5cadfc77e757c79526f738acbd28341d1db015b8943b7b7de4e2f27f072bf1792ee
   languageName: node
   linkType: hard
 
