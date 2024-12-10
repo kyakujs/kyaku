@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@kyakujs/ui": "workspace:*",
-    "@tanstack/react-router": "^1.87.3",
-    "@tanstack/router-devtools": "^1.87.3",
-    "@tanstack/start": "^1.87.4",
+    "@tanstack/react-router": "^1.87.7",
+    "@tanstack/router-devtools": "^1.87.7",
+    "@tanstack/start": "^1.87.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vinxi": "^0.5.1"
