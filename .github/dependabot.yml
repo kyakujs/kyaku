@@ -15,6 +15,10 @@ updates:
         patterns:
           - "react"
           - "react-dom"
+      react-compiler:
+        patterns:
+          - "babel-plugin-react-compiler"
+          - "eslint-plugin-react-compiler"
       tailwindcss:
         patterns:
           - "@tailwindcss/postcss"
