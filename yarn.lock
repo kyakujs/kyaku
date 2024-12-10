@@ -1157,7 +1157,7 @@ __metadata:
     "@tanstack/start": "npm:^1.86.1"
     "@types/node": "npm:^22.10.1"
     "@types/react": "npm:^19.0.0"
-    "@types/react-dom": "npm:^19.0.0"
+    "@types/react-dom": "npm:^19.0.2"
     "@vitejs/plugin-react": "npm:^4.3.4"
     eslint: "npm:^9.16.0"
     prettier: "npm:^3.4.2"
@@ -2229,16 +2229,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^19.0.0":
-  version: 19.0.0
-  resolution: "@types/react-dom@npm:19.0.0"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 10c0/bd480fc4a9c801fc6bbc7d26b37bb815fc382e76b5428511b1bdb2e8048f3dbd2ff9973bafc86b448e0593f9da4c02f7b39d47409e427daeed5a54f045de4596
+"@types/react-dom@npm:^19.0.2":
+  version: 19.0.2
+  resolution: "@types/react-dom@npm:19.0.2"
+  peerDependencies:
+    "@types/react": ^19.0.0
+  checksum: 10c0/3d0c7b78dbe8df64ea769f30af990a5950173a8321c745fe11094d765423f7964c3519dca6e7cd36b4be6521c8efc690bdd3b79b327b229dd1e9d5a8bad677dd
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^19.0.0":
+"@types/react@npm:^19.0.0":
   version: 19.0.0
   resolution: "@types/react@npm:19.0.0"
   dependencies:
