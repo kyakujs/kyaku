@@ -1,5 +1,6 @@
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import type { PropsWithChildren } from "react";
+import fontsourceInter from "@fontsource-variable/inter?url";
 import {
   createRootRoute,
   Outlet,
@@ -26,7 +27,13 @@ export const Route = createRootRoute({
           title: "Kyaku",
         },
       ],
-      links: [{ rel: "stylesheet", href: appCss }],
+      links: [
+        { rel: "stylesheet", href: appCss },
+        {
+          rel: "stylesheet",
+          href: fontsourceInter,
+        },
+      ],
     };
   },
   component: RootComponent,

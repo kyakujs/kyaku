@@ -988,6 +988,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/inter@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@fontsource-variable/inter@npm:5.1.0"
+  checksum: 10c0/6b46019c71380f6e18427b4b19468a9a656609fcf613b8472f7b928ec1bc6f13b03d1dd0bb9536cd168a53e58c009465e2245cd87ef57f9925a07d2306bd8f58
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -1195,6 +1202,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/web@workspace:apps/web"
   dependencies:
+    "@fontsource-variable/inter": "npm:^5.1.0"
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"

@@ -3,6 +3,9 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(222.2 47.4% 11.2%);
 
