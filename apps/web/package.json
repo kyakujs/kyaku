@@ -15,9 +15,9 @@
   "dependencies": {
     "@fontsource-variable/inter": "^5.1.0",
     "@kyakujs/ui": "workspace:*",
-    "@tanstack/react-router": "^1.87.7",
-    "@tanstack/router-devtools": "^1.87.7",
-    "@tanstack/start": "^1.87.7",
+    "@tanstack/react-router": "^1.90.0",
+    "@tanstack/router-devtools": "^1.90.0",
+    "@tanstack/start": "^1.90.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vinxi": "^0.5.1"
