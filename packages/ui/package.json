@@ -33,7 +33,7 @@
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
-    "@types/react": "^19.0.1",
+    "@types/react": "^19.0.2",
     "eslint": "^9.17.0",
     "prettier": "^3.4.2",
     "react": "^19.0.0",
