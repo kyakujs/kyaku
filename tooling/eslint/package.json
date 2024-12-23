@@ -22,7 +22,7 @@
     "eslint-plugin-react-compiler": "19.0.0-beta-201e55d-20241215",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-turbo": "^2.3.3",
-    "typescript-eslint": "^8.18.1"
+    "typescript-eslint": "^8.18.2"
   },
   "devDependencies": {
     "@kyakujs/prettier-config": "workspace:*",
