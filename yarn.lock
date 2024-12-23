@@ -1209,9 +1209,9 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@tailwindcss/vite": "npm:next"
-    "@tanstack/react-router": "npm:^1.91.3"
-    "@tanstack/router-devtools": "npm:^1.91.3"
-    "@tanstack/start": "npm:^1.91.3"
+    "@tanstack/react-router": "npm:^1.92.3"
+    "@tanstack/router-devtools": "npm:^1.92.3"
+    "@tanstack/start": "npm:^1.92.4"
     "@types/node": "npm:^22.10.2"
     "@types/react": "npm:^19.0.2"
     "@types/react-dom": "npm:^19.0.2"
@@ -2022,9 +2022,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-router@npm:^1.91.3":
-  version: 1.91.3
-  resolution: "@tanstack/react-router@npm:1.91.3"
+"@tanstack/react-router@npm:^1.92.3":
+  version: 1.92.3
+  resolution: "@tanstack/react-router@npm:1.92.3"
   dependencies:
     "@tanstack/history": "npm:1.90.0"
     "@tanstack/react-store": "npm:^0.6.1"
@@ -2038,7 +2038,7 @@ __metadata:
   peerDependenciesMeta:
     "@tanstack/router-generator":
       optional: true
-  checksum: 10c0/9f285ec55d836f98ea8908d605c429409e8c277d7bc1943728914a171b9322039ba6ddc8b88b027ed7dd6b91b9f18376e2c1e6fe5f6e66db32ea9665ae818f07
+  checksum: 10c0/259437a1a6d071b69b1d71e52334c357ed1422c1ae8b0ff1a6e42d40514bd2642c616c836ad6d279f32b7f55b0737959cb213228ed1609c42a19c5e696e8a67a
   languageName: node
   linkType: hard
 
@@ -2055,17 +2055,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/router-devtools@npm:^1.91.3":
-  version: 1.91.3
-  resolution: "@tanstack/router-devtools@npm:1.91.3"
+"@tanstack/router-devtools@npm:^1.92.3":
+  version: 1.92.3
+  resolution: "@tanstack/router-devtools@npm:1.92.3"
   dependencies:
     clsx: "npm:^2.1.1"
     goober: "npm:^2.1.16"
   peerDependencies:
-    "@tanstack/react-router": ^1.91.3
+    "@tanstack/react-router": ^1.92.3
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10c0/87f1a0970d1f4a8728055ea1b1d9ee4eeb70759dbf802c0c87bc47938cb4c77e746476f05f32cef1117154f0b5b0d859e7c95646e017c85266acfbb89e0685fc
+  checksum: 10c0/7ab90413c496dc02581568ea32d0740258d8fd0c849310d422b1788a406b44a9c575da47d324fd95bb2ea9c0afb01fd528ad42c298d594fdc8789563f7ccdac3
   languageName: node
   linkType: hard
 
@@ -2142,12 +2142,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/start@npm:^1.91.3":
-  version: 1.91.3
-  resolution: "@tanstack/start@npm:1.91.3"
+"@tanstack/start@npm:^1.92.4":
+  version: 1.92.4
+  resolution: "@tanstack/start@npm:1.92.4"
   dependencies:
     "@tanstack/react-cross-context": "npm:^1.87.6"
-    "@tanstack/react-router": "npm:^1.91.3"
+    "@tanstack/react-router": "npm:^1.92.3"
     "@tanstack/router-generator": "npm:^1.87.7"
     "@tanstack/router-plugin": "npm:^1.91.1"
     "@tanstack/start-vite-plugin": "npm:^1.91.1"
@@ -2165,7 +2165,7 @@ __metadata:
   peerDependencies:
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10c0/37b72f7dc51feb4a2ff7fd68e2ec8e9e79422ea97e73f88cf6d87807cf9843ec174efce4c818f3a98c433f63129373ad899112a3fc93464af1d26c4261ea2501
+  checksum: 10c0/d81db8d8600a211dc0a0a04faec36fbd34c6020ef178ea46a185bb89fe3e32df7cbe799f205c4df9f3cbc23740f46151ea7734d2797ff22e502dec0767a54e5a
   languageName: node
   linkType: hard
 
