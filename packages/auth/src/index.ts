@@ -21,8 +21,8 @@ const auth = betterAuth({
   },
   socialProviders: {
     github: {
-      clientId: process.env.AUTH_GITHUB_ID!,
-      clientSecret: process.env.AUTH_GITHUB_SECRET!,
+      clientId: process.env.AUTH_GITHUB_ID as string,
+      clientSecret: process.env.AUTH_GITHUB_SECRET as string,
     },
   },
   plugins: [jwt(), username(), admin()],

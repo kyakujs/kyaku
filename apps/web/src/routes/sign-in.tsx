@@ -13,7 +13,7 @@ function SignIn() {
       <button
         type="button"
         onClick={() => {
-          authClient.signIn.social({
+          void authClient.signIn.social({
             provider: "github",
             callbackURL: "/",
           });
