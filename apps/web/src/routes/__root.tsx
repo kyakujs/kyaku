@@ -2,16 +2,25 @@ import type { ErrorComponentProps } from "@tanstack/react-router";
 import type { PropsWithChildren } from "react";
 import fontsourceInter from "@fontsource-variable/inter?url";
 import {
-  createRootRoute,
+  createRootRouteWithContext,
   Outlet,
   ScrollRestoration,
 } from "@tanstack/react-router";
 import { Meta, Scripts } from "@tanstack/start";
 
-import { RouterDevtools } from "~/libs/router";
+import type { RouterContext } from "~/router";
+import { RouterDevtools } from "~/router";
+import { authQueryOptions } from "~/services/auth.query";
 import appCss from "~/styles/app.css?url";
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<RouterContext>()({
+  beforeLoad: async ({ context }) => {
+    const auth = await context.queryClient.ensureQueryData(authQueryOptions());
+
+    return {
+      auth,
+    };
+  },
   head: () => {
     return {
       meta: [

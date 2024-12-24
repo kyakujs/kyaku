@@ -18,9 +18,17 @@
       "outputs": [".cache/.prettiercache"],
       "outputLogs": "new-only"
     },
+    "generate-migration": {
+      "cache": false,
+      "interactive": true
+    },
     "lint": {
       "dependsOn": ["^topo", "^build"],
       "outputs": [".cache/.eslintcache"]
+    },
+    "push-migration": {
+      "cache": false,
+      "interactive": true
     },
     "typecheck": {
       "dependsOn": ["^topo", "^build"],
@@ -33,6 +41,14 @@
       "cache": false
     }
   },
-  "globalEnv": ["PORT"],
+  "globalEnv": [
+    "AUTH_GITHUB_ID",
+    "AUTH_GITHUB_SECRET",
+    "AUTH_SECRET",
+    "PORT",
+    "POSTGRES_URL",
+    "VITE_APP_BASE_URL",
+    "VITE_SYNC_ENGINE_URL"
+  ],
   "globalPassThroughEnv": ["NODE_ENV", "CI", "PROD", "npm_lifecycle_event"]
 }
