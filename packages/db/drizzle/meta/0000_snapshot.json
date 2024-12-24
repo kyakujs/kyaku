@@ -93,12 +93,8 @@
           "name": "account_userId_user_id_fk",
           "tableFrom": "account",
           "tableTo": "user",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -187,12 +183,8 @@
           "name": "customer_createdById_user_id_fk",
           "tableFrom": "customer",
           "tableTo": "user",
-          "columnsFrom": [
-            "createdById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["createdById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -200,12 +192,8 @@
           "name": "customer_updatedById_user_id_fk",
           "tableFrom": "customer",
           "tableTo": "user",
-          "columnsFrom": [
-            "updatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["updatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         }
@@ -318,12 +306,8 @@
           "name": "session_userId_user_id_fk",
           "tableFrom": "session",
           "tableTo": "user",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -333,9 +317,7 @@
         "session_token_unique": {
           "name": "session_token_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token"
-          ]
+          "columns": ["token"]
         }
       },
       "policies": {},
@@ -402,12 +384,8 @@
           "name": "ticket_assignedToId_user_id_fk",
           "tableFrom": "ticket",
           "tableTo": "user",
-          "columnsFrom": [
-            "assignedToId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["assignedToId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -415,12 +393,8 @@
           "name": "ticket_customerId_customer_id_fk",
           "tableFrom": "ticket",
           "tableTo": "customer",
-          "columnsFrom": [
-            "customerId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["customerId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -428,12 +402,8 @@
           "name": "ticket_createdById_user_id_fk",
           "tableFrom": "ticket",
           "tableTo": "user",
-          "columnsFrom": [
-            "createdById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["createdById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -441,12 +411,8 @@
           "name": "ticket_updatedById_user_id_fk",
           "tableFrom": "ticket",
           "tableTo": "user",
-          "columnsFrom": [
-            "updatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["updatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         }
@@ -541,16 +507,12 @@
         "user_email_unique": {
           "name": "user_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         },
         "user_username_unique": {
           "name": "user_username_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "username"
-          ]
+          "columns": ["username"]
         }
       },
       "policies": {},
