@@ -28,3 +28,10 @@ dist/
 # Vinxi
 .vinxi
 .output
+
+# local env files
+.env
+.env*.local
+
+# Zero
+zero-schema.json

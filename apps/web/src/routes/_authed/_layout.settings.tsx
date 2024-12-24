@@ -3,11 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@kyakujs/ui/button";
 import { Input } from "@kyakujs/ui/input";
 
-export const Route = createFileRoute("/")({
-  component: Home,
+export const Route = createFileRoute("/_authed/_layout/settings")({
+  component: Settings,
 });
 
-function Home() {
+function Settings() {
   return (
     <div className="bg-backround mx-auto max-w-2xl">
       <main className="py-4 sm:py-12">
