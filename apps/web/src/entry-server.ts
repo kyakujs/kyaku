@@ -5,7 +5,7 @@ import {
   defaultStreamHandler,
 } from "@tanstack/start/server";
 
-import { createRouter } from "~/libs/router";
+import { createRouter } from "~/router";
 
 export default createStartHandler({
   createRouter,
