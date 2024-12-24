@@ -4,10 +4,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import type { Schema } from "@kyakujs/zero/schema";
 
 export const Route = createFileRoute("/_authed/_layout/")({
-  component: IndexComponent,
+  component: Index,
 });
 
-function IndexComponent() {
+function Index() {
   const z = useZero<Schema>();
   const [tickets] = useQuery(z.query.ticket);
   return (
