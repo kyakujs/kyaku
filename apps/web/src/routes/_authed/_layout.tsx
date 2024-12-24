@@ -8,10 +8,10 @@ import { schema } from "@kyakujs/zero/schema";
 import { useAuthQuery } from "~/services/auth.query";
 
 export const Route = createFileRoute("/_authed/_layout")({
-  component: RouteComponent,
+  component: AuthedLayout,
 });
 
-function RouteComponent() {
+function AuthedLayout() {
   const authQuery = useAuthQuery();
 
   const z = useMemo(
