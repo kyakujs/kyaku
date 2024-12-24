@@ -5,7 +5,7 @@ export const Route = createFileRoute("/_authed")({
     if (!context.auth.isAuthenticated) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
       throw redirect({
-        to: "/sign-in",
+        to: "/login",
       });
     }
   },
