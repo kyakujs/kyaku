@@ -42,7 +42,7 @@ export function createRouter() {
 
   function handleRedirectError(error: Error) {
     if (isRedirect(error)) {
-      router.navigate(
+      void router.navigate(
         router.resolveRedirect({
           ...error,
           _fromLocation: router.state.location,
