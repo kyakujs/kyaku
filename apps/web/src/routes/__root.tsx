@@ -43,6 +43,19 @@ export const Route = createRootRouteWithContext<RouterContext>()({
           href: fontsourceInter,
         },
       ],
+      scripts: import.meta.env.PROD
+        ? []
+        : [
+            {
+              type: "module",
+              children: `
+            import RefreshRuntime from "/_build/@react-refresh"
+            RefreshRuntime.injectIntoGlobalHook(window)
+            window.$RefreshReg$ = () => {}
+            window.$RefreshSig$ = () => (type) => type
+          `,
+            },
+          ],
     };
   },
   component: RootComponent,

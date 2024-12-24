@@ -11,7 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as SignInImport } from './routes/sign-in'
+import { Route as LoginImport } from './routes/login'
 import { Route as AuthedImport } from './routes/_authed'
 import { Route as AuthedLayoutImport } from './routes/_authed/_layout'
 import { Route as AuthedLayoutIndexImport } from './routes/_authed/_layout.index'
@@ -19,9 +19,9 @@ import { Route as AuthedLayoutSettingsImport } from './routes/_authed/_layout.se
 
 // Create/Update Routes
 
-const SignInRoute = SignInImport.update({
-  id: '/sign-in',
-  path: '/sign-in',
+const LoginRoute = LoginImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -58,11 +58,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthedImport
       parentRoute: typeof rootRoute
     }
-    '/sign-in': {
-      id: '/sign-in'
-      path: '/sign-in'
-      fullPath: '/sign-in'
-      preLoaderRoute: typeof SignInImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
     '/_authed/_layout': {
@@ -118,14 +118,14 @@ const AuthedRouteWithChildren =
 
 export interface FileRoutesByFullPath {
   '': typeof AuthedLayoutRouteWithChildren
-  '/sign-in': typeof SignInRoute
+  '/login': typeof LoginRoute
   '/settings': typeof AuthedLayoutSettingsRoute
   '/': typeof AuthedLayoutIndexRoute
 }
 
 export interface FileRoutesByTo {
   '': typeof AuthedRouteWithChildren
-  '/sign-in': typeof SignInRoute
+  '/login': typeof LoginRoute
   '/settings': typeof AuthedLayoutSettingsRoute
   '/': typeof AuthedLayoutIndexRoute
 }
@@ -133,7 +133,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/_authed': typeof AuthedRouteWithChildren
-  '/sign-in': typeof SignInRoute
+  '/login': typeof LoginRoute
   '/_authed/_layout': typeof AuthedLayoutRouteWithChildren
   '/_authed/_layout/settings': typeof AuthedLayoutSettingsRoute
   '/_authed/_layout/': typeof AuthedLayoutIndexRoute
@@ -141,13 +141,13 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/sign-in' | '/settings' | '/'
+  fullPaths: '' | '/login' | '/settings' | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '' | '/sign-in' | '/settings' | '/'
+  to: '' | '/login' | '/settings' | '/'
   id:
     | '__root__'
     | '/_authed'
-    | '/sign-in'
+    | '/login'
     | '/_authed/_layout'
     | '/_authed/_layout/settings'
     | '/_authed/_layout/'
@@ -156,12 +156,12 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   AuthedRoute: typeof AuthedRouteWithChildren
-  SignInRoute: typeof SignInRoute
+  LoginRoute: typeof LoginRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   AuthedRoute: AuthedRouteWithChildren,
-  SignInRoute: SignInRoute,
+  LoginRoute: LoginRoute,
 }
 
 export const routeTree = rootRoute
@@ -175,7 +175,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/_authed",
-        "/sign-in"
+        "/login"
       ]
     },
     "/_authed": {
@@ -184,8 +184,8 @@ export const routeTree = rootRoute
         "/_authed/_layout"
       ]
     },
-    "/sign-in": {
-      "filePath": "sign-in.tsx"
+    "/login": {
+      "filePath": "login.tsx"
     },
     "/_authed/_layout": {
       "filePath": "_authed/_layout.tsx",
