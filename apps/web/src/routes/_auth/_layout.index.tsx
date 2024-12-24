@@ -1,15 +1,15 @@
-import { useQuery, useZero } from '@rocicorp/zero/react'
-import { createFileRoute } from '@tanstack/react-router'
+import { useQuery, useZero } from "@rocicorp/zero/react";
+import { createFileRoute } from "@tanstack/react-router";
 
-import type { Schema } from '@kyakujs/zero/schema'
+import type { Schema } from "@kyakujs/zero/schema";
 
-export const Route = createFileRoute('/_auth/_layout/')({
+export const Route = createFileRoute("/_auth/_layout/")({
   component: Index,
-})
+});
 
 function Index() {
-  const z = useZero<Schema>()
-  const [tickets] = useQuery(z.query.ticket)
+  const z = useZero<Schema>();
+  const [tickets] = useQuery(z.query.ticket);
   return (
     <main>
       Hello world!
@@ -19,5 +19,5 @@ function Index() {
         ))}
       </ul>
     </main>
-  )
+  );
 }
