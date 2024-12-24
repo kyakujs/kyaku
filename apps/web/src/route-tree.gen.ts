@@ -12,10 +12,10 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as LoginImport } from './routes/login'
-import { Route as AuthedImport } from './routes/_authed'
-import { Route as AuthedLayoutImport } from './routes/_authed/_layout'
-import { Route as AuthedLayoutIndexImport } from './routes/_authed/_layout.index'
-import { Route as AuthedLayoutSettingsImport } from './routes/_authed/_layout.settings'
+import { Route as AuthImport } from './routes/_auth'
+import { Route as AuthLayoutImport } from './routes/_auth/_layout'
+import { Route as AuthLayoutIndexImport } from './routes/_auth/_layout.index'
+import { Route as AuthLayoutSettingsImport } from './routes/_auth/_layout.settings'
 
 // Create/Update Routes
 
@@ -25,37 +25,37 @@ const LoginRoute = LoginImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const AuthedRoute = AuthedImport.update({
-  id: '/_authed',
+const AuthRoute = AuthImport.update({
+  id: '/_auth',
   getParentRoute: () => rootRoute,
 } as any)
 
-const AuthedLayoutRoute = AuthedLayoutImport.update({
+const AuthLayoutRoute = AuthLayoutImport.update({
   id: '/_layout',
-  getParentRoute: () => AuthedRoute,
+  getParentRoute: () => AuthRoute,
 } as any)
 
-const AuthedLayoutIndexRoute = AuthedLayoutIndexImport.update({
+const AuthLayoutIndexRoute = AuthLayoutIndexImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => AuthedLayoutRoute,
+  getParentRoute: () => AuthLayoutRoute,
 } as any)
 
-const AuthedLayoutSettingsRoute = AuthedLayoutSettingsImport.update({
+const AuthLayoutSettingsRoute = AuthLayoutSettingsImport.update({
   id: '/settings',
   path: '/settings',
-  getParentRoute: () => AuthedLayoutRoute,
+  getParentRoute: () => AuthLayoutRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/_authed': {
-      id: '/_authed'
+    '/_auth': {
+      id: '/_auth'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof AuthedImport
+      preLoaderRoute: typeof AuthImport
       parentRoute: typeof rootRoute
     }
     '/login': {
@@ -65,78 +65,77 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
-    '/_authed/_layout': {
-      id: '/_authed/_layout'
+    '/_auth/_layout': {
+      id: '/_auth/_layout'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof AuthedLayoutImport
-      parentRoute: typeof AuthedImport
+      preLoaderRoute: typeof AuthLayoutImport
+      parentRoute: typeof AuthImport
     }
-    '/_authed/_layout/settings': {
-      id: '/_authed/_layout/settings'
+    '/_auth/_layout/settings': {
+      id: '/_auth/_layout/settings'
       path: '/settings'
       fullPath: '/settings'
-      preLoaderRoute: typeof AuthedLayoutSettingsImport
-      parentRoute: typeof AuthedLayoutImport
+      preLoaderRoute: typeof AuthLayoutSettingsImport
+      parentRoute: typeof AuthLayoutImport
     }
-    '/_authed/_layout/': {
-      id: '/_authed/_layout/'
+    '/_auth/_layout/': {
+      id: '/_auth/_layout/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof AuthedLayoutIndexImport
-      parentRoute: typeof AuthedLayoutImport
+      preLoaderRoute: typeof AuthLayoutIndexImport
+      parentRoute: typeof AuthLayoutImport
     }
   }
 }
 
 // Create and export the route tree
 
-interface AuthedLayoutRouteChildren {
-  AuthedLayoutSettingsRoute: typeof AuthedLayoutSettingsRoute
-  AuthedLayoutIndexRoute: typeof AuthedLayoutIndexRoute
+interface AuthLayoutRouteChildren {
+  AuthLayoutSettingsRoute: typeof AuthLayoutSettingsRoute
+  AuthLayoutIndexRoute: typeof AuthLayoutIndexRoute
 }
 
-const AuthedLayoutRouteChildren: AuthedLayoutRouteChildren = {
-  AuthedLayoutSettingsRoute: AuthedLayoutSettingsRoute,
-  AuthedLayoutIndexRoute: AuthedLayoutIndexRoute,
+const AuthLayoutRouteChildren: AuthLayoutRouteChildren = {
+  AuthLayoutSettingsRoute: AuthLayoutSettingsRoute,
+  AuthLayoutIndexRoute: AuthLayoutIndexRoute,
 }
 
-const AuthedLayoutRouteWithChildren = AuthedLayoutRoute._addFileChildren(
-  AuthedLayoutRouteChildren,
+const AuthLayoutRouteWithChildren = AuthLayoutRoute._addFileChildren(
+  AuthLayoutRouteChildren,
 )
 
-interface AuthedRouteChildren {
-  AuthedLayoutRoute: typeof AuthedLayoutRouteWithChildren
+interface AuthRouteChildren {
+  AuthLayoutRoute: typeof AuthLayoutRouteWithChildren
 }
 
-const AuthedRouteChildren: AuthedRouteChildren = {
-  AuthedLayoutRoute: AuthedLayoutRouteWithChildren,
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthLayoutRoute: AuthLayoutRouteWithChildren,
 }
 
-const AuthedRouteWithChildren =
-  AuthedRoute._addFileChildren(AuthedRouteChildren)
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '': typeof AuthedLayoutRouteWithChildren
+  '': typeof AuthLayoutRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthedLayoutSettingsRoute
-  '/': typeof AuthedLayoutIndexRoute
+  '/settings': typeof AuthLayoutSettingsRoute
+  '/': typeof AuthLayoutIndexRoute
 }
 
 export interface FileRoutesByTo {
-  '': typeof AuthedRouteWithChildren
+  '': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthedLayoutSettingsRoute
-  '/': typeof AuthedLayoutIndexRoute
+  '/settings': typeof AuthLayoutSettingsRoute
+  '/': typeof AuthLayoutIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  '/_authed': typeof AuthedRouteWithChildren
+  '/_auth': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
-  '/_authed/_layout': typeof AuthedLayoutRouteWithChildren
-  '/_authed/_layout/settings': typeof AuthedLayoutSettingsRoute
-  '/_authed/_layout/': typeof AuthedLayoutIndexRoute
+  '/_auth/_layout': typeof AuthLayoutRouteWithChildren
+  '/_auth/_layout/settings': typeof AuthLayoutSettingsRoute
+  '/_auth/_layout/': typeof AuthLayoutIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -146,21 +145,21 @@ export interface FileRouteTypes {
   to: '' | '/login' | '/settings' | '/'
   id:
     | '__root__'
-    | '/_authed'
+    | '/_auth'
     | '/login'
-    | '/_authed/_layout'
-    | '/_authed/_layout/settings'
-    | '/_authed/_layout/'
+    | '/_auth/_layout'
+    | '/_auth/_layout/settings'
+    | '/_auth/_layout/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  AuthedRoute: typeof AuthedRouteWithChildren
+  AuthRoute: typeof AuthRouteWithChildren
   LoginRoute: typeof LoginRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  AuthedRoute: AuthedRouteWithChildren,
+  AuthRoute: AuthRouteWithChildren,
   LoginRoute: LoginRoute,
 }
 
@@ -174,34 +173,34 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/_authed",
+        "/_auth",
         "/login"
       ]
     },
-    "/_authed": {
-      "filePath": "_authed.tsx",
+    "/_auth": {
+      "filePath": "_auth.tsx",
       "children": [
-        "/_authed/_layout"
+        "/_auth/_layout"
       ]
     },
     "/login": {
       "filePath": "login.tsx"
     },
-    "/_authed/_layout": {
-      "filePath": "_authed/_layout.tsx",
-      "parent": "/_authed",
+    "/_auth/_layout": {
+      "filePath": "_auth/_layout.tsx",
+      "parent": "/_auth",
       "children": [
-        "/_authed/_layout/settings",
-        "/_authed/_layout/"
+        "/_auth/_layout/settings",
+        "/_auth/_layout/"
       ]
     },
-    "/_authed/_layout/settings": {
-      "filePath": "_authed/_layout.settings.tsx",
-      "parent": "/_authed/_layout"
+    "/_auth/_layout/settings": {
+      "filePath": "_auth/_layout.settings.tsx",
+      "parent": "/_auth/_layout"
     },
-    "/_authed/_layout/": {
-      "filePath": "_authed/_layout.index.tsx",
-      "parent": "/_authed/_layout"
+    "/_auth/_layout/": {
+      "filePath": "_auth/_layout.index.tsx",
+      "parent": "/_auth/_layout"
     }
   }
 }

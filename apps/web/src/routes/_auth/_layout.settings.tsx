@@ -1,11 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from '@tanstack/react-router'
 
-import { Button } from "@kyakujs/ui/button";
-import { Input } from "@kyakujs/ui/input";
+import { Button } from '@kyakujs/ui/button'
+import { Input } from '@kyakujs/ui/input'
 
-export const Route = createFileRoute("/_authed/_layout/settings")({
+export const Route = createFileRoute('/_auth/_layout/settings')({
   component: Settings,
-});
+})
 
 function Settings() {
   return (
@@ -77,5 +77,5 @@ function Settings() {
         </div>
       </main>
     </div>
-  );
+  )
 }
