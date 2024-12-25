@@ -3,11 +3,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@kyakujs/ui/button";
 import { Input } from "@kyakujs/ui/input";
 
-export const Route = createFileRoute("/")({
-  component: Home,
+import { useAuthedQuery } from "~/services/auth.query";
+
+export const Route = createFileRoute("/_auth/_layout/settings")({
+  component: Settings,
 });
 
-function Home() {
+function Settings() {
+  const authedQuery = useAuthedQuery();
+
   return (
     <div className="bg-backround mx-auto max-w-2xl">
       <main className="py-4 sm:py-12">
@@ -33,7 +37,7 @@ function Home() {
                       name="first-name"
                       type="text"
                       placeholder="janesmith"
-                      value="John Doe"
+                      value={authedQuery.data.user.name}
                     />
                   </li>
                   <li className="relative flex flex-col items-stretch justify-between gap-2 px-4 py-3 sm:flex-row sm:items-center sm:gap-4">
@@ -54,6 +58,7 @@ function Home() {
                       name="username"
                       type="text"
                       placeholder="johndoe"
+                      value={authedQuery.data.user.username ?? undefined}
                     />
                   </li>
                 </ul>

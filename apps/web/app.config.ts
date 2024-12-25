@@ -1,11 +1,31 @@
+import { join } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "@tanstack/start/config";
+import { App } from "vinxi";
 import viteTsConfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
+const config = {
+  appDirectory: "src",
+};
+const app = defineConfig({
   server: {
     preset: "node-server",
-    compatibilityDate: "2024-12-02",
+    compatibilityDate: "2024-12-05",
+  },
+  routers: {
+    api: {
+      entry: join(config.appDirectory, "entry-api.ts"),
+    },
+    ssr: {
+      entry: join(config.appDirectory, "entry-server.ts"),
+    },
+    client: {
+      entry: join(config.appDirectory, "entry-client.tsx"),
+    },
+  },
+  tsr: {
+    appDirectory: config.appDirectory,
+    generatedRouteTree: join(config.appDirectory, "route-tree.gen.ts"),
   },
   vite: {
     plugins: [
@@ -14,9 +34,6 @@ export default defineConfig({
         projects: ["./tsconfig.json"],
       }),
     ],
-  },
-  tsr: {
-    generatedRouteTree: "app/route-tree.gen.ts",
   },
   react: {
     babel: {
@@ -31,3 +48,21 @@ export default defineConfig({
     },
   },
 });
+
+function withGlobalMiddleware(app: App) {
+  return {
+    ...app,
+    config: {
+      ...app.config,
+      routers: app.config.routers.map((router) => ({
+        ...router,
+        middleware:
+          router.target !== "server"
+            ? undefined
+            : join(config.appDirectory, "global-middleware.ts"),
+      })),
+    },
+  };
+}
+
+export default withGlobalMiddleware(app);
