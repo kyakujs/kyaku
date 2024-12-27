@@ -1614,7 +1614,7 @@ __metadata:
     "@eslint/compat": "npm:^1.2.4"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@tanstack/eslint-plugin-router": "npm:^1.87.6"
+    "@tanstack/eslint-plugin-router": "npm:^1.92.7"
     babel-plugin-react-compiler: "npm:19.0.0-beta-201e55d-20241215"
     eslint: "npm:^9.17.0"
     eslint-plugin-import: "npm:^2.31.0"
@@ -3179,14 +3179,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/eslint-plugin-router@npm:^1.87.6":
-  version: 1.87.6
-  resolution: "@tanstack/eslint-plugin-router@npm:1.87.6"
+"@tanstack/eslint-plugin-router@npm:^1.92.7":
+  version: 1.92.7
+  resolution: "@tanstack/eslint-plugin-router@npm:1.92.7"
   dependencies:
-    "@typescript-eslint/utils": "npm:^8.18.0"
+    "@typescript-eslint/utils": "npm:^8.18.2"
   peerDependencies:
     eslint: ^8.57.0 || ^9.0.0
-  checksum: 10c0/74250c64a3d8b5c29778f858b2992691fdc01563e03b0b8f2db133e86c0b8a2bb70efc144cb82eb7bb3c2dda7164b001f64b3b233f520107b34cbd8cab6b9a70
+  checksum: 10c0/906c3df9e1f4cf1201e5eca75f5709ba94701a514c9ea8c823b295d613ba4b339fea8838171c97162cf2a367213d45d46bdf50ed686d381657f48761f870ff6a
   languageName: node
   linkType: hard
 
@@ -3631,7 +3631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:8.18.2, @typescript-eslint/utils@npm:^8.18.0":
+"@typescript-eslint/utils@npm:8.18.2, @typescript-eslint/utils@npm:^8.18.2":
   version: 8.18.2
   resolution: "@typescript-eslint/utils@npm:8.18.2"
   dependencies:
