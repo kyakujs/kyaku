@@ -8,3 +8,7 @@
       "calt" 1;
   }
 }
+
+* {
+  @apply border-border;
+}
