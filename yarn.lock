@@ -1695,10 +1695,10 @@ __metadata:
     "@rocicorp/zero": "npm:^0.10.2024122404"
     "@tailwindcss/vite": "npm:next"
     "@tanstack/react-query": "npm:^5.62.11"
-    "@tanstack/react-router": "npm:^1.92.6"
-    "@tanstack/react-router-with-query": "npm:^1.92.6"
-    "@tanstack/router-devtools": "npm:^1.92.6"
-    "@tanstack/start": "npm:^1.92.6"
+    "@tanstack/react-router": "npm:^1.92.9"
+    "@tanstack/react-router-with-query": "npm:^1.92.9"
+    "@tanstack/router-devtools": "npm:^1.92.9"
+    "@tanstack/start": "npm:^1.92.10"
     "@types/node": "npm:^22.10.2"
     "@types/react": "npm:^19.0.2"
     "@types/react-dom": "npm:^19.0.2"
@@ -3225,21 +3225,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-router-with-query@npm:^1.92.6":
-  version: 1.92.6
-  resolution: "@tanstack/react-router-with-query@npm:1.92.6"
+"@tanstack/react-router-with-query@npm:^1.92.9":
+  version: 1.92.9
+  resolution: "@tanstack/react-router-with-query@npm:1.92.9"
   peerDependencies:
     "@tanstack/react-query": ">=5.49.2"
     "@tanstack/react-router": ">=1.43.2"
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10c0/b33d2b5634e82d1978c70806060095d51633cac90aa6b91877c1e9014c525c8e0622231a88323f0fac07f192e0845108d4164559825e5e1baa74f705af210a60
+  checksum: 10c0/7312da7fd26d794b9f211aa1cd839677a6c77ff8c54a7d694977db08e85b45a14c26e9ed18e0ef3d2246e22baf92b851813dbcd7ac55947f416d0e6fd2525206
   languageName: node
   linkType: hard
 
-"@tanstack/react-router@npm:^1.92.6":
-  version: 1.92.6
-  resolution: "@tanstack/react-router@npm:1.92.6"
+"@tanstack/react-router@npm:^1.92.9":
+  version: 1.92.9
+  resolution: "@tanstack/react-router@npm:1.92.9"
   dependencies:
     "@tanstack/history": "npm:1.90.0"
     "@tanstack/react-store": "npm:^0.7.0"
@@ -3253,7 +3253,7 @@ __metadata:
   peerDependenciesMeta:
     "@tanstack/router-generator":
       optional: true
-  checksum: 10c0/119936f998e807ada0c80dd9e9054336e90517a450a53b5c3fc323516132ff8ec40172646ed70e398bcebc5ba283c9596abedd38e3f6ee56cbb337c2bc49a141
+  checksum: 10c0/5e929b8896a530f758fa9cd9c41fc179d28345e830854ea2de4579d4f5d51140a186f72aab7ee35f9de18f833f5c16f913549f6b5b7f34ad0824554ac33501f0
   languageName: node
   linkType: hard
 
@@ -3270,17 +3270,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/router-devtools@npm:^1.92.6":
-  version: 1.92.6
-  resolution: "@tanstack/router-devtools@npm:1.92.6"
+"@tanstack/router-devtools@npm:^1.92.9":
+  version: 1.92.9
+  resolution: "@tanstack/router-devtools@npm:1.92.9"
   dependencies:
     clsx: "npm:^2.1.1"
     goober: "npm:^2.1.16"
   peerDependencies:
-    "@tanstack/react-router": ^1.92.6
+    "@tanstack/react-router": ^1.92.9
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10c0/fc7226387c474f838a187bff5139d00073d06f75cb95dfa8fe1e8e654f5709202e1209fe9f33512a66c2eec32eb7bebd38017b3b640007ed69b9e5034d89ab09
+  checksum: 10c0/f67f5b231114719ebbb9a9200e6d87b0e8b5278a14baf012f5cd31ca75c3f4e4226846a389d39b270d4496c6489be2b1f22f99563be9f37375d931a27216be81
   languageName: node
   linkType: hard
 
@@ -3357,12 +3357,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/start@npm:^1.92.6":
-  version: 1.92.6
-  resolution: "@tanstack/start@npm:1.92.6"
+"@tanstack/start@npm:^1.92.10":
+  version: 1.92.10
+  resolution: "@tanstack/start@npm:1.92.10"
   dependencies:
     "@tanstack/react-cross-context": "npm:^1.87.6"
-    "@tanstack/react-router": "npm:^1.92.6"
+    "@tanstack/react-router": "npm:^1.92.9"
     "@tanstack/router-generator": "npm:^1.87.7"
     "@tanstack/router-plugin": "npm:^1.91.1"
     "@tanstack/start-vite-plugin": "npm:^1.91.1"
@@ -3380,7 +3380,7 @@ __metadata:
   peerDependencies:
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10c0/bebdbbc070ef804ab91d51b9d32fdb068087cb9002c95a6ad6533b0d5ab5a320fd677baf37b2ad0f2c60c05326d5176854b7eab60ee028c6faeca9599eb40d60
+  checksum: 10c0/62077e7e52a996b60a99bce4c2e02d1e3eeeaece9aa23c1600fc942525aa24da03080d4396f860fdc90b7861634c97cfb1b8cec44d7ce0d2871723b8ef8360c7
   languageName: node
   linkType: hard
 
