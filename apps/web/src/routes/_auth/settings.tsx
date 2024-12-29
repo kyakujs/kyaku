@@ -1,16 +1,16 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 
-import { Button } from '@kyakujs/ui/button'
-import { Input } from '@kyakujs/ui/input'
+import { Button } from "@kyakujs/ui/button";
+import { Input } from "@kyakujs/ui/input";
 
-import { useAuthedQuery } from '~/services/auth.query'
+import { useAuthedQuery } from "~/services/auth.query";
 
-export const Route = createFileRoute('/_auth/settings')({
+export const Route = createFileRoute("/_auth/settings")({
   component: Settings,
-})
+});
 
 function Settings() {
-  const authedQuery = useAuthedQuery()
+  const authedQuery = useAuthedQuery();
 
   return (
     <div className="bg-backround mx-auto max-w-2xl">
@@ -82,5 +82,5 @@ function Settings() {
         </div>
       </main>
     </div>
-  )
+  );
 }
