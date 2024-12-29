@@ -1788,6 +1788,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.3.4"
     dotenv-cli: "npm:^8.0.0"
     eslint: "npm:^9.17.0"
+    lucide-react: "npm:^0.469.0"
     prettier: "npm:^3.4.2"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"

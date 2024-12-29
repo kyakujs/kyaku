@@ -1,14 +1,19 @@
 import * as React from "react";
 import {
-  Circle,
   CircleArrowOutUpRight as CircleArrowOutUpRightIcon,
-  CircleCheck,
-  CirclePause,
-  Inbox,
-  MessageCircleDashed,
-  MessagesSquare,
+  CircleCheck as CircleCheckIcon,
+  Circle as CircleIcon,
+  CirclePause as CirclePauseIcon,
+  Inbox as InboxIcon,
+  MessageCircleDashed as MessageCircleDashedIcon,
+  MessagesSquare as MessagesSquareIcon,
 } from "lucide-react";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@kyakujs/ui/dropdown-menu";
 import {
   Sidebar,
   SidebarContent,
@@ -23,31 +28,32 @@ import {
   SidebarRail,
 } from "@kyakujs/ui/sidebar";
 
-// This is sample data.
+import { AppSidebarDropdownMenu } from "~/components/app-sidebar-dropdown-menu";
+
 const data = {
   navMain: [
     {
       title: "All tickets",
-      url: "#",
-      icon: MessagesSquare,
+      url: "/tickets/all",
+      icon: MessagesSquareIcon,
       items: [],
     },
     {
       title: "Your tickets",
-      url: "#",
-      icon: Inbox,
+      url: "/tickets/yours",
+      icon: InboxIcon,
       items: [],
     },
     {
       title: "Unassigned tickets",
-      url: "#",
-      icon: MessageCircleDashed,
+      url: "/tickets/unassigned",
+      icon: MessageCircleDashedIcon,
       items: [],
     },
     {
       title: "Todo",
-      url: "#",
-      icon: Circle,
+      url: "/tickets/todo",
+      icon: CircleIcon,
       items: [
         {
           title: "Needs first response",
@@ -70,7 +76,7 @@ const data = {
     {
       title: "Snoozed",
       url: "#",
-      icon: CirclePause,
+      icon: CirclePauseIcon,
       items: [
         {
           title: "Waiting for customer",
@@ -84,8 +90,8 @@ const data = {
     },
     {
       title: "Done",
-      url: "#",
-      icon: CircleCheck,
+      url: "/tickets/done",
+      icon: CircleCheckIcon,
       items: [],
     },
   ],
@@ -97,16 +103,23 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <CircleArrowOutUpRightIcon className="size-4" />
-                </div>
-                <div className="flex flex-col leading-none">
-                  <span className="font-semibold">Kyaku</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                render={
+                  <SidebarMenuButton size="lg">
+                    <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                      <CircleArrowOutUpRightIcon className="size-4" />
+                    </div>
+                    <div className="flex flex-col leading-none">
+                      <span className="font-semibold">Kyaku</span>
+                    </div>
+                  </SidebarMenuButton>
+                }
+              ></DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="min-w-48">
+                <AppSidebarDropdownMenu />
+              </DropdownMenuContent>
+            </DropdownMenu>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>

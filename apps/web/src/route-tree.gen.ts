@@ -13,9 +13,14 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as LoginImport } from './routes/login'
 import { Route as AuthImport } from './routes/_auth'
-import { Route as AuthLayoutImport } from './routes/_auth/_layout'
-import { Route as AuthLayoutIndexImport } from './routes/_auth/_layout.index'
-import { Route as AuthLayoutSettingsImport } from './routes/_auth/_layout.settings'
+import { Route as AuthSettingsImport } from './routes/_auth/settings'
+import { Route as AuthMainNavigationImport } from './routes/_auth/_main-navigation'
+import { Route as AuthMainNavigationIndexImport } from './routes/_auth/_main-navigation/index'
+import { Route as AuthMainNavigationTicketsYoursImport } from './routes/_auth/_main-navigation/tickets/yours'
+import { Route as AuthMainNavigationTicketsUnassignedImport } from './routes/_auth/_main-navigation/tickets/unassigned'
+import { Route as AuthMainNavigationTicketsTodoImport } from './routes/_auth/_main-navigation/tickets/todo'
+import { Route as AuthMainNavigationTicketsDoneImport } from './routes/_auth/_main-navigation/tickets/done'
+import { Route as AuthMainNavigationTicketsAllImport } from './routes/_auth/_main-navigation/tickets/all'
 
 // Create/Update Routes
 
@@ -30,22 +35,57 @@ const AuthRoute = AuthImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const AuthLayoutRoute = AuthLayoutImport.update({
-  id: '/_layout',
+const AuthSettingsRoute = AuthSettingsImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => AuthRoute,
 } as any)
 
-const AuthLayoutIndexRoute = AuthLayoutIndexImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => AuthLayoutRoute,
+const AuthMainNavigationRoute = AuthMainNavigationImport.update({
+  id: '/_main-navigation',
+  getParentRoute: () => AuthRoute,
 } as any)
 
-const AuthLayoutSettingsRoute = AuthLayoutSettingsImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => AuthLayoutRoute,
+const AuthMainNavigationIndexRoute = AuthMainNavigationIndexImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthMainNavigationRoute,
 } as any)
+
+const AuthMainNavigationTicketsYoursRoute =
+  AuthMainNavigationTicketsYoursImport.update({
+    id: '/tickets/yours',
+    path: '/tickets/yours',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsUnassignedRoute =
+  AuthMainNavigationTicketsUnassignedImport.update({
+    id: '/tickets/unassigned',
+    path: '/tickets/unassigned',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsTodoRoute =
+  AuthMainNavigationTicketsTodoImport.update({
+    id: '/tickets/todo',
+    path: '/tickets/todo',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsDoneRoute =
+  AuthMainNavigationTicketsDoneImport.update({
+    id: '/tickets/done',
+    path: '/tickets/done',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsAllRoute =
+  AuthMainNavigationTicketsAllImport.update({
+    id: '/tickets/all',
+    path: '/tickets/all',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -65,91 +105,174 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
-    '/_auth/_layout': {
-      id: '/_auth/_layout'
+    '/_auth/_main-navigation': {
+      id: '/_auth/_main-navigation'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof AuthLayoutImport
+      preLoaderRoute: typeof AuthMainNavigationImport
       parentRoute: typeof AuthImport
     }
-    '/_auth/_layout/settings': {
-      id: '/_auth/_layout/settings'
+    '/_auth/settings': {
+      id: '/_auth/settings'
       path: '/settings'
       fullPath: '/settings'
-      preLoaderRoute: typeof AuthLayoutSettingsImport
-      parentRoute: typeof AuthLayoutImport
+      preLoaderRoute: typeof AuthSettingsImport
+      parentRoute: typeof AuthImport
     }
-    '/_auth/_layout/': {
-      id: '/_auth/_layout/'
+    '/_auth/_main-navigation/': {
+      id: '/_auth/_main-navigation/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof AuthLayoutIndexImport
-      parentRoute: typeof AuthLayoutImport
+      preLoaderRoute: typeof AuthMainNavigationIndexImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/all': {
+      id: '/_auth/_main-navigation/tickets/all'
+      path: '/tickets/all'
+      fullPath: '/tickets/all'
+      preLoaderRoute: typeof AuthMainNavigationTicketsAllImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/done': {
+      id: '/_auth/_main-navigation/tickets/done'
+      path: '/tickets/done'
+      fullPath: '/tickets/done'
+      preLoaderRoute: typeof AuthMainNavigationTicketsDoneImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/todo': {
+      id: '/_auth/_main-navigation/tickets/todo'
+      path: '/tickets/todo'
+      fullPath: '/tickets/todo'
+      preLoaderRoute: typeof AuthMainNavigationTicketsTodoImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/unassigned': {
+      id: '/_auth/_main-navigation/tickets/unassigned'
+      path: '/tickets/unassigned'
+      fullPath: '/tickets/unassigned'
+      preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/yours': {
+      id: '/_auth/_main-navigation/tickets/yours'
+      path: '/tickets/yours'
+      fullPath: '/tickets/yours'
+      preLoaderRoute: typeof AuthMainNavigationTicketsYoursImport
+      parentRoute: typeof AuthMainNavigationImport
     }
   }
 }
 
 // Create and export the route tree
 
-interface AuthLayoutRouteChildren {
-  AuthLayoutSettingsRoute: typeof AuthLayoutSettingsRoute
-  AuthLayoutIndexRoute: typeof AuthLayoutIndexRoute
+interface AuthMainNavigationRouteChildren {
+  AuthMainNavigationIndexRoute: typeof AuthMainNavigationIndexRoute
+  AuthMainNavigationTicketsAllRoute: typeof AuthMainNavigationTicketsAllRoute
+  AuthMainNavigationTicketsDoneRoute: typeof AuthMainNavigationTicketsDoneRoute
+  AuthMainNavigationTicketsTodoRoute: typeof AuthMainNavigationTicketsTodoRoute
+  AuthMainNavigationTicketsUnassignedRoute: typeof AuthMainNavigationTicketsUnassignedRoute
+  AuthMainNavigationTicketsYoursRoute: typeof AuthMainNavigationTicketsYoursRoute
 }
 
-const AuthLayoutRouteChildren: AuthLayoutRouteChildren = {
-  AuthLayoutSettingsRoute: AuthLayoutSettingsRoute,
-  AuthLayoutIndexRoute: AuthLayoutIndexRoute,
+const AuthMainNavigationRouteChildren: AuthMainNavigationRouteChildren = {
+  AuthMainNavigationIndexRoute: AuthMainNavigationIndexRoute,
+  AuthMainNavigationTicketsAllRoute: AuthMainNavigationTicketsAllRoute,
+  AuthMainNavigationTicketsDoneRoute: AuthMainNavigationTicketsDoneRoute,
+  AuthMainNavigationTicketsTodoRoute: AuthMainNavigationTicketsTodoRoute,
+  AuthMainNavigationTicketsUnassignedRoute:
+    AuthMainNavigationTicketsUnassignedRoute,
+  AuthMainNavigationTicketsYoursRoute: AuthMainNavigationTicketsYoursRoute,
 }
 
-const AuthLayoutRouteWithChildren = AuthLayoutRoute._addFileChildren(
-  AuthLayoutRouteChildren,
-)
+const AuthMainNavigationRouteWithChildren =
+  AuthMainNavigationRoute._addFileChildren(AuthMainNavigationRouteChildren)
 
 interface AuthRouteChildren {
-  AuthLayoutRoute: typeof AuthLayoutRouteWithChildren
+  AuthMainNavigationRoute: typeof AuthMainNavigationRouteWithChildren
+  AuthSettingsRoute: typeof AuthSettingsRoute
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
-  AuthLayoutRoute: AuthLayoutRouteWithChildren,
+  AuthMainNavigationRoute: AuthMainNavigationRouteWithChildren,
+  AuthSettingsRoute: AuthSettingsRoute,
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '': typeof AuthLayoutRouteWithChildren
+  '': typeof AuthMainNavigationRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthLayoutSettingsRoute
-  '/': typeof AuthLayoutIndexRoute
+  '/settings': typeof AuthSettingsRoute
+  '/': typeof AuthMainNavigationIndexRoute
+  '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
+  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
+  '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
+  '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
 }
 
 export interface FileRoutesByTo {
   '': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthLayoutSettingsRoute
-  '/': typeof AuthLayoutIndexRoute
+  '/settings': typeof AuthSettingsRoute
+  '/': typeof AuthMainNavigationIndexRoute
+  '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
+  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
+  '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
+  '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/_auth': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
-  '/_auth/_layout': typeof AuthLayoutRouteWithChildren
-  '/_auth/_layout/settings': typeof AuthLayoutSettingsRoute
-  '/_auth/_layout/': typeof AuthLayoutIndexRoute
+  '/_auth/_main-navigation': typeof AuthMainNavigationRouteWithChildren
+  '/_auth/settings': typeof AuthSettingsRoute
+  '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
+  '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/_auth/_main-navigation/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
+  '/_auth/_main-navigation/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
+  '/_auth/_main-navigation/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
+  '/_auth/_main-navigation/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/login' | '/settings' | '/'
+  fullPaths:
+    | ''
+    | '/login'
+    | '/settings'
+    | '/'
+    | '/tickets/all'
+    | '/tickets/done'
+    | '/tickets/todo'
+    | '/tickets/unassigned'
+    | '/tickets/yours'
   fileRoutesByTo: FileRoutesByTo
-  to: '' | '/login' | '/settings' | '/'
+  to:
+    | ''
+    | '/login'
+    | '/settings'
+    | '/'
+    | '/tickets/all'
+    | '/tickets/done'
+    | '/tickets/todo'
+    | '/tickets/unassigned'
+    | '/tickets/yours'
   id:
     | '__root__'
     | '/_auth'
     | '/login'
-    | '/_auth/_layout'
-    | '/_auth/_layout/settings'
-    | '/_auth/_layout/'
+    | '/_auth/_main-navigation'
+    | '/_auth/settings'
+    | '/_auth/_main-navigation/'
+    | '/_auth/_main-navigation/tickets/all'
+    | '/_auth/_main-navigation/tickets/done'
+    | '/_auth/_main-navigation/tickets/todo'
+    | '/_auth/_main-navigation/tickets/unassigned'
+    | '/_auth/_main-navigation/tickets/yours'
   fileRoutesById: FileRoutesById
 }
 
@@ -180,27 +303,52 @@ export const routeTree = rootRoute
     "/_auth": {
       "filePath": "_auth.tsx",
       "children": [
-        "/_auth/_layout"
+        "/_auth/_main-navigation",
+        "/_auth/settings"
       ]
     },
     "/login": {
       "filePath": "login.tsx"
     },
-    "/_auth/_layout": {
-      "filePath": "_auth/_layout.tsx",
+    "/_auth/_main-navigation": {
+      "filePath": "_auth/_main-navigation.tsx",
       "parent": "/_auth",
       "children": [
-        "/_auth/_layout/settings",
-        "/_auth/_layout/"
+        "/_auth/_main-navigation/",
+        "/_auth/_main-navigation/tickets/all",
+        "/_auth/_main-navigation/tickets/done",
+        "/_auth/_main-navigation/tickets/todo",
+        "/_auth/_main-navigation/tickets/unassigned",
+        "/_auth/_main-navigation/tickets/yours"
       ]
     },
-    "/_auth/_layout/settings": {
-      "filePath": "_auth/_layout.settings.tsx",
-      "parent": "/_auth/_layout"
+    "/_auth/settings": {
+      "filePath": "_auth/settings.tsx",
+      "parent": "/_auth"
     },
-    "/_auth/_layout/": {
-      "filePath": "_auth/_layout.index.tsx",
-      "parent": "/_auth/_layout"
+    "/_auth/_main-navigation/": {
+      "filePath": "_auth/_main-navigation/index.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/all": {
+      "filePath": "_auth/_main-navigation/tickets/all.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/done": {
+      "filePath": "_auth/_main-navigation/tickets/done.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/todo": {
+      "filePath": "_auth/_main-navigation/tickets/todo.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/unassigned": {
+      "filePath": "_auth/_main-navigation/tickets/unassigned.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/yours": {
+      "filePath": "_auth/_main-navigation/tickets/yours.tsx",
+      "parent": "/_auth/_main-navigation"
     }
   }
 }

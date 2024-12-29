@@ -10,5 +10,5 @@
 }
 
 * {
-  @apply border-border;
+  @apply border-border outline-border;
 }
