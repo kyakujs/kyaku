@@ -14,7 +14,7 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource-variable/inter": "^5.1.1",
     "@kyakujs/auth": "workspace:*",
     "@kyakujs/ui": "workspace:*",
     "@kyakujs/zero": "workspace:*",
