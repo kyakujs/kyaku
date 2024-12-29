@@ -1,12 +1,13 @@
 import * as React from "react";
+import { Link } from "@tanstack/react-router";
 import {
-  CircleArrowOutUpRight as CircleArrowOutUpRightIcon,
-  CircleCheck as CircleCheckIcon,
-  Circle as CircleIcon,
-  CirclePause as CirclePauseIcon,
-  Inbox as InboxIcon,
-  MessageCircleDashed as MessageCircleDashedIcon,
-  MessagesSquare as MessagesSquareIcon,
+  CircleArrowOutUpRightIcon,
+  CircleCheckIcon,
+  CircleIcon,
+  CirclePauseIcon,
+  InboxIcon,
+  MessageCircleDashedIcon,
+  MessagesSquareIcon,
 } from "lucide-react";
 
 import {
@@ -57,34 +58,34 @@ const data = {
       items: [
         {
           title: "Needs first response",
-          url: "#",
+          url: "/tickets/needs-first-response",
         },
         {
           title: "Needs next response",
-          url: "#",
+          url: "/tickets/needs-next-response",
         },
         {
           title: "Investigating",
-          url: "#",
+          url: "/tickets/investigating",
         },
         {
           title: "Close the loop",
-          url: "#",
+          url: "/tickets/close-the-loop",
         },
       ],
     },
     {
       title: "Snoozed",
-      url: "#",
+      url: "/tickets/snoozed",
       icon: CirclePauseIcon,
       items: [
         {
           title: "Waiting for customer",
-          url: "#",
+          url: "/tickets/waiting-for-customer",
         },
         {
           title: "Paused for later",
-          url: "#",
+          url: "/tickets/paused-for-later",
         },
       ],
     },
@@ -129,17 +130,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
-                  <a href={item.url} className="font-medium">
+                  <Link to={item.url} className="font-medium">
                     <item.icon />
                     {item.title}
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
                 {item.items.length ? (
                   <SidebarMenuSub>
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild isActive={item.isActive}>
-                          <a href={item.url}>{item.title}</a>
+                        <SidebarMenuSubButton asChild>
+                          <Link to={item.url}>{item.title}</Link>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                     ))}

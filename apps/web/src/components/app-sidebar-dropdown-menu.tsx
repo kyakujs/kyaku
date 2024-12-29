@@ -11,10 +11,14 @@ import { authClient } from "~/libs/auth-client";
 export function AppSidebarDropdownMenu() {
   return (
     <>
-      <DropdownMenuItem render={<Link to="/settings" />}>
-        <SettingsIcon />
-        <span>Settings</span>
-      </DropdownMenuItem>
+      <DropdownMenuItem
+        render={
+          <Link to="/settings">
+            <SettingsIcon />
+            <span>Settings</span>
+          </Link>
+        }
+      />
 
       <DropdownMenuSeparator />
 
