@@ -2,9 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { AppPageHeader } from "~/components/app-page-header";
 
-export const Route = createFileRoute(
-  "/_auth/_main-navigation/tickets/waiting-for-customer",
-)({
+export const Route = createFileRoute("/_auth/_main-navigation/search")({
   component: RouteComponent,
 });
 
@@ -12,7 +10,7 @@ function RouteComponent() {
   return (
     <>
       <AppPageHeader>
-        <h2 className="text-sm">Waiting for customer</h2>
+        <h2 className="text-sm">Search</h2>
       </AppPageHeader>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
         <div className="grid auto-rows-min gap-4 md:grid-cols-3">

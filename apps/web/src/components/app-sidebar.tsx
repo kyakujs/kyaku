@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "@tanstack/react-router";
 import {
+  ChevronDownIcon,
   CircleArrowOutUpRightIcon,
   CircleCheckIcon,
   CircleIcon,
@@ -8,6 +9,7 @@ import {
   InboxIcon,
   MessageCircleDashedIcon,
   MessagesSquareIcon,
+  SearchIcon,
 } from "lucide-react";
 
 import {
@@ -107,13 +109,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <DropdownMenu>
               <DropdownMenuTrigger
                 render={
-                  <SidebarMenuButton size="lg">
-                    <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                      <CircleArrowOutUpRightIcon className="size-4" />
+                  <SidebarMenuButton className="w-fit px-1.5">
+                    <div className="flex aspect-square size-5 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
+                      <CircleArrowOutUpRightIcon className="size-3" />
                     </div>
-                    <div className="flex flex-col leading-none">
-                      <span className="font-semibold">Kyaku</span>
-                    </div>
+                    <span className="truncate font-semibold">Kyaku</span>
+                    <ChevronDownIcon className="opacity-50" />
                   </SidebarMenuButton>
                 }
               ></DropdownMenuTrigger>
@@ -122,7 +123,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
+          <SidebarMenuButton asChild>
+            <Link to="/search">
+              <SearchIcon />
+              <span>Search</span>
+            </Link>
+          </SidebarMenuButton>
         </SidebarMenu>
+        <SidebarMenu></SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

@@ -16,6 +16,7 @@ import { Route as AuthImport } from './routes/_auth'
 import { Route as AuthSettingsImport } from './routes/_auth/settings'
 import { Route as AuthMainNavigationImport } from './routes/_auth/_main-navigation'
 import { Route as AuthMainNavigationIndexImport } from './routes/_auth/_main-navigation/index'
+import { Route as AuthMainNavigationSearchImport } from './routes/_auth/_main-navigation/search'
 import { Route as AuthMainNavigationTicketsYoursImport } from './routes/_auth/_main-navigation/tickets/yours'
 import { Route as AuthMainNavigationTicketsWaitingForCustomerImport } from './routes/_auth/_main-navigation/tickets/waiting-for-customer'
 import { Route as AuthMainNavigationTicketsUnassignedImport } from './routes/_auth/_main-navigation/tickets/unassigned'
@@ -56,6 +57,12 @@ const AuthMainNavigationRoute = AuthMainNavigationImport.update({
 const AuthMainNavigationIndexRoute = AuthMainNavigationIndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => AuthMainNavigationRoute,
+} as any)
+
+const AuthMainNavigationSearchRoute = AuthMainNavigationSearchImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => AuthMainNavigationRoute,
 } as any)
 
@@ -175,6 +182,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthSettingsImport
       parentRoute: typeof AuthImport
     }
+    '/_auth/_main-navigation/search': {
+      id: '/_auth/_main-navigation/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof AuthMainNavigationSearchImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
     '/_auth/_main-navigation/': {
       id: '/_auth/_main-navigation/'
       path: '/'
@@ -272,6 +286,7 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 interface AuthMainNavigationRouteChildren {
+  AuthMainNavigationSearchRoute: typeof AuthMainNavigationSearchRoute
   AuthMainNavigationIndexRoute: typeof AuthMainNavigationIndexRoute
   AuthMainNavigationTicketsAllRoute: typeof AuthMainNavigationTicketsAllRoute
   AuthMainNavigationTicketsCloseTheLoopRoute: typeof AuthMainNavigationTicketsCloseTheLoopRoute
@@ -288,6 +303,7 @@ interface AuthMainNavigationRouteChildren {
 }
 
 const AuthMainNavigationRouteChildren: AuthMainNavigationRouteChildren = {
+  AuthMainNavigationSearchRoute: AuthMainNavigationSearchRoute,
   AuthMainNavigationIndexRoute: AuthMainNavigationIndexRoute,
   AuthMainNavigationTicketsAllRoute: AuthMainNavigationTicketsAllRoute,
   AuthMainNavigationTicketsCloseTheLoopRoute:
@@ -329,6 +345,7 @@ export interface FileRoutesByFullPath {
   '': typeof AuthMainNavigationRouteWithChildren
   '/login': typeof LoginRoute
   '/settings': typeof AuthSettingsRoute
+  '/search': typeof AuthMainNavigationSearchRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
   '/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
@@ -348,6 +365,7 @@ export interface FileRoutesByTo {
   '': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
   '/settings': typeof AuthSettingsRoute
+  '/search': typeof AuthMainNavigationSearchRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
   '/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
@@ -369,6 +387,7 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/_auth/_main-navigation': typeof AuthMainNavigationRouteWithChildren
   '/_auth/settings': typeof AuthSettingsRoute
+  '/_auth/_main-navigation/search': typeof AuthMainNavigationSearchRoute
   '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
   '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
   '/_auth/_main-navigation/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
@@ -390,6 +409,7 @@ export interface FileRouteTypes {
     | ''
     | '/login'
     | '/settings'
+    | '/search'
     | '/'
     | '/tickets/all'
     | '/tickets/close-the-loop'
@@ -408,6 +428,7 @@ export interface FileRouteTypes {
     | ''
     | '/login'
     | '/settings'
+    | '/search'
     | '/'
     | '/tickets/all'
     | '/tickets/close-the-loop'
@@ -427,6 +448,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/_auth/_main-navigation'
     | '/_auth/settings'
+    | '/_auth/_main-navigation/search'
     | '/_auth/_main-navigation/'
     | '/_auth/_main-navigation/tickets/all'
     | '/_auth/_main-navigation/tickets/close-the-loop'
@@ -481,6 +503,7 @@ export const routeTree = rootRoute
       "filePath": "_auth/_main-navigation.tsx",
       "parent": "/_auth",
       "children": [
+        "/_auth/_main-navigation/search",
         "/_auth/_main-navigation/",
         "/_auth/_main-navigation/tickets/all",
         "/_auth/_main-navigation/tickets/close-the-loop",
@@ -499,6 +522,10 @@ export const routeTree = rootRoute
     "/_auth/settings": {
       "filePath": "_auth/settings.tsx",
       "parent": "/_auth"
+    },
+    "/_auth/_main-navigation/search": {
+      "filePath": "_auth/_main-navigation/search.tsx",
+      "parent": "/_auth/_main-navigation"
     },
     "/_auth/_main-navigation/": {
       "filePath": "_auth/_main-navigation/index.tsx",
