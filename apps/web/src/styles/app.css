@@ -8,3 +8,11 @@
       "calt" 1;
   }
 }
+
+* {
+  @apply border-border;
+}
+
+.Root {
+  isolation: isolate;
+}

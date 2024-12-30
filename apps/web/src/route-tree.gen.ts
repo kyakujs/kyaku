@@ -13,9 +13,25 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as LoginImport } from './routes/login'
 import { Route as AuthImport } from './routes/_auth'
-import { Route as AuthLayoutImport } from './routes/_auth/_layout'
-import { Route as AuthLayoutIndexImport } from './routes/_auth/_layout.index'
-import { Route as AuthLayoutSettingsImport } from './routes/_auth/_layout.settings'
+import { Route as AuthSettingsNavigationImport } from './routes/_auth/_settings-navigation'
+import { Route as AuthMainNavigationImport } from './routes/_auth/_main-navigation'
+import { Route as AuthMainNavigationIndexImport } from './routes/_auth/_main-navigation/index'
+import { Route as AuthMainNavigationSearchImport } from './routes/_auth/_main-navigation/search'
+import { Route as AuthSettingsNavigationSettingsIndexImport } from './routes/_auth/_settings-navigation/settings/index'
+import { Route as AuthMainNavigationTicketsYoursImport } from './routes/_auth/_main-navigation/tickets/yours'
+import { Route as AuthMainNavigationTicketsWaitingForCustomerImport } from './routes/_auth/_main-navigation/tickets/waiting-for-customer'
+import { Route as AuthMainNavigationTicketsUnassignedImport } from './routes/_auth/_main-navigation/tickets/unassigned'
+import { Route as AuthMainNavigationTicketsTodoImport } from './routes/_auth/_main-navigation/tickets/todo'
+import { Route as AuthMainNavigationTicketsSnoozedImport } from './routes/_auth/_main-navigation/tickets/snoozed'
+import { Route as AuthMainNavigationTicketsPausedForLaterImport } from './routes/_auth/_main-navigation/tickets/paused-for-later'
+import { Route as AuthMainNavigationTicketsNeedsNextResponseImport } from './routes/_auth/_main-navigation/tickets/needs-next-response'
+import { Route as AuthMainNavigationTicketsNeedsFirstResponseImport } from './routes/_auth/_main-navigation/tickets/needs-first-response'
+import { Route as AuthMainNavigationTicketsInvestigatingImport } from './routes/_auth/_main-navigation/tickets/investigating'
+import { Route as AuthMainNavigationTicketsDoneImport } from './routes/_auth/_main-navigation/tickets/done'
+import { Route as AuthMainNavigationTicketsCloseTheLoopImport } from './routes/_auth/_main-navigation/tickets/close-the-loop'
+import { Route as AuthMainNavigationTicketsAllImport } from './routes/_auth/_main-navigation/tickets/all'
+import { Route as AuthSettingsNavigationSettingsAccountProfileImport } from './routes/_auth/_settings-navigation/settings/account/profile'
+import { Route as AuthSettingsNavigationSettingsAccountPreferencesImport } from './routes/_auth/_settings-navigation/settings/account/preferences'
 
 // Create/Update Routes
 
@@ -30,22 +46,132 @@ const AuthRoute = AuthImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const AuthLayoutRoute = AuthLayoutImport.update({
-  id: '/_layout',
+const AuthSettingsNavigationRoute = AuthSettingsNavigationImport.update({
+  id: '/_settings-navigation',
   getParentRoute: () => AuthRoute,
 } as any)
 
-const AuthLayoutIndexRoute = AuthLayoutIndexImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => AuthLayoutRoute,
+const AuthMainNavigationRoute = AuthMainNavigationImport.update({
+  id: '/_main-navigation',
+  getParentRoute: () => AuthRoute,
 } as any)
 
-const AuthLayoutSettingsRoute = AuthLayoutSettingsImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => AuthLayoutRoute,
+const AuthMainNavigationIndexRoute = AuthMainNavigationIndexImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthMainNavigationRoute,
 } as any)
+
+const AuthMainNavigationSearchRoute = AuthMainNavigationSearchImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => AuthMainNavigationRoute,
+} as any)
+
+const AuthSettingsNavigationSettingsIndexRoute =
+  AuthSettingsNavigationSettingsIndexImport.update({
+    id: '/settings/',
+    path: '/settings/',
+    getParentRoute: () => AuthSettingsNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsYoursRoute =
+  AuthMainNavigationTicketsYoursImport.update({
+    id: '/tickets/yours',
+    path: '/tickets/yours',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsWaitingForCustomerRoute =
+  AuthMainNavigationTicketsWaitingForCustomerImport.update({
+    id: '/tickets/waiting-for-customer',
+    path: '/tickets/waiting-for-customer',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsUnassignedRoute =
+  AuthMainNavigationTicketsUnassignedImport.update({
+    id: '/tickets/unassigned',
+    path: '/tickets/unassigned',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsTodoRoute =
+  AuthMainNavigationTicketsTodoImport.update({
+    id: '/tickets/todo',
+    path: '/tickets/todo',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsSnoozedRoute =
+  AuthMainNavigationTicketsSnoozedImport.update({
+    id: '/tickets/snoozed',
+    path: '/tickets/snoozed',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsPausedForLaterRoute =
+  AuthMainNavigationTicketsPausedForLaterImport.update({
+    id: '/tickets/paused-for-later',
+    path: '/tickets/paused-for-later',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsNeedsNextResponseRoute =
+  AuthMainNavigationTicketsNeedsNextResponseImport.update({
+    id: '/tickets/needs-next-response',
+    path: '/tickets/needs-next-response',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsNeedsFirstResponseRoute =
+  AuthMainNavigationTicketsNeedsFirstResponseImport.update({
+    id: '/tickets/needs-first-response',
+    path: '/tickets/needs-first-response',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsInvestigatingRoute =
+  AuthMainNavigationTicketsInvestigatingImport.update({
+    id: '/tickets/investigating',
+    path: '/tickets/investigating',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsDoneRoute =
+  AuthMainNavigationTicketsDoneImport.update({
+    id: '/tickets/done',
+    path: '/tickets/done',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsCloseTheLoopRoute =
+  AuthMainNavigationTicketsCloseTheLoopImport.update({
+    id: '/tickets/close-the-loop',
+    path: '/tickets/close-the-loop',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthMainNavigationTicketsAllRoute =
+  AuthMainNavigationTicketsAllImport.update({
+    id: '/tickets/all',
+    path: '/tickets/all',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+
+const AuthSettingsNavigationSettingsAccountProfileRoute =
+  AuthSettingsNavigationSettingsAccountProfileImport.update({
+    id: '/settings/account/profile',
+    path: '/settings/account/profile',
+    getParentRoute: () => AuthSettingsNavigationRoute,
+  } as any)
+
+const AuthSettingsNavigationSettingsAccountPreferencesRoute =
+  AuthSettingsNavigationSettingsAccountPreferencesImport.update({
+    id: '/settings/account/preferences',
+    path: '/settings/account/preferences',
+    getParentRoute: () => AuthSettingsNavigationRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -65,91 +191,356 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
-    '/_auth/_layout': {
-      id: '/_auth/_layout'
+    '/_auth/_main-navigation': {
+      id: '/_auth/_main-navigation'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof AuthLayoutImport
+      preLoaderRoute: typeof AuthMainNavigationImport
       parentRoute: typeof AuthImport
     }
-    '/_auth/_layout/settings': {
-      id: '/_auth/_layout/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof AuthLayoutSettingsImport
-      parentRoute: typeof AuthLayoutImport
+    '/_auth/_settings-navigation': {
+      id: '/_auth/_settings-navigation'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AuthSettingsNavigationImport
+      parentRoute: typeof AuthImport
     }
-    '/_auth/_layout/': {
-      id: '/_auth/_layout/'
+    '/_auth/_main-navigation/search': {
+      id: '/_auth/_main-navigation/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof AuthMainNavigationSearchImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/': {
+      id: '/_auth/_main-navigation/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof AuthLayoutIndexImport
-      parentRoute: typeof AuthLayoutImport
+      preLoaderRoute: typeof AuthMainNavigationIndexImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/all': {
+      id: '/_auth/_main-navigation/tickets/all'
+      path: '/tickets/all'
+      fullPath: '/tickets/all'
+      preLoaderRoute: typeof AuthMainNavigationTicketsAllImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/close-the-loop': {
+      id: '/_auth/_main-navigation/tickets/close-the-loop'
+      path: '/tickets/close-the-loop'
+      fullPath: '/tickets/close-the-loop'
+      preLoaderRoute: typeof AuthMainNavigationTicketsCloseTheLoopImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/done': {
+      id: '/_auth/_main-navigation/tickets/done'
+      path: '/tickets/done'
+      fullPath: '/tickets/done'
+      preLoaderRoute: typeof AuthMainNavigationTicketsDoneImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/investigating': {
+      id: '/_auth/_main-navigation/tickets/investigating'
+      path: '/tickets/investigating'
+      fullPath: '/tickets/investigating'
+      preLoaderRoute: typeof AuthMainNavigationTicketsInvestigatingImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/needs-first-response': {
+      id: '/_auth/_main-navigation/tickets/needs-first-response'
+      path: '/tickets/needs-first-response'
+      fullPath: '/tickets/needs-first-response'
+      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsFirstResponseImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/needs-next-response': {
+      id: '/_auth/_main-navigation/tickets/needs-next-response'
+      path: '/tickets/needs-next-response'
+      fullPath: '/tickets/needs-next-response'
+      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsNextResponseImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/paused-for-later': {
+      id: '/_auth/_main-navigation/tickets/paused-for-later'
+      path: '/tickets/paused-for-later'
+      fullPath: '/tickets/paused-for-later'
+      preLoaderRoute: typeof AuthMainNavigationTicketsPausedForLaterImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/snoozed': {
+      id: '/_auth/_main-navigation/tickets/snoozed'
+      path: '/tickets/snoozed'
+      fullPath: '/tickets/snoozed'
+      preLoaderRoute: typeof AuthMainNavigationTicketsSnoozedImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/todo': {
+      id: '/_auth/_main-navigation/tickets/todo'
+      path: '/tickets/todo'
+      fullPath: '/tickets/todo'
+      preLoaderRoute: typeof AuthMainNavigationTicketsTodoImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/unassigned': {
+      id: '/_auth/_main-navigation/tickets/unassigned'
+      path: '/tickets/unassigned'
+      fullPath: '/tickets/unassigned'
+      preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/waiting-for-customer': {
+      id: '/_auth/_main-navigation/tickets/waiting-for-customer'
+      path: '/tickets/waiting-for-customer'
+      fullPath: '/tickets/waiting-for-customer'
+      preLoaderRoute: typeof AuthMainNavigationTicketsWaitingForCustomerImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_main-navigation/tickets/yours': {
+      id: '/_auth/_main-navigation/tickets/yours'
+      path: '/tickets/yours'
+      fullPath: '/tickets/yours'
+      preLoaderRoute: typeof AuthMainNavigationTicketsYoursImport
+      parentRoute: typeof AuthMainNavigationImport
+    }
+    '/_auth/_settings-navigation/settings/': {
+      id: '/_auth/_settings-navigation/settings/'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsIndexImport
+      parentRoute: typeof AuthSettingsNavigationImport
+    }
+    '/_auth/_settings-navigation/settings/account/preferences': {
+      id: '/_auth/_settings-navigation/settings/account/preferences'
+      path: '/settings/account/preferences'
+      fullPath: '/settings/account/preferences'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountPreferencesImport
+      parentRoute: typeof AuthSettingsNavigationImport
+    }
+    '/_auth/_settings-navigation/settings/account/profile': {
+      id: '/_auth/_settings-navigation/settings/account/profile'
+      path: '/settings/account/profile'
+      fullPath: '/settings/account/profile'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountProfileImport
+      parentRoute: typeof AuthSettingsNavigationImport
     }
   }
 }
 
 // Create and export the route tree
 
-interface AuthLayoutRouteChildren {
-  AuthLayoutSettingsRoute: typeof AuthLayoutSettingsRoute
-  AuthLayoutIndexRoute: typeof AuthLayoutIndexRoute
+interface AuthMainNavigationRouteChildren {
+  AuthMainNavigationSearchRoute: typeof AuthMainNavigationSearchRoute
+  AuthMainNavigationIndexRoute: typeof AuthMainNavigationIndexRoute
+  AuthMainNavigationTicketsAllRoute: typeof AuthMainNavigationTicketsAllRoute
+  AuthMainNavigationTicketsCloseTheLoopRoute: typeof AuthMainNavigationTicketsCloseTheLoopRoute
+  AuthMainNavigationTicketsDoneRoute: typeof AuthMainNavigationTicketsDoneRoute
+  AuthMainNavigationTicketsInvestigatingRoute: typeof AuthMainNavigationTicketsInvestigatingRoute
+  AuthMainNavigationTicketsNeedsFirstResponseRoute: typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
+  AuthMainNavigationTicketsNeedsNextResponseRoute: typeof AuthMainNavigationTicketsNeedsNextResponseRoute
+  AuthMainNavigationTicketsPausedForLaterRoute: typeof AuthMainNavigationTicketsPausedForLaterRoute
+  AuthMainNavigationTicketsSnoozedRoute: typeof AuthMainNavigationTicketsSnoozedRoute
+  AuthMainNavigationTicketsTodoRoute: typeof AuthMainNavigationTicketsTodoRoute
+  AuthMainNavigationTicketsUnassignedRoute: typeof AuthMainNavigationTicketsUnassignedRoute
+  AuthMainNavigationTicketsWaitingForCustomerRoute: typeof AuthMainNavigationTicketsWaitingForCustomerRoute
+  AuthMainNavigationTicketsYoursRoute: typeof AuthMainNavigationTicketsYoursRoute
 }
 
-const AuthLayoutRouteChildren: AuthLayoutRouteChildren = {
-  AuthLayoutSettingsRoute: AuthLayoutSettingsRoute,
-  AuthLayoutIndexRoute: AuthLayoutIndexRoute,
+const AuthMainNavigationRouteChildren: AuthMainNavigationRouteChildren = {
+  AuthMainNavigationSearchRoute: AuthMainNavigationSearchRoute,
+  AuthMainNavigationIndexRoute: AuthMainNavigationIndexRoute,
+  AuthMainNavigationTicketsAllRoute: AuthMainNavigationTicketsAllRoute,
+  AuthMainNavigationTicketsCloseTheLoopRoute:
+    AuthMainNavigationTicketsCloseTheLoopRoute,
+  AuthMainNavigationTicketsDoneRoute: AuthMainNavigationTicketsDoneRoute,
+  AuthMainNavigationTicketsInvestigatingRoute:
+    AuthMainNavigationTicketsInvestigatingRoute,
+  AuthMainNavigationTicketsNeedsFirstResponseRoute:
+    AuthMainNavigationTicketsNeedsFirstResponseRoute,
+  AuthMainNavigationTicketsNeedsNextResponseRoute:
+    AuthMainNavigationTicketsNeedsNextResponseRoute,
+  AuthMainNavigationTicketsPausedForLaterRoute:
+    AuthMainNavigationTicketsPausedForLaterRoute,
+  AuthMainNavigationTicketsSnoozedRoute: AuthMainNavigationTicketsSnoozedRoute,
+  AuthMainNavigationTicketsTodoRoute: AuthMainNavigationTicketsTodoRoute,
+  AuthMainNavigationTicketsUnassignedRoute:
+    AuthMainNavigationTicketsUnassignedRoute,
+  AuthMainNavigationTicketsWaitingForCustomerRoute:
+    AuthMainNavigationTicketsWaitingForCustomerRoute,
+  AuthMainNavigationTicketsYoursRoute: AuthMainNavigationTicketsYoursRoute,
 }
 
-const AuthLayoutRouteWithChildren = AuthLayoutRoute._addFileChildren(
-  AuthLayoutRouteChildren,
-)
+const AuthMainNavigationRouteWithChildren =
+  AuthMainNavigationRoute._addFileChildren(AuthMainNavigationRouteChildren)
+
+interface AuthSettingsNavigationRouteChildren {
+  AuthSettingsNavigationSettingsIndexRoute: typeof AuthSettingsNavigationSettingsIndexRoute
+  AuthSettingsNavigationSettingsAccountPreferencesRoute: typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  AuthSettingsNavigationSettingsAccountProfileRoute: typeof AuthSettingsNavigationSettingsAccountProfileRoute
+}
+
+const AuthSettingsNavigationRouteChildren: AuthSettingsNavigationRouteChildren =
+  {
+    AuthSettingsNavigationSettingsIndexRoute:
+      AuthSettingsNavigationSettingsIndexRoute,
+    AuthSettingsNavigationSettingsAccountPreferencesRoute:
+      AuthSettingsNavigationSettingsAccountPreferencesRoute,
+    AuthSettingsNavigationSettingsAccountProfileRoute:
+      AuthSettingsNavigationSettingsAccountProfileRoute,
+  }
+
+const AuthSettingsNavigationRouteWithChildren =
+  AuthSettingsNavigationRoute._addFileChildren(
+    AuthSettingsNavigationRouteChildren,
+  )
 
 interface AuthRouteChildren {
-  AuthLayoutRoute: typeof AuthLayoutRouteWithChildren
+  AuthMainNavigationRoute: typeof AuthMainNavigationRouteWithChildren
+  AuthSettingsNavigationRoute: typeof AuthSettingsNavigationRouteWithChildren
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
-  AuthLayoutRoute: AuthLayoutRouteWithChildren,
+  AuthMainNavigationRoute: AuthMainNavigationRouteWithChildren,
+  AuthSettingsNavigationRoute: AuthSettingsNavigationRouteWithChildren,
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '': typeof AuthLayoutRouteWithChildren
+  '': typeof AuthSettingsNavigationRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthLayoutSettingsRoute
-  '/': typeof AuthLayoutIndexRoute
+  '/search': typeof AuthMainNavigationSearchRoute
+  '/': typeof AuthMainNavigationIndexRoute
+  '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
+  '/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
+  '/tickets/investigating': typeof AuthMainNavigationTicketsInvestigatingRoute
+  '/tickets/needs-first-response': typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
+  '/tickets/needs-next-response': typeof AuthMainNavigationTicketsNeedsNextResponseRoute
+  '/tickets/paused-for-later': typeof AuthMainNavigationTicketsPausedForLaterRoute
+  '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
+  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
+  '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
+  '/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
+  '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
+  '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
+  '/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  '/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 
 export interface FileRoutesByTo {
-  '': typeof AuthRouteWithChildren
+  '': typeof AuthSettingsNavigationRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthLayoutSettingsRoute
-  '/': typeof AuthLayoutIndexRoute
+  '/search': typeof AuthMainNavigationSearchRoute
+  '/': typeof AuthMainNavigationIndexRoute
+  '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
+  '/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
+  '/tickets/investigating': typeof AuthMainNavigationTicketsInvestigatingRoute
+  '/tickets/needs-first-response': typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
+  '/tickets/needs-next-response': typeof AuthMainNavigationTicketsNeedsNextResponseRoute
+  '/tickets/paused-for-later': typeof AuthMainNavigationTicketsPausedForLaterRoute
+  '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
+  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
+  '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
+  '/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
+  '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
+  '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
+  '/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  '/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/_auth': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
-  '/_auth/_layout': typeof AuthLayoutRouteWithChildren
-  '/_auth/_layout/settings': typeof AuthLayoutSettingsRoute
-  '/_auth/_layout/': typeof AuthLayoutIndexRoute
+  '/_auth/_main-navigation': typeof AuthMainNavigationRouteWithChildren
+  '/_auth/_settings-navigation': typeof AuthSettingsNavigationRouteWithChildren
+  '/_auth/_main-navigation/search': typeof AuthMainNavigationSearchRoute
+  '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
+  '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/_auth/_main-navigation/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
+  '/_auth/_main-navigation/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
+  '/_auth/_main-navigation/tickets/investigating': typeof AuthMainNavigationTicketsInvestigatingRoute
+  '/_auth/_main-navigation/tickets/needs-first-response': typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
+  '/_auth/_main-navigation/tickets/needs-next-response': typeof AuthMainNavigationTicketsNeedsNextResponseRoute
+  '/_auth/_main-navigation/tickets/paused-for-later': typeof AuthMainNavigationTicketsPausedForLaterRoute
+  '/_auth/_main-navigation/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
+  '/_auth/_main-navigation/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
+  '/_auth/_main-navigation/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
+  '/_auth/_main-navigation/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
+  '/_auth/_main-navigation/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
+  '/_auth/_settings-navigation/settings/': typeof AuthSettingsNavigationSettingsIndexRoute
+  '/_auth/_settings-navigation/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  '/_auth/_settings-navigation/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/login' | '/settings' | '/'
+  fullPaths:
+    | ''
+    | '/login'
+    | '/search'
+    | '/'
+    | '/tickets/all'
+    | '/tickets/close-the-loop'
+    | '/tickets/done'
+    | '/tickets/investigating'
+    | '/tickets/needs-first-response'
+    | '/tickets/needs-next-response'
+    | '/tickets/paused-for-later'
+    | '/tickets/snoozed'
+    | '/tickets/todo'
+    | '/tickets/unassigned'
+    | '/tickets/waiting-for-customer'
+    | '/tickets/yours'
+    | '/settings'
+    | '/settings/account/preferences'
+    | '/settings/account/profile'
   fileRoutesByTo: FileRoutesByTo
-  to: '' | '/login' | '/settings' | '/'
+  to:
+    | ''
+    | '/login'
+    | '/search'
+    | '/'
+    | '/tickets/all'
+    | '/tickets/close-the-loop'
+    | '/tickets/done'
+    | '/tickets/investigating'
+    | '/tickets/needs-first-response'
+    | '/tickets/needs-next-response'
+    | '/tickets/paused-for-later'
+    | '/tickets/snoozed'
+    | '/tickets/todo'
+    | '/tickets/unassigned'
+    | '/tickets/waiting-for-customer'
+    | '/tickets/yours'
+    | '/settings'
+    | '/settings/account/preferences'
+    | '/settings/account/profile'
   id:
     | '__root__'
     | '/_auth'
     | '/login'
-    | '/_auth/_layout'
-    | '/_auth/_layout/settings'
-    | '/_auth/_layout/'
+    | '/_auth/_main-navigation'
+    | '/_auth/_settings-navigation'
+    | '/_auth/_main-navigation/search'
+    | '/_auth/_main-navigation/'
+    | '/_auth/_main-navigation/tickets/all'
+    | '/_auth/_main-navigation/tickets/close-the-loop'
+    | '/_auth/_main-navigation/tickets/done'
+    | '/_auth/_main-navigation/tickets/investigating'
+    | '/_auth/_main-navigation/tickets/needs-first-response'
+    | '/_auth/_main-navigation/tickets/needs-next-response'
+    | '/_auth/_main-navigation/tickets/paused-for-later'
+    | '/_auth/_main-navigation/tickets/snoozed'
+    | '/_auth/_main-navigation/tickets/todo'
+    | '/_auth/_main-navigation/tickets/unassigned'
+    | '/_auth/_main-navigation/tickets/waiting-for-customer'
+    | '/_auth/_main-navigation/tickets/yours'
+    | '/_auth/_settings-navigation/settings/'
+    | '/_auth/_settings-navigation/settings/account/preferences'
+    | '/_auth/_settings-navigation/settings/account/profile'
   fileRoutesById: FileRoutesById
 }
 
@@ -180,27 +571,109 @@ export const routeTree = rootRoute
     "/_auth": {
       "filePath": "_auth.tsx",
       "children": [
-        "/_auth/_layout"
+        "/_auth/_main-navigation",
+        "/_auth/_settings-navigation"
       ]
     },
     "/login": {
       "filePath": "login.tsx"
     },
-    "/_auth/_layout": {
-      "filePath": "_auth/_layout.tsx",
+    "/_auth/_main-navigation": {
+      "filePath": "_auth/_main-navigation.tsx",
       "parent": "/_auth",
       "children": [
-        "/_auth/_layout/settings",
-        "/_auth/_layout/"
+        "/_auth/_main-navigation/search",
+        "/_auth/_main-navigation/",
+        "/_auth/_main-navigation/tickets/all",
+        "/_auth/_main-navigation/tickets/close-the-loop",
+        "/_auth/_main-navigation/tickets/done",
+        "/_auth/_main-navigation/tickets/investigating",
+        "/_auth/_main-navigation/tickets/needs-first-response",
+        "/_auth/_main-navigation/tickets/needs-next-response",
+        "/_auth/_main-navigation/tickets/paused-for-later",
+        "/_auth/_main-navigation/tickets/snoozed",
+        "/_auth/_main-navigation/tickets/todo",
+        "/_auth/_main-navigation/tickets/unassigned",
+        "/_auth/_main-navigation/tickets/waiting-for-customer",
+        "/_auth/_main-navigation/tickets/yours"
       ]
     },
-    "/_auth/_layout/settings": {
-      "filePath": "_auth/_layout.settings.tsx",
-      "parent": "/_auth/_layout"
+    "/_auth/_settings-navigation": {
+      "filePath": "_auth/_settings-navigation.tsx",
+      "parent": "/_auth",
+      "children": [
+        "/_auth/_settings-navigation/settings/",
+        "/_auth/_settings-navigation/settings/account/preferences",
+        "/_auth/_settings-navigation/settings/account/profile"
+      ]
     },
-    "/_auth/_layout/": {
-      "filePath": "_auth/_layout.index.tsx",
-      "parent": "/_auth/_layout"
+    "/_auth/_main-navigation/search": {
+      "filePath": "_auth/_main-navigation/search.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/": {
+      "filePath": "_auth/_main-navigation/index.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/all": {
+      "filePath": "_auth/_main-navigation/tickets/all.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/close-the-loop": {
+      "filePath": "_auth/_main-navigation/tickets/close-the-loop.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/done": {
+      "filePath": "_auth/_main-navigation/tickets/done.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/investigating": {
+      "filePath": "_auth/_main-navigation/tickets/investigating.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/needs-first-response": {
+      "filePath": "_auth/_main-navigation/tickets/needs-first-response.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/needs-next-response": {
+      "filePath": "_auth/_main-navigation/tickets/needs-next-response.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/paused-for-later": {
+      "filePath": "_auth/_main-navigation/tickets/paused-for-later.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/snoozed": {
+      "filePath": "_auth/_main-navigation/tickets/snoozed.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/todo": {
+      "filePath": "_auth/_main-navigation/tickets/todo.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/unassigned": {
+      "filePath": "_auth/_main-navigation/tickets/unassigned.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/waiting-for-customer": {
+      "filePath": "_auth/_main-navigation/tickets/waiting-for-customer.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_main-navigation/tickets/yours": {
+      "filePath": "_auth/_main-navigation/tickets/yours.tsx",
+      "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_settings-navigation/settings/": {
+      "filePath": "_auth/_settings-navigation/settings/index.tsx",
+      "parent": "/_auth/_settings-navigation"
+    },
+    "/_auth/_settings-navigation/settings/account/preferences": {
+      "filePath": "_auth/_settings-navigation/settings/account/preferences.tsx",
+      "parent": "/_auth/_settings-navigation"
+    },
+    "/_auth/_settings-navigation/settings/account/profile": {
+      "filePath": "_auth/_settings-navigation/settings/account/profile.tsx",
+      "parent": "/_auth/_settings-navigation"
     }
   }
 }
