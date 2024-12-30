@@ -60,15 +60,15 @@ export function SettingsSidebar({
               <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
               {item.items.length ? (
                 <SidebarGroupContent>
-                  {item.items.map((item) => (
-                    <SidebarMenu key={item.title}>
-                      <SidebarMenuItem>
+                  <SidebarMenu>
+                    {item.items.map((item) => (
+                      <SidebarMenuItem key={item.title}>
                         <SidebarMenuSubButton asChild>
                           <Link to={item.url}>{item.title}</Link>
                         </SidebarMenuSubButton>
                       </SidebarMenuItem>
-                    </SidebarMenu>
-                  ))}
+                    ))}
+                  </SidebarMenu>
                 </SidebarGroupContent>
               ) : null}
             </SidebarGroupContent>
