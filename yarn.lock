@@ -335,12 +335,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/utils@npm:0.2.2":
-  version: 0.2.2
-  resolution: "@better-auth/utils@npm:0.2.2"
+"@better-auth/utils@npm:0.2.3":
+  version: 0.2.3
+  resolution: "@better-auth/utils@npm:0.2.3"
   dependencies:
     uncrypto: "npm:^0.1.3"
-  checksum: 10c0/d0367cde5fdb8f828ce8230e8e1d102086ae378d998e69833dc8fed1bb0054b999d4b01de726eedbbf764baf68b96722e93605c5f0deb7ed89b1afc7a02f459b
+  checksum: 10c0/57678bbba1f9377af660d8924e4bb19383714fcbb226aa80137ee7b9c504424b3e95191375d098c92304a0de86f0bf0bf4c589c238f8f7763f963cc815dfe6b6
   languageName: node
   linkType: hard
 
@@ -1581,7 +1581,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.1.4"
+    better-auth: "npm:^1.1.6"
     eslint: "npm:^9.17.0"
     prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.2"
@@ -4302,11 +4302,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "better-auth@npm:1.1.4"
+"better-auth@npm:^1.1.6":
+  version: 1.1.6
+  resolution: "better-auth@npm:1.1.6"
   dependencies:
-    "@better-auth/utils": "npm:0.2.2"
+    "@better-auth/utils": "npm:0.2.3"
     "@better-fetch/fetch": "npm:1.1.12"
     "@noble/ciphers": "npm:^0.6.0"
     "@noble/hashes": "npm:^1.6.1"
@@ -4318,7 +4318,7 @@ __metadata:
     kysely: "npm:^0.27.4"
     uncrypto: "npm:^0.1.3"
     zod: "npm:^3.24.1"
-  checksum: 10c0/42739b104e9ee597bcd57bbb83b59058bc82bfe172db420d2c4d9f35305055d7beb2230e7cd0124e7c447ea91b2efda4966d3f713c1b0fb62b678927011f0097
+  checksum: 10c0/55d39650a502ab1cb2270a1ec2673797cbf09a5681577b713eaf41271d597213b3accc4b1ce168b7a674816a44d9463c1f340b7906b4118ff3326a2218635f23
   languageName: node
   linkType: hard
 
