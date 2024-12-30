@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Separator } from "@kyakujs/ui/separator";
-import { SidebarTrigger } from "@kyakujs/ui/sidebar";
-
 import { AppPageHeader } from "~/components/app-page-header";
 
 export const Route = createFileRoute("/_auth/_main-navigation/tickets/done")({
