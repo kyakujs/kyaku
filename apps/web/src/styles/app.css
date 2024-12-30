@@ -12,3 +12,7 @@
 * {
   @apply border-border;
 }
+
+.Root {
+  isolation: isolate;
+}

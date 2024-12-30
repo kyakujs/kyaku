@@ -98,7 +98,7 @@ function RootDocument({ children }: PropsWithChildren) {
         <Meta />
       </head>
       <body>
-        {children}
+        <div className="Root">{children}</div>
         <RouterDevtools position="bottom-right" />
         <ScrollRestoration />
         <Scripts />

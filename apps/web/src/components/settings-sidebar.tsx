@@ -51,7 +51,6 @@ export function SettingsSidebar({
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <SidebarMenu></SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         {data.navMain.map((item) => (
