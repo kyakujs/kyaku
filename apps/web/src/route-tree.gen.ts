@@ -13,10 +13,11 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as LoginImport } from './routes/login'
 import { Route as AuthImport } from './routes/_auth'
-import { Route as AuthSettingsImport } from './routes/_auth/settings'
+import { Route as AuthSettingsNavigationImport } from './routes/_auth/_settings-navigation'
 import { Route as AuthMainNavigationImport } from './routes/_auth/_main-navigation'
 import { Route as AuthMainNavigationIndexImport } from './routes/_auth/_main-navigation/index'
 import { Route as AuthMainNavigationSearchImport } from './routes/_auth/_main-navigation/search'
+import { Route as AuthSettingsNavigationSettingsIndexImport } from './routes/_auth/_settings-navigation/settings/index'
 import { Route as AuthMainNavigationTicketsYoursImport } from './routes/_auth/_main-navigation/tickets/yours'
 import { Route as AuthMainNavigationTicketsWaitingForCustomerImport } from './routes/_auth/_main-navigation/tickets/waiting-for-customer'
 import { Route as AuthMainNavigationTicketsUnassignedImport } from './routes/_auth/_main-navigation/tickets/unassigned'
@@ -29,6 +30,8 @@ import { Route as AuthMainNavigationTicketsInvestigatingImport } from './routes/
 import { Route as AuthMainNavigationTicketsDoneImport } from './routes/_auth/_main-navigation/tickets/done'
 import { Route as AuthMainNavigationTicketsCloseTheLoopImport } from './routes/_auth/_main-navigation/tickets/close-the-loop'
 import { Route as AuthMainNavigationTicketsAllImport } from './routes/_auth/_main-navigation/tickets/all'
+import { Route as AuthSettingsNavigationSettingsAccountProfileImport } from './routes/_auth/_settings-navigation/settings/account/profile'
+import { Route as AuthSettingsNavigationSettingsAccountPreferencesImport } from './routes/_auth/_settings-navigation/settings/account/preferences'
 
 // Create/Update Routes
 
@@ -43,9 +46,8 @@ const AuthRoute = AuthImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const AuthSettingsRoute = AuthSettingsImport.update({
-  id: '/settings',
-  path: '/settings',
+const AuthSettingsNavigationRoute = AuthSettingsNavigationImport.update({
+  id: '/_settings-navigation',
   getParentRoute: () => AuthRoute,
 } as any)
 
@@ -65,6 +67,13 @@ const AuthMainNavigationSearchRoute = AuthMainNavigationSearchImport.update({
   path: '/search',
   getParentRoute: () => AuthMainNavigationRoute,
 } as any)
+
+const AuthSettingsNavigationSettingsIndexRoute =
+  AuthSettingsNavigationSettingsIndexImport.update({
+    id: '/settings/',
+    path: '/settings/',
+    getParentRoute: () => AuthSettingsNavigationRoute,
+  } as any)
 
 const AuthMainNavigationTicketsYoursRoute =
   AuthMainNavigationTicketsYoursImport.update({
@@ -150,6 +159,20 @@ const AuthMainNavigationTicketsAllRoute =
     getParentRoute: () => AuthMainNavigationRoute,
   } as any)
 
+const AuthSettingsNavigationSettingsAccountProfileRoute =
+  AuthSettingsNavigationSettingsAccountProfileImport.update({
+    id: '/settings/account/profile',
+    path: '/settings/account/profile',
+    getParentRoute: () => AuthSettingsNavigationRoute,
+  } as any)
+
+const AuthSettingsNavigationSettingsAccountPreferencesRoute =
+  AuthSettingsNavigationSettingsAccountPreferencesImport.update({
+    id: '/settings/account/preferences',
+    path: '/settings/account/preferences',
+    getParentRoute: () => AuthSettingsNavigationRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -175,11 +198,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthMainNavigationImport
       parentRoute: typeof AuthImport
     }
-    '/_auth/settings': {
-      id: '/_auth/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof AuthSettingsImport
+    '/_auth/_settings-navigation': {
+      id: '/_auth/_settings-navigation'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AuthSettingsNavigationImport
       parentRoute: typeof AuthImport
     }
     '/_auth/_main-navigation/search': {
@@ -280,6 +303,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthMainNavigationTicketsYoursImport
       parentRoute: typeof AuthMainNavigationImport
     }
+    '/_auth/_settings-navigation/settings/': {
+      id: '/_auth/_settings-navigation/settings/'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsIndexImport
+      parentRoute: typeof AuthSettingsNavigationImport
+    }
+    '/_auth/_settings-navigation/settings/account/preferences': {
+      id: '/_auth/_settings-navigation/settings/account/preferences'
+      path: '/settings/account/preferences'
+      fullPath: '/settings/account/preferences'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountPreferencesImport
+      parentRoute: typeof AuthSettingsNavigationImport
+    }
+    '/_auth/_settings-navigation/settings/account/profile': {
+      id: '/_auth/_settings-navigation/settings/account/profile'
+      path: '/settings/account/profile'
+      fullPath: '/settings/account/profile'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountProfileImport
+      parentRoute: typeof AuthSettingsNavigationImport
+    }
   }
 }
 
@@ -329,22 +373,42 @@ const AuthMainNavigationRouteChildren: AuthMainNavigationRouteChildren = {
 const AuthMainNavigationRouteWithChildren =
   AuthMainNavigationRoute._addFileChildren(AuthMainNavigationRouteChildren)
 
+interface AuthSettingsNavigationRouteChildren {
+  AuthSettingsNavigationSettingsIndexRoute: typeof AuthSettingsNavigationSettingsIndexRoute
+  AuthSettingsNavigationSettingsAccountPreferencesRoute: typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  AuthSettingsNavigationSettingsAccountProfileRoute: typeof AuthSettingsNavigationSettingsAccountProfileRoute
+}
+
+const AuthSettingsNavigationRouteChildren: AuthSettingsNavigationRouteChildren =
+  {
+    AuthSettingsNavigationSettingsIndexRoute:
+      AuthSettingsNavigationSettingsIndexRoute,
+    AuthSettingsNavigationSettingsAccountPreferencesRoute:
+      AuthSettingsNavigationSettingsAccountPreferencesRoute,
+    AuthSettingsNavigationSettingsAccountProfileRoute:
+      AuthSettingsNavigationSettingsAccountProfileRoute,
+  }
+
+const AuthSettingsNavigationRouteWithChildren =
+  AuthSettingsNavigationRoute._addFileChildren(
+    AuthSettingsNavigationRouteChildren,
+  )
+
 interface AuthRouteChildren {
   AuthMainNavigationRoute: typeof AuthMainNavigationRouteWithChildren
-  AuthSettingsRoute: typeof AuthSettingsRoute
+  AuthSettingsNavigationRoute: typeof AuthSettingsNavigationRouteWithChildren
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
   AuthMainNavigationRoute: AuthMainNavigationRouteWithChildren,
-  AuthSettingsRoute: AuthSettingsRoute,
+  AuthSettingsNavigationRoute: AuthSettingsNavigationRouteWithChildren,
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '': typeof AuthMainNavigationRouteWithChildren
+  '': typeof AuthSettingsNavigationRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthSettingsRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -359,12 +423,14 @@ export interface FileRoutesByFullPath {
   '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
   '/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
   '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
+  '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
+  '/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  '/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 
 export interface FileRoutesByTo {
-  '': typeof AuthRouteWithChildren
+  '': typeof AuthSettingsNavigationRouteWithChildren
   '/login': typeof LoginRoute
-  '/settings': typeof AuthSettingsRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -379,6 +445,9 @@ export interface FileRoutesByTo {
   '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
   '/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
   '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
+  '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
+  '/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  '/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 
 export interface FileRoutesById {
@@ -386,7 +455,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
   '/_auth/_main-navigation': typeof AuthMainNavigationRouteWithChildren
-  '/_auth/settings': typeof AuthSettingsRoute
+  '/_auth/_settings-navigation': typeof AuthSettingsNavigationRouteWithChildren
   '/_auth/_main-navigation/search': typeof AuthMainNavigationSearchRoute
   '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
   '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -401,6 +470,9 @@ export interface FileRoutesById {
   '/_auth/_main-navigation/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
   '/_auth/_main-navigation/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
   '/_auth/_main-navigation/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
+  '/_auth/_settings-navigation/settings/': typeof AuthSettingsNavigationSettingsIndexRoute
+  '/_auth/_settings-navigation/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
+  '/_auth/_settings-navigation/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 
 export interface FileRouteTypes {
@@ -408,7 +480,6 @@ export interface FileRouteTypes {
   fullPaths:
     | ''
     | '/login'
-    | '/settings'
     | '/search'
     | '/'
     | '/tickets/all'
@@ -423,11 +494,13 @@ export interface FileRouteTypes {
     | '/tickets/unassigned'
     | '/tickets/waiting-for-customer'
     | '/tickets/yours'
+    | '/settings'
+    | '/settings/account/preferences'
+    | '/settings/account/profile'
   fileRoutesByTo: FileRoutesByTo
   to:
     | ''
     | '/login'
-    | '/settings'
     | '/search'
     | '/'
     | '/tickets/all'
@@ -442,12 +515,15 @@ export interface FileRouteTypes {
     | '/tickets/unassigned'
     | '/tickets/waiting-for-customer'
     | '/tickets/yours'
+    | '/settings'
+    | '/settings/account/preferences'
+    | '/settings/account/profile'
   id:
     | '__root__'
     | '/_auth'
     | '/login'
     | '/_auth/_main-navigation'
-    | '/_auth/settings'
+    | '/_auth/_settings-navigation'
     | '/_auth/_main-navigation/search'
     | '/_auth/_main-navigation/'
     | '/_auth/_main-navigation/tickets/all'
@@ -462,6 +538,9 @@ export interface FileRouteTypes {
     | '/_auth/_main-navigation/tickets/unassigned'
     | '/_auth/_main-navigation/tickets/waiting-for-customer'
     | '/_auth/_main-navigation/tickets/yours'
+    | '/_auth/_settings-navigation/settings/'
+    | '/_auth/_settings-navigation/settings/account/preferences'
+    | '/_auth/_settings-navigation/settings/account/profile'
   fileRoutesById: FileRoutesById
 }
 
@@ -493,7 +572,7 @@ export const routeTree = rootRoute
       "filePath": "_auth.tsx",
       "children": [
         "/_auth/_main-navigation",
-        "/_auth/settings"
+        "/_auth/_settings-navigation"
       ]
     },
     "/login": {
@@ -519,9 +598,14 @@ export const routeTree = rootRoute
         "/_auth/_main-navigation/tickets/yours"
       ]
     },
-    "/_auth/settings": {
-      "filePath": "_auth/settings.tsx",
-      "parent": "/_auth"
+    "/_auth/_settings-navigation": {
+      "filePath": "_auth/_settings-navigation.tsx",
+      "parent": "/_auth",
+      "children": [
+        "/_auth/_settings-navigation/settings/",
+        "/_auth/_settings-navigation/settings/account/preferences",
+        "/_auth/_settings-navigation/settings/account/profile"
+      ]
     },
     "/_auth/_main-navigation/search": {
       "filePath": "_auth/_main-navigation/search.tsx",
@@ -578,6 +662,18 @@ export const routeTree = rootRoute
     "/_auth/_main-navigation/tickets/yours": {
       "filePath": "_auth/_main-navigation/tickets/yours.tsx",
       "parent": "/_auth/_main-navigation"
+    },
+    "/_auth/_settings-navigation/settings/": {
+      "filePath": "_auth/_settings-navigation/settings/index.tsx",
+      "parent": "/_auth/_settings-navigation"
+    },
+    "/_auth/_settings-navigation/settings/account/preferences": {
+      "filePath": "_auth/_settings-navigation/settings/account/preferences.tsx",
+      "parent": "/_auth/_settings-navigation"
+    },
+    "/_auth/_settings-navigation/settings/account/profile": {
+      "filePath": "_auth/_settings-navigation/settings/account/profile.tsx",
+      "parent": "/_auth/_settings-navigation"
     }
   }
 }
