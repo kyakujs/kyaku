@@ -1662,7 +1662,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.1.6"
+    better-auth: "npm:^1.1.7"
     eslint: "npm:^9.17.0"
     prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.2"
@@ -4387,9 +4387,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.1.6":
-  version: 1.1.6
-  resolution: "better-auth@npm:1.1.6"
+"better-auth@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "better-auth@npm:1.1.7"
   dependencies:
     "@better-auth/utils": "npm:0.2.3"
     "@better-fetch/fetch": "npm:1.1.12"
@@ -4397,26 +4397,25 @@ __metadata:
     "@noble/hashes": "npm:^1.6.1"
     "@simplewebauthn/browser": "npm:^13.0.0"
     "@simplewebauthn/server": "npm:^13.0.0"
-    better-call: "npm:0.3.3-beta.4"
+    better-call: "npm:0.3.3"
     defu: "npm:^6.1.4"
     jose: "npm:^5.9.6"
     kysely: "npm:^0.27.4"
     uncrypto: "npm:^0.1.3"
     zod: "npm:^3.24.1"
-  checksum: 10c0/55d39650a502ab1cb2270a1ec2673797cbf09a5681577b713eaf41271d597213b3accc4b1ce168b7a674816a44d9463c1f340b7906b4118ff3326a2218635f23
+  checksum: 10c0/a675be84caf6d168874dc95ca43f09eff63d1baf6cf0b5bbd5a781be62d11303fd458998c5d1dbe0c6fb4c7653ea0742aa47dd7fbd74e6b9576796d8fafd3f21
   languageName: node
   linkType: hard
 
-"better-call@npm:0.3.3-beta.4":
-  version: 0.3.3-beta.4
-  resolution: "better-call@npm:0.3.3-beta.4"
+"better-call@npm:0.3.3":
+  version: 0.3.3
+  resolution: "better-call@npm:0.3.3"
   dependencies:
     "@better-fetch/fetch": "npm:^1.1.4"
     rou3: "npm:^0.5.1"
-    set-cookie-parser: "npm:^2.7.1"
     uncrypto: "npm:^0.1.3"
-    zod: "npm:^3.23.8"
-  checksum: 10c0/f0a98bd8857580b9664b222e20e2dd82f6b488b97cd0c6c91dc89aa9aeb75d4d4e897a7792a1ae24079b49057877dfcf1743e80de6821468c68bc5f31684acce
+    zod: "npm:^3.24.1"
+  checksum: 10c0/7ade425c1463f1a5bc99c27b3bcd0f476a55bfabb992937c305df579651fc7fe11e544dae833f87bc494b971f391cbd6ffe0032fba7f12ba8a166c308cb0d3ed
   languageName: node
   linkType: hard
 
@@ -10356,7 +10355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-cookie-parser@npm:^2.6.0, set-cookie-parser@npm:^2.7.1":
+"set-cookie-parser@npm:^2.6.0":
   version: 2.7.1
   resolution: "set-cookie-parser@npm:2.7.1"
   checksum: 10c0/060c198c4c92547ac15988256f445eae523f57f2ceefeccf52d30d75dedf6bff22b9c26f756bd44e8e560d44ff4ab2130b178bd2e52ef5571bf7be3bd7632d9a
