@@ -160,7 +160,7 @@ const Sidebar = ({
     <>
       <div
         ref={ref}
-        className="group peer -translate-x-(--sidebar-width) text-sidebar-foreground transition-transform duration-150 md:translate-x-0"
+        className="group peer hidden text-sidebar-foreground md:block"
         data-state={state}
         data-collapsible={state === "collapsed" ? collapsible : ""}
         data-side={side}
@@ -168,7 +168,7 @@ const Sidebar = ({
         {/* This is what handles the sidebar gap on desktop */}
         <div
           className={cn(
-            "relative h-svh w-0 bg-transparent transition-[width] duration-150 md:w-(--sidebar-width)",
+            "relative h-svh w-(--sidebar-width) bg-transparent transition-[width] duration-150",
             "group-data-[collapsible=offcanvas]:w-0",
             "group-data-[side=right]:rotate-180",
             "group-data-[collapsible=icon]:w-(--sidebar-width-icon)",
@@ -387,7 +387,7 @@ const SidebarGroupLabel = ({
       ref={ref}
       data-sidebar="group-label"
       className={cn(
-        "focus-visible:outline-sidebar-ringg flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 transition-[margin,opa] duration-200 ease-linear focus-visible:outline-1 focus-visible:-outline-offset-1 [&>svg]:size-4 [&>svg]:shrink-0",
+        "flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 transition-[margin,opa] duration-200 ease-linear focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-sidebar-ring [&>svg]:size-4 [&>svg]:shrink-0",
         "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
         className,
       )}
