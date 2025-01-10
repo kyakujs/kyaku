@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@eslint/compat": "^1.2.4",
+    "@eslint/compat": "^1.2.5",
     "@tanstack/eslint-plugin-router": "^1.92.7",
     "babel-plugin-react-compiler": "19.0.0-beta-55955c9-20241229",
     "eslint-plugin-import": "^2.31.0",
