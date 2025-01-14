@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "next",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.0",
     "tailwindcss": "next"
   },
   "devDependencies": {
