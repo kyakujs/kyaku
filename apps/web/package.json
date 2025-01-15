@@ -37,7 +37,7 @@
     "@kyakujs/tsconfig": "workspace:*",
     "@tailwindcss/vite": "next",
     "@types/node": "^22.10.6",
-    "@types/react": "^19.0.6",
+    "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
     "dotenv-cli": "^8.0.0",
