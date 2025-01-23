@@ -24,7 +24,7 @@
     "@tanstack/react-router-with-query": "^1.97.14",
     "@tanstack/router-devtools": "^1.97.14",
     "@tanstack/start": "^1.97.14",
-    "lucide-react": "^0.473.0",
+    "lucide-react": "^0.474.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vinxi": "^0.5.1",
