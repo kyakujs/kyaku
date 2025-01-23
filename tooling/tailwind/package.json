@@ -11,9 +11,9 @@
     "format": "prettier --check . --ignore-path ../../.gitignore"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "next",
+    "@tailwindcss/postcss": "^4.0.0",
     "postcss": "^8.5.1",
-    "tailwindcss": "next"
+    "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
     "@kyakujs/prettier-config": "workspace:*",

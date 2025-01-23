@@ -1816,7 +1816,7 @@ __metadata:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.1"
     "@kyakujs/tsconfig": "workspace:*"
     prettier: "npm:^3.4.2"
-    prettier-plugin-tailwindcss: "npm:^0.6.10"
+    prettier-plugin-tailwindcss: "npm:^0.6.11"
     typescript: "npm:^5.7.3"
   languageName: unknown
   linkType: soft
@@ -1826,10 +1826,10 @@ __metadata:
   resolution: "@kyakujs/tailwind-config@workspace:tooling/tailwind"
   dependencies:
     "@kyakujs/prettier-config": "workspace:*"
-    "@tailwindcss/postcss": "npm:next"
+    "@tailwindcss/postcss": "npm:^4.0.0"
     postcss: "npm:^8.5.1"
     prettier: "npm:^3.4.2"
-    tailwindcss: "npm:next"
+    tailwindcss: "npm:^4.0.0"
   languageName: unknown
   linkType: soft
 
@@ -1875,7 +1875,7 @@ __metadata:
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
     "@rocicorp/zero": "npm:^0.11.2025011402"
-    "@tailwindcss/vite": "npm:next"
+    "@tailwindcss/vite": "npm:^4.0.0"
     "@tanstack/react-query": "npm:^5.64.2"
     "@tanstack/react-router": "npm:^1.97.14"
     "@tanstack/react-router-with-query": "npm:^1.97.14"
@@ -3505,7 +3505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/postcss@npm:next":
+"@tailwindcss/postcss@npm:^4.0.0":
   version: 4.0.0
   resolution: "@tailwindcss/postcss@npm:4.0.0"
   dependencies:
@@ -3519,7 +3519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/vite@npm:next":
+"@tailwindcss/vite@npm:^4.0.0":
   version: 4.0.0
   resolution: "@tailwindcss/vite@npm:4.0.0"
   dependencies:
@@ -9948,9 +9948,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.6.10":
-  version: 0.6.10
-  resolution: "prettier-plugin-tailwindcss@npm:0.6.10"
+"prettier-plugin-tailwindcss@npm:^0.6.11":
+  version: 0.6.11
+  resolution: "prettier-plugin-tailwindcss@npm:0.6.11"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
@@ -10002,7 +10002,7 @@ __metadata:
       optional: true
     prettier-plugin-svelte:
       optional: true
-  checksum: 10c0/9e1e8d59285acb915c647235867e0c6da4f66e60a05984375036998c207662988cb59a362390f86050c09863e4ee982102dfcffb0131cc1413aec1b7d1d8fb08
+  checksum: 10c0/e5688a86f457b4eaa682d83a86702826d2d828db4cfc153b8b1f0b8409c94530a4bde8deb3e819497ba8e4bd0eda08ed55468a41a8138f82db43d633cf332121
   languageName: node
   linkType: hard
 
@@ -11291,7 +11291,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.0.0, tailwindcss@npm:next":
+"tailwindcss@npm:4.0.0, tailwindcss@npm:^4.0.0":
   version: 4.0.0
   resolution: "tailwindcss@npm:4.0.0"
   checksum: 10c0/418b1cb02c46f5064bdd4931d8bb030e5c2a986744226dc282b47ecd4b95d1eb919a6f35a68cac948fbf3224fd976feafd9476e289cb5774062f6a3b2a49606e
