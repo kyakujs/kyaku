@@ -1795,12 +1795,12 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
     "@tanstack/eslint-plugin-router": "npm:^1.99.3"
-    babel-plugin-react-compiler: "npm:19.0.0-beta-55955c9-20241229"
+    babel-plugin-react-compiler: "npm:19.0.0-beta-714736e-20250131"
     eslint: "npm:^9.19.0"
     eslint-plugin-import: "npm:^2.31.0"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.4"
-    eslint-plugin-react-compiler: "npm:19.0.0-beta-55955c9-20241229"
+    eslint-plugin-react-compiler: "npm:19.0.0-beta-714736e-20250131"
     eslint-plugin-react-hooks: "npm:^5.1.0"
     eslint-plugin-turbo: "npm:^2.4.0"
     prettier: "npm:^3.4.2"
@@ -4814,12 +4814,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229":
-  version: 19.0.0-beta-55955c9-20241229
-  resolution: "babel-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229"
+"babel-plugin-react-compiler@npm:19.0.0-beta-714736e-20250131":
+  version: 19.0.0-beta-714736e-20250131
+  resolution: "babel-plugin-react-compiler@npm:19.0.0-beta-714736e-20250131"
   dependencies:
     "@babel/types": "npm:^7.19.0"
-  checksum: 10c0/f0b20b45d514c727c4171fc158eb2693b848c7713db59c79bd54a43f427a7cd1193942df90de2e16ff027266454a6f53f519a792f066d237e9367593d9fdbc34
+  checksum: 10c0/b0e16cadc72792acad1de9821e776ba063dee888d6f77c0a754a78235922404cc59bf384968fbf65085f87ae45c3b38f2074ec6b654662ffef72bd594f781795
   languageName: node
   linkType: hard
 
@@ -6664,9 +6664,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229":
-  version: 19.0.0-beta-55955c9-20241229
-  resolution: "eslint-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229"
+"eslint-plugin-react-compiler@npm:19.0.0-beta-714736e-20250131":
+  version: 19.0.0-beta-714736e-20250131
+  resolution: "eslint-plugin-react-compiler@npm:19.0.0-beta-714736e-20250131"
   dependencies:
     "@babel/core": "npm:^7.24.4"
     "@babel/parser": "npm:^7.24.4"
@@ -6676,7 +6676,7 @@ __metadata:
     zod-validation-error: "npm:^3.0.3"
   peerDependencies:
     eslint: ">=7"
-  checksum: 10c0/59183b041ee82a56c7b9ecf4d813ed9d261f318c7f7a295fb734a404f107a3f416cb4252f856c7af3aa0601d369f0ba7e7e25fe3a4a506e4aec1b9e4e816be5c
+  checksum: 10c0/c3b758d7ea75a059de4b36009a44664f57ba056c236583910429a3b0e94fe9f806a3a9ea7f14cc8a64b3ccc9e77cf782de128660747222391bac13fa8787c24b
   languageName: node
   linkType: hard
 
