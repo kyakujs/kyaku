@@ -1883,7 +1883,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.13.2025020501"
+    "@rocicorp/zero": "npm:^0.14.2025020701"
     "@tailwindcss/vite": "npm:^4.0.4"
     "@tanstack/react-query": "npm:^5.66.0"
     "@tanstack/react-router": "npm:^1.99.13"
@@ -1915,7 +1915,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.13.2025020501"
+    "@rocicorp/zero": "npm:^0.14.2025020701"
     dotenv-cli: "npm:^8.0.0"
     eslint: "npm:^9.20.0"
     prettier: "npm:^3.4.2"
@@ -3027,9 +3027,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.13.2025020501":
-  version: 0.13.2025020501
-  resolution: "@rocicorp/zero@npm:0.13.2025020501"
+"@rocicorp/zero@npm:^0.14.2025020701":
+  version: 0.14.2025020701
+  resolution: "@rocicorp/zero@npm:0.14.2025020701"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3061,7 +3061,6 @@ __metadata:
     js-xxhash: "npm:^4.0.0"
     json-custom-numbers: "npm:^3.1.1"
     kasi: "npm:^1.1.0"
-    magic-stopwatch: "npm:^1.0.1"
     nanoid: "npm:^5.0.8"
     pg: "npm:^8.11.3"
     pg-format: "npm:pg-format-fix@^1.0.5"
@@ -3077,7 +3076,7 @@ __metadata:
     zero-build-schema: out/zero/src/build-schema.js
     zero-cache: out/zero/src/cli.js
     zero-cache-dev: out/zero/src/zero-cache-dev.js
-  checksum: 10c0/ed4ce4805b3e8bd0dbb9c48506be2216dab67a5554442db0110611cf4db7580d6d4a4d8c84e0665444196bc84dc35fc86957f63e99a100a03fae3230bcb93613
+  checksum: 10c0/55ce18349ea23288d5c91acc65f52f490cef676530fa11831290a4c3885c0236b5d82c663c581f34b858086997588d2838e32fff0e0c82720d37d8045be11c69
   languageName: node
   linkType: hard
 
@@ -8736,13 +8735,6 @@ __metadata:
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 10c0/9cb17bd4e70da4db104874b6b2e9d9c7e2be9438e9d1c0b2565df0c4d0bdd1add41b7dff3cb60840699ecbd29870c453878b42b69a7c46480def0c9370a852a9
-  languageName: node
-  linkType: hard
-
-"magic-stopwatch@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "magic-stopwatch@npm:1.0.1"
-  checksum: 10c0/ad2c06653c59da918c7313b8daf3addf1dcbf7c9fcc72f92957cd9aa93718357a2d46b2006f02dd5c65a066591ac2f8fb1c34da7b8615a834eaef3270055e876
   languageName: node
   linkType: hard
 
