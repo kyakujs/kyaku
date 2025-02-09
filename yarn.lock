@@ -1901,7 +1901,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:^5.7.3"
-    vinxi: "npm:^0.5.1"
+    vinxi: "npm:^0.5.3"
     vite-tsconfig-paths: "npm:^5.1.4"
     zod: "npm:^3.24.1"
   languageName: unknown
@@ -12055,6 +12055,50 @@ __metadata:
   bin:
     vinxi: bin/cli.mjs
   checksum: 10c0/113da02d7df3fdbf903770e0d56dc77241c14ab1c2ef6d4d3cc6d2a8d391839b5c3786461597ebd37a9dcfdce0d5ec4c50c18660cbd5127cb6f4e85aa49e6037
+  languageName: node
+  linkType: hard
+
+"vinxi@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "vinxi@npm:0.5.3"
+  dependencies:
+    "@babel/core": "npm:^7.22.11"
+    "@babel/plugin-syntax-jsx": "npm:^7.22.5"
+    "@babel/plugin-syntax-typescript": "npm:^7.22.5"
+    "@types/micromatch": "npm:^4.0.2"
+    "@vinxi/listhen": "npm:^1.5.6"
+    boxen: "npm:^7.1.1"
+    chokidar: "npm:^3.5.3"
+    citty: "npm:^0.1.4"
+    consola: "npm:^3.2.3"
+    crossws: "npm:^0.3.1"
+    dax-sh: "npm:^0.39.1"
+    defu: "npm:^6.1.2"
+    es-module-lexer: "npm:^1.3.0"
+    esbuild: "npm:^0.20.2"
+    fast-glob: "npm:^3.3.1"
+    get-port-please: "npm:^3.1.1"
+    h3: "npm:1.13.0"
+    hookable: "npm:^5.5.3"
+    http-proxy: "npm:^1.18.1"
+    micromatch: "npm:^4.0.5"
+    nitropack: "npm:^2.10.4"
+    node-fetch-native: "npm:^1.4.0"
+    path-to-regexp: "npm:^6.2.1"
+    pathe: "npm:^1.1.1"
+    radix3: "npm:^1.1.0"
+    resolve: "npm:^1.22.6"
+    serve-placeholder: "npm:^2.0.1"
+    serve-static: "npm:^1.15.0"
+    ufo: "npm:^1.3.0"
+    unctx: "npm:^2.3.1"
+    unenv: "npm:^1.9.0"
+    unstorage: "npm:^1.13.1"
+    vite: "npm:^6.0.0"
+    zod: "npm:^3.22.2"
+  bin:
+    vinxi: bin/cli.mjs
+  checksum: 10c0/2eb2fa5270300ec472e695706b015461cf7d72b327d0e6adeaf3952bd1df0ac03d823a23b2219f5863ec51d8570c7abf26ece52426b6bd968c5f81efacd1deda
   languageName: node
   linkType: hard
 
