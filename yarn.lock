@@ -1772,7 +1772,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     better-auth: "npm:^1.1.16"
     eslint: "npm:^9.20.0"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     typescript: "npm:^5.7.3"
   languageName: unknown
   linkType: soft
@@ -1791,7 +1791,7 @@ __metadata:
     drizzle-orm: "npm:^0.39.2"
     eslint: "npm:^9.20.0"
     pg: "npm:^8.13.1"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     typescript: "npm:^5.7.3"
   languageName: unknown
   linkType: soft
@@ -1812,7 +1812,7 @@ __metadata:
     eslint-plugin-react-compiler: "npm:19.0.0-beta-714736e-20250131"
     eslint-plugin-react-hooks: "npm:^5.1.0"
     eslint-plugin-turbo: "npm:^2.4.0"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     typescript: "npm:^5.7.3"
     typescript-eslint: "npm:^8.23.0"
   languageName: unknown
@@ -1824,7 +1824,7 @@ __metadata:
   dependencies:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.1"
     "@kyakujs/tsconfig": "workspace:*"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     prettier-plugin-tailwindcss: "npm:^0.6.11"
     typescript: "npm:^5.7.3"
   languageName: unknown
@@ -1837,7 +1837,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@tailwindcss/postcss": "npm:^4.0.5"
     postcss: "npm:^8.5.1"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     tailwindcss: "npm:^4.0.5"
   languageName: unknown
   linkType: soft
@@ -1862,7 +1862,7 @@ __metadata:
     class-variance-authority: "npm:^0.7.1"
     eslint: "npm:^9.20.0"
     lucide-react: "npm:^0.475.0"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     react: "npm:^19.0.0"
     tailwind-merge: "npm:^2.6.0"
     typescript: "npm:^5.7.3"
@@ -1897,7 +1897,7 @@ __metadata:
     dotenv-cli: "npm:^8.0.0"
     eslint: "npm:^9.20.0"
     lucide-react: "npm:^0.475.0"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:^5.7.3"
@@ -1918,7 +1918,7 @@ __metadata:
     "@rocicorp/zero": "npm:^0.14.2025020701"
     dotenv-cli: "npm:^8.0.0"
     eslint: "npm:^9.20.0"
-    prettier: "npm:^3.4.2"
+    prettier: "npm:^3.5.0"
     typescript: "npm:^5.7.3"
   languageName: unknown
   linkType: soft
@@ -10034,6 +10034,15 @@ __metadata:
   bin:
     prettier: bin/prettier.cjs
   checksum: 10c0/99e076a26ed0aba4ebc043880d0f08bbb8c59a4c6641cdee6cdadf2205bdd87aa1d7823f50c3aea41e015e99878d37c58d7b5f0e663bba0ef047f94e36b96446
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "prettier@npm:3.5.0"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/6c355d74c377f5622953229d92477e8b9779162e848db90fd7e06c431deb73585d31fafc4516cf5868917825b97b9ec7c87c8d8b8e03ccd9fc9c0b7699d1a650
   languageName: node
   linkType: hard
 
