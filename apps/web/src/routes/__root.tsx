@@ -1,11 +1,7 @@
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import type { PropsWithChildren } from "react";
 import fontsourceInter from "@fontsource-variable/inter?url";
-import {
-  createRootRouteWithContext,
-  Outlet,
-  ScrollRestoration,
-} from "@tanstack/react-router";
+import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
 import { Meta, Scripts } from "@tanstack/start";
 
 import type { RouterContext } from "~/router";
@@ -43,19 +39,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
           href: fontsourceInter,
         },
       ],
-      scripts: import.meta.env.PROD
-        ? []
-        : [
-            {
-              type: "module",
-              children: `
-            import RefreshRuntime from "/_build/@react-refresh"
-            RefreshRuntime.injectIntoGlobalHook(window)
-            window.$RefreshReg$ = () => {}
-            window.$RefreshSig$ = () => (type) => type
-          `,
-            },
-          ],
     };
   },
   component: RootComponent,
@@ -100,7 +83,6 @@ function RootDocument({ children }: PropsWithChildren) {
       <body>
         <div className="Root">{children}</div>
         <RouterDevtools position="bottom-right" />
-        <ScrollRestoration />
         <Scripts />
       </body>
     </html>

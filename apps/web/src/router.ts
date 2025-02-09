@@ -34,6 +34,7 @@ export function createRouter() {
       strict: true,
     },
     defaultPreload: false,
+    scrollRestoration: true,
   });
 
   // handle redirect without useServerFn when using tanstack query
