@@ -7,7 +7,7 @@ import viteTsConfigPaths from "vite-tsconfig-paths";
 const config = {
   appDirectory: "src",
 };
-const app = defineConfig({
+const app = await defineConfig({
   server: {
     preset: "node-server",
     compatibilityDate: "2024-12-05",
