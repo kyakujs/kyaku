@@ -1,8 +1,12 @@
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import type { PropsWithChildren } from "react";
 import fontsourceInter from "@fontsource-variable/inter?url";
-import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
-import { Meta, Scripts } from "@tanstack/start";
+import {
+  createRootRouteWithContext,
+  HeadContent,
+  Outlet,
+  Scripts,
+} from "@tanstack/react-router";
 
 import type { RouterContext } from "~/router";
 import { RouterDevtools } from "~/router";
@@ -78,7 +82,7 @@ function RootDocument({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Meta />
+        <HeadContent />
       </head>
       <body>
         <div className="Root">{children}</div>
