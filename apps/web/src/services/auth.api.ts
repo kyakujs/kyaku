@@ -1,7 +1,8 @@
-import { createServerFn } from "@tanstack/start";
-import { getEvent } from "vinxi/http";
+import { createServerFn } from "@tanstack/react-start";
 
 import type { Session } from "@kyakujs/auth";
+
+import sessionMiddleware from "~/session-middleware";
 
 export interface Authenticated extends Session {
   isAuthenticated: true;
@@ -13,8 +14,8 @@ export interface Unauthenticated {
 
 export type Auth = Authenticated | Unauthenticated;
 
-export const getAuth = createServerFn({ method: "GET" }).handler<Auth>(() => {
-  const event = getEvent();
-
-  return event.context.auth as Auth;
-});
+export const getAuth = createServerFn({ method: "GET" })
+  .middleware([sessionMiddleware])
+  .handler<Auth>((ctx) => {
+    return ctx.context.auth;
+  });

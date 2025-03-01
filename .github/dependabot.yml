@@ -28,8 +28,8 @@ updates:
         patterns:
           - "@tanstack/eslint-plugin-router"
           - "@tanstack/react-router*"
+          - "@tanstack/react-start*"
           - "@tanstack/router*"
-          - "@tanstack/start*"
       turbo:
         patterns:
           - "turbo"
