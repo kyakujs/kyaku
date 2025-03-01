@@ -1,7 +1,6 @@
 import { join } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "@tanstack/react-start/config";
-import { App } from "vinxi";
 import viteTsConfigPaths from "vite-tsconfig-paths";
 
 const config = {
@@ -49,21 +48,4 @@ const app = await defineConfig({
   },
 });
 
-/*function withGlobalMiddleware(app: App) {
-  return {
-    ...app,
-    config: {
-      ...app.config,
-      routers: app.config.routers.map((router) => ({
-        ...router,
-        middleware:
-          router.target === "server"
-            ? join(config.appDirectory, "global-middleware.ts")
-            : undefined,
-      })),
-    },
-  };
-}
-
-export default withGlobalMiddleware(app);*/
 export default app;
