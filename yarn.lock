@@ -1484,10 +1484,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/inter@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "@fontsource-variable/inter@npm:5.1.1"
-  checksum: 10c0/d7ada2768ac803711dea6a2124ab25721454143366d6e77a9086ba69b9d5c91ce48d02380ed92c3e358fd1dacf0bc17ab21e590d9de3eab90ccf5659fb370c76
+"@fontsource-variable/inter@npm:^5.2.5":
+  version: 5.2.5
+  resolution: "@fontsource-variable/inter@npm:5.2.5"
+  checksum: 10c0/e950b76fc7ce58cc0d32afaf5f21835eb4e2cb0dbe1ab17786258d13bcc19147de69e3776db3fb91bd570ed21fcc8ca75d8820ed91572fafd866110b94adc5c3
   languageName: node
   linkType: hard
 
@@ -1867,7 +1867,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/web@workspace:apps/web"
   dependencies:
-    "@fontsource-variable/inter": "npm:^5.1.1"
+    "@fontsource-variable/inter": "npm:^5.2.5"
     "@kyakujs/auth": "workspace:*"
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
