@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@kyakujs/db": "workspace:*",
-    "better-auth": "^1.2.2"
+    "better-auth": "^1.2.3"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",

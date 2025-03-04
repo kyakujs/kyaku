@@ -1769,7 +1769,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.2.2"
+    better-auth: "npm:^1.2.3"
     eslint: "npm:^9.21.0"
     prettier: "npm:^3.5.3"
     typescript: "npm:^5.8.2"
@@ -4849,9 +4849,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "better-auth@npm:1.2.2"
+"better-auth@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "better-auth@npm:1.2.3"
   dependencies:
     "@better-auth/utils": "npm:0.2.3"
     "@better-fetch/fetch": "npm:^1.1.15"
@@ -4866,7 +4866,7 @@ __metadata:
     nanostores: "npm:^0.11.3"
     valibot: "npm:1.0.0-beta.15"
     zod: "npm:^3.24.1"
-  checksum: 10c0/732791289648a0b9e84a321d27a65bee1e89e1ef4376593af286c688b973de8e6a5ef7ac022bd3dbbc6b475e1005f8e082faf164c3f452b4d52fdd67097e4589
+  checksum: 10c0/ff385dd1aff26d0c4def9accb1922917b62d4d68e57c052bbfd54341c84c0533fd2457355b497cf662e312d323c5ec8c6023ca01f276f6a27c7ec8d368e66892
   languageName: node
   linkType: hard
 
