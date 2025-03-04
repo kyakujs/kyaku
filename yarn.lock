@@ -375,7 +375,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-fetch/fetch@npm:1.1.12, @better-fetch/fetch@npm:^1.1.4":
+"@better-fetch/fetch@npm:^1.1.15":
+  version: 1.1.15
+  resolution: "@better-fetch/fetch@npm:1.1.15"
+  checksum: 10c0/5ac549ba0e693e242c2f944ab2ad216004630a62f90d11833317bce90bb7895ccf6df4ac1cb4acaad13fcd25e5f51d60e088e78ae58c80315d1782ac50eb4edc
+  languageName: node
+  linkType: hard
+
+"@better-fetch/fetch@npm:^1.1.4":
   version: 1.1.12
   resolution: "@better-fetch/fetch@npm:1.1.12"
   checksum: 10c0/ff207769e00fbc81263904cb5fcbfc93db11667b6f1160bbf018c538d9e060e6eaf430f2ef333895e40b87ab6988bb55b92199ba08ad0934744ee2a945079865
@@ -1762,7 +1769,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.1.21"
+    better-auth: "npm:^1.2.2"
     eslint: "npm:^9.21.0"
     prettier: "npm:^3.5.2"
     typescript: "npm:^5.8.2"
@@ -4782,35 +4789,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.1.21":
-  version: 1.1.21
-  resolution: "better-auth@npm:1.1.21"
+"better-auth@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "better-auth@npm:1.2.2"
   dependencies:
     "@better-auth/utils": "npm:0.2.3"
-    "@better-fetch/fetch": "npm:1.1.12"
+    "@better-fetch/fetch": "npm:^1.1.15"
     "@noble/ciphers": "npm:^0.6.0"
     "@noble/hashes": "npm:^1.6.1"
     "@simplewebauthn/browser": "npm:^13.0.0"
     "@simplewebauthn/server": "npm:^13.0.0"
-    better-call: "npm:0.3.3"
+    better-call: "npm:^1.0.3"
     defu: "npm:^6.1.4"
     jose: "npm:^5.9.6"
     kysely: "npm:^0.27.4"
     nanostores: "npm:^0.11.3"
+    valibot: "npm:1.0.0-beta.15"
     zod: "npm:^3.24.1"
-  checksum: 10c0/95bd70bce4ab64c2fcc4c79250ce32c0f3b17cce8bd9551dcb7810db0d5276e4b4a1f4a5b0de3c25f868cde48c089252ab483ae2d5515b9c1e5fc6c019ed233f
+  checksum: 10c0/732791289648a0b9e84a321d27a65bee1e89e1ef4376593af286c688b973de8e6a5ef7ac022bd3dbbc6b475e1005f8e082faf164c3f452b4d52fdd67097e4589
   languageName: node
   linkType: hard
 
-"better-call@npm:0.3.3":
-  version: 0.3.3
-  resolution: "better-call@npm:0.3.3"
+"better-call@npm:^1.0.3":
+  version: 1.0.4
+  resolution: "better-call@npm:1.0.4"
   dependencies:
     "@better-fetch/fetch": "npm:^1.1.4"
     rou3: "npm:^0.5.1"
+    set-cookie-parser: "npm:^2.7.1"
     uncrypto: "npm:^0.1.3"
-    zod: "npm:^3.24.1"
-  checksum: 10c0/7ade425c1463f1a5bc99c27b3bcd0f476a55bfabb992937c305df579651fc7fe11e544dae833f87bc494b971f391cbd6ffe0032fba7f12ba8a166c308cb0d3ed
+  checksum: 10c0/f890986745a1311a2d561b32032eeb10345816b8ac63e42554a4f2a46698ab1155e775e8ca1f1f9e5891c8599d745aa1cc75e904b7164a6838db57c5af2f91e2
   languageName: node
   linkType: hard
 
@@ -10800,7 +10808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-cookie-parser@npm:^2.6.0":
+"set-cookie-parser@npm:^2.6.0, set-cookie-parser@npm:^2.7.1":
   version: 2.7.1
   resolution: "set-cookie-parser@npm:2.7.1"
   checksum: 10c0/060c198c4c92547ac15988256f445eae523f57f2ceefeccf52d30d75dedf6bff22b9c26f756bd44e8e560d44ff4ab2130b178bd2e52ef5571bf7be3bd7632d9a
@@ -12025,6 +12033,18 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10c0/41a5bdd214df2f6c3ecf8622745e4a366c4adced864bc3c833739791aeeeb1838119af7daed4ba36428114b5c67dcda034a79c882e97e43c03e66a4dd7389942
+  languageName: node
+  linkType: hard
+
+"valibot@npm:1.0.0-beta.15":
+  version: 1.0.0-beta.15
+  resolution: "valibot@npm:1.0.0-beta.15"
+  peerDependencies:
+    typescript: ">=5"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/32c45a29ca9c9d8eddc77991ebfd61790ca8ff03d5db5f20d3af10b773617765ab1021e688cabe03dfcf94c262d07f9898507d6e95272ca4bdb47324d63afcf8
   languageName: node
   linkType: hard
 
