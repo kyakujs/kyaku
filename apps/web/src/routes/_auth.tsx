@@ -29,12 +29,7 @@ function AuthLayout() {
     () =>
       new Zero({
         userID: authQuery.data.isAuthenticated ? authQuery.data.user.id : "",
-        auth: authQuery.data.isAuthenticated
-          ? () =>
-              fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/auth/token`)
-                .then((res) => res.json() as Promise<{ token: string }>)
-                .then((json) => json.token)
-          : "",
+        auth: authQuery.data.isAuthenticated ? (authQuery.data.jwt ?? "") : "",
         server: import.meta.env.VITE_SYNC_ENGINE_URL as string,
         schema,
         kvStore: "mem", // or "idb" for IndexedDB persistence
