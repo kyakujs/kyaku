@@ -21,7 +21,6 @@ updates:
           - "eslint-plugin-react-compiler"
       tailwindcss:
         patterns:
-          - "@tailwindcss/postcss"
           - "@tailwindcss/vite"
           - "tailwindcss"
       tanstack-start:
