@@ -27,7 +27,7 @@
     "@base-ui-components/react": "^1.0.0-alpha.6",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
-    "lucide-react": "^0.477.0",
+    "lucide-react": "^0.479.0",
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
