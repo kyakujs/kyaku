@@ -44,7 +44,7 @@ const ticketRelationships = relationships(ticket, ({ one }) => ({
   }),
 }));
 
-export const schema = createSchema(1, {
+export const schema = createSchema({
   tables: [customer, ticket, user],
   relationships: [ticketRelationships],
 });
