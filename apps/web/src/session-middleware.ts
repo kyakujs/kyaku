@@ -17,13 +17,14 @@ export default createMiddleware().server(async ({ next }) => {
 
   return next({
     context: {
-      auth: session.ok
-        ? {
-            isAuthenticated: true as const,
-            ...(await (session.json() as Promise<Session>)),
-            jwt: session.headers.get("set-auth-jwt"),
-          }
-        : { isAuthenticated: false as const },
+      auth:
+        session.ok && session.body !== null
+          ? {
+              isAuthenticated: true as const,
+              ...(await (session.json() as Promise<Session>)),
+              jwt: session.headers.get("set-auth-jwt"),
+            }
+          : { isAuthenticated: false as const },
     },
   });
 });
