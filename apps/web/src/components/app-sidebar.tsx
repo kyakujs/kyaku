@@ -28,7 +28,6 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-  SidebarRail,
 } from "@kyakujs/ui/sidebar";
 
 import { AppSidebarDropdownMenu } from "~/components/app-sidebar-dropdown-menu";
@@ -102,7 +101,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props}>
+    <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -159,7 +158,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarRail />
     </Sidebar>
   );
 }
