@@ -1877,9 +1877,9 @@ __metadata:
     "@tailwindcss/vite": "npm:^4.0.14"
     "@tanstack/react-query": "npm:^5.68.0"
     "@tanstack/react-router": "npm:^1.114.17"
+    "@tanstack/react-router-devtools": "npm:^1.114.21"
     "@tanstack/react-router-with-query": "npm:^1.114.17"
     "@tanstack/react-start": "npm:^1.114.19"
-    "@tanstack/router-devtools": "npm:^1.114.21"
     "@types/node": "npm:^22.13.10"
     "@types/react": "npm:^19.0.10"
     "@types/react-dom": "npm:^19.0.4"
@@ -3792,25 +3792,6 @@ __metadata:
     csstype:
       optional: true
   checksum: 10c0/ba91104725ca0557992527dcf0395d54ae68fff4351c42715ee886a629fa2849eff8a9a42c6fc4d469b81af3ca32d0a36a23e7830fde95c2a2e2f7726cafb5d6
-  languageName: node
-  linkType: hard
-
-"@tanstack/router-devtools@npm:^1.114.21":
-  version: 1.114.21
-  resolution: "@tanstack/router-devtools@npm:1.114.21"
-  dependencies:
-    "@tanstack/react-router-devtools": "npm:^1.114.21"
-    clsx: "npm:^2.1.1"
-    goober: "npm:^2.1.16"
-  peerDependencies:
-    "@tanstack/react-router": ^1.114.17
-    csstype: ^3.0.10
-    react: ">=18.0.0 || >=19.0.0"
-    react-dom: ">=18.0.0 || >=19.0.0"
-  peerDependenciesMeta:
-    csstype:
-      optional: true
-  checksum: 10c0/0dfa8a5ad75559abe20176c1c8ac49e88d1b8565c38f6804d7371362909a51de27dba564e426204a2d9f12fbdfa7211c8252cb20225a51f1022a409577cd670d
   languageName: node
   linkType: hard
 
