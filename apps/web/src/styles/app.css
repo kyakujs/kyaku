@@ -13,6 +13,6 @@
   @apply border-border;
 }
 
-.Root {
+.root {
   isolation: isolate;
 }

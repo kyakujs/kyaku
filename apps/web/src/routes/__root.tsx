@@ -21,30 +21,28 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       auth,
     };
   },
-  head: () => {
-    return {
-      meta: [
-        {
-          charSet: "utf-8",
-        },
-        {
-          name: "viewport",
-          content:
-            "width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover",
-        },
-        {
-          title: "Kyaku",
-        },
-      ],
-      links: [
-        { rel: "stylesheet", href: appCss },
-        {
-          rel: "stylesheet",
-          href: fontsourceInter,
-        },
-      ],
-    };
-  },
+  head: () => ({
+    meta: [
+      {
+        charSet: "utf-8",
+      },
+      {
+        name: "viewport",
+        content:
+          "width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover",
+      },
+      {
+        title: "Kyaku",
+      },
+    ],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      {
+        rel: "stylesheet",
+        href: fontsourceInter,
+      },
+    ],
+  }),
   component: RootComponent,
   errorComponent: ErrorComponent,
   pendingComponent: PendingComponent,
@@ -85,7 +83,7 @@ function RootDocument({ children }: PropsWithChildren) {
         <HeadContent />
       </head>
       <body>
-        <div className="Root">{children}</div>
+        <div className="root">{children}</div>
         <RouterDevtools position="bottom-right" />
         <Scripts />
       </body>
