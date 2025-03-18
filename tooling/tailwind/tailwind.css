@@ -102,7 +102,3 @@
   --color-sidebar-border: hsl(240 3.7% 15.9%);
   --color-sidebar-ring: hsl(240 4.9% 83.9%);
 }
-
-body {
-  @apply select-none;
-}
