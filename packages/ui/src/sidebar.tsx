@@ -180,7 +180,7 @@ const Sidebar = ({
             side === "left"
               ? "left-0 group-data-[collapsible=offcanvas]:-left-(--sidebar-width)"
               : "right-0 group-data-[collapsible=offcanvas]:-right-(--sidebar-width)",
-            "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l",
+            "group-data-[collapsible=icon]:w-(--sidebar-width-icon)",
             className,
           )}
           {...props}

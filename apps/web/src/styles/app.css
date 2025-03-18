@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground select-none;
+    @apply overflow-hidden bg-sidebar-background text-foreground select-none;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;

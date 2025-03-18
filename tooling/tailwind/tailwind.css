@@ -56,6 +56,8 @@
   --color-sidebar-accent-foreground: hsl(240 5.9% 10%);
   --color-sidebar-border: hsl(220 13% 91%);
   --color-sidebar-ring: hsl(240 5% 64.9%);
+
+  --color-container: hsl(0 0% 100%);
 }
 
 .dark {
@@ -101,4 +103,6 @@
   --color-sidebar-accent-foreground: hsl(240 4.8% 95.9%);
   --color-sidebar-border: hsl(240 3.7% 15.9%);
   --color-sidebar-ring: hsl(240 4.9% 83.9%);
+
+  --color-container: hsl(240 3.03% 6.47%);
 }

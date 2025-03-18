@@ -1,6 +1,6 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-import { SidebarInset, SidebarProvider } from "@kyakujs/ui/sidebar";
+import { SidebarProvider } from "@kyakujs/ui/sidebar";
 
 import { AppSidebar } from "~/components/app-sidebar";
 
@@ -12,9 +12,11 @@ function RouteComponent() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
-        <Outlet />
-      </SidebarInset>
+      <main className="h-svh w-full overflow-hidden lg:p-2">
+        <div className="flex h-full w-full flex-col items-center justify-start overflow-hidden bg-container lg:rounded-md lg:border">
+          <Outlet />
+        </div>
+      </main>
     </SidebarProvider>
   );
 }
