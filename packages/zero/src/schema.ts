@@ -3,6 +3,7 @@ import {
   createSchema,
   definePermissions,
   NOBODY_CAN,
+  number,
   relationships,
   string,
   table,
@@ -17,6 +18,8 @@ const customer = table("customer")
     avatarUrl: string(),
     language: string(),
     timezone: string(),
+    createdById: string(),
+    updatedById: string(),
   })
   .primaryKey("id");
 
@@ -24,29 +27,135 @@ const user = table("user")
   .columns({
     id: string(),
     name: string(),
+    firstName: string(),
+    lastName: string(),
+    image: string(),
+    username: string(),
   })
   .primaryKey("id");
+
+const label = table("label")
+  .columns({
+    id: string(),
+    name: string(),
+    color: string(),
+    createdById: string(),
+    updatedById: string(),
+  })
+  .primaryKey("id");
+
+const ticketLabel = table("ticketLabel")
+  .columns({
+    ticketId: string(),
+    labelId: string(),
+    createdById: string(),
+    updatedById: string(),
+  })
+  .primaryKey("ticketId", "labelId");
 
 const ticket = table("ticket")
   .columns({
     id: string(),
+    shortId: number(),
     title: string(),
+    priority: number(),
+    status: number(),
+    customerId: string(),
+    statusDetail: number(),
     assignedToId: string(),
+    createdById: string(),
+    createdAt: number(),
+    updatedById: string(),
+    updatedAt: number(),
   })
   .primaryKey("id");
 
 // Relationships
-const ticketRelationships = relationships(ticket, ({ one }) => ({
-  sender: one({
-    sourceField: ["assignedToId"],
+export const customerRelationships = relationships(customer, ({ one }) => ({
+  createdBy: one({
+    sourceField: ["createdById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+  updatedBy: one({
+    sourceField: ["updatedById"],
     destField: ["id"],
     destSchema: user,
   }),
 }));
 
+export const labelRelationships = relationships(label, ({ one }) => ({
+  createdBy: one({
+    sourceField: ["createdById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+  updatedBy: one({
+    sourceField: ["updatedById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+}));
+
+export const ticketLabelRelationships = relationships(
+  ticketLabel,
+  ({ one }) => ({
+    ticket: one({
+      sourceField: ["ticketId"],
+      destField: ["id"],
+      destSchema: ticket,
+    }),
+    label: one({
+      sourceField: ["labelId"],
+      destField: ["id"],
+      destSchema: label,
+    }),
+    createdBy: one({
+      sourceField: ["createdById"],
+      destField: ["id"],
+      destSchema: user,
+    }),
+    updatedBy: one({
+      sourceField: ["updatedById"],
+      destField: ["id"],
+      destSchema: user,
+    }),
+  }),
+);
+
+const ticketRelationships = relationships(ticket, ({ many, one }) => ({
+  assignedTo: one({
+    sourceField: ["assignedToId"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+  customer: one({
+    sourceField: ["customerId"],
+    destField: ["id"],
+    destSchema: customer,
+  }),
+  labels: many(
+    {
+      sourceField: ["id"],
+      destField: ["ticketId"],
+      destSchema: ticketLabel,
+    },
+    {
+      sourceField: ["labelId"],
+      destField: ["id"],
+      destSchema: label,
+    },
+  ),
+}));
+
 export const schema = createSchema({
-  tables: [customer, ticket, user],
-  relationships: [ticketRelationships],
+  tables: [customer, label, ticket, ticketLabel, user],
+  relationships: [
+    customerRelationships,
+    labelRelationships,
+    ticketLabelRelationships,
+    ticketRelationships,
+  ],
 });
 
 export type Schema = typeof schema;
@@ -71,6 +180,7 @@ export const permissions: ReturnType<typeof definePermissions> =
     return {
       customer: {
         row: {
+          select: [allowIfLoggedIn],
           insert: [allowIfLoggedIn],
           update: {
             preMutation: [allowIfLoggedIn],
@@ -80,6 +190,7 @@ export const permissions: ReturnType<typeof definePermissions> =
       },
       ticket: {
         row: {
+          select: [allowIfLoggedIn],
           insert: [allowIfLoggedIn],
           update: {
             preMutation: [allowIfLoggedIn],
@@ -89,6 +200,7 @@ export const permissions: ReturnType<typeof definePermissions> =
       },
       user: {
         row: {
+          select: [allowIfLoggedIn],
           insert: NOBODY_CAN,
           update: {
             preMutation: NOBODY_CAN,
