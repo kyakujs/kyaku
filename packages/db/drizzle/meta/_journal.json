@@ -8,6 +8,13 @@
       "when": 1735035108383,
       "tag": "0000_opposite_goblin_queen",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1742405610939,
+      "tag": "0001_orange_silk_fever",
+      "breakpoints": true
     }
   ]
 }
