@@ -21,6 +21,7 @@
     "generate-migration": "yarn with-env drizzle-kit generate",
     "lint": "eslint",
     "push-migration": "yarn with-env drizzle-kit push",
+    "seed": "yarn build --emitDeclarationOnly false && yarn with-env node ./dist/seed.js",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --"
   },
@@ -36,6 +37,7 @@
     "@types/pg": "^8.11.11",
     "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.30.5",
+    "drizzle-seed": "^0.3.1",
     "eslint": "^9.22.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2"
