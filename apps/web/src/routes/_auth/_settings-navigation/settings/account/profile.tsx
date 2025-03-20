@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Input } from "@kyakujs/ui/input";
 
-import { SettingsPageHeader } from "~/components/settings-page-header";
+import { Header } from "~/components/layout/headers/settings/header";
 import { useAuthedQuery } from "~/services/auth.query";
 
 export const Route = createFileRoute(
@@ -15,7 +15,7 @@ function RouteComponent() {
   const authedQuery = useAuthedQuery();
   return (
     <>
-      <SettingsPageHeader />
+      <Header />
       <div className="mx-4 flex flex-col items-center">
         <div className="flex w-full max-w-160 flex-col gap-8 py-4 md:py-16">
           <div className="text-2xl font-semibold text-foreground">Profile</div>

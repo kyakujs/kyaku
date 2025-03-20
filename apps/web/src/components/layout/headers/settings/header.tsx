@@ -3,7 +3,7 @@ import { ChevronLeftIcon } from "lucide-react";
 
 import { SidebarTrigger } from "@kyakujs/ui/sidebar";
 
-export function SettingsPageHeader() {
+export function Header() {
   return (
     <header className="sticky top-0 z-1 flex shrink-0 items-center gap-2 border-b border-border bg-background py-2 md:hidden">
       <div className="flex items-center gap-2 px-4">

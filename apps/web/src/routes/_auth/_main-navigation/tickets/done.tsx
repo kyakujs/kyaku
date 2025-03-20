@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { AppPageHeader } from "~/components/app-page-header";
+import { Header } from "~/components/layout/headers/tickets/header";
 
 export const Route = createFileRoute("/_auth/_main-navigation/tickets/done")({
   component: RouteComponent,
@@ -9,9 +9,9 @@ export const Route = createFileRoute("/_auth/_main-navigation/tickets/done")({
 function RouteComponent() {
   return (
     <>
-      <AppPageHeader>
+      <Header>
         <h2 className="text-sm">Done</h2>
-      </AppPageHeader>
+      </Header>
       <div className="h-[calc(100svh-40px)] w-full overflow-auto lg:h-[calc(100svh-56px)]">
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">

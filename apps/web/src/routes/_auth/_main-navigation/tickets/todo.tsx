@@ -12,13 +12,13 @@ import type {
   Column,
   Ticket,
 } from "~/components/common/tickets/ticket-group-data-list";
-import { AppPageHeader } from "~/components/app-page-header";
 import { PriorityIcon } from "~/components/common/tickets/priority-icon";
 import { StatusIcon } from "~/components/common/tickets/status-icon";
 import {
   getContextualDate,
   TicketGroupDataList,
 } from "~/components/common/tickets/ticket-group-data-list";
+import { Header } from "~/components/layout/headers/tickets/header";
 
 export const Route = createFileRoute("/_auth/_main-navigation/tickets/todo")({
   component: RouteComponent,
@@ -190,9 +190,9 @@ function RouteComponent() {
 
   return (
     <>
-      <AppPageHeader>
+      <Header>
         <h2 className="text-sm">Todo</h2>
-      </AppPageHeader>
+      </Header>
       <div className="h-[calc(100svh-40px)] w-full overflow-auto lg:h-[calc(100svh-56px)]">
         <div className="h-full w-full">
           <TicketGroupDataList
