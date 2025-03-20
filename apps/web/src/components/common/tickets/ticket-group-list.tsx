@@ -5,21 +5,7 @@ import { Fragment, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-import { TicketGroupDataHeader } from "~/components/common/tickets/ticket-group-data-header";
-
-export const getContextualDate = (date: Date, locale: string) => {
-  if (date.getFullYear() === new Date().getFullYear()) {
-    return new Intl.DateTimeFormat(locale, {
-      month: "short",
-      day: "numeric",
-    }).format(date);
-  } else {
-    return new Intl.DateTimeFormat(locale, {
-      year: "numeric",
-      month: "short",
-    }).format(date);
-  }
-};
+import { TicketGroupHeader } from "~/components/common/tickets/ticket-group-header";
 
 export interface Ticket {
   id: string;
@@ -57,7 +43,7 @@ export interface DataList<T> {
 
 const ITEM_HEIGHT = 39;
 
-export function TicketGroupDataList({
+export function TicketGroupList({
   columns,
   data,
   dataList,
@@ -116,7 +102,7 @@ export function TicketGroupDataList({
             data-index={virtualRow.index}
             ref={groupVirtualizer.measureElement}
           >
-            <TicketGroupDataHeader
+            <TicketGroupHeader
               data-list-key={`GROUP_${virtualRow.index}`}
               count={groupedPriorities[virtualRow.index]?.length ?? 0}
               priority={virtualRow.index}

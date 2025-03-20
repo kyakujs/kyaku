@@ -1,18 +1,7 @@
 import { PriorityIcon } from "~/components/common/tickets/priority-icon";
+import { PriorityLabel } from "~/components/common/tickets/priority-label";
 
-export const getPriority = (priority: number) => {
-  return priority === 0 ? (
-    <span>Critical</span>
-  ) : priority === 1 ? (
-    <span>High</span>
-  ) : priority === 2 ? (
-    <span>Medium</span>
-  ) : (
-    <span>Low</span>
-  );
-};
-
-export function TicketGroupDataHeader({
+export function TicketGroupHeader({
   count,
   priority,
   ...props
@@ -27,7 +16,9 @@ export function TicketGroupDataHeader({
       {...props}
     >
       <PriorityIcon priority={priority} />
-      <span className="text-foreground">{getPriority(priority)}</span>
+      <span className="text-foreground">
+        <PriorityLabel priority={priority} />
+      </span>
       <span className="text-muted-foreground">{count}</span>
     </div>
   );
