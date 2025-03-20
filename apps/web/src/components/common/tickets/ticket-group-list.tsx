@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 "use no memo";
 
 import type { JSX } from "react";
@@ -35,7 +36,7 @@ export type Column<T> = {
   cell: ({ row, dataList }: { row: T; dataList: DataList<T> }) => JSX.Element;
 }[];
 
-export interface DataList<T> {
+export interface DataList<_T> {
   rowSelection: string[];
   isRowSelected: (rowId: string) => boolean;
   onRowSelectionChange: (rowId: string) => void;
