@@ -11,7 +11,7 @@
     "format": "prettier --check . --ignore-path ../../.gitignore"
   },
   "dependencies": {
-    "tailwindcss": "^4.0.14"
+    "tailwindcss": "^4.0.15"
   },
   "devDependencies": {
     "@kyakujs/prettier-config": "workspace:*",
