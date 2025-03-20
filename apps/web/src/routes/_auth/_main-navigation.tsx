@@ -2,7 +2,7 @@ import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 import { SidebarProvider } from "@kyakujs/ui/sidebar";
 
-import { AppSidebar } from "~/components/app-sidebar";
+import { AppSidebar } from "~/components/layout/sidebars/app-sidebar";
 
 export const Route = createFileRoute("/_auth/_main-navigation")({
   component: RouteComponent,

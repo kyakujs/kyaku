@@ -30,10 +30,10 @@ import {
   SidebarMenuSubItem,
 } from "@kyakujs/ui/sidebar";
 
-import { AppSidebarDropdownMenu } from "~/components/app-sidebar-dropdown-menu";
+import { WorkspaceMenu } from "~/components/layout/sidebars/workspace-menu";
 
 const data = {
-  navMain: [
+  workspace: [
     {
       title: "All tickets",
       url: "/tickets/all",
@@ -118,7 +118,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 }
               ></DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="min-w-48">
-                <AppSidebarDropdownMenu />
+                <WorkspaceMenu />
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
@@ -134,7 +134,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
-            {data.navMain.map((item) => (
+            {data.workspace.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
                   <Link to={item.url} className="font-medium">

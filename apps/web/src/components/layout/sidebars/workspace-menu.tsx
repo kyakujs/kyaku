@@ -8,7 +8,7 @@ import {
 
 import { authClient } from "~/libs/auth-client";
 
-export function AppSidebarDropdownMenu() {
+export function WorkspaceMenu() {
   return (
     <>
       <DropdownMenuItem
