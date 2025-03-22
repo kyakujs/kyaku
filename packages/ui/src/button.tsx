@@ -1,7 +1,7 @@
 import type { VariantProps } from "class-variance-authority";
 import type { ComponentProps } from "react";
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
+import { mergeProps, useRender } from "@base-ui-components/react";
 import { cva } from "class-variance-authority";
 
 import { cn } from "@kyakujs/ui";
@@ -38,26 +38,26 @@ const buttonVariants = cva(
 
 interface ButtonProps
   extends ComponentProps<"button">,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+    VariantProps<typeof buttonVariants>,
+    useRender.ComponentProps<"button"> {}
 
 const Button = ({
   className,
   variant,
   size,
-  asChild = false,
+  render = <button />,
   ref,
   ...props
 }: ButtonProps) => {
-  const Comp = asChild ? Slot : "button";
-  return (
-    <Comp
-      className={cn(buttonVariants({ variant, size, className }))}
-      ref={ref}
-      {...props}
-    />
-  );
+  const defaultProps: useRender.ElementProps<"button"> = {
+    className: cn(buttonVariants({ variant, size, className })),
+    ref: ref,
+  };
+  const { renderElement } = useRender({
+    render,
+    props: mergeProps<"button">(defaultProps, props),
+  });
+  return renderElement();
 };
 Button.displayName = "Button";
 

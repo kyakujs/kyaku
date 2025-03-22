@@ -42,13 +42,16 @@ export function SettingsSidebar({
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton className="w-fit px-1.5" asChild>
-              {/* TODO: return to previous page */}
-              <Link to="/">
-                <ChevronLeftIcon />
-                <span className="">Go back</span>
-              </Link>
-            </SidebarMenuButton>
+            <SidebarMenuButton
+              className="w-fit px-1.5"
+              render={
+                /* TODO: return to previous page */
+                <Link to="/">
+                  <ChevronLeftIcon />
+                  <span className="">Go back</span>
+                </Link>
+              }
+            />
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
@@ -62,9 +65,9 @@ export function SettingsSidebar({
                   <SidebarMenu>
                     {item.items.map((item) => (
                       <SidebarMenuItem key={item.title}>
-                        <SidebarMenuSubButton asChild>
-                          <Link to={item.url}>{item.title}</Link>
-                        </SidebarMenuSubButton>
+                        <SidebarMenuSubButton
+                          render={<Link to={item.url}>{item.title}</Link>}
+                        />
                       </SidebarMenuItem>
                     ))}
                   </SidebarMenu>

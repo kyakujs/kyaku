@@ -122,12 +122,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
-          <SidebarMenuButton asChild>
-            <Link to="/search">
-              <SearchIcon />
-              <span>Search</span>
-            </Link>
-          </SidebarMenuButton>
+          <SidebarMenuButton
+            render={
+              <Link to="/search">
+                <SearchIcon />
+                <span>Search</span>
+              </Link>
+            }
+          />
         </SidebarMenu>
         <SidebarMenu></SidebarMenu>
       </SidebarHeader>
@@ -136,19 +138,21 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>
             {data.workspace.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
-                  <Link to={item.url} className="font-medium">
-                    <item.icon />
-                    {item.title}
-                  </Link>
-                </SidebarMenuButton>
+                <SidebarMenuButton
+                  render={
+                    <Link to={item.url} className="font-medium">
+                      <item.icon />
+                      {item.title}
+                    </Link>
+                  }
+                />
                 {item.items.length ? (
                   <SidebarMenuSub>
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild>
-                          <Link to={item.url}>{item.title}</Link>
-                        </SidebarMenuSubButton>
+                        <SidebarMenuSubButton
+                          render={<Link to={item.url}>{item.title}</Link>}
+                        />
                       </SidebarMenuSubItem>
                     ))}
                   </SidebarMenuSub>
