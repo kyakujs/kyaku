@@ -359,16 +359,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/utils@npm:0.2.3":
-  version: 0.2.3
-  resolution: "@better-auth/utils@npm:0.2.3"
+"@better-auth/utils@npm:0.2.4":
+  version: 0.2.4
+  resolution: "@better-auth/utils@npm:0.2.4"
   dependencies:
+    typescript: "npm:^5.8.2"
     uncrypto: "npm:^0.1.3"
-  checksum: 10c0/57678bbba1f9377af660d8924e4bb19383714fcbb226aa80137ee7b9c504424b3e95191375d098c92304a0de86f0bf0bf4c589c238f8f7763f963cc815dfe6b6
+  checksum: 10c0/1e66ede79400204185a6d12e946f91ddb1307b758a64bd2d39f7f9bdc3df99a72c74a4695d82e2679e1345d2467280444e973a9fb196a3a0c2315a482d87d973
   languageName: node
   linkType: hard
 
-"@better-fetch/fetch@npm:^1.1.15, @better-fetch/fetch@npm:^1.1.4":
+"@better-fetch/fetch@npm:^1.1.17":
+  version: 1.1.18
+  resolution: "@better-fetch/fetch@npm:1.1.18"
+  checksum: 10c0/b8202e4d3dbcd52fd8b5b2f255817606c300f37c60b1d9876f560372b77f66cb6d730e72e2c9b35bca06a1e364ed9d08977c0e8c2ce0ee30fdb4c6f43aae9433
+  languageName: node
+  linkType: hard
+
+"@better-fetch/fetch@npm:^1.1.4":
   version: 1.1.15
   resolution: "@better-fetch/fetch@npm:1.1.15"
   checksum: 10c0/5ac549ba0e693e242c2f944ab2ad216004630a62f90d11833317bce90bb7895ccf6df4ac1cb4acaad13fcd25e5f51d60e088e78ae58c80315d1782ac50eb4edc
@@ -1762,7 +1770,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.2.4"
+    better-auth: "npm:^1.2.5"
     eslint: "npm:^9.23.0"
     prettier: "npm:^3.5.3"
     typescript: "npm:^5.8.2"
@@ -4799,36 +4807,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.2.4":
-  version: 1.2.4
-  resolution: "better-auth@npm:1.2.4"
+"better-auth@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "better-auth@npm:1.2.5"
   dependencies:
-    "@better-auth/utils": "npm:0.2.3"
-    "@better-fetch/fetch": "npm:^1.1.15"
+    "@better-auth/utils": "npm:0.2.4"
+    "@better-fetch/fetch": "npm:^1.1.17"
     "@noble/ciphers": "npm:^0.6.0"
     "@noble/hashes": "npm:^1.6.1"
     "@simplewebauthn/browser": "npm:^13.0.0"
     "@simplewebauthn/server": "npm:^13.0.0"
-    better-call: "npm:^1.0.3"
+    better-call: "npm:^1.0.5"
     defu: "npm:^6.1.4"
     jose: "npm:^5.9.6"
     kysely: "npm:^0.27.6"
     nanostores: "npm:^0.11.3"
     valibot: "npm:1.0.0-beta.15"
     zod: "npm:^3.24.1"
-  checksum: 10c0/68bfb202dd83a1c92d7a02b04bedf21d24f7f9536351dd0adb507b5add81c91838901cb5a84526b94bc524be8f2aba41baed748716718064564211292fe1b7b9
+  checksum: 10c0/0ed2b2f1261e6084764399ce2fa6a287151b2bb168a8af73a9908dd4ca43677f9bcbf8d78a0aec3c36d254a2778466f0c6a68d4cb2ad4c1380c1f4c08db8f455
   languageName: node
   linkType: hard
 
-"better-call@npm:^1.0.3":
-  version: 1.0.4
-  resolution: "better-call@npm:1.0.4"
+"better-call@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "better-call@npm:1.0.5"
   dependencies:
     "@better-fetch/fetch": "npm:^1.1.4"
     rou3: "npm:^0.5.1"
     set-cookie-parser: "npm:^2.7.1"
     uncrypto: "npm:^0.1.3"
-  checksum: 10c0/f890986745a1311a2d561b32032eeb10345816b8ac63e42554a4f2a46698ab1155e775e8ca1f1f9e5891c8599d745aa1cc75e904b7164a6838db57c5af2f91e2
+  checksum: 10c0/765d41a05bfa798b4245534c8b8ca5153a235d09af156191fcfa7c3646cc9044c52b3f73e57869992a484e5fc23e3773c23eef8d1cb20577c4387da700a5ac49
   languageName: node
   linkType: hard
 
