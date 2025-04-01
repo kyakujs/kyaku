@@ -93,12 +93,8 @@
           "name": "account_userId_user_id_fk",
           "tableFrom": "account",
           "tableTo": "user",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -199,12 +195,8 @@
           "name": "customer_createdById_user_id_fk",
           "tableFrom": "customer",
           "tableTo": "user",
-          "columnsFrom": [
-            "createdById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["createdById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -212,12 +204,8 @@
           "name": "customer_updatedById_user_id_fk",
           "tableFrom": "customer",
           "tableTo": "user",
-          "columnsFrom": [
-            "updatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["updatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         }
@@ -325,12 +313,8 @@
           "name": "label_createdById_user_id_fk",
           "tableFrom": "label",
           "tableTo": "user",
-          "columnsFrom": [
-            "createdById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["createdById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -338,12 +322,8 @@
           "name": "label_updatedById_user_id_fk",
           "tableFrom": "label",
           "tableTo": "user",
-          "columnsFrom": [
-            "updatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["updatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         }
@@ -419,12 +399,8 @@
           "name": "session_userId_user_id_fk",
           "tableFrom": "session",
           "tableTo": "user",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -434,9 +410,7 @@
         "session_token_unique": {
           "name": "session_token_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token"
-          ]
+          "columns": ["token"]
         }
       },
       "policies": {},
@@ -541,12 +515,8 @@
           "name": "ticket_statusChangedById_user_id_fk",
           "tableFrom": "ticket",
           "tableTo": "user",
-          "columnsFrom": [
-            "statusChangedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["statusChangedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -554,12 +524,8 @@
           "name": "ticket_assignedToId_user_id_fk",
           "tableFrom": "ticket",
           "tableTo": "user",
-          "columnsFrom": [
-            "assignedToId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["assignedToId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -567,12 +533,8 @@
           "name": "ticket_customerId_customer_id_fk",
           "tableFrom": "ticket",
           "tableTo": "customer",
-          "columnsFrom": [
-            "customerId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["customerId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -580,12 +542,8 @@
           "name": "ticket_createdById_user_id_fk",
           "tableFrom": "ticket",
           "tableTo": "user",
-          "columnsFrom": [
-            "createdById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["createdById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -593,12 +551,8 @@
           "name": "ticket_updatedById_user_id_fk",
           "tableFrom": "ticket",
           "tableTo": "user",
-          "columnsFrom": [
-            "updatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["updatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         }
@@ -608,9 +562,7 @@
         "ticket_shortId_unique": {
           "name": "ticket_shortId_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "shortId"
-          ]
+          "columns": ["shortId"]
         }
       },
       "policies": {},
@@ -665,12 +617,8 @@
           "name": "ticketLabel_ticketId_ticket_id_fk",
           "tableFrom": "ticketLabel",
           "tableTo": "ticket",
-          "columnsFrom": [
-            "ticketId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["ticketId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -678,12 +626,8 @@
           "name": "ticketLabel_labelId_label_id_fk",
           "tableFrom": "ticketLabel",
           "tableTo": "label",
-          "columnsFrom": [
-            "labelId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["labelId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -691,12 +635,8 @@
           "name": "ticketLabel_createdById_user_id_fk",
           "tableFrom": "ticketLabel",
           "tableTo": "user",
-          "columnsFrom": [
-            "createdById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["createdById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -704,12 +644,8 @@
           "name": "ticketLabel_updatedById_user_id_fk",
           "tableFrom": "ticketLabel",
           "tableTo": "user",
-          "columnsFrom": [
-            "updatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["updatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         }
@@ -717,10 +653,7 @@
       "compositePrimaryKeys": {
         "ticketLabel_ticketId_labelId_pk": {
           "name": "ticketLabel_ticketId_labelId_pk",
-          "columns": [
-            "ticketId",
-            "labelId"
-          ]
+          "columns": ["ticketId", "labelId"]
         }
       },
       "uniqueConstraints": {},
@@ -807,12 +740,8 @@
           "name": "ticketTimelineEntry_ticketId_ticket_id_fk",
           "tableFrom": "ticketTimelineEntry",
           "tableTo": "ticket",
-          "columnsFrom": [
-            "ticketId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["ticketId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -820,12 +749,8 @@
           "name": "ticketTimelineEntry_customerId_customer_id_fk",
           "tableFrom": "ticketTimelineEntry",
           "tableTo": "customer",
-          "columnsFrom": [
-            "customerId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["customerId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -833,12 +758,8 @@
           "name": "ticketTimelineEntry_customerCreatedById_customer_id_fk",
           "tableFrom": "ticketTimelineEntry",
           "tableTo": "customer",
-          "columnsFrom": [
-            "customerCreatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["customerCreatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -846,12 +767,8 @@
           "name": "ticketTimelineEntry_userCreatedById_user_id_fk",
           "tableFrom": "ticketTimelineEntry",
           "tableTo": "user",
-          "columnsFrom": [
-            "userCreatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userCreatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -859,12 +776,8 @@
           "name": "ticketTimelineEntry_customerUpdatedById_customer_id_fk",
           "tableFrom": "ticketTimelineEntry",
           "tableTo": "customer",
-          "columnsFrom": [
-            "customerUpdatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["customerUpdatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         },
@@ -872,12 +785,8 @@
           "name": "ticketTimelineEntry_userUpdatedById_user_id_fk",
           "tableFrom": "ticketTimelineEntry",
           "tableTo": "user",
-          "columnsFrom": [
-            "userUpdatedById"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userUpdatedById"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "cascade"
         }
@@ -984,16 +893,12 @@
         "user_email_unique": {
           "name": "user_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         },
         "user_username_unique": {
           "name": "user_username_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "username"
-          ]
+          "columns": ["username"]
         }
       },
       "policies": {},
