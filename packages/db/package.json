@@ -26,6 +26,7 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@kyakujs/kyaku": "workspace:*",
     "drizzle-orm": "^0.41.0",
     "pg": "^8.14.1"
   },

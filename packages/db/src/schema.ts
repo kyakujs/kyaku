@@ -1,6 +1,8 @@
 import {
   boolean,
   integer,
+  json,
+  pgEnum,
   pgTable,
   primaryKey,
   serial,
@@ -9,6 +11,9 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm/relations";
+
+import type { TicketTimelineEntry } from "@kyakujs/kyaku";
+import { TimelineEntryType } from "@kyakujs/kyaku";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -150,7 +155,6 @@ export const ticketLabel = pgTable(
         onDelete: "restrict",
         onUpdate: "cascade",
       }),
-
     ...lifecycleFields,
   },
   (table) => {
@@ -176,6 +180,89 @@ export const ticketLabelRelations = relations(ticketLabel, ({ one }) => ({
     references: [user.id],
   }),
 }));
+
+export const ticketTimelineEntryType = pgEnum("ticketTimelineEntryType", [
+  TimelineEntryType.AssignmentChanged,
+  TimelineEntryType.Chat,
+  TimelineEntryType.LabelsChanged,
+  TimelineEntryType.Note,
+  TimelineEntryType.PriorityChanged,
+  TimelineEntryType.StatusChanged,
+]);
+
+export const ticketTimelineEntry = pgTable("ticketTimelineEntry", {
+  id: varchar("id").primaryKey().notNull(),
+  type: ticketTimelineEntryType("type").notNull(),
+  entry: json("entry").notNull().$type<TicketTimelineEntry>(),
+  ticketId: varchar("ticketId")
+    .notNull()
+    .references(() => ticket.id, {
+      onDelete: "restrict",
+      onUpdate: "cascade",
+    }),
+  customerId: varchar("customerId")
+    .notNull()
+    .references(() => customer.id, {
+      onDelete: "restrict",
+      onUpdate: "cascade",
+    }),
+  createdAt: timestamp("createdAt", { precision: 3, mode: "date" })
+    .defaultNow()
+    .notNull(),
+  customerCreatedById: varchar("customerCreatedById").references(
+    () => customer.id,
+    {
+      onDelete: "restrict",
+      onUpdate: "cascade",
+    },
+  ),
+  userCreatedById: varchar("userCreatedById").references(() => user.id, {
+    onDelete: "restrict",
+    onUpdate: "cascade",
+  }),
+  updatedAt: timestamp("updatedAt", { precision: 3, mode: "date" }),
+  customerUpdatedById: varchar("customerUpdatedById").references(
+    () => customer.id,
+    {
+      onDelete: "restrict",
+      onUpdate: "cascade",
+    },
+  ),
+  userUpdatedById: varchar("userUpdatedById").references(() => user.id, {
+    onDelete: "restrict",
+    onUpdate: "cascade",
+  }),
+});
+
+export const ticketTimelineEntryRelations = relations(
+  ticketTimelineEntry,
+  ({ one }) => ({
+    customer: one(customer, {
+      fields: [ticketTimelineEntry.customerId],
+      references: [customer.id],
+    }),
+    customerCreatedBy: one(customer, {
+      fields: [ticketTimelineEntry.customerCreatedById],
+      references: [customer.id],
+    }),
+    userCreatedBy: one(user, {
+      fields: [ticketTimelineEntry.userCreatedById],
+      references: [user.id],
+    }),
+    customerUpdatedBy: one(user, {
+      fields: [ticketTimelineEntry.customerUpdatedById],
+      references: [user.id],
+    }),
+    userUpdatedBy: one(user, {
+      fields: [ticketTimelineEntry.userUpdatedById],
+      references: [user.id],
+    }),
+    ticket: one(ticket, {
+      fields: [ticketTimelineEntry.ticketId],
+      references: [ticket.id],
+    }),
+  }),
+);
 
 export const ticket = pgTable("ticket", {
   id: text("id").primaryKey().notNull(),
@@ -224,4 +311,5 @@ export const ticketRelations = relations(ticket, ({ one, many }) => ({
     references: [user.id],
   }),
   labels: many(label),
+  timelineEntries: many(ticketTimelineEntry),
 }));

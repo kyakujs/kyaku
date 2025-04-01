@@ -1,33 +1,27 @@
 {
-  "name": "@kyakujs/zero",
+  "name": "@kyakujs/kyaku",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    "./schema": {
-      "types": "./dist/schema.d.ts",
-      "default": "./src/schema.ts"
+    ".": {
+      "types": "./dist/src/ticket.d.ts",
+      "default": "./src/ticket.ts"
     }
   },
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "yarn with-env zero-cache-dev -p src/schema.ts",
+    "dev": "tsc",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "with-env": "dotenv -e ../../.env --"
-  },
-  "dependencies": {
-    "@kyakujs/kyaku": "workspace:*",
-    "@rocicorp/zero": "^0.17.2025031904"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
-    "dotenv-cli": "^8.0.0",
     "eslint": "^9.23.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2"

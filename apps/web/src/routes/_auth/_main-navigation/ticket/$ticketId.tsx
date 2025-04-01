@@ -24,11 +24,19 @@ export const Route = createFileRoute(
 function RouteComponent() {
   const z = useZero<Schema>();
   const { ticketId } = Route.useParams();
-  const [data] = useQuery(z.query.ticket.where("id", ticketId).one());
+  const [data] = useQuery(
+    z.query.ticket.related("timelineEntries").where("id", ticketId).one(),
+  );
   return (
     <div>
       <h2>{data?.id}</h2>
       <p>{data?.title}</p>
+      {data?.timelineEntries.map((entry) => (
+        <div key={entry.id}>
+          <p>{entry.type}</p>
+          <p>{JSON.stringify(entry.entry)}</p>
+        </div>
+      ))}
     </div>
   );
 }

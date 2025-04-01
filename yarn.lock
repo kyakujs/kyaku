@@ -1775,6 +1775,7 @@ __metadata:
   resolution: "@kyakujs/db@workspace:packages/db"
   dependencies:
     "@kyakujs/eslint-config": "workspace:*"
+    "@kyakujs/kyaku": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
@@ -1809,6 +1810,20 @@ __metadata:
     prettier: "npm:^3.5.3"
     typescript: "npm:^5.8.2"
     typescript-eslint: "npm:^8.29.0"
+  languageName: unknown
+  linkType: soft
+
+"@kyakujs/kyaku@workspace:*, @kyakujs/kyaku@workspace:packages/kyaku":
+  version: 0.0.0-use.local
+  resolution: "@kyakujs/kyaku@workspace:packages/kyaku"
+  dependencies:
+    "@kyakujs/eslint-config": "workspace:*"
+    "@kyakujs/prettier-config": "workspace:*"
+    "@kyakujs/tailwind-config": "workspace:*"
+    "@kyakujs/tsconfig": "workspace:*"
+    eslint: "npm:^9.23.0"
+    prettier: "npm:^3.5.3"
+    typescript: "npm:^5.8.2"
   languageName: unknown
   linkType: soft
 
@@ -1904,6 +1919,7 @@ __metadata:
   resolution: "@kyakujs/zero@workspace:packages/zero"
   dependencies:
     "@kyakujs/eslint-config": "workspace:*"
+    "@kyakujs/kyaku": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"

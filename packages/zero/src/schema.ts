@@ -2,12 +2,16 @@ import type { ExpressionBuilder, Row } from "@rocicorp/zero";
 import {
   createSchema,
   definePermissions,
+  enumeration,
+  json,
   NOBODY_CAN,
   number,
   relationships,
   string,
   table,
 } from "@rocicorp/zero";
+
+import type { TicketTimelineEntry, TimelineEntryType } from "@kyakujs/kyaku";
 
 const customer = table("customer")
   .columns({
@@ -67,6 +71,15 @@ const ticket = table("ticket")
     createdAt: number(),
     updatedById: string(),
     updatedAt: number(),
+  })
+  .primaryKey("id");
+
+const ticketTimelineEntry = table("ticketTimelineEntry")
+  .columns({
+    id: string(),
+    ticketId: string(),
+    type: enumeration<TimelineEntryType>(),
+    entry: json<TicketTimelineEntry>(),
   })
   .primaryKey("id");
 
@@ -146,15 +159,32 @@ const ticketRelationships = relationships(ticket, ({ many, one }) => ({
       destSchema: label,
     },
   ),
+  timelineEntries: many({
+    sourceField: ["id"],
+    destField: ["ticketId"],
+    destSchema: ticketTimelineEntry,
+  }),
 }));
 
+const ticketTimelineEntryRelationships = relationships(
+  ticketTimelineEntry,
+  ({ one }) => ({
+    ticket: one({
+      sourceField: ["ticketId"],
+      destField: ["id"],
+      destSchema: ticket,
+    }),
+  }),
+);
+
 export const schema = createSchema({
-  tables: [customer, label, ticket, ticketLabel, user],
+  tables: [customer, label, ticket, ticketLabel, ticketTimelineEntry, user],
   relationships: [
     customerRelationships,
     labelRelationships,
     ticketLabelRelationships,
     ticketRelationships,
+    ticketTimelineEntryRelationships,
   ],
 });
 
@@ -189,6 +219,16 @@ export const permissions: ReturnType<typeof definePermissions> =
         },
       },
       ticket: {
+        row: {
+          select: [allowIfLoggedIn],
+          insert: [allowIfLoggedIn],
+          update: {
+            preMutation: [allowIfLoggedIn],
+          },
+          delete: NOBODY_CAN,
+        },
+      },
+      ticketTimelineEntry: {
         row: {
           select: [allowIfLoggedIn],
           insert: [allowIfLoggedIn],

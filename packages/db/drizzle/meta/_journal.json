@@ -15,6 +15,13 @@
       "when": 1742405610939,
       "tag": "0001_orange_silk_fever",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1743454647161,
+      "tag": "0002_yummy_shiva",
+      "breakpoints": true
     }
   ]
 }
