@@ -213,6 +213,7 @@ export const permissions: ReturnType<typeof definePermissions> =
           select: [allowIfLoggedIn],
           insert: [allowIfLoggedIn],
           update: {
+            postMutation: [allowIfLoggedIn],
             preMutation: [allowIfLoggedIn],
           },
           delete: NOBODY_CAN,
@@ -223,6 +224,7 @@ export const permissions: ReturnType<typeof definePermissions> =
           select: [allowIfLoggedIn],
           insert: [allowIfLoggedIn],
           update: {
+            postMutation: [allowIfLoggedIn],
             preMutation: [allowIfLoggedIn],
           },
           delete: NOBODY_CAN,
@@ -233,6 +235,7 @@ export const permissions: ReturnType<typeof definePermissions> =
           select: [allowIfLoggedIn],
           insert: [allowIfLoggedIn],
           update: {
+            postMutation: [allowIfLoggedIn],
             preMutation: [allowIfLoggedIn],
           },
           delete: NOBODY_CAN,
@@ -243,6 +246,7 @@ export const permissions: ReturnType<typeof definePermissions> =
           select: [allowIfLoggedIn],
           insert: NOBODY_CAN,
           update: {
+            postMutation: NOBODY_CAN,
             preMutation: NOBODY_CAN,
           },
           delete: NOBODY_CAN,
