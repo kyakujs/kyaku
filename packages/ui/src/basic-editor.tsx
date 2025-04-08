@@ -1,4 +1,4 @@
-import type { DOMOutputSpec, NodeSpec } from "prosemirror-model";
+import type { NodeSpec } from "prosemirror-model";
 import type { Transaction } from "prosemirror-state";
 import { useCallback, useState } from "react";
 import {
@@ -11,22 +11,12 @@ import { keymap } from "prosemirror-keymap";
 import { Schema } from "prosemirror-model";
 import { EditorState } from "prosemirror-state";
 
-const pDOM: DOMOutputSpec = ["p", 0];
+import { areStatesEqual } from "./utils/prosemirror";
 
 const schema = new Schema({
   nodes: {
     doc: {
-      content: "block+",
-    } as NodeSpec,
-    /// A plain paragraph textblock. Represented in the DOM
-    /// as a `<p>` element.
-    paragraph: {
       content: "inline*",
-      group: "block",
-      parseDOM: [{ tag: "p" }],
-      toDOM() {
-        return pDOM;
-      },
     } as NodeSpec,
     text: {
       group: "inline",
@@ -42,16 +32,24 @@ const plugins = [
 ];
 
 export interface BasicEditorProps {
-  value: any | undefined;
-  onChange: (value: any) => void;
-  onBlur?: () => void;
+  defaultValue: string;
+  onChange?: (value: string) => void;
+  onBlur?: (value: string) => void;
 }
 
-const BasicEditor = ({ value, onChange, onBlur }: BasicEditorProps) => {
+const BasicEditor = ({ defaultValue, onChange, onBlur }: BasicEditorProps) => {
   const [state, setState] = useState(
     EditorState.create({
       schema,
-      doc: value ? schema.nodeFromJSON(value) : undefined,
+      doc: schema.nodeFromJSON({
+        type: "doc",
+        content: [
+          {
+            type: "text",
+            text: defaultValue,
+          },
+        ],
+      }),
       plugins: [history(), reactKeys()],
     }),
   );
@@ -60,8 +58,8 @@ const BasicEditor = ({ value, onChange, onBlur }: BasicEditorProps) => {
     (tr: Transaction) => {
       setState((prev) => {
         const newState = prev.apply(tr);
-        if (!prev.doc.eq(newState.doc)) {
-          onChange(newState.doc.toJSON());
+        if (!areStatesEqual(prev, newState)) {
+          onChange?.(newState.doc.textContent);
         }
         return newState;
       });
@@ -75,7 +73,7 @@ const BasicEditor = ({ value, onChange, onBlur }: BasicEditorProps) => {
       dispatchTransaction={dispatchTransaction}
       handleDOMEvents={{
         blur: (_, __) => {
-          onBlur?.();
+          onBlur?.(state.doc.textContent);
         },
       }}
       plugins={plugins}
