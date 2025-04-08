@@ -1,4 +1,4 @@
-import type { NodeSpec } from "prosemirror-model";
+import type { Node, NodeSpec } from "prosemirror-model";
 import type { Transaction } from "prosemirror-state";
 import { useCallback, useState } from "react";
 import {
@@ -37,19 +37,27 @@ export interface BasicEditorProps {
   onBlur?: (value: string) => void;
 }
 
+const serializeValue = (value: string) => {
+  return schema.nodeFromJSON({
+    type: "doc",
+    content: [
+      {
+        type: "text",
+        text: value,
+      },
+    ],
+  });
+};
+
+const deserializeValue = (node: Node) => {
+  return node.textContent;
+};
+
 const BasicEditor = ({ defaultValue, onChange, onBlur }: BasicEditorProps) => {
   const [state, setState] = useState(
     EditorState.create({
       schema,
-      doc: schema.nodeFromJSON({
-        type: "doc",
-        content: [
-          {
-            type: "text",
-            text: defaultValue,
-          },
-        ],
-      }),
+      doc: serializeValue(defaultValue),
       plugins: [history(), reactKeys()],
     }),
   );
@@ -59,7 +67,7 @@ const BasicEditor = ({ defaultValue, onChange, onBlur }: BasicEditorProps) => {
       setState((prev) => {
         const newState = prev.apply(tr);
         if (!areStatesEqual(prev, newState)) {
-          onChange?.(newState.doc.textContent);
+          onChange?.(deserializeValue(newState.doc));
         }
         return newState;
       });
@@ -73,7 +81,7 @@ const BasicEditor = ({ defaultValue, onChange, onBlur }: BasicEditorProps) => {
       dispatchTransaction={dispatchTransaction}
       handleDOMEvents={{
         blur: (_, __) => {
-          onBlur?.(state.doc.textContent);
+          onBlur?.(deserializeValue(state.doc));
         },
       }}
       plugins={plugins}
