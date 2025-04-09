@@ -268,6 +268,7 @@ export const ticket = pgTable("ticket", {
   id: text("id").primaryKey().notNull(),
   shortId: serial("shortId").unique(),
   title: text("title"),
+  description: text("description"),
   priority: integer("priority"),
   status: integer("status").notNull().default(0),
   statusDetail: integer("statusDetail").default(0),

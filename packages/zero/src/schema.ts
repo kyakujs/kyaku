@@ -13,6 +13,11 @@ import {
 
 import type { TicketTimelineEntry, TimelineEntryType } from "@kyakujs/kyaku";
 
+// Status : 0 = Todo, 1 = Snoozed, 2 = Done
+// Status detail : 0 = Created (Needs first response), 1 = In progress (Investigating), 2 = New reply (Needs next response)
+//                 3 = Waiting for customer, 4 = Waiting for duration
+//                 5 = Ignored, 6 = Done manually set, 7 = Done automatically set
+
 const customer = table("customer")
   .columns({
     id: string(),
@@ -62,6 +67,7 @@ const ticket = table("ticket")
     id: string(),
     shortId: number(),
     title: string(),
+    description: string(),
     priority: number(),
     status: number(),
     customerId: string(),
