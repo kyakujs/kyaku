@@ -13,6 +13,10 @@
   @apply border-border;
 }
 
+:focus-visible {
+  @apply outline-1 outline-sidebar-ring;
+}
+
 .root {
   isolation: isolate;
 }
