@@ -8,6 +8,7 @@ export const authQueryOptions = () =>
   queryOptions({
     queryKey: ["getAuth"],
     queryFn: () => getAuth(),
+    refetchInterval: 1000 * 60 * 15, // 15 minutes - default expiration time for JWT
   });
 
 export const useAuthQuery = () => {
