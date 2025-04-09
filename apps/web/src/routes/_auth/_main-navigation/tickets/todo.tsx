@@ -187,7 +187,7 @@ function RouteComponent() {
   );
 
   return (
-    <>
+    <div className="flex w-full flex-col">
       <Header>
         <h2 className="text-sm">Todo</h2>
       </Header>
@@ -204,6 +204,6 @@ function RouteComponent() {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
