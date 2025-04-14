@@ -35,7 +35,7 @@
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
-    "@types/pg": "^8.11.12",
+    "@types/pg": "^8.11.13",
     "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.30.6",
     "drizzle-seed": "^0.3.1",
