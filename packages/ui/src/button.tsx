@@ -41,14 +41,14 @@ interface ButtonProps
     VariantProps<typeof buttonVariants>,
     useRender.ComponentProps<"button"> {}
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   className,
   variant,
   size,
   render = <button />,
   ref,
   ...props
-}: ButtonProps) => {
+}) => {
   const defaultProps: useRender.ElementProps<"button"> = {
     className: cn(buttonVariants({ variant, size, className })),
     ref: ref,
