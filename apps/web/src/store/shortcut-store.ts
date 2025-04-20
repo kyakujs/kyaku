@@ -57,7 +57,6 @@ export const useShortcutStore = create<ShortcutState>((set, get) => ({
         shortcut.enableOnInteractiveElement,
       )
     ) {
-      // Execute the shortcut action here
       console.log(`Shortcut triggered: ${shortcut.id}`);
       shortcut.action(event);
     }

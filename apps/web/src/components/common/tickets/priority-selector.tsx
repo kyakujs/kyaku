@@ -153,12 +153,14 @@ export function PrioritySelector({
                         <item.icon className="size-4 text-muted-foreground" />
                         {item.name}
                       </div>
-                      {value === item.id && (
+                      {value === item.id ? (
                         <CheckIcon size={16} className="ml-auto" />
-                      )}
-                      <span className="text-xs text-muted-foreground">
-                        {item.shortcut}
-                      </span>
+                      ) : null}
+                      {!searchValue ? (
+                        <span className="text-xs text-muted-foreground">
+                          {item.shortcut}
+                        </span>
+                      ) : null}
                     </CommandItem>
                   ))}
                 </CommandGroup>
