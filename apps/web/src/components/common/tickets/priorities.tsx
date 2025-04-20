@@ -109,7 +109,7 @@ export interface Priority {
   name: string;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   value: number | undefined;
-  shortcut: number;
+  shortcut: string;
 }
 
 export const priorities: Priority[] = [
@@ -118,22 +118,22 @@ export const priorities: Priority[] = [
     name: "No priority",
     icon: NoPriorityIcon,
     value: undefined,
-    shortcut: 0,
+    shortcut: "0",
   },
   {
     id: "urgent",
     name: "Urgent",
     icon: UrgentPriorityIcon,
     value: 0,
-    shortcut: 1,
+    shortcut: "1",
   },
-  { id: "high", name: "High", icon: HighPriorityIcon, value: 1, shortcut: 2 },
+  { id: "high", name: "High", icon: HighPriorityIcon, value: 1, shortcut: "2" },
   {
     id: "medium",
     name: "Medium",
     icon: MediumPriorityIcon,
     value: 2,
-    shortcut: 3,
+    shortcut: "3",
   },
-  { id: "low", name: "Low", icon: LowPriorityIcon, value: 3, shortcut: 4 },
+  { id: "low", name: "Low", icon: LowPriorityIcon, value: 3, shortcut: "4" },
 ];

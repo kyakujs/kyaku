@@ -20,6 +20,8 @@ import {
 } from "@kyakujs/ui/popover";
 
 import type { Priority } from "./priorities";
+import type { Shortcut } from "~/store/shortcut-store";
+import { useShortcutStore } from "~/store/shortcut-store";
 import { priorities } from "./priorities";
 
 interface PrioritySelectorProps {
@@ -33,11 +35,63 @@ export function PrioritySelector({
 }: PrioritySelectorProps) {
   const id = useId();
   const [open, setOpen] = useState<boolean>(false);
+  const [searchValue, setSearchValue] = useState<string>("");
   const [value, setValue] = useState<string>(priority.id);
+  const {
+    registerShortcut,
+    registerShortcuts,
+    unregisterShortcut,
+    unregisterShortcuts,
+  } = useShortcutStore();
 
   useEffect(() => {
     setValue(priority.id);
   }, [priority.id]);
+
+  useEffect(() => {
+    const priorityShortcut: Shortcut = {
+      id: "priority",
+      key: "p",
+      action: (e: KeyboardEvent) => {
+        if (!open) {
+          e.preventDefault();
+          setOpen((prev) => !prev);
+        }
+      },
+      enableOnContentEditable: false,
+      enableOnInteractiveElement: false,
+    };
+
+    registerShortcut(priorityShortcut);
+
+    return () => {
+      unregisterShortcut(priorityShortcut.id);
+    };
+  }, [open, registerShortcut, unregisterShortcut]);
+
+  useEffect(() => {
+    const priorityShortcuts: Shortcut[] = priorities.map((priority) => ({
+      id: `priority-${priority.id}`,
+      key: priority.shortcut,
+      action: (e: KeyboardEvent) => {
+        if (open && !searchValue) {
+          e.preventDefault();
+          setValue(priority.id);
+          setOpen(false);
+        }
+      },
+      enableOnContentEditable: true,
+      enableOnInteractiveElement: true,
+    }));
+
+    if (open) {
+      registerShortcuts(priorityShortcuts);
+    }
+
+    return () => {
+      unregisterShortcuts(priorityShortcuts.map((s) => s.id));
+    };
+  }, [open, searchValue, registerShortcuts, unregisterShortcuts]);
 
   /*const handlePriorityChange = (priorityId: string) => {
     setValue(priorityId);
@@ -80,7 +134,11 @@ export function PrioritySelector({
         <PopoverPositioner align="start" side="inline-start" sideOffset={4}>
           <PopoverContent className="w-full min-w-(--radix-popper-anchor-width) border-input p-0">
             <Command>
-              <CommandInput placeholder="Set priority..." />
+              <CommandInput
+                placeholder="Set priority..."
+                value={searchValue}
+                onValueChange={setSearchValue}
+              />
               <CommandList>
                 <CommandEmpty>No priority found.</CommandEmpty>
                 <CommandGroup>
