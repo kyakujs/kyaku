@@ -48,7 +48,7 @@ export const useShortcutStore = create<ShortcutState>((set, get) => ({
   shortcuts: [],
   callback: (event: KeyboardEvent) => {
     const { shortcuts } = get();
-    const shortcut = shortcuts.find((s) => s.key === event.key);
+    const shortcut = shortcuts.find((s) => s.key === event.key.toLowerCase());
     if (
       shortcut &&
       !ignoreKeydownEvent(
