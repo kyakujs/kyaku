@@ -12,6 +12,7 @@ import {
   CommandItem,
   CommandList,
 } from "@kyakujs/ui/command";
+import { Kbd } from "@kyakujs/ui/kbd";
 import {
   Popover,
   PopoverContent,
@@ -157,9 +158,7 @@ export function PrioritySelector({
                         <CheckIcon size={16} className="ml-auto" />
                       ) : null}
                       {!searchValue ? (
-                        <span className="text-xs text-muted-foreground">
-                          {item.shortcut}
-                        </span>
+                        <Kbd shortcut={item.shortcut} className="min-w-2.5" />
                       ) : null}
                     </CommandItem>
                   ))}

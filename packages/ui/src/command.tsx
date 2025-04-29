@@ -5,6 +5,8 @@ import { Search } from "lucide-react";
 import { cn } from "@kyakujs/ui";
 import { Dialog, DialogContent } from "@kyakujs/ui/dialog";
 
+import { Kbd } from "./kbd";
+
 const Command: React.FC<React.ComponentProps<typeof CommandPrimitive>> = ({
   className,
   ...props
@@ -47,6 +49,7 @@ const CommandInput: React.FC<
       )}
       {...props}
     />
+    <Kbd shortcut="P" />
   </div>
 );
 CommandInput.displayName = CommandPrimitive.Input.displayName;
