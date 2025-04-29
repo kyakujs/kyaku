@@ -13,20 +13,17 @@ const SheetClose = SheetPrimitive.Close;
 
 const SheetPortal = SheetPrimitive.Portal;
 
-const SheetBackdrop = ({
-  className,
-  ref,
-  ...props
-}: SheetPrimitive.Backdrop.Props & {
-  ref?: React.Ref<HTMLDivElement>;
-}) => (
+const SheetBackdrop: React.FC<
+  SheetPrimitive.Backdrop.Props & {
+    ref?: React.Ref<HTMLDivElement>;
+  }
+> = ({ className, ...props }) => (
   <SheetPrimitive.Backdrop
     className={cn(
       "fixed inset-0 bg-black/20 transition-opacity duration-150 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:opacity-70",
       className,
     )}
     {...props}
-    ref={ref}
   />
 );
 SheetBackdrop.displayName = SheetPrimitive.Backdrop.displayName;
@@ -53,17 +50,15 @@ interface SheetContentProps
   ref?: React.Ref<HTMLDivElement>;
 }
 
-const SheetContent = ({
+const SheetContent: React.FC<SheetContentProps> = ({
   side = "right",
   className,
   children,
-  ref,
   ...props
-}: SheetContentProps) => (
+}) => (
   <SheetPortal>
     <SheetBackdrop />
     <SheetPrimitive.Popup
-      ref={ref}
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
@@ -73,10 +68,10 @@ const SheetContent = ({
 );
 SheetContent.displayName = SheetPrimitive.Popup.displayName;
 
-const SheetHeader = ({
+const SheetHeader: React.FC<React.ComponentProps<"div">> = ({
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
+}) => (
   <div
     className={cn(
       "flex flex-col space-y-2 text-center sm:text-left",
@@ -87,10 +82,10 @@ const SheetHeader = ({
 );
 SheetHeader.displayName = "SheetHeader";
 
-const SheetFooter = ({
+const SheetFooter: React.FC<React.ComponentProps<"div">> = ({
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
+}) => (
   <div
     className={cn(
       "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
@@ -101,30 +96,24 @@ const SheetFooter = ({
 );
 SheetFooter.displayName = "SheetFooter";
 
-const SheetTitle = ({
-  className,
-  ref,
-  ...props
-}: SheetPrimitive.Title.Props & {
-  ref?: React.Ref<HTMLHeadingElement>;
-}) => (
+const SheetTitle: React.FC<
+  SheetPrimitive.Title.Props & {
+    ref?: React.Ref<HTMLHeadingElement>;
+  }
+> = ({ className, ...props }) => (
   <SheetPrimitive.Title
-    ref={ref}
     className={cn("text-lg font-semibold text-foreground", className)}
     {...props}
   />
 );
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
-const SheetDescription = ({
-  className,
-  ref,
-  ...props
-}: SheetPrimitive.Description.Props & {
-  ref?: React.Ref<HTMLHeadingElement>;
-}) => (
+const SheetDescription: React.FC<
+  SheetPrimitive.Description.Props & {
+    ref?: React.Ref<HTMLParagraphElement>;
+  }
+> = ({ className, ...props }) => (
   <SheetPrimitive.Description
-    ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
     {...props}
   />
