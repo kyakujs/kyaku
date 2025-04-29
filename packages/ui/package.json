@@ -35,7 +35,6 @@
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@types/react": "^19.1.2",
-    "babel-plugin-react-compiler": "^19.1.0-rc.1",
     "eslint": "^9.25.1",
     "prettier": "^3.5.3",
     "react": "^19.1.0",
