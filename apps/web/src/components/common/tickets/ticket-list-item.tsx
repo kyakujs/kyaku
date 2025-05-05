@@ -1,34 +1,28 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 "use no memo";
 
+import type { Row } from "@tanstack/react-table";
 import { Fragment } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
+import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-import type {
-  Column,
-  DataList,
-  Ticket,
-} from "~/components/common/tickets/ticket-group-list";
-import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-group-list";
+import type { Ticket } from "~/components/common/tickets/ticket-list";
+import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-list-group";
 
-export function TicketGroupListItem({
-  columns,
-  items,
+export function TicketListItem({
   getScrollElement,
   initialOffset,
+  rows,
   scrollMargin,
-  dataList,
 }: {
-  columns: Column<Ticket>;
-  initialOffset: () => number;
-  scrollMargin: number;
-  items: Ticket[];
   getScrollElement: () => HTMLDivElement;
-  dataList: DataList<Ticket>;
+  initialOffset: () => number;
+  rows: Row<Ticket>[];
+  scrollMargin: number;
 }) {
   const virtualizer = useVirtualizer({
-    count: items.length,
+    count: rows.length,
     scrollMargin,
     getScrollElement,
     estimateSize: () => TICKET_GROUP_ITEM_HEIGHT,
@@ -63,20 +57,22 @@ export function TicketGroupListItem({
       {virtualItems.map((virtualRow) => (
         <Link
           to="/ticket/$ticketId"
-          params={{ ticketId: items[virtualRow.index]!.id }}
+          params={{ ticketId: rows[virtualRow.index]!.original.id }}
           key={virtualRow.key}
-          data-list-key={`ITEM_${items[virtualRow.index]!.id}`}
+          data-list-key={`ITEM_${rows[virtualRow.index]!.id}`}
           data-index={virtualRow.index}
           ref={virtualizer.measureElement}
           className="block h-[39px] w-full -outline-offset-3 transition-colors hover:bg-muted/50 focus-visible:outline-1 data-[state=selected]:bg-muted"
         >
           <div className="flex h-full flex-col items-center justify-center p-2">
             <div className="flex w-full flex-[initial] flex-row items-center gap-2 text-sm">
-              {columns.map((column) => (
-                <Fragment key={column.id}>
-                  {column.cell({ row: items[virtualRow.index]!, dataList })}
-                </Fragment>
-              ))}
+              {rows[virtualRow.index]
+                ?.getVisibleCells()
+                .map((cell) => (
+                  <Fragment key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </Fragment>
+                ))}
             </div>
           </div>
         </Link>
