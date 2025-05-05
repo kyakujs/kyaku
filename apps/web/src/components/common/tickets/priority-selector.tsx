@@ -30,10 +30,7 @@ interface PrioritySelectorProps {
   ticketId?: string;
 }
 
-export function PrioritySelector({
-  priority,
-  ticketId,
-}: PrioritySelectorProps) {
+export function PrioritySelector({ priority }: PrioritySelectorProps) {
   const id = useId();
   const [open, setOpen] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<string>("");

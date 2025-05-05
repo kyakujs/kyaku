@@ -62,7 +62,8 @@ function RouteComponent() {
       <div className="flex w-72 flex-col overflow-y-scroll border-l border-accent bg-sidebar-background p-6">
         <div className="mb-4">{ticket.title}</div>
         <div className="text-xs">{ticket.description}</div>
-        <PrioritySelector priority={priorities[0]} />
+        {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+        <PrioritySelector priority={priorities[0]!} />
       </div>
     </div>
   );
