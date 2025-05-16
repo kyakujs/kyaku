@@ -28,14 +28,14 @@
   "dependencies": {
     "@kyakujs/kyaku": "workspace:*",
     "drizzle-orm": "^0.43.1",
-    "pg": "^8.15.6"
+    "pg": "^8.16.0"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
-    "@types/pg": "^8.12.0",
+    "@types/pg": "^8.15.2",
     "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.31.1",
     "drizzle-seed": "^0.3.1",
