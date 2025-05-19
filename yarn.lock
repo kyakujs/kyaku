@@ -358,13 +358,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/utils@npm:0.2.4":
-  version: 0.2.4
-  resolution: "@better-auth/utils@npm:0.2.4"
+"@better-auth/utils@npm:0.2.5":
+  version: 0.2.5
+  resolution: "@better-auth/utils@npm:0.2.5"
   dependencies:
     typescript: "npm:^5.8.2"
     uncrypto: "npm:^0.1.3"
-  checksum: 10c0/1e66ede79400204185a6d12e946f91ddb1307b758a64bd2d39f7f9bdc3df99a72c74a4695d82e2679e1345d2467280444e973a9fb196a3a0c2315a482d87d973
+  checksum: 10c0/6e93ad61dfee41ac39525a40e3bcc6496ec95793ca72b4b58f941704409865df80ff3ae907e597f9140928c43c3b892235aa53e511b460ac8c1ff50155529ea6
   languageName: node
   linkType: hard
 
@@ -1855,7 +1855,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.2.7"
+    better-auth: "npm:^1.2.8"
     eslint: "npm:^9.26.0"
     prettier: "npm:^3.5.3"
     typescript: "npm:^5.8.3"
@@ -5399,11 +5399,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.2.7":
-  version: 1.2.7
-  resolution: "better-auth@npm:1.2.7"
+"better-auth@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "better-auth@npm:1.2.8"
   dependencies:
-    "@better-auth/utils": "npm:0.2.4"
+    "@better-auth/utils": "npm:0.2.5"
     "@better-fetch/fetch": "npm:^1.1.18"
     "@noble/ciphers": "npm:^0.6.0"
     "@noble/hashes": "npm:^1.6.1"
@@ -5412,10 +5412,10 @@ __metadata:
     better-call: "npm:^1.0.8"
     defu: "npm:^6.1.4"
     jose: "npm:^5.9.6"
-    kysely: "npm:^0.27.6"
+    kysely: "npm:^0.28.1"
     nanostores: "npm:^0.11.3"
     zod: "npm:^3.24.1"
-  checksum: 10c0/48466203eb320a4f6d9f574eddb058c07c8501564a747d5e9bedf08ef505c0f19e6a7af83ff986bf1a35a08d0348e3f5da5a6c68c9bac92446adc78cdff58d0e
+  checksum: 10c0/2c13b612ad05141cdfe07d9bb570a3eb971adaf245038207edfd6bc19ba08845695435d1219e6703b177422b8e3f345e91acf3629f500bca4e252a7b2ebb71a1
   languageName: node
   linkType: hard
 
@@ -9315,10 +9315,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kysely@npm:^0.27.6":
-  version: 0.27.6
-  resolution: "kysely@npm:0.27.6"
-  checksum: 10c0/81cf668d196be265fa6782afb72d051590ce3f5c72b6456cc4a6eccbdfbac12bb1c938a8ec09b45de995854cfffb9972ce19553df2a4cf13dded3dc6cdddc326
+"kysely@npm:^0.28.1":
+  version: 0.28.2
+  resolution: "kysely@npm:0.28.2"
+  checksum: 10c0/66eccd19e6476a10f3b004835c4a966516968003075aa0c217db48ecd0f9679a2efa812f797063540cdb4e3e81fbf5afe876e1f7a08a1550e1fd99acc2a6dbb9
   languageName: node
   linkType: hard
 
