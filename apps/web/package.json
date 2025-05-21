@@ -30,7 +30,7 @@
     "react-dom": "^19.1.0",
     "vinxi": "^0.5.3",
     "zod": "^3.25.8",
-    "zustand": "^5.0.4"
+    "zustand": "^5.0.5"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
