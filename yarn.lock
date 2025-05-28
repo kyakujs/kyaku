@@ -1702,9 +1702,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ianvs/prettier-plugin-sort-imports@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.4.1"
+"@ianvs/prettier-plugin-sort-imports@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.4.2"
   dependencies:
     "@babel/generator": "npm:^7.26.2"
     "@babel/parser": "npm:^7.26.2"
@@ -1713,11 +1713,11 @@ __metadata:
     semver: "npm:^7.5.2"
   peerDependencies:
     "@vue/compiler-sfc": 2.7.x || 3.x
-    prettier: 2 || 3
+    prettier: 2 || 3 || ^4.0.0-0
   peerDependenciesMeta:
     "@vue/compiler-sfc":
       optional: true
-  checksum: 10c0/bdf2f658f495d0899318c6d4542b10007bc7343d53c5436cc6eb82cc29e57be97e19fb74004c282c4a44da2e015c5ddaa2c3c451fbc7fec64b1a96ff0e4d0f6d
+  checksum: 10c0/98f3bf00d4e02af561c4dee52aabc9d6be3549c7d080ab876bbcdde31c160af1775263815164df2f426fe44ee6b22c9cccbd643dad6b299b99ce4fa134c07996
   languageName: node
   linkType: hard
 
@@ -1921,7 +1921,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/prettier-config@workspace:tooling/prettier"
   dependencies:
-    "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.1"
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.2"
     "@kyakujs/tsconfig": "workspace:*"
     prettier: "npm:^3.5.3"
     prettier-plugin-tailwindcss: "npm:^0.6.11"
