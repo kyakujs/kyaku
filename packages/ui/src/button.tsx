@@ -53,11 +53,11 @@ const Button: React.FC<ButtonProps> = ({
     className: cn(buttonVariants({ variant, size, className })),
     ref: ref,
   };
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"button">(defaultProps, props),
   });
-  return renderElement();
+  return element;
 };
 Button.displayName = "Button";
 

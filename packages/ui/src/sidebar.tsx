@@ -391,12 +391,12 @@ const SidebarGroupLabel: React.FC<
     ref: ref,
   };
 
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"div">(defaultProps, props),
   });
 
-  return renderElement();
+  return element;
 };
 SidebarGroupLabel.displayName = "SidebarGroupLabel";
 
@@ -415,12 +415,12 @@ const SidebarGroupAction: React.FC<
     ref: ref,
   };
 
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"button">(defaultProps, props),
   });
 
-  return renderElement();
+  return element;
 };
 SidebarGroupAction.displayName = "SidebarGroupAction";
 
@@ -500,12 +500,12 @@ const SidebarMenuButton: React.FC<SidebarMenuButtonProps> = ({
     ref: ref,
   };
 
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"button">(defaultProps, props),
   });
 
-  return renderElement();
+  return element;
 };
 SidebarMenuButton.displayName = "SidebarMenuButton";
 
@@ -537,12 +537,12 @@ const SidebarMenuAction: React.FC<SidebarMenuActionProps> = ({
     ref: ref,
   };
 
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"button">(defaultProps, props),
   });
 
-  return renderElement();
+  return element;
 };
 SidebarMenuAction.displayName = "SidebarMenuAction";
 
@@ -613,12 +613,12 @@ const SidebarMenuSubButton: React.FC<SidebarMenuSubButtonProps> = ({
     ref: ref,
   };
 
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"a">(defaultProps, props),
   });
 
-  return renderElement();
+  return element;
 };
 SidebarMenuSubButton.displayName = "SidebarMenuSubButton";
 
