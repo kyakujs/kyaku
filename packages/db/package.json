@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@kyakujs/kyaku": "workspace:*",
-    "drizzle-orm": "^0.44.0",
+    "drizzle-orm": "^0.44.1",
     "pg": "^8.16.0"
   },
   "devDependencies": {
