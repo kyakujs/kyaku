@@ -1892,7 +1892,7 @@ __metadata:
     "@kyakujs/zero": "workspace:*"
     "@rocicorp/zero": "npm:^0.20.2025052100"
     "@tailwindcss/vite": "npm:^4.1.8"
-    "@tanstack/react-query": "npm:^5.79.0"
+    "@tanstack/react-query": "npm:^5.79.2"
     "@tanstack/react-router": "npm:^1.120.13"
     "@tanstack/react-router-devtools": "npm:^1.120.13"
     "@tanstack/react-router-with-query": "npm:^1.120.13"
@@ -4411,21 +4411,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.79.0":
-  version: 5.79.0
-  resolution: "@tanstack/query-core@npm:5.79.0"
-  checksum: 10c0/614c9f4dc7cb4df9c6804f67a76e2d580af5fa7b25505c2e3c5137bfa40d2005a1a96606c9f8e533754c78722e23708948760104a460fd8bc06df990fea42afb
+"@tanstack/query-core@npm:5.79.2":
+  version: 5.79.2
+  resolution: "@tanstack/query-core@npm:5.79.2"
+  checksum: 10c0/d2a72c99e967748f77c92301413bfa13a333de0900d4995131d165ebf04445a582ec322aa009e9d2eb5ec6a34821f5ba6c029fdd13893550255fc8d1b225bee0
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.79.0":
-  version: 5.79.0
-  resolution: "@tanstack/react-query@npm:5.79.0"
+"@tanstack/react-query@npm:^5.79.2":
+  version: 5.79.2
+  resolution: "@tanstack/react-query@npm:5.79.2"
   dependencies:
-    "@tanstack/query-core": "npm:5.79.0"
+    "@tanstack/query-core": "npm:5.79.2"
   peerDependencies:
     react: ^18 || ^19
-  checksum: 10c0/f1d440075b7f8e7738cd4f26a87a089c0efaf282e633cfb9db249ef20068d5f4f14c9d990a304b96df183bffc8839ee579853fef212c213510c425b8092630be
+  checksum: 10c0/927969a55437f20e52473e94f03840835da52a1e5ecd8fb87c4d3e6690cf39d7219e29813388ea724ee391d71d8f69589f8c33c6900c3b39b597f1d8139c70d3
   languageName: node
   linkType: hard
 
