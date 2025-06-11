@@ -1,5 +1,3 @@
-/// <reference types="vinxi/types/server" />
-import { getRouterManifest } from "@tanstack/react-start/router-manifest";
 import {
   createStartHandler,
   defaultStreamHandler,
@@ -9,6 +7,5 @@ import { createRouter } from "~/router";
 
 export default createStartHandler({
   createRouter,
-  getRouterManifest,
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 })(defaultStreamHandler);

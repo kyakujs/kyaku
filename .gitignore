@@ -25,9 +25,9 @@ yarn-error.log*
 # typescript
 dist/
 
-# Vinxi
-.vinxi
+# Tanstack
 .output
+.tanstack
 
 # local env files
 .env
