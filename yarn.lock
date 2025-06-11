@@ -2109,7 +2109,7 @@ __metadata:
     typescript: "npm:^5.8.3"
     vinxi: "npm:^0.5.3"
     vite-tsconfig-paths: "npm:^5.1.4"
-    zod: "npm:^3.25.51"
+    zod: "npm:^3.25.60"
     zustand: "npm:^5.0.5"
   languageName: unknown
   linkType: soft
@@ -14097,10 +14097,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.22.2, zod@npm:^3.22.4, zod@npm:^3.24.1, zod@npm:^3.24.2, zod@npm:^3.25.51":
+"zod@npm:^3.22.2, zod@npm:^3.22.4, zod@npm:^3.24.1, zod@npm:^3.24.2":
   version: 3.25.51
   resolution: "zod@npm:3.25.51"
   checksum: 10c0/6fc708a45b0d44282c18da4c93f4d42336a884a42487031b40bacb7e8c5a2e539b7993d3ccba75f445df78050f05ff4e34110ffe03d2c3fcbe557c7fe7c1350a
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.25.60":
+  version: 3.25.60
+  resolution: "zod@npm:3.25.60"
+  checksum: 10c0/4b5c0fc9fc9020a1b41c9e4093e722181f9535dc4e917cd5a63ce764c405f49ff49d7f5ef4d8c92665d250d92c2216c4c0b0145175c755209762be4ec305c5d2
   languageName: node
   linkType: hard
 
