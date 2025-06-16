@@ -6,7 +6,7 @@ import sessionMiddleware from "~/session-middleware";
 
 export interface Authenticated extends Session {
   isAuthenticated: true;
-  jwt: string | null;
+  jwt: string;
 }
 
 export interface Unauthenticated {

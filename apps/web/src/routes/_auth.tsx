@@ -29,7 +29,7 @@ function AuthLayout() {
     () =>
       new Zero({
         userID: authQuery.data.isAuthenticated ? authQuery.data.user.id : "",
-        auth: authQuery.data.isAuthenticated ? (authQuery.data.jwt ?? "") : "",
+        auth: authQuery.data.isAuthenticated ? authQuery.data.jwt : "",
         server: import.meta.env.VITE_SYNC_ENGINE_URL as string,
         schema,
         kvStore: "mem", // or "idb" for IndexedDB persistence

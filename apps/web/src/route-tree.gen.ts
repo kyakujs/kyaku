@@ -168,7 +168,6 @@ const ApiAuthSplatServerRoute = ApiAuthSplatServerRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '': typeof AuthSettingsNavigationRouteWithChildren
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/': typeof AuthMainNavigationIndexRoute
@@ -190,7 +189,6 @@ export interface FileRoutesByFullPath {
   '/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 export interface FileRoutesByTo {
-  '': typeof AuthSettingsNavigationRouteWithChildren
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/': typeof AuthMainNavigationIndexRoute
@@ -239,7 +237,6 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | ''
     | '/login'
     | '/search'
     | '/'
@@ -261,7 +258,6 @@ export interface FileRouteTypes {
     | '/settings/account/profile'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | ''
     | '/login'
     | '/search'
     | '/'
@@ -335,13 +331,6 @@ export interface RootServerRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/_auth': {
-      id: '/_auth'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof AuthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -349,12 +338,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_auth/_main-navigation': {
-      id: '/_auth/_main-navigation'
+    '/_auth': {
+      id: '/_auth'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof AuthMainNavigationRouteImport
-      parentRoute: typeof AuthRoute
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_auth/_settings-navigation': {
       id: '/_auth/_settings-navigation'
@@ -363,19 +352,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthSettingsNavigationRouteImport
       parentRoute: typeof AuthRoute
     }
-    '/_auth/_main-navigation/search': {
-      id: '/_auth/_main-navigation/search'
-      path: '/search'
-      fullPath: '/search'
-      preLoaderRoute: typeof AuthMainNavigationSearchRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/api/auth/$': {
-      id: '/api/auth/$'
+    '/_auth/_main-navigation': {
+      id: '/_auth/_main-navigation'
       path: ''
-      fullPath: '/api/auth/$'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootRouteImport
+      fullPath: ''
+      preLoaderRoute: typeof AuthMainNavigationRouteImport
+      parentRoute: typeof AuthRoute
     }
     '/_auth/_main-navigation/': {
       id: '/_auth/_main-navigation/'
@@ -384,95 +366,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthMainNavigationIndexRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
-    '/_auth/_main-navigation/ticket/$ticketId': {
-      id: '/_auth/_main-navigation/ticket/$ticketId'
-      path: '/ticket/$ticketId'
-      fullPath: '/ticket/$ticketId'
-      preLoaderRoute: typeof AuthMainNavigationTicketTicketIdRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/all': {
-      id: '/_auth/_main-navigation/tickets/all'
-      path: '/tickets/all'
-      fullPath: '/tickets/all'
-      preLoaderRoute: typeof AuthMainNavigationTicketsAllRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/close-the-loop': {
-      id: '/_auth/_main-navigation/tickets/close-the-loop'
-      path: '/tickets/close-the-loop'
-      fullPath: '/tickets/close-the-loop'
-      preLoaderRoute: typeof AuthMainNavigationTicketsCloseTheLoopRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/done': {
-      id: '/_auth/_main-navigation/tickets/done'
-      path: '/tickets/done'
-      fullPath: '/tickets/done'
-      preLoaderRoute: typeof AuthMainNavigationTicketsDoneRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/investigating': {
-      id: '/_auth/_main-navigation/tickets/investigating'
-      path: '/tickets/investigating'
-      fullPath: '/tickets/investigating'
-      preLoaderRoute: typeof AuthMainNavigationTicketsInvestigatingRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/needs-first-response': {
-      id: '/_auth/_main-navigation/tickets/needs-first-response'
-      path: '/tickets/needs-first-response'
-      fullPath: '/tickets/needs-first-response'
-      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsFirstResponseRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/needs-next-response': {
-      id: '/_auth/_main-navigation/tickets/needs-next-response'
-      path: '/tickets/needs-next-response'
-      fullPath: '/tickets/needs-next-response'
-      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsNextResponseRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/paused-for-later': {
-      id: '/_auth/_main-navigation/tickets/paused-for-later'
-      path: '/tickets/paused-for-later'
-      fullPath: '/tickets/paused-for-later'
-      preLoaderRoute: typeof AuthMainNavigationTicketsPausedForLaterRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/snoozed': {
-      id: '/_auth/_main-navigation/tickets/snoozed'
-      path: '/tickets/snoozed'
-      fullPath: '/tickets/snoozed'
-      preLoaderRoute: typeof AuthMainNavigationTicketsSnoozedRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/todo': {
-      id: '/_auth/_main-navigation/tickets/todo'
-      path: '/tickets/todo'
-      fullPath: '/tickets/todo'
-      preLoaderRoute: typeof AuthMainNavigationTicketsTodoRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/unassigned': {
-      id: '/_auth/_main-navigation/tickets/unassigned'
-      path: '/tickets/unassigned'
-      fullPath: '/tickets/unassigned'
-      preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/waiting-for-customer': {
-      id: '/_auth/_main-navigation/tickets/waiting-for-customer'
-      path: '/tickets/waiting-for-customer'
-      fullPath: '/tickets/waiting-for-customer'
-      preLoaderRoute: typeof AuthMainNavigationTicketsWaitingForCustomerRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/yours': {
-      id: '/_auth/_main-navigation/tickets/yours'
-      path: '/tickets/yours'
-      fullPath: '/tickets/yours'
-      preLoaderRoute: typeof AuthMainNavigationTicketsYoursRouteImport
+    '/_auth/_main-navigation/search': {
+      id: '/_auth/_main-navigation/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof AuthMainNavigationSearchRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
     '/_auth/_settings-navigation/settings/': {
@@ -482,12 +380,96 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthSettingsNavigationSettingsIndexRouteImport
       parentRoute: typeof AuthSettingsNavigationRoute
     }
-    '/_auth/_settings-navigation/settings/account/preferences': {
-      id: '/_auth/_settings-navigation/settings/account/preferences'
-      path: '/settings/account/preferences'
-      fullPath: '/settings/account/preferences'
-      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountPreferencesRouteImport
-      parentRoute: typeof AuthSettingsNavigationRoute
+    '/_auth/_main-navigation/tickets/yours': {
+      id: '/_auth/_main-navigation/tickets/yours'
+      path: '/tickets/yours'
+      fullPath: '/tickets/yours'
+      preLoaderRoute: typeof AuthMainNavigationTicketsYoursRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/waiting-for-customer': {
+      id: '/_auth/_main-navigation/tickets/waiting-for-customer'
+      path: '/tickets/waiting-for-customer'
+      fullPath: '/tickets/waiting-for-customer'
+      preLoaderRoute: typeof AuthMainNavigationTicketsWaitingForCustomerRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/unassigned': {
+      id: '/_auth/_main-navigation/tickets/unassigned'
+      path: '/tickets/unassigned'
+      fullPath: '/tickets/unassigned'
+      preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/todo': {
+      id: '/_auth/_main-navigation/tickets/todo'
+      path: '/tickets/todo'
+      fullPath: '/tickets/todo'
+      preLoaderRoute: typeof AuthMainNavigationTicketsTodoRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/snoozed': {
+      id: '/_auth/_main-navigation/tickets/snoozed'
+      path: '/tickets/snoozed'
+      fullPath: '/tickets/snoozed'
+      preLoaderRoute: typeof AuthMainNavigationTicketsSnoozedRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/paused-for-later': {
+      id: '/_auth/_main-navigation/tickets/paused-for-later'
+      path: '/tickets/paused-for-later'
+      fullPath: '/tickets/paused-for-later'
+      preLoaderRoute: typeof AuthMainNavigationTicketsPausedForLaterRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/needs-next-response': {
+      id: '/_auth/_main-navigation/tickets/needs-next-response'
+      path: '/tickets/needs-next-response'
+      fullPath: '/tickets/needs-next-response'
+      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsNextResponseRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/needs-first-response': {
+      id: '/_auth/_main-navigation/tickets/needs-first-response'
+      path: '/tickets/needs-first-response'
+      fullPath: '/tickets/needs-first-response'
+      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsFirstResponseRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/investigating': {
+      id: '/_auth/_main-navigation/tickets/investigating'
+      path: '/tickets/investigating'
+      fullPath: '/tickets/investigating'
+      preLoaderRoute: typeof AuthMainNavigationTicketsInvestigatingRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/done': {
+      id: '/_auth/_main-navigation/tickets/done'
+      path: '/tickets/done'
+      fullPath: '/tickets/done'
+      preLoaderRoute: typeof AuthMainNavigationTicketsDoneRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/close-the-loop': {
+      id: '/_auth/_main-navigation/tickets/close-the-loop'
+      path: '/tickets/close-the-loop'
+      fullPath: '/tickets/close-the-loop'
+      preLoaderRoute: typeof AuthMainNavigationTicketsCloseTheLoopRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/all': {
+      id: '/_auth/_main-navigation/tickets/all'
+      path: '/tickets/all'
+      fullPath: '/tickets/all'
+      preLoaderRoute: typeof AuthMainNavigationTicketsAllRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/ticket/$ticketId': {
+      id: '/_auth/_main-navigation/ticket/$ticketId'
+      path: '/ticket/$ticketId'
+      fullPath: '/ticket/$ticketId'
+      preLoaderRoute: typeof AuthMainNavigationTicketTicketIdRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
     }
     '/_auth/_settings-navigation/settings/account/profile': {
       id: '/_auth/_settings-navigation/settings/account/profile'
@@ -496,169 +478,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountProfileRouteImport
       parentRoute: typeof AuthSettingsNavigationRoute
     }
+    '/_auth/_settings-navigation/settings/account/preferences': {
+      id: '/_auth/_settings-navigation/settings/account/preferences'
+      path: '/settings/account/preferences'
+      fullPath: '/settings/account/preferences'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountPreferencesRouteImport
+      parentRoute: typeof AuthSettingsNavigationRoute
+    }
   }
 }
 declare module '@tanstack/react-start/server' {
   interface ServerFileRoutesByPath {
-    '/_auth': {
-      id: '/_auth'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation': {
-      id: '/_auth/_main-navigation'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_settings-navigation': {
-      id: '/_auth/_settings-navigation'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/search': {
-      id: '/_auth/_main-navigation/search'
-      path: '/search'
-      fullPath: '/search'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
       fullPath: '/api/auth/$'
       preLoaderRoute: typeof ApiAuthSplatServerRouteImport
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/': {
-      id: '/_auth/_main-navigation/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/ticket/$ticketId': {
-      id: '/_auth/_main-navigation/ticket/$ticketId'
-      path: '/ticket/$ticketId'
-      fullPath: '/ticket/$ticketId'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/all': {
-      id: '/_auth/_main-navigation/tickets/all'
-      path: '/tickets/all'
-      fullPath: '/tickets/all'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/close-the-loop': {
-      id: '/_auth/_main-navigation/tickets/close-the-loop'
-      path: '/tickets/close-the-loop'
-      fullPath: '/tickets/close-the-loop'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/done': {
-      id: '/_auth/_main-navigation/tickets/done'
-      path: '/tickets/done'
-      fullPath: '/tickets/done'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/investigating': {
-      id: '/_auth/_main-navigation/tickets/investigating'
-      path: '/tickets/investigating'
-      fullPath: '/tickets/investigating'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/needs-first-response': {
-      id: '/_auth/_main-navigation/tickets/needs-first-response'
-      path: '/tickets/needs-first-response'
-      fullPath: '/tickets/needs-first-response'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/needs-next-response': {
-      id: '/_auth/_main-navigation/tickets/needs-next-response'
-      path: '/tickets/needs-next-response'
-      fullPath: '/tickets/needs-next-response'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/paused-for-later': {
-      id: '/_auth/_main-navigation/tickets/paused-for-later'
-      path: '/tickets/paused-for-later'
-      fullPath: '/tickets/paused-for-later'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/snoozed': {
-      id: '/_auth/_main-navigation/tickets/snoozed'
-      path: '/tickets/snoozed'
-      fullPath: '/tickets/snoozed'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/todo': {
-      id: '/_auth/_main-navigation/tickets/todo'
-      path: '/tickets/todo'
-      fullPath: '/tickets/todo'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/unassigned': {
-      id: '/_auth/_main-navigation/tickets/unassigned'
-      path: '/tickets/unassigned'
-      fullPath: '/tickets/unassigned'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/waiting-for-customer': {
-      id: '/_auth/_main-navigation/tickets/waiting-for-customer'
-      path: '/tickets/waiting-for-customer'
-      fullPath: '/tickets/waiting-for-customer'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_main-navigation/tickets/yours': {
-      id: '/_auth/_main-navigation/tickets/yours'
-      path: '/tickets/yours'
-      fullPath: '/tickets/yours'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_settings-navigation/settings/': {
-      id: '/_auth/_settings-navigation/settings/'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_settings-navigation/settings/account/preferences': {
-      id: '/_auth/_settings-navigation/settings/account/preferences'
-      path: '/settings/account/preferences'
-      fullPath: '/settings/account/preferences'
-      preLoaderRoute: unknown
-      parentRoute: typeof rootServerRouteImport
-    }
-    '/_auth/_settings-navigation/settings/account/profile': {
-      id: '/_auth/_settings-navigation/settings/account/profile'
-      path: '/settings/account/profile'
-      fullPath: '/settings/account/profile'
-      preLoaderRoute: unknown
       parentRoute: typeof rootServerRouteImport
     }
   }
