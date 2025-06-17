@@ -14,7 +14,7 @@ export const Route = createFileRoute(
   loader: ({ context, params }) => {
     const z = new Zero({
       userID: context.auth.isAuthenticated ? context.auth.user.id : "",
-      auth: context.auth.isAuthenticated ? (context.auth.jwt ?? "") : "",
+      auth: context.auth.isAuthenticated ? context.auth.jwt : "",
       server: import.meta.env.VITE_SYNC_ENGINE_URL as string,
       schema,
       kvStore: "mem",
