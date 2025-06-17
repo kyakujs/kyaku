@@ -2,13 +2,11 @@
 "use no memo";
 
 import type { Row } from "@tanstack/react-table";
-import { Fragment } from "react/jsx-runtime";
-import { Link } from "@tanstack/react-router";
-import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list";
 import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-group-virtual-list";
+import { TicketListLine } from "~/components/common/tickets/ticket-list-line";
 
 export function TicketVirtualList({
   getScrollElement,
@@ -16,7 +14,7 @@ export function TicketVirtualList({
   rows,
   scrollMargin,
 }: {
-  getScrollElement: () => HTMLDivElement;
+  getScrollElement: () => HTMLDivElement | null;
   initialOffset: () => number;
   rows: Row<Ticket>[];
   scrollMargin: number;
@@ -55,27 +53,13 @@ export function TicketVirtualList({
     >
       {paddingTop > 0 ? <div style={{ height: paddingTop }}></div> : null}
       {virtualItems.map((virtualRow) => (
-        <Link
-          to="/ticket/$ticketId"
-          params={{ ticketId: rows[virtualRow.index]!.original.id }}
+        <TicketListLine
           key={virtualRow.key}
-          data-list-key={`ITEM_${rows[virtualRow.index]!.id}`}
+          data-list-key={`ITEM_${rows[virtualRow.index]?.id}`}
           data-index={virtualRow.index}
           ref={virtualizer.measureElement}
-          className="block h-[39px] w-full -outline-offset-3 transition-colors hover:bg-muted/50 focus-visible:outline-1 data-[state=selected]:bg-muted"
-        >
-          <div className="flex h-full flex-col items-center justify-center p-2">
-            <div className="flex w-full flex-[initial] flex-row items-center gap-2 text-sm">
-              {rows[virtualRow.index]
-                ?.getVisibleCells()
-                .map((cell) => (
-                  <Fragment key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </Fragment>
-                ))}
-            </div>
-          </div>
-        </Link>
+          row={rows[virtualRow.index]!}
+        />
       ))}
       {paddingBottom > 0 ? <div style={{ height: paddingBottom }}></div> : null}
     </div>

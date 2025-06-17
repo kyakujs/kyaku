@@ -117,7 +117,6 @@ function RouteComponent() {
       accessorKey: "statusDetail",
       cell: ({ cell }) => (
         <div className="flex items-center">
-          {cell.getValue<number>()}
           <StatusIcon status={cell.getValue<number>()} />
         </div>
       ),
@@ -184,7 +183,6 @@ function RouteComponent() {
         ),
     },
   ];
-  console.log("tickets", tickets);
 
   return (
     <div className="flex w-full flex-col">

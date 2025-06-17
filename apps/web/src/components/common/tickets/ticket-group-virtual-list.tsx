@@ -3,10 +3,10 @@
 
 import type { Row } from "@tanstack/react-table";
 import { useRef } from "react";
+import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list";
-import { TicketListGroupItem } from "~/components/common/tickets/ticket-list-group-item";
 import { TicketVirtualList } from "~/components/common/tickets/ticket-virtual-list";
 
 export const TICKET_GROUP_ITEM_HEIGHT = 39;
@@ -63,15 +63,19 @@ export function TicketGroupVirtualList({ rows }: { rows: Row<Ticket>[] }) {
               return groupedCell.getIsAggregated() ? null : (
                 <div
                   key={groupedCell.id}
-                  data-group-header-id={groupedCell.column.id}
+                  data-list-key={`GROUP_${groupedCell.column.id}`}
                 >
-                  <TicketListGroupItem
-                    data-list-key={`GROUP_${virtualRow.index}`}
-                    cell={groupedCell}
-                    count={rows[virtualRow.index]?.subRows.length ?? 0}
-                  />
+                  <div className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b bg-muted pr-2 pl-8 text-sm">
+                    {flexRender(
+                      groupedCell.column.columnDef.aggregatedCell,
+                      groupedCell.getContext(),
+                    )}
+                    <span className="text-muted-foreground">
+                      {rows[virtualRow.index]?.subRows.length ?? 0}
+                    </span>
+                  </div>
                   <TicketVirtualList
-                    getScrollElement={() => parentRef.current!}
+                    getScrollElement={() => parentRef.current}
                     initialOffset={() => virtualizer.scrollOffset ?? 0}
                     scrollMargin={virtualRow.start + TICKET_GROUP_ITEM_HEIGHT}
                     rows={rows[virtualRow.index]?.subRows ?? []}

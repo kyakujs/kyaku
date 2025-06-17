@@ -14,8 +14,7 @@ export function TicketListWrapper({ rows }: { rows: Row<Ticket>[] }) {
       data-view
     >
       <TicketVirtualList
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        getScrollElement={() => parentRef.current!}
+        getScrollElement={() => parentRef.current}
         rows={rows}
         initialOffset={() => 0}
         scrollMargin={0}
