@@ -7,11 +7,11 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list";
 import { TicketListGroupItem } from "~/components/common/tickets/ticket-list-group-item";
-import { TicketListItem } from "~/components/common/tickets/ticket-list-item";
+import { TicketVirtualList } from "~/components/common/tickets/ticket-virtual-list";
 
 export const TICKET_GROUP_ITEM_HEIGHT = 39;
 
-export function TicketListGroup({ rows }: { rows: Row<Ticket>[] }) {
+export function TicketGroupVirtualList({ rows }: { rows: Row<Ticket>[] }) {
   const parentRef = useRef<HTMLDivElement>(null);
 
   const virtualizer = useVirtualizer({
@@ -70,7 +70,7 @@ export function TicketListGroup({ rows }: { rows: Row<Ticket>[] }) {
                     cell={groupedCell}
                     count={rows[virtualRow.index]?.subRows.length ?? 0}
                   />
-                  <TicketListItem
+                  <TicketVirtualList
                     getScrollElement={() => parentRef.current!}
                     initialOffset={() => virtualizer.scrollOffset ?? 0}
                     scrollMargin={virtualRow.start + TICKET_GROUP_ITEM_HEIGHT}

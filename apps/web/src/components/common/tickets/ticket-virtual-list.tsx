@@ -8,9 +8,9 @@ import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list";
-import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-list-group";
+import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-group-virtual-list";
 
-export function TicketListItem({
+export function TicketVirtualList({
   getScrollElement,
   initialOffset,
   rows,

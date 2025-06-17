@@ -9,8 +9,8 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-import { TicketListFlat } from "~/components/common/tickets/ticket-list-flat";
-import { TicketListGroup } from "~/components/common/tickets/ticket-list-group";
+import { TicketGroupVirtualList } from "~/components/common/tickets/ticket-group-virtual-list";
+import { TicketListWrapper } from "~/components/common/tickets/ticket-list-wrapper";
 
 export interface Ticket {
   id: string;
@@ -56,8 +56,8 @@ export function TicketList({
   });
 
   if (state?.grouping?.length) {
-    return <TicketListGroup rows={table.getRowModel().rows} />;
+    return <TicketGroupVirtualList rows={table.getRowModel().rows} />;
   }
 
-  return <TicketListFlat rows={table.getRowModel().rows} />;
+  return <TicketListWrapper rows={table.getRowModel().rows} />;
 }
