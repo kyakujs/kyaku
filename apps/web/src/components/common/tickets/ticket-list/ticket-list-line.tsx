@@ -6,7 +6,7 @@ import { Fragment } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
 import { flexRender } from "@tanstack/react-table";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list";
+import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 
 type TicketListLineProps = {
   row: Row<Ticket>;

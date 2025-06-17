@@ -6,8 +6,8 @@ import { useRef } from "react";
 import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list";
-import { TicketVirtualList } from "~/components/common/tickets/ticket-virtual-list";
+import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import { TicketVirtualList } from "~/components/common/tickets/ticket-list/ticket-virtual-list";
 
 export const TICKET_GROUP_ITEM_HEIGHT = 39;
 

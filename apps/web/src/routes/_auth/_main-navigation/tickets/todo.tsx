@@ -8,11 +8,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
 import { Badge } from "@kyakujs/ui/badge";
 import { Checkbox } from "@kyakujs/ui/checkbox";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list";
+import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import { PriorityIcon } from "~/components/common/tickets/priority-icon";
 import { PriorityLabel } from "~/components/common/tickets/priority-label";
 import { StatusIcon } from "~/components/common/tickets/status-icon";
-import { TicketList } from "~/components/common/tickets/ticket-list";
+import { TicketList } from "~/components/common/tickets/ticket-list/ticket-list";
 import { Header } from "~/components/layout/headers/tickets/header";
 import { getContextualDate } from "~/libs/date";
 
@@ -29,8 +29,7 @@ function RouteComponent() {
       .related("customer")
       .related("labels")
       .orderBy("priority", "asc")
-      .orderBy("createdAt", "asc")
-      .limit(1000),
+      .orderBy("createdAt", "asc"),
   );
 
   const tickets: Ticket[] = data.map((ticket) => ({
@@ -189,40 +188,38 @@ function RouteComponent() {
       <Header>
         <h2 className="text-sm">Todo</h2>
       </Header>
-      <div className="h-[calc(100svh-40px)] w-full overflow-auto lg:h-[calc(100svh-56px)]">
-        <div className="h-full w-full">
-          {result.type === "complete" ? (
-            <TicketList
-              columns={columns}
-              data={tickets}
-              state={{
-                grouping: ["priority"],
-                columnPinning: {
-                  left: ["select"],
+      <div className="h-full w-full overflow-auto">
+        {result.type === "complete" ? (
+          <TicketList
+            columns={columns}
+            data={tickets}
+            state={{
+              grouping: ["priority"],
+              columnPinning: {
+                left: ["select"],
+              },
+              columnOrder: [
+                "select",
+                "priority",
+                "shortId",
+                "statusDetail",
+                "title",
+                "labels",
+                "createdAt",
+                "assignedTo",
+              ],
+              columnVisibility: {
+                status: false,
+              },
+              columnFilters: [
+                {
+                  id: "status",
+                  value: [0, 1],
                 },
-                columnOrder: [
-                  "select",
-                  "priority",
-                  "shortId",
-                  "statusDetail",
-                  "title",
-                  "labels",
-                  "createdAt",
-                  "assignedTo",
-                ],
-                columnVisibility: {
-                  status: false,
-                },
-                columnFilters: [
-                  {
-                    id: "status",
-                    value: [0, 1],
-                  },
-                ],
-              }}
-            />
-          ) : null}
-        </div>
+              ],
+            }}
+          />
+        ) : null}
       </div>
     </div>
   );

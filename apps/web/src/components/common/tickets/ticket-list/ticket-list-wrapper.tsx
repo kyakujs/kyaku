@@ -1,8 +1,8 @@
 import type { Row } from "@tanstack/react-table";
 import { useRef } from "react";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list";
-import { TicketVirtualList } from "~/components/common/tickets/ticket-virtual-list";
+import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import { TicketVirtualList } from "~/components/common/tickets/ticket-list/ticket-virtual-list";
 
 export function TicketListWrapper({ rows }: { rows: Row<Ticket>[] }) {
   const parentRef = useRef<HTMLDivElement>(null);

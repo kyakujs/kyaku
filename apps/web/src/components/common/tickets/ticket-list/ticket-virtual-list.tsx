@@ -4,9 +4,9 @@
 import type { Row } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list";
-import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-group-virtual-list";
-import { TicketListLine } from "~/components/common/tickets/ticket-list-line";
+import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-list/ticket-group-virtual-list";
+import { TicketListLine } from "~/components/common/tickets/ticket-list/ticket-list-line";
 
 export function TicketVirtualList({
   getScrollElement,

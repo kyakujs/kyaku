@@ -9,8 +9,8 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-import { TicketGroupVirtualList } from "~/components/common/tickets/ticket-group-virtual-list";
-import { TicketListWrapper } from "~/components/common/tickets/ticket-list-wrapper";
+import { TicketGroupVirtualList } from "~/components/common/tickets/ticket-list/ticket-group-virtual-list";
+import { TicketListWrapper } from "~/components/common/tickets/ticket-list/ticket-list-wrapper";
 
 export interface Ticket {
   id: string;
