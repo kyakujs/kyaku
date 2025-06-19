@@ -28,7 +28,7 @@
   "dependencies": {
     "@kyakujs/kyaku": "workspace:*",
     "drizzle-orm": "^0.44.2",
-    "pg": "^8.16.1"
+    "pg": "^8.16.2"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
