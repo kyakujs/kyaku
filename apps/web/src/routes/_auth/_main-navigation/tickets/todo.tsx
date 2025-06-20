@@ -10,11 +10,12 @@ import { Badge } from "@kyakujs/ui/badge";
 import { Checkbox } from "@kyakujs/ui/checkbox";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
-import { StatusIcon } from "~/components/common/tickets/status-icon";
 import { TicketList } from "~/components/common/tickets/ticket-list/ticket-list";
 import { Header } from "~/components/layout/headers/tickets/header";
 import { getContextualDate } from "~/libs/date";
 import { priorities } from "~/store/priority-store";
+import { statuses } from "~/store/status-store";
+import { subStatuses } from "~/store/substatus-store";
 
 export const Route = createFileRoute("/_auth/_main-navigation/tickets/todo")({
   component: RouteComponent,
@@ -120,19 +121,39 @@ function RouteComponent() {
     },
     {
       accessorKey: "status",
-      cell: ({ cell }) => (
-        <div className="flex items-center">
-          <StatusIcon status={cell.getValue<number>()} />
-        </div>
-      ),
+      cell: ({ cell }) => {
+        const status = statuses.find(
+          (s) => s.value === cell.getValue<number>(),
+        );
+
+        if (!status) return null;
+
+        return (
+          <div className="flex items-center">
+            <span className={status.color}>
+              <status.icon className="size-4" />
+            </span>
+          </div>
+        );
+      },
     },
     {
       accessorKey: "statusDetail",
-      cell: ({ cell }) => (
-        <div className="flex items-center">
-          <StatusIcon status={cell.getValue<number>()} />
-        </div>
-      ),
+      cell: ({ cell }) => {
+        const subStatus = subStatuses.find(
+          (s) => s.value === cell.getValue<number>(),
+        );
+
+        if (!subStatus) return null;
+
+        return (
+          <div className="flex items-center">
+            <span className={subStatus.color}>
+              <subStatus.icon className="size-4" />
+            </span>
+          </div>
+        );
+      },
     },
     {
       accessorKey: "title",
