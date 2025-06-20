@@ -4,17 +4,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CircleDashedIcon } from "lucide-react";
 
 import type { Schema } from "@kyakujs/zero/schema";
+import { cn } from "@kyakujs/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
 import { Badge } from "@kyakujs/ui/badge";
 import { Checkbox } from "@kyakujs/ui/checkbox";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
-import { PriorityIcon } from "~/components/common/tickets/priority-icon";
-import { PriorityLabel } from "~/components/common/tickets/priority-label";
 import { StatusIcon } from "~/components/common/tickets/status-icon";
 import { TicketList } from "~/components/common/tickets/ticket-list/ticket-list";
 import { Header } from "~/components/layout/headers/tickets/header";
 import { getContextualDate } from "~/libs/date";
+import { priorities } from "~/store/priority-store";
 
 export const Route = createFileRoute("/_auth/_main-navigation/tickets/todo")({
   component: RouteComponent,
@@ -77,19 +77,33 @@ function RouteComponent() {
     },
     {
       accessorKey: "priority",
-      aggregatedCell: ({ cell }) => (
-        <>
-          <PriorityIcon priority={cell.getValue<number>()} />
-          <span className="text-foreground">
-            <PriorityLabel priority={cell.getValue<number>()} />
-          </span>
-        </>
-      ),
-      cell: ({ cell }) => (
-        <div className="flex items-center">
-          <PriorityIcon priority={cell.getValue<number>()} />
-        </div>
-      ),
+      aggregatedCell: ({ cell }) => {
+        const priority = priorities.find(
+          (p) => p.value === cell.getValue<number | undefined>(),
+        );
+
+        if (!priority) return null;
+
+        return (
+          <div className="flex items-center gap-2">
+            <priority.icon className={cn("size-4", priority.color)} />
+            <span className="text-foreground">{priority.name}</span>
+          </div>
+        );
+      },
+      cell: ({ cell }) => {
+        const priority = priorities.find(
+          (p) => p.value === cell.getValue<number | undefined>(),
+        );
+
+        if (!priority) return null;
+
+        return (
+          <div className="flex items-center">
+            <priority.icon className={cn("size-4", priority.color)} />
+          </div>
+        );
+      },
     },
     {
       accessorKey: "shortId",

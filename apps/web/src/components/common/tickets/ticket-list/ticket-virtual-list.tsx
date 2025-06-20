@@ -52,13 +52,13 @@ export function TicketVirtualList({
       }}
     >
       {paddingTop > 0 ? <div style={{ height: paddingTop }}></div> : null}
-      {virtualItems.map((virtualRow) => (
+      {virtualItems.map((virtualItem) => (
         <TicketListLine
-          key={virtualRow.key}
-          data-list-key={`ITEM_${rows[virtualRow.index]?.id}`}
-          data-index={virtualRow.index}
+          key={virtualItem.key}
+          data-list-key={`ITEM_${rows[virtualItem.index]?.id}`}
+          data-index={virtualItem.index}
           ref={virtualizer.measureElement}
-          row={rows[virtualRow.index]!}
+          row={rows[virtualItem.index]!}
         />
       ))}
       {paddingBottom > 0 ? <div style={{ height: paddingBottom }}></div> : null}

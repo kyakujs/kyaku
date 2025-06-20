@@ -20,13 +20,12 @@ import {
   PopoverTrigger,
 } from "@kyakujs/ui/popover";
 
-import type { Priority } from "./priorities";
 import type { Shortcut } from "~/store/shortcut-store";
+import { priorities } from "~/store/priority-store";
 import { useShortcutStore } from "~/store/shortcut-store";
-import { priorities } from "./priorities";
 
 interface PrioritySelectorProps {
-  priority: Priority;
+  priority: number | undefined;
   ticketId?: string;
 }
 
@@ -34,7 +33,7 @@ export function PrioritySelector({ priority }: PrioritySelectorProps) {
   const id = useId();
   const [open, setOpen] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<string>("");
-  const [value, setValue] = useState<string>(priority.id);
+  const [value, setValue] = useState<number | undefined>(priority);
   const {
     registerShortcut,
     registerShortcuts,
@@ -43,8 +42,8 @@ export function PrioritySelector({ priority }: PrioritySelectorProps) {
   } = useShortcutStore();
 
   useEffect(() => {
-    setValue(priority.id);
-  }, [priority.id]);
+    setValue(priority);
+  }, [priority]);
 
   useEffect(() => {
     const priorityShortcut: Shortcut = {
@@ -74,7 +73,7 @@ export function PrioritySelector({ priority }: PrioritySelectorProps) {
       action: (e: KeyboardEvent) => {
         if (open && !searchValue) {
           e.preventDefault();
-          setValue(priority.id);
+          setValue(priority.value);
           setOpen(false);
         }
       },
@@ -118,11 +117,12 @@ export function PrioritySelector({ priority }: PrioritySelectorProps) {
             >
               {(() => {
                 const selectedItem = priorities.find(
-                  (item) => item.id === value,
+                  (item) => item.value === value,
                 );
                 if (selectedItem) {
-                  const Icon = selectedItem.icon;
-                  return <Icon className="size-4 text-muted-foreground" />;
+                  return (
+                    <selectedItem.icon className="size-4 text-muted-foreground" />
+                  );
                 }
                 return null;
               })()}
@@ -151,7 +151,7 @@ export function PrioritySelector({ priority }: PrioritySelectorProps) {
                         <item.icon className="size-4 text-muted-foreground" />
                         {item.name}
                       </div>
-                      {value === item.id ? (
+                      {value === item.value ? (
                         <CheckIcon size={16} className="ml-auto" />
                       ) : null}
                       {!searchValue ? (

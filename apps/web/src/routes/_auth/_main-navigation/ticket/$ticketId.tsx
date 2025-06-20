@@ -5,7 +5,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import type { Schema } from "@kyakujs/zero/schema";
 import { schema } from "@kyakujs/zero/schema";
 
-import { priorities } from "~/components/common/tickets/priorities";
 import { PrioritySelector } from "~/components/common/tickets/priority-selector";
 
 export const Route = createFileRoute(
@@ -62,8 +61,8 @@ function RouteComponent() {
       <div className="flex w-72 flex-col overflow-y-scroll border-l border-accent bg-sidebar-background p-6">
         <div className="mb-4">{ticket.title}</div>
         <div className="text-xs">{ticket.description}</div>
-        {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-        <PrioritySelector priority={priorities[0]!} />
+        {}
+        <PrioritySelector priority={ticket.priority} />
       </div>
     </div>
   );
