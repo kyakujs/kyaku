@@ -1165,6 +1165,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:^9.8.0":
+  version: 9.8.0
+  resolution: "@faker-js/faker@npm:9.8.0"
+  checksum: 10c0/f5db1125c1ea0115b9142fb4d4cb37cac2da4cd12ed02afb1cabf3b9600bd365bf480386250975a4fb200d77c00e8364dc8f61ac273a9dcdd2f2f42c3b29b0ec
+  languageName: node
+  linkType: hard
+
 "@fastify/ajv-compiler@npm:^4.0.0":
   version: 4.0.1
   resolution: "@fastify/ajv-compiler@npm:4.0.1"
@@ -1504,6 +1511,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/db@workspace:packages/db"
   dependencies:
+    "@faker-js/faker": "npm:^9.8.0"
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/kyaku": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"

@@ -21,7 +21,7 @@
     "generate-migration": "yarn with-env drizzle-kit generate",
     "lint": "eslint",
     "push-migration": "yarn with-env drizzle-kit push",
-    "seed": "yarn build --emitDeclarationOnly false && yarn with-env node ./dist/seed.js",
+    "seed": "yarn build --emitDeclarationOnly false --module nodenext --moduleResolution nodenext && yarn with-env node ./dist/seed.js",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --"
   },
@@ -31,6 +31,7 @@
     "pg": "^8.16.2"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
     "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",

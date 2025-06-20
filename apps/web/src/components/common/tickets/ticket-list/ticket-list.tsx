@@ -19,8 +19,8 @@ export interface Ticket {
   assignedTo: {
     id: string;
     name: string;
-    firstName: string;
-    lastName: string;
+    firstName: string | undefined;
+    lastName: string | undefined;
     username: string;
     image: string;
   } | null;

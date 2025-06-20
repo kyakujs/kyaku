@@ -79,7 +79,9 @@ const ticketTimelineEntry = table("ticketTimelineEntry")
   .columns({
     id: string(),
     ticketId: string(),
-    type: enumeration<TimelineEntryType>(),
+    type: enumeration<
+      (typeof TimelineEntryType)[keyof typeof TimelineEntryType]
+    >(),
     entry: json<TicketTimelineEntry>(),
   })
   .primaryKey("id");
@@ -220,7 +222,29 @@ export const permissions: ReturnType<typeof definePermissions> =
           delete: NOBODY_CAN,
         },
       },
+      label: {
+        row: {
+          select: [allowIfLoggedIn],
+          insert: [allowIfLoggedIn],
+          update: {
+            postMutation: [allowIfLoggedIn],
+            preMutation: [allowIfLoggedIn],
+          },
+          delete: NOBODY_CAN,
+        },
+      },
       ticket: {
+        row: {
+          select: [allowIfLoggedIn],
+          insert: [allowIfLoggedIn],
+          update: {
+            postMutation: [allowIfLoggedIn],
+            preMutation: [allowIfLoggedIn],
+          },
+          delete: NOBODY_CAN,
+        },
+      },
+      ticketLabel: {
         row: {
           select: [allowIfLoggedIn],
           insert: [allowIfLoggedIn],

@@ -108,16 +108,24 @@ function RouteComponent() {
     },
     {
       accessorKey: "shortId",
-      cell: ({ cell }) => (
-        <div
-          className="flex shrink-0 items-center text-muted-foreground"
-          style={{
-            width: `7ch`,
-          }}
-        >
-          TIC-{cell.getValue<string>()}
-        </div>
-      ),
+      cell: ({ cell, table }) => {
+        const width =
+          table
+            .getRowModel()
+            .rows.toSorted((a, b) => b.original.shortId - a.original.shortId)[0]
+            ?.original.shortId.toString().length ?? 3;
+
+        return (
+          <div
+            className="flex shrink-0 items-center text-muted-foreground"
+            style={{
+              width: `${width + 4}ch`,
+            }}
+          >
+            TIC-{cell.getValue<string>()}
+          </div>
+        );
+      },
     },
     {
       accessorKey: "status",
@@ -208,12 +216,12 @@ function RouteComponent() {
               alt={row.original.assignedTo.username}
             />
             <AvatarFallback>
-              {row.original.assignedTo.firstName[0] ?? ""}
-              {row.original.assignedTo.lastName[0] ?? ""}
+              {row.original.assignedTo.firstName?.[0] ?? ""}
+              {row.original.assignedTo.lastName?.[0] ?? ""}
             </AvatarFallback>
           </Avatar>
         ) : (
-          <CircleDashedIcon />
+          <CircleDashedIcon className="size-5" />
         ),
     },
   ];

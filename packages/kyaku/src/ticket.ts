@@ -1,47 +1,49 @@
-export enum TicketStatus {
-  Done = "DONE",
-  Snoozed = "SNOOZED",
-  Todo = "TODO",
-}
+export const TicketStatus = {
+  Todo: 0,
+  Snoozed: 1,
+  Done: 2,
+} as const;
 
-export enum DoneTicketStatusDetail {
-  DoneAutomaticallySet = "DONE_AUTOMATICALLY_SET",
-  DoneManuallySet = "DONE_MANUALLY_SET",
-  Ignored = "IGNORED",
-}
+export const TodoTicketStatusDetail = {
+  NeedsFirstResponse: 0,
+  Invetigating: 1,
+  NeedNextResponse: 2,
+  CloseTheLoop: 3,
+} as const;
 
-export enum SnoozeTicketStatusDetail {
-  WaitingForCustomer = "WAITING_FOR_CUSTOMER",
-  WaitingForDuration = "WAITING_FOR_DURATION",
-}
+export const SnoozeTicketStatusDetail = {
+  WaitingForCustomer: 4,
+  PausedForLater: 5,
+} as const;
 
-export enum TodoTicketStatusDetail {
-  CloseTheLoop = "CLOSE_THE_LOOP",
-  Created = "CREATED",
-  InProgress = "IN_PROGRESS",
-  NewReply = "NEW_REPLY",
-}
+export const DoneTicketStatusDetail = {
+  Ignored: 6,
+  DoneManuallySet: 7,
+  DoneAutomaticallySet: 8,
+} as const;
 
-export type TicketStatusDetail =
-  | DoneTicketStatusDetail
-  | SnoozeTicketStatusDetail
-  | TodoTicketStatusDetail;
+export const TicketStatusDetail = {
+  ...TodoTicketStatusDetail,
+  ...SnoozeTicketStatusDetail,
+  ...DoneTicketStatusDetail,
+} as const;
 
-export enum TicketPriority {
-  Critical = "CRITICAL",
-  High = "HIGH",
-  Low = "LOW",
-  Medium = "MEDIUM",
-}
+export const TicketPriority = {
+  NoPriority: undefined,
+  Urgent: 0,
+  High: 1,
+  Medium: 2,
+  Low: 3,
+} as const;
 
-export enum TimelineEntryType {
-  AssignmentChanged = "ASSIGNMENT_CHANGED",
-  Chat = "CHAT",
-  LabelsChanged = "LABELS_CHANGED",
-  Note = "NOTE",
-  PriorityChanged = "PRIORITY_CHANGED",
-  StatusChanged = "STATUS_CHANGED",
-}
+export const TimelineEntryType = {
+  AssignmentChanged: "ASSIGNMENT_CHANGED",
+  Chat: "CHAT",
+  LabelsChanged: "LABELS_CHANGED",
+  Note: "NOTE",
+  PriorityChanged: "PRIORITY_CHANGED",
+  StatusChanged: "STATUS_CHANGED",
+} as const;
 
 export type TicketAssignmentChanged = {
   oldAssignedToId: string | null;
@@ -63,13 +65,13 @@ export type TicketNote = {
 };
 
 export type TicketPriorityChanged = {
-  oldPriority: TicketPriority;
-  newPriority: TicketPriority;
+  oldPriority: (typeof TicketPriority)[keyof typeof TicketPriority];
+  newPriority: (typeof TicketPriority)[keyof typeof TicketPriority];
 };
 
 export type TicketStatusChanged = {
-  oldStatus: TicketStatus;
-  newStatus: TicketStatus;
+  oldStatus: (typeof TicketStatus)[keyof typeof TicketStatus];
+  newStatus: (typeof TicketStatus)[keyof typeof TicketStatus];
 };
 
 export type TicketTimelineEntry =
