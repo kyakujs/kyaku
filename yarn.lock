@@ -1519,7 +1519,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@types/pg": "npm:^8.15.4"
     dotenv-cli: "npm:^8.0.0"
-    drizzle-kit: "npm:^0.31.1"
+    drizzle-kit: "npm:^0.31.2"
     drizzle-orm: "npm:^0.44.2"
     drizzle-seed: "npm:^0.3.1"
     eslint: "npm:^9.29.0"
@@ -6908,17 +6908,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"drizzle-kit@npm:^0.31.1":
-  version: 0.31.1
-  resolution: "drizzle-kit@npm:0.31.1"
+"drizzle-kit@npm:^0.31.2":
+  version: 0.31.2
+  resolution: "drizzle-kit@npm:0.31.2"
   dependencies:
     "@drizzle-team/brocli": "npm:^0.10.2"
     "@esbuild-kit/esm-loader": "npm:^2.5.5"
-    esbuild: "npm:^0.25.2"
+    esbuild: "npm:^0.25.4"
     esbuild-register: "npm:^3.5.0"
   bin:
     drizzle-kit: bin.cjs
-  checksum: 10c0/da28fd8de2649ff4a9bccd84270d95eddac7578bda7604d9cf1870bffd94c7ae3a939d300a4af1f74e9942ae6a46e816afdc7aa7f2837e65c3051a4aa42cdee9
+  checksum: 10c0/3277328967cfdeac4bd2a6fd281c77766a62b263b102ba6c1ae15fd0fa456c04598ead88d35acd4bc7846f942e7afbe1762748d407728ea02a9401ca319dc900
   languageName: node
   linkType: hard
 
@@ -7436,7 +7436,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:0.25.5, esbuild@npm:^0.25.0, esbuild@npm:^0.25.2, esbuild@npm:^0.25.4":
+"esbuild@npm:0.25.5, esbuild@npm:^0.25.0, esbuild@npm:^0.25.4":
   version: 0.25.5
   resolution: "esbuild@npm:0.25.5"
   dependencies:
