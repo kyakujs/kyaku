@@ -21,6 +21,48 @@ interface ShortcutState {
   unregisterShortcuts: (shortcutIds: string[]) => void;
 }
 
+const modKeyMapping = {
+  control: "ctrlKey",
+  shift: "shiftKey",
+  alt: "altKey",
+  meta: "metaKey",
+} as const;
+
+const convertKeyToArray = (key: string) => {
+  const sanitizedKey = key.toLowerCase();
+
+  // Modifier key combination
+  if (sanitizedKey.includes("+")) {
+    return sanitizedKey.split("+").map((k) => k.trim());
+  }
+
+  // Key sequence
+  if (sanitizedKey.includes(" ")) {
+    return sanitizedKey.split(" ").map((k) => k.trim());
+  }
+
+  return [sanitizedKey];
+};
+
+const mapModKeys = (keys: string[]) => {
+  return keys.map((key) => modKeyMapping[key as keyof typeof modKeyMapping]);
+};
+
+const getEventModKeys = (event: KeyboardEvent) => {
+  const modKeys: (typeof modKeyMapping)[keyof typeof modKeyMapping][] = [];
+
+  if (event.altKey) modKeys.push("altKey");
+  if (event.ctrlKey) modKeys.push("ctrlKey");
+  if (event.metaKey) modKeys.push("metaKey");
+  if (event.shiftKey) modKeys.push("shiftKey");
+
+  return modKeys;
+};
+
+const isModKeyPressed = (event: KeyboardEvent) => {
+  return event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
+};
+
 const ignoreKeydownEvent = (
   event: KeyboardEvent,
   enableOnContentEditable?: boolean,
@@ -44,22 +86,57 @@ const ignoreKeydownEvent = (
   return false;
 };
 
+const areSetEqual = <T>(a: Set<T>, b: Set<T>) => {
+  return a.size === b.size && a.isSubsetOf(b);
+};
+
+const isHotKeyCombination = (event: KeyboardEvent, hotKeys: string[]) => {
+  const actionKey = hotKeys.at(-1);
+  const hotKeyModKeys = hotKeys.slice(0, -1);
+
+  const mappedHotKeyModKeys = new Set(mapModKeys(hotKeyModKeys));
+  const eventModKeys = new Set(getEventModKeys(event));
+
+  return (
+    areSetEqual(mappedHotKeyModKeys, eventModKeys) &&
+    event.key.toLowerCase() === actionKey
+  );
+};
+
 export const useShortcutStore = create<ShortcutState>((set, get) => ({
   shortcuts: [],
   callback: (event: KeyboardEvent) => {
     const { shortcuts } = get();
-    const shortcut = shortcuts.find((s) => s.key === event.key.toLowerCase());
-    if (
-      shortcut &&
-      !ignoreKeydownEvent(
-        event,
-        shortcut.enableOnContentEditable,
-        shortcut.enableOnInteractiveElement,
-      )
-    ) {
-      console.log(`Shortcut triggered: ${shortcut.id}`);
-      shortcut.action(event);
-    }
+
+    shortcuts.forEach((shortcut) => {
+      const hotKeys = convertKeyToArray(shortcut.key);
+
+      if (
+        ignoreKeydownEvent(
+          event,
+          shortcut.enableOnContentEditable,
+          shortcut.enableOnInteractiveElement,
+        )
+      ) {
+        return;
+      }
+
+      if (isModKeyPressed(event)) {
+        if (isHotKeyCombination(event, hotKeys)) {
+          console.log(`Shortcut triggered: ${shortcut.id}`);
+          shortcut.action(event);
+        }
+
+        return;
+      }
+
+      // TODO: handle key sequences
+
+      if (event.key.toLowerCase() === hotKeys[0]) {
+        console.log(`Shortcut triggered: ${shortcut.id}`);
+        shortcut.action(event);
+      }
+    });
   },
 
   subscribe: () => {
