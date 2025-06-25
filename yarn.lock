@@ -4807,16 +4807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=13.7.0":
-  version: 24.0.3
-  resolution: "@types/node@npm:24.0.3"
-  dependencies:
-    undici-types: "npm:~7.8.0"
-  checksum: 10c0/9c3c4e87600d1cf11e291c2fd4bfd806a615455463c30a0ef6dc9c801b3423344d9b82b8084e3ccabce485a7421ebb61a66e9676181bd7d9aea4759998a120d5
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^24.0.4":
+"@types/node@npm:*, @types/node@npm:>=13.7.0, @types/node@npm:^24.0.4":
   version: 24.0.4
   resolution: "@types/node@npm:24.0.4"
   dependencies:
@@ -11607,16 +11598,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.5.0, prettier@npm:^3.5.3":
-  version: 3.6.0
-  resolution: "prettier@npm:3.6.0"
-  bin:
-    prettier: bin/prettier.cjs
-  checksum: 10c0/636897c8084b71ef1f740a46199df0d8f6ed896aa497212cc8cc229d3026b9dca82fa92f61e55924c4708cea11e39a88478e2d93c4818741c55b7408a9ac6d91
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^3.6.1":
+"prettier@npm:^3.5.0, prettier@npm:^3.5.3, prettier@npm:^3.6.1":
   version: 3.6.1
   resolution: "prettier@npm:3.6.1"
   bin:
