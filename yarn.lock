@@ -3620,16 +3620,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero-sqlite3@npm:^1.0.7":
-  version: 1.0.7
-  resolution: "@rocicorp/zero-sqlite3@npm:1.0.7"
+"@rocicorp/zero-sqlite3@npm:1.0.5":
+  version: 1.0.5
+  resolution: "@rocicorp/zero-sqlite3@npm:1.0.5"
   dependencies:
     bindings: "npm:^1.5.0"
     node-gyp: "npm:latest"
     prebuild-install: "npm:^7.1.1"
   bin:
     zero-sqlite3: shell.ps1
-  checksum: 10c0/48a9806d19227df6f433614329394988b184035e6113a83f2041e5854c94afb2092f2d629d7b1f157cd9eceed861dcb0c4cefa8b5ce2819af88bd85b9384e926
+  checksum: 10c0/2d9414ba6eec64e2674872e2a22fd254e3688d1cbad866df304bc9e3718fd24cbe6f852d36c74a204f7a083cc41af29fe2576bbfd648ac429765c37aa326ecf7
   languageName: node
   linkType: hard
 
