@@ -24,7 +24,7 @@ export function TicketVirtualList({
     scrollMargin,
     getScrollElement,
     estimateSize: () => TICKET_GROUP_ITEM_HEIGHT,
-    overscan: 0,
+    overscan: 20,
     initialOffset,
   });
 

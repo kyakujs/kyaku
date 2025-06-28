@@ -2,25 +2,53 @@
 "use no memo";
 
 import type { Row } from "@tanstack/react-table";
-import { useRef } from "react";
+import type { Range } from "@tanstack/react-virtual";
+import { Fragment, useCallback, useMemo, useRef } from "react";
 import { flexRender } from "@tanstack/react-table";
-import { useVirtualizer } from "@tanstack/react-virtual";
+import { defaultRangeExtractor, useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
-import { TicketVirtualList } from "~/components/common/tickets/ticket-list/ticket-virtual-list";
+import { TicketListLine } from "~/components/common/tickets/ticket-list/ticket-list-line";
 
 export const TICKET_GROUP_ITEM_HEIGHT = 39;
 
 export function TicketGroupVirtualList({ rows }: { rows: Row<Ticket>[] }) {
   const parentRef = useRef<HTMLDivElement>(null);
 
+  const activeStickyIndexRef = useRef(0);
+  const flattenedRows = useMemo(
+    () => rows.flatMap((row) => [row, ...row.subRows]),
+    [rows],
+  );
+  const stickyIndexes = useMemo(
+    () =>
+      rows.map((row) =>
+        flattenedRows.findIndex((flatRow) => flatRow.id === row.id),
+      ),
+    [flattenedRows, rows],
+  );
+
   const virtualizer = useVirtualizer({
-    count: rows.length,
-    estimateSize: (index) =>
-      (rows[index]?.subRows.length ?? 0) * TICKET_GROUP_ITEM_HEIGHT +
-      TICKET_GROUP_ITEM_HEIGHT,
+    count: flattenedRows.length,
+    estimateSize: () => TICKET_GROUP_ITEM_HEIGHT,
     getScrollElement: () => parentRef.current,
-    overscan: 0,
+    rangeExtractor: useCallback(
+      (range: Range) => {
+        activeStickyIndexRef.current =
+          [...stickyIndexes]
+            .reverse()
+            .find((index) => range.startIndex >= index) ?? 0;
+
+        const next = new Set([
+          activeStickyIndexRef.current,
+          ...defaultRangeExtractor(range),
+        ]);
+
+        return [...next].sort((a, b) => a - b);
+      },
+      [stickyIndexes],
+    ),
+    overscan: 20,
   });
 
   const virtualItems = virtualizer.getVirtualItems();
@@ -30,7 +58,9 @@ export function TicketGroupVirtualList({ rows }: { rows: Row<Ticket>[] }) {
       ? [
           Math.max(
             0,
-            virtualItems[0]!.start - virtualizer.options.scrollMargin,
+            (virtualItems[1]?.start ?? 0) -
+              (virtualItems[0]?.size ?? 0) -
+              virtualizer.options.scrollMargin,
           ),
           Math.max(
             0,
@@ -53,47 +83,39 @@ export function TicketGroupVirtualList({ rows }: { rows: Row<Ticket>[] }) {
       >
         {paddingTop > 0 ? <div style={{ height: paddingTop }}></div> : null}
         {virtualItems.map((virtualItem) => {
-          const currentRow = rows[virtualItem.index];
+          const currentRow = flattenedRows[virtualItem.index];
 
           if (!currentRow) return null;
 
-          return (
+          return currentRow.getIsGrouped() ? (
             <div
               key={virtualItem.key}
-              data-group-key={`group_GROUP_${currentRow.id}`}
+              data-list-key={`GROUP_${currentRow.id}`}
               data-index={virtualItem.index}
               ref={virtualizer.measureElement}
+              className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b bg-muted pr-2 pl-8 text-sm"
             >
-              {currentRow.getVisibleCells().map((groupedCell) => {
-                return groupedCell.getIsAggregated() ? null : (
-                  <div
-                    key={groupedCell.id}
-                    data-list-key={`GROUP_${groupedCell.column.id}`}
-                  >
-                    <div className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b bg-muted pr-2 pl-8 text-sm">
-                      <span>
-                        {flexRender(
-                          groupedCell.column.columnDef.aggregatedCell,
-                          groupedCell.getContext(),
-                        )}
-                      </span>
-
-                      <span className="text-muted-foreground">
-                        {currentRow.subRows.length}
-                      </span>
-                    </div>
-                    <TicketVirtualList
-                      getScrollElement={() => parentRef.current}
-                      initialOffset={() => virtualizer.scrollOffset ?? 0}
-                      scrollMargin={
-                        virtualItem.start + TICKET_GROUP_ITEM_HEIGHT
-                      }
-                      rows={rows[virtualItem.index]?.subRows ?? []}
-                    />
-                  </div>
-                );
-              })}
+              {currentRow
+                .getVisibleCells()
+                .map((cell) =>
+                  cell.getIsAggregated() ? null : (
+                    <Fragment key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.aggregatedCell,
+                        cell.getContext(),
+                      )}
+                    </Fragment>
+                  ),
+                )}
             </div>
+          ) : (
+            <TicketListLine
+              key={virtualItem.key}
+              data-list-key={`ITEM_${currentRow.id}`}
+              data-index={virtualItem.index}
+              ref={virtualizer.measureElement}
+              row={currentRow}
+            />
           );
         })}
         {paddingBottom > 0 ? (
