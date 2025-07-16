@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@kyakujs/prettier-config": "workspace:*",
-    "turbo": "^2.5.4"
+    "turbo": "^2.5.5"
   },
   "resolutions": {
     "@rocicorp/zero-sqlite3": "1.0.5"
