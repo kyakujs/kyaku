@@ -12,25 +12,18 @@ const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
   }),
-  user: {
-    additionalFields: {
-      firstName: {
-        type: "string",
-        required: false,
-        defaultValue: "",
-      },
-      lastName: {
-        type: "string",
-        required: false,
-        defaultValue: "",
-      },
-    },
-  },
   account: {
     // TODO: Manually Linking Accounts: https://www.better-auth.com/docs/concepts/users-accounts#manually-linking-accounts
     accountLinking: {
       enabled: true,
       trustedProviders: ["github"],
+    },
+  },
+  advanced: {
+    cookiePrefix: "kyaku",
+    defaultCookieAttributes: {
+      httpOnly: false,
+      secure: true,
     },
   },
   socialProviders: {

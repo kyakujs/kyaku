@@ -22,6 +22,9 @@ export default defineConfig({
           ],
         },
       },
+      spa: {
+        enabled: true,
+      },
       tsr: {
         generatedRouteTree: "./src/route-tree.gen.ts",
       },

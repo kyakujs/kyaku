@@ -10,6 +10,7 @@ export const Route = createFileRoute("/login")({
     redirect: z.string().optional().catch("/"),
   }),
   component: Login,
+  ssr: false,
 });
 
 function Login() {

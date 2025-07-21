@@ -6,6 +6,7 @@ export const Route = createFileRoute(
   "/_auth/_settings-navigation/settings/account/preferences",
 )({
   component: RouteComponent,
+  ssr: false,
 });
 
 function RouteComponent() {

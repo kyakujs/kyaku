@@ -8,6 +8,7 @@ import { useShortcutStore } from "~/store/shortcut-store";
 
 export const Route = createFileRoute("/_auth/_main-navigation")({
   component: RouteComponent,
+  ssr: false,
 });
 
 function RouteComponent() {

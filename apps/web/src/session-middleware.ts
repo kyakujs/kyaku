@@ -13,18 +13,12 @@ export default createMiddleware({ type: "function" }).server(
 
     return next({
       context: {
-        auth:
-          session !== null
-            ? {
-                isAuthenticated: true as const,
-                ...session,
-                jwt: (
-                  await auth.api.getToken({
-                    headers: request.headers,
-                  })
-                ).token,
-              }
-            : { isAuthenticated: false as const },
+        auth: session
+          ? {
+              isAuthenticated: true as const,
+              ...session,
+            }
+          : { isAuthenticated: false as const },
       },
     });
   },

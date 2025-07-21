@@ -1,13 +1,13 @@
-import { useMemo } from "react";
-import { Zero } from "@rocicorp/zero";
-import { ZeroProvider } from "@rocicorp/zero/react";
+"use client";
+
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
 
-import { schema } from "@kyakujs/zero/schema";
-
-import { useAuthQuery } from "~/services/auth.query";
+import { AuthProvider, useAuth } from "~/components/auth-provider";
+import { ZeroProvider } from "~/components/zero-provider";
 
 export const Route = createFileRoute("/_auth")({
+  ssr: false,
+  component: AuthLayout,
   beforeLoad: ({ context, location }) => {
     if (!context.auth.isAuthenticated) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
@@ -19,25 +19,25 @@ export const Route = createFileRoute("/_auth")({
       });
     }
   },
-  component: AuthLayout,
 });
 
 function AuthLayout() {
-  const authQuery = useAuthQuery();
-
-  const z = useMemo(
-    () =>
-      new Zero({
-        userID: authQuery.data.isAuthenticated ? authQuery.data.user.id : "",
-        auth: authQuery.data.isAuthenticated ? authQuery.data.jwt : "",
-        server: import.meta.env.VITE_SYNC_ENGINE_URL as string,
-        schema,
-        kvStore: "mem", // or "idb" for IndexedDB persistence
-      }),
-    [authQuery.data],
-  );
   return (
-    <ZeroProvider zero={z}>
+    <AuthProvider>
+      <Auth />
+    </AuthProvider>
+  );
+}
+
+function Auth() {
+  const { isPending } = useAuth();
+
+  if (isPending) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <ZeroProvider>
       <Outlet />
     </ZeroProvider>
   );

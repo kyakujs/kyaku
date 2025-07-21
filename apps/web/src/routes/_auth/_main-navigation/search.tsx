@@ -4,6 +4,7 @@ import { Header } from "~/components/layout/headers/tickets/header";
 
 export const Route = createFileRoute("/_auth/_main-navigation/search")({
   component: RouteComponent,
+  ssr: false,
 });
 
 function RouteComponent() {

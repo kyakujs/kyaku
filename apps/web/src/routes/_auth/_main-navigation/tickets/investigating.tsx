@@ -6,6 +6,7 @@ export const Route = createFileRoute(
   "/_auth/_main-navigation/tickets/investigating",
 )({
   component: RouteComponent,
+  ssr: false,
 });
 
 function RouteComponent() {

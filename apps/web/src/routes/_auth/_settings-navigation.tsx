@@ -6,6 +6,7 @@ import { SettingsSidebar } from "~/components/layout/sidebars/settings-sidebar";
 
 export const Route = createFileRoute("/_auth/_settings-navigation")({
   component: RouteComponent,
+  ssr: false,
 });
 
 function RouteComponent() {

@@ -10,12 +10,12 @@ import {
 
 import type { RouterContext } from "~/router";
 import { RouterDevtools } from "~/router";
-import { authQueryOptions } from "~/services/auth.query";
+import { getAuth } from "~/services/auth.api";
 import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRouteWithContext<RouterContext>()({
-  beforeLoad: async ({ context }) => {
-    const auth = await context.queryClient.ensureQueryData(authQueryOptions());
+  beforeLoad: async () => {
+    const auth = await getAuth();
 
     return {
       auth,
