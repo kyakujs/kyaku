@@ -2,9 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Header } from "~/components/layout/headers/tickets/header";
 
-export const Route = createFileRoute(
-  "/_auth/_main-navigation/tickets/yours",
-)({
+export const Route = createFileRoute("/_auth/_main-navigation/tickets/yours")({
   component: RouteComponent,
   ssr: false,
 });

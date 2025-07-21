@@ -17,9 +17,7 @@ import { priorities } from "~/store/priority-store";
 import { statuses } from "~/store/status-store";
 import { subStatuses } from "~/store/substatus-store";
 
-export const Route = createFileRoute(
-  "/_auth/_main-navigation/tickets/todo",
-)({
+export const Route = createFileRoute("/_auth/_main-navigation/tickets/todo")({
   component: RouteComponent,
   ssr: false,
 });
