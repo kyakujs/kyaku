@@ -5,7 +5,7 @@ services:
     restart: always
     user: postgres
     ports:
-      - 6434:5432
+      - 5432:5432
     volumes:
       - kyaku_db_data:/var/lib/postgresql/data
     environment:
@@ -20,29 +20,6 @@ services:
       -c hot_standby=on
       -c hot_standby_feedback=on
 
-  kyaku_db_sync:
-    image: postgres:17-alpine
-    shm_size: 1g
-    restart: always
-    user: postgres
-    ports:
-      - 6435:5432
-    volumes:
-      - kyaku_db_sync_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_DB=kyaku
-      - POSTGRES_PASSWORD=kyaku
-    command: |
-      postgres
-      -c wal_level=logical
-      -c max_wal_senders=10
-      -c max_replication_slots=5
-      -c hot_standby=on
-      -c hot_standby_feedback=on
-
 volumes:
   kyaku_db_data:
-    driver: local
-  kyaku_db_sync_data:
     driver: local

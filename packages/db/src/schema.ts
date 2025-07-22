@@ -26,6 +26,7 @@ export const user = pgTable("user", {
   createdAt: timestamp("createdAt").notNull(),
   updatedAt: timestamp("updatedAt").notNull(),
   username: text("username").unique(),
+  displayUsername: text("displayUsername"),
   role: text("role"),
   banned: boolean("banned"),
   banReason: text("banReason"),

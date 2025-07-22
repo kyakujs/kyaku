@@ -29,6 +29,13 @@
       "when": 1744226297337,
       "tag": "0003_nappy_outlaw_kid",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1753215257415,
+      "tag": "0004_strange_vance_astro",
+      "breakpoints": true
     }
   ]
 }
