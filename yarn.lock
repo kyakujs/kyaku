@@ -1624,7 +1624,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.22.2025072500"
+    "@rocicorp/zero": "npm:^0.22.2025072901"
     "@tailwindcss/vite": "npm:^4.1.11"
     "@tanstack/react-query": "npm:^5.83.0"
     "@tanstack/react-router": "npm:^1.129.8"
@@ -1661,7 +1661,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.22.2025072500"
+    "@rocicorp/zero": "npm:^0.22.2025072901"
     dotenv-cli: "npm:^9.0.0"
     eslint: "npm:^9.32.0"
     prettier: "npm:^3.6.2"
@@ -3638,9 +3638,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.22.2025072500":
-  version: 0.22.2025072500
-  resolution: "@rocicorp/zero@npm:0.22.2025072500"
+"@rocicorp/zero@npm:^0.22.2025072901":
+  version: 0.22.2025072901
+  resolution: "@rocicorp/zero@npm:0.22.2025072901"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3665,7 +3665,7 @@ __metadata:
     "@rocicorp/lock": "npm:^1.0.4"
     "@rocicorp/logger": "npm:^5.4.0"
     "@rocicorp/resolver": "npm:^1.0.2"
-    "@rocicorp/zero-sqlite3": "npm:^1.0.7"
+    "@rocicorp/zero-sqlite3": "npm:^1.0.8"
     "@types/basic-auth": "npm:^1.1.8"
     basic-auth: "npm:^2.0.1"
     chalk: "npm:^5.3.0"
@@ -3701,7 +3701,7 @@ __metadata:
     zero-cache: out/zero/src/cli.js
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
-  checksum: 10c0/5ade0eabbca555c65d8d89e09807a4330191dd01f099d1eba8c75f0fde50a7c856e283a71ff530fa19b5d3bc7b6a6abfd63e72e6f6a986dac9f1053a4289fb6d
+  checksum: 10c0/b9197a37ea40de7351de8fa9ca3b47f2a729a0df9cac7605da821994533135fd425331eefce690393ba5e75e8bf12778f27cf8436e02adb1e15f72b9f59099e3
   languageName: node
   linkType: hard
 
