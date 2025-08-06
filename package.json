@@ -24,9 +24,6 @@
     "@kyakujs/prettier-config": "workspace:*",
     "turbo": "^2.5.5"
   },
-  "resolutions": {
-    "@rocicorp/zero-sqlite3": "1.0.5"
-  },
   "packageManager": "yarn@4.9.2",
   "prettier": "@kyakujs/prettier-config"
 }
