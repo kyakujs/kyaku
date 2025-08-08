@@ -1424,9 +1424,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ianvs/prettier-plugin-sort-imports@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.6.0"
+"@ianvs/prettier-plugin-sort-imports@npm:^4.6.1":
+  version: 4.6.1
+  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.6.1"
   dependencies:
     "@babel/generator": "npm:^7.26.2"
     "@babel/parser": "npm:^7.26.2"
@@ -1448,7 +1448,7 @@ __metadata:
       optional: true
     prettier-plugin-ember-template-tag:
       optional: true
-  checksum: 10c0/d3f6c26edbd7a2d5e5c327e90d2174b066918340c4718149b598ac0d72aa5e8c233d6a1225ae22ccbcb224c489b4f5afcdcefb134dcc5b488a081504ce9f305f
+  checksum: 10c0/1832eca2ba73ced3390bfa93d93a8df2a61aca475c78e0e18f03316bf42debd3c32ec37342aae856db02ddde0b01a86ff4b0023072078da0f224368e008b21d4
   languageName: node
   linkType: hard
 
@@ -1608,7 +1608,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/prettier-config@workspace:tooling/prettier"
   dependencies:
-    "@ianvs/prettier-plugin-sort-imports": "npm:^4.6.0"
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.6.1"
     "@kyakujs/tsconfig": "workspace:*"
     prettier: "npm:^3.6.2"
     prettier-plugin-tailwindcss: "npm:^0.6.14"
