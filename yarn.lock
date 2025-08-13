@@ -1666,7 +1666,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.22.2025080200"
+    "@rocicorp/zero": "npm:^0.23.2025081200"
     "@tailwindcss/vite": "npm:^4.1.11"
     "@tanstack/react-query": "npm:^5.84.2"
     "@tanstack/react-router": "npm:^1.131.5"
@@ -1703,7 +1703,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.22.2025080200"
+    "@rocicorp/zero": "npm:^0.23.2025081200"
     dotenv-cli: "npm:^10.0.0"
     eslint: "npm:^9.33.0"
     prettier: "npm:^3.6.2"
@@ -2118,7 +2118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/exporter-logs-otlp-http@npm:0.203.0, @opentelemetry/exporter-logs-otlp-http@npm:^0.203.0":
+"@opentelemetry/exporter-logs-otlp-http@npm:0.203.0":
   version: 0.203.0
   resolution: "@opentelemetry/exporter-logs-otlp-http@npm:0.203.0"
   dependencies:
@@ -2229,7 +2229,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/exporter-trace-otlp-http@npm:0.203.0, @opentelemetry/exporter-trace-otlp-http@npm:^0.203.0":
+"@opentelemetry/exporter-trace-otlp-http@npm:0.203.0":
   version: 0.203.0
   resolution: "@opentelemetry/exporter-trace-otlp-http@npm:0.203.0"
   dependencies:
@@ -3697,9 +3697,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.22.2025080200":
-  version: 0.22.2025080201
-  resolution: "@rocicorp/zero@npm:0.22.2025080201"
+"@rocicorp/zero@npm:^0.23.2025081200":
+  version: 0.23.2025081200
+  resolution: "@rocicorp/zero@npm:0.23.2025081200"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3712,9 +3712,7 @@ __metadata:
     "@opentelemetry/api": "npm:^1.9.0"
     "@opentelemetry/api-logs": "npm:^0.203.0"
     "@opentelemetry/auto-instrumentations-node": "npm:^0.62.0"
-    "@opentelemetry/exporter-logs-otlp-http": "npm:^0.203.0"
     "@opentelemetry/exporter-metrics-otlp-http": "npm:^0.203.0"
-    "@opentelemetry/exporter-trace-otlp-http": "npm:^0.203.0"
     "@opentelemetry/resources": "npm:^2.0.1"
     "@opentelemetry/sdk-metrics": "npm:^2.0.1"
     "@opentelemetry/sdk-node": "npm:^0.203.0"
@@ -3759,7 +3757,7 @@ __metadata:
     zero-cache: out/zero/src/cli.js
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
-  checksum: 10c0/ff743aab77dc4a72222f15c028581866dd9aa16eae4ca6672514899b30acf076e2f43f887348067342cb6dd5dcdc9521e174d85406b3c7f1cc55524e6f2d6fb8
+  checksum: 10c0/a947c4832ec3227d349137b4d1b5dd828a7e6c8e18d119e3386bf07440ab0832ff5ca50f2e9bec34ef9003d2630e1c24004dcf79862f97f6d3be5d2abe9b3273
   languageName: node
   linkType: hard
 
