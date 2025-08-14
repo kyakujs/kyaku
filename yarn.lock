@@ -1666,7 +1666,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.23.2025081200"
+    "@rocicorp/zero": "npm:^0.23.2025081401"
     "@tailwindcss/vite": "npm:^4.1.11"
     "@tanstack/react-query": "npm:^5.85.0"
     "@tanstack/react-router": "npm:^1.131.10"
@@ -1703,7 +1703,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.23.2025081200"
+    "@rocicorp/zero": "npm:^0.23.2025081401"
     dotenv-cli: "npm:^10.0.0"
     eslint: "npm:^9.33.0"
     prettier: "npm:^3.6.2"
@@ -3697,9 +3697,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.23.2025081200":
-  version: 0.23.2025081200
-  resolution: "@rocicorp/zero@npm:0.23.2025081200"
+"@rocicorp/zero@npm:^0.23.2025081401":
+  version: 0.23.2025081401
+  resolution: "@rocicorp/zero@npm:0.23.2025081401"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3727,6 +3727,7 @@ __metadata:
     chalk: "npm:^5.3.0"
     chalk-template: "npm:^1.1.0"
     chokidar: "npm:^4.0.1"
+    cloudevents: "npm:^10.0.0"
     command-line-args: "npm:^6.0.1"
     command-line-usage: "npm:^7.0.3"
     compare-utf8: "npm:^0.1.1"
@@ -3757,7 +3758,7 @@ __metadata:
     zero-cache: out/zero/src/cli.js
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
-  checksum: 10c0/a947c4832ec3227d349137b4d1b5dd828a7e6c8e18d119e3386bf07440ab0832ff5ca50f2e9bec34ef9003d2630e1c24004dcf79862f97f6d3be5d2abe9b3273
+  checksum: 10c0/5bb3258cf14c1a48de230a1452b82f35bd7c03eb0081280c55e071e95a4456664a44c66a6596ec6847610d20cb971d576d0d972c2ab9feabf0a7b19cc3ec5ee1
   languageName: node
   linkType: hard
 
@@ -5588,6 +5589,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ajv-formats@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "ajv-formats@npm:2.1.1"
+  dependencies:
+    ajv: "npm:^8.0.0"
+  peerDependencies:
+    ajv: ^8.0.0
+  peerDependenciesMeta:
+    ajv:
+      optional: true
+  checksum: 10c0/e43ba22e91b6a48d96224b83d260d3a3a561b42d391f8d3c6d2c1559f9aa5b253bfb306bc94bbeca1d967c014e15a6efe9a207309e95b3eaae07fcbcdc2af662
+  languageName: node
+  linkType: hard
+
 "ajv-formats@npm:^3.0.1":
   version: 3.0.1
   resolution: "ajv-formats@npm:3.0.1"
@@ -5614,7 +5629,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv@npm:^8.0.0, ajv@npm:^8.12.0":
+"ajv@npm:^8.0.0, ajv@npm:^8.11.0, ajv@npm:^8.12.0":
   version: 8.17.1
   resolution: "ajv@npm:8.17.1"
   dependencies:
@@ -6432,6 +6447,20 @@ __metadata:
     strip-ansi: "npm:^6.0.1"
     wrap-ansi: "npm:^7.0.0"
   checksum: 10c0/4bda0f09c340cbb6dfdc1ed508b3ca080f12992c18d68c6be4d9cf51756033d5266e61ec57529e610dacbf4da1c634423b0c1b11037709cc6b09045cbd815df5
+  languageName: node
+  linkType: hard
+
+"cloudevents@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "cloudevents@npm:10.0.0"
+  dependencies:
+    ajv: "npm:^8.11.0"
+    ajv-formats: "npm:^2.1.1"
+    json-bigint: "npm:^1.0.0"
+    process: "npm:^0.11.10"
+    util: "npm:^0.12.4"
+    uuid: "npm:^8.3.2"
+  checksum: 10c0/a0355db0c35495477241cf10c9fbb0e27e10ad34705e33ed221bd1fad94537ec787034c57aee5b9f63c74e4f843328766bcc53ef96bc5cc24700bc11d884a0ef
   languageName: node
   linkType: hard
 
@@ -8801,7 +8830,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-proto@npm:^1.0.1":
+"get-proto@npm:^1.0.0, get-proto@npm:^1.0.1":
   version: 1.0.1
   resolution: "get-proto@npm:1.0.1"
   dependencies:
@@ -9349,6 +9378,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-arguments@npm:^1.0.4":
+  version: 1.2.0
+  resolution: "is-arguments@npm:1.2.0"
+  dependencies:
+    call-bound: "npm:^1.0.2"
+    has-tostringtag: "npm:^1.0.2"
+  checksum: 10c0/6377344b31e9fcb707c6751ee89b11f132f32338e6a782ec2eac9393b0cbd32235dad93052998cda778ee058754860738341d8114910d50ada5615912bb929fc
+  languageName: node
+  linkType: hard
+
 "is-array-buffer@npm:^3.0.4, is-array-buffer@npm:^3.0.5":
   version: 3.0.5
   resolution: "is-array-buffer@npm:3.0.5"
@@ -9497,6 +9536,18 @@ __metadata:
   dependencies:
     has-tostringtag: "npm:^1.0.0"
   checksum: 10c0/df03514df01a6098945b5a0cfa1abff715807c8e72f57c49a0686ad54b3b74d394e2d8714e6f709a71eb00c9630d48e73ca1796c1ccc84ac95092c1fecc0d98b
+  languageName: node
+  linkType: hard
+
+"is-generator-function@npm:^1.0.7":
+  version: 1.1.0
+  resolution: "is-generator-function@npm:1.1.0"
+  dependencies:
+    call-bound: "npm:^1.0.3"
+    get-proto: "npm:^1.0.0"
+    has-tostringtag: "npm:^1.0.2"
+    safe-regex-test: "npm:^1.1.0"
+  checksum: 10c0/fdfa96c8087bf36fc4cd514b474ba2ff404219a4dd4cfa6cf5426404a1eed259bdcdb98f082a71029a48d01f27733e3436ecc6690129a7ec09cb0434bee03a2a
   languageName: node
   linkType: hard
 
@@ -9665,7 +9716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-typed-array@npm:^1.1.13, is-typed-array@npm:^1.1.14, is-typed-array@npm:^1.1.15":
+"is-typed-array@npm:^1.1.13, is-typed-array@npm:^1.1.14, is-typed-array@npm:^1.1.15, is-typed-array@npm:^1.1.3":
   version: 1.1.15
   resolution: "is-typed-array@npm:1.1.15"
   dependencies:
@@ -14432,12 +14483,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"util@npm:^0.12.4":
+  version: 0.12.5
+  resolution: "util@npm:0.12.5"
+  dependencies:
+    inherits: "npm:^2.0.3"
+    is-arguments: "npm:^1.0.4"
+    is-generator-function: "npm:^1.0.7"
+    is-typed-array: "npm:^1.1.3"
+    which-typed-array: "npm:^1.1.2"
+  checksum: 10c0/c27054de2cea2229a66c09522d0fa1415fb12d861d08523a8846bf2e4cbf0079d4c3f725f09dcb87493549bcbf05f5798dce1688b53c6c17201a45759e7253f3
+  languageName: node
+  linkType: hard
+
 "uuid@npm:^11.1.0":
   version: 11.1.0
   resolution: "uuid@npm:11.1.0"
   bin:
     uuid: dist/esm/bin/uuid
   checksum: 10c0/34aa51b9874ae398c2b799c88a127701408cd581ee89ec3baa53509dd8728cbb25826f2a038f9465f8b7be446f0fbf11558862965b18d21c993684297628d4d3
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 10c0/bcbb807a917d374a49f475fae2e87fdca7da5e5530820ef53f65ba1d12131bd81a92ecf259cc7ce317cbe0f289e7d79fdfebcef9bfa3087c8c8a2fa304c9be54
   languageName: node
   linkType: hard
 
@@ -14636,7 +14709,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"which-typed-array@npm:^1.1.16, which-typed-array@npm:^1.1.19":
+"which-typed-array@npm:^1.1.16, which-typed-array@npm:^1.1.19, which-typed-array@npm:^1.1.2":
   version: 1.1.19
   resolution: "which-typed-array@npm:1.1.19"
   dependencies:
