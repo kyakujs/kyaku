@@ -31,7 +31,7 @@
     "pg": "^8.16.3"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.9.0",
+    "@faker-js/faker": "^10.0.0",
     "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
