@@ -24,6 +24,6 @@
     "@kyakujs/prettier-config": "workspace:*",
     "turbo": "^2.5.6"
   },
-  "packageManager": "yarn@4.9.2",
+  "packageManager": "yarn@4.9.4",
   "prettier": "@kyakujs/prettier-config"
 }
