@@ -1550,7 +1550,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.7"
+    better-auth: "npm:^1.3.8"
     eslint: "npm:^9.34.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.2"
@@ -5757,9 +5757,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.7":
-  version: 1.3.7
-  resolution: "better-auth@npm:1.3.7"
+"better-auth@npm:^1.3.8":
+  version: 1.3.8
+  resolution: "better-auth@npm:1.3.8"
   dependencies:
     "@better-auth/utils": "npm:0.2.6"
     "@better-fetch/fetch": "npm:^1.1.18"
@@ -5767,33 +5767,33 @@ __metadata:
     "@noble/hashes": "npm:^1.8.0"
     "@simplewebauthn/browser": "npm:^13.1.2"
     "@simplewebauthn/server": "npm:^13.1.2"
-    better-call: "npm:^1.0.13"
+    better-call: "npm:1.0.16"
     defu: "npm:^6.1.4"
     jose: "npm:^5.10.0"
     kysely: "npm:^0.28.5"
     nanostores: "npm:^0.11.4"
+    zod: "npm:^4.1.5"
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-    zod: ^3.25.0 || ^4.0.0
   peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/f28036f79c01aad66c8051d6df98ed829160325a9af26b2361face63ee0ce11c85143685bd508c6792821de4a0c7987e4ca1cd294c05948607b72099eae82818
+  checksum: 10c0/7fbd5924c8533a38771169814f6632c10e691dd41c7e2611924822eb31c8952565d5358b85d5cceadac8fb51e4188d15428933e9ddefff99a1cb709d88f3aac8
   languageName: node
   linkType: hard
 
-"better-call@npm:^1.0.13":
-  version: 1.0.13
-  resolution: "better-call@npm:1.0.13"
+"better-call@npm:1.0.16":
+  version: 1.0.16
+  resolution: "better-call@npm:1.0.16"
   dependencies:
     "@better-fetch/fetch": "npm:^1.1.4"
     rou3: "npm:^0.5.1"
     set-cookie-parser: "npm:^2.7.1"
     uncrypto: "npm:^0.1.3"
-  checksum: 10c0/025533ae800f7861273f50d0ada7d67eadf00a443cad9c0d2d2778eaad0769ef6f1c5963cebd679b2caba6b7405cca9388bb6f0c2ead40dffd33eb3686e74269
+  checksum: 10c0/b6482f11e1dcbcc3508e70a07ac716f5b72261fe56edbc80b193b3154f3b84eb1c21808b92979feb02eb0dcef2dd19da3aff28424552071d4f86e95273a40fac
   languageName: node
   linkType: hard
 
