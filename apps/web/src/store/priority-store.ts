@@ -5,53 +5,47 @@ import { NoPriorityIcon } from "~/components/ui/priorities/no-priority-icon";
 import { UrgentPriorityIcon } from "~/components/ui/priorities/urgent-priority-icon";
 
 export interface Priority {
-  id: string;
+  code: string;
   color: string;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  name: string;
-  shortcut: string;
-  value: number | undefined;
+  id: number | undefined;
+  value: string;
 }
 
 export const priorities: Priority[] = [
   {
-    id: "no-priority",
+    code: "0",
     color: "text-gray-500",
     icon: NoPriorityIcon,
-    name: "No priority",
-    shortcut: "0",
-    value: undefined,
+    id: undefined,
+    value: "No priority",
   },
   {
-    id: "urgent",
+    code: "1",
     color: "text-orange-500",
     icon: UrgentPriorityIcon,
-    name: "Urgent",
-    shortcut: "1",
-    value: 0,
+    id: 0,
+    value: "Urgent",
   },
   {
-    id: "high",
+    code: "2",
     color: "text-gray-500",
     icon: HighPriorityIcon,
-    name: "High",
-    shortcut: "2",
-    value: 1,
+    id: 1,
+    value: "High",
   },
   {
-    id: "medium",
+    code: "3",
     color: "text-gray-500",
     icon: MediumPriorityIcon,
-    name: "Medium",
-    shortcut: "3",
-    value: 2,
+    id: 2,
+    value: "Medium",
   },
   {
-    id: "low",
+    code: "4",
     color: "text-gray-500",
     icon: LowPriorityIcon,
-    name: "Low",
-    shortcut: "4",
-    value: 3,
+    id: 3,
+    value: "Low",
   },
 ];
