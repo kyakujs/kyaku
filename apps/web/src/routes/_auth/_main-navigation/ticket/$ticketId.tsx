@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import type { Schema } from "@kyakujs/zero/schema";
 
-import { PrioritySelector } from "~/components/common/tickets/priority-selector";
+import PriorityCombobox from "~/components/common/tickets/priority-combobox";
 
 export const Route = createFileRoute(
   "/_auth/_main-navigation/ticket/$ticketId",
@@ -50,8 +50,7 @@ function RouteComponent() {
       <div className="flex w-72 flex-col overflow-y-scroll border-l border-accent bg-sidebar-background p-6">
         <div className="mb-4">{ticket.title}</div>
         <div className="text-xs">{ticket.description}</div>
-        {}
-        <PrioritySelector priority={ticket.priority} />
+        <PriorityCombobox priority={ticket.priority} />
       </div>
     </div>
   );
