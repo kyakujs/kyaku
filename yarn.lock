@@ -1550,7 +1550,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.8"
+    better-auth: "npm:^1.3.9"
     eslint: "npm:^9.35.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.2"
@@ -1883,17 +1883,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/ciphers@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@noble/ciphers@npm:0.6.0"
-  checksum: 10c0/840900243306dbf4caad942d518dc215bbe83e4daf6385d9294e76ea39b0834ba21591271cf2dd5cc5e64f96f98cdb967065b75e804b0b338b10ed50415ea64e
-  languageName: node
-  linkType: hard
-
 "@noble/ciphers@npm:^1.0.0":
   version: 1.2.1
   resolution: "@noble/ciphers@npm:1.2.1"
   checksum: 10c0/00e414da686ddba00f6e9bed124abb698bfe076658d40cc4e3b67b51fc7582fc3c2a7002ef33f154ea8cbf45e7783cfd48325cf3885d577ce8c0ae8bdd648069
+  languageName: node
+  linkType: hard
+
+"@noble/ciphers@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@noble/ciphers@npm:2.0.0"
+  checksum: 10c0/7b89c24993646f8a0ba3df0fdf124a2ab365d827bdb14a9b0db4db8a8e77a1ee99917436e8b0c0cf11ffcad917be5c6c16adbeec688e02a140714a5770b3cf15
   languageName: node
   linkType: hard
 
@@ -1913,10 +1913,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:^1.5.0, @noble/hashes@npm:^1.8.0":
+"@noble/hashes@npm:^1.5.0":
   version: 1.8.0
   resolution: "@noble/hashes@npm:1.8.0"
   checksum: 10c0/06a0b52c81a6fa7f04d67762e08b2c476a00285858150caeaaff4037356dd5e119f45b2a530f638b77a5eeca013168ec1b655db41bae3236cb2e9d511484fc77
+  languageName: node
+  linkType: hard
+
+"@noble/hashes@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@noble/hashes@npm:2.0.0"
+  checksum: 10c0/4c619df392164ea8655c630e753e791e1afb5f38cb746463d36509f684a197c3c653858b6a78135a0b54c80270a66f28003d5999ec1ad06cec0d658bf720a03f
   languageName: node
   linkType: hard
 
@@ -5757,43 +5764,46 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.8":
-  version: 1.3.8
-  resolution: "better-auth@npm:1.3.8"
+"better-auth@npm:^1.3.9":
+  version: 1.3.9
+  resolution: "better-auth@npm:1.3.9"
   dependencies:
     "@better-auth/utils": "npm:0.2.6"
     "@better-fetch/fetch": "npm:^1.1.18"
-    "@noble/ciphers": "npm:^0.6.0"
-    "@noble/hashes": "npm:^1.8.0"
+    "@noble/ciphers": "npm:^2.0.0"
+    "@noble/hashes": "npm:^2.0.0"
     "@simplewebauthn/browser": "npm:^13.1.2"
     "@simplewebauthn/server": "npm:^13.1.2"
-    better-call: "npm:1.0.16"
+    better-call: "npm:1.0.18"
     defu: "npm:^6.1.4"
-    jose: "npm:^5.10.0"
+    jose: "npm:^6.1.0"
     kysely: "npm:^0.28.5"
     nanostores: "npm:^0.11.4"
     zod: "npm:^4.1.5"
   peerDependencies:
+    "@lynx-js/react": "*"
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
+    "@lynx-js/react":
+      optional: true
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/7fbd5924c8533a38771169814f6632c10e691dd41c7e2611924822eb31c8952565d5358b85d5cceadac8fb51e4188d15428933e9ddefff99a1cb709d88f3aac8
+  checksum: 10c0/e6a4a1f644dd658a82d2155138da0fd1099676dc10b3f51f1e6d2acac47047e373aa4bcd0f4d7e0cc3c7007b328ad923ee1ebbf27913f3adf3d8eb03aa666314
   languageName: node
   linkType: hard
 
-"better-call@npm:1.0.16":
-  version: 1.0.16
-  resolution: "better-call@npm:1.0.16"
+"better-call@npm:1.0.18":
+  version: 1.0.18
+  resolution: "better-call@npm:1.0.18"
   dependencies:
     "@better-fetch/fetch": "npm:^1.1.4"
     rou3: "npm:^0.5.1"
     set-cookie-parser: "npm:^2.7.1"
     uncrypto: "npm:^0.1.3"
-  checksum: 10c0/b6482f11e1dcbcc3508e70a07ac716f5b72261fe56edbc80b193b3154f3b84eb1c21808b92979feb02eb0dcef2dd19da3aff28424552071d4f86e95273a40fac
+  checksum: 10c0/1ffd2a516099c8d5c5764becd303f20d183c889f62f77e98f8a30b1cc77279994ae58e8d21d4f832d72ad73ef58b0ad0ccd077f2e73ea2e02dc4a3bb74ce6984
   languageName: node
   linkType: hard
 
@@ -9601,10 +9611,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:^5.10.0, jose@npm:^5.9.3":
+"jose@npm:^5.9.3":
   version: 5.10.0
   resolution: "jose@npm:5.10.0"
   checksum: 10c0/e20d9fc58d7e402f2e5f04e824b8897d5579aae60e64cb88ebdea1395311c24537bf4892f7de413fab1acf11e922797fb1b42269bc8fc65089a3749265ccb7b0
+  languageName: node
+  linkType: hard
+
+"jose@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "jose@npm:6.1.0"
+  checksum: 10c0/f4518579e907317e144facd15c7627acd06097bbea17735097437217498aa419564c039dd4020f6af5f2d024a7cee6b7be4648ccbbdc238aedb80a47c061217d
   languageName: node
   linkType: hard
 
