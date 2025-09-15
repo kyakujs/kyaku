@@ -4601,16 +4601,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=13.7.0":
-  version: 24.3.1
-  resolution: "@types/node@npm:24.3.1"
-  dependencies:
-    undici-types: "npm:~7.10.0"
-  checksum: 10c0/99b86fc32294fcd61136ca1f771026443a1e370e9f284f75e243b29299dd878e18c193deba1ce29a374932db4e30eb80826e1049b9aad02d36f5c30b94b6f928
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^24.4.0":
+"@types/node@npm:*, @types/node@npm:>=13.7.0, @types/node@npm:^24.4.0":
   version: 24.4.0
   resolution: "@types/node@npm:24.4.0"
   dependencies:
@@ -13449,13 +13440,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~7.10.0":
-  version: 7.10.0
-  resolution: "undici-types@npm:7.10.0"
-  checksum: 10c0/8b00ce50e235fe3cc601307f148b5e8fb427092ee3b23e8118ec0a5d7f68eca8cee468c8fc9f15cbb2cf2a3797945ebceb1cbd9732306a1d00e0a9b6afa0f635
-  languageName: node
-  linkType: hard
-
 "undici-types@npm:~7.11.0":
   version: 7.11.0
   resolution: "undici-types@npm:7.11.0"
@@ -14284,14 +14268,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^4.1.5":
-  version: 4.1.5
-  resolution: "zod@npm:4.1.5"
-  checksum: 10c0/7826fb931bc71d4d0fff2fbb72f1a1cf30a6672cf9dbe6933a216bbb60242ef1c3bdfbcd3c5b27e806235a35efaad7a4a9897ff4d3621452f9ea278bce6fd42a
-  languageName: node
-  linkType: hard
-
-"zod@npm:^4.1.8":
+"zod@npm:^4.1.5, zod@npm:^4.1.8":
   version: 4.1.8
   resolution: "zod@npm:4.1.8"
   checksum: 10c0/5eae39da09d7bd0564a30dfd2348811e4e2e7dd15955d8f3444f8e196f35e5422b1482eda234b722fafb0738f4a8b718adb042b860936bfdd2cc19cdbdac8a9a
