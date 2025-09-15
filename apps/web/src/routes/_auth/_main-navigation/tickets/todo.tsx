@@ -81,7 +81,7 @@ function RouteComponent() {
       accessorKey: "priority",
       aggregatedCell: ({ cell }) => {
         const priority = priorities.find(
-          (p) => p.value === cell.getValue<number | undefined>(),
+          (p) => p.id === cell.getValue<number | undefined>(),
         );
 
         if (!priority) return null;
@@ -95,7 +95,7 @@ function RouteComponent() {
       },
       cell: ({ cell }) => {
         const priority = priorities.find(
-          (p) => p.value === cell.getValue<number | undefined>(),
+          (p) => p.id === cell.getValue<number | undefined>(),
         );
 
         if (!priority) return null;
@@ -131,9 +131,7 @@ function RouteComponent() {
     {
       accessorKey: "status",
       cell: ({ cell }) => {
-        const status = statuses.find(
-          (s) => s.value === cell.getValue<number>(),
-        );
+        const status = statuses.find((s) => s.id === cell.getValue<number>());
 
         if (!status) return null;
 
@@ -150,7 +148,7 @@ function RouteComponent() {
       accessorKey: "statusDetail",
       cell: ({ cell }) => {
         const subStatus = subStatuses.find(
-          (s) => s.value === cell.getValue<number>(),
+          (s) => s.id === cell.getValue<number>(),
         );
 
         if (!subStatus) return null;

@@ -9,68 +9,86 @@ import {
   SquareSlashIcon,
 } from "lucide-react";
 
-export const subStatuses = [
+export interface SubStatus {
+  code: string;
+  color: string;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  id: number;
+  name: string;
+  value: string;
+}
+
+export const subStatuses: SubStatus[] = [
   {
-    id: "needs-first-response",
-    color: "text-blue-500",
+    code: "0",
+    color: "var(--color-todo)",
     icon: SparkleIcon,
-    name: "Needs first response",
-    value: 0,
+    id: 0,
+    name: "needs-first-response",
+    value: "Needs first response",
   },
   {
-    id: "investigating",
-    color: "text-blue-500",
+    code: "1",
+    color: "var(--color-todo)",
     icon: FocusIcon,
-    name: "Investigating",
-    value: 1,
+    id: 1,
+    name: "investigating",
+    value: "Investigating",
   },
   {
-    id: "needs-next-response",
-    color: "text-blue-500",
+    code: "2",
+    color: "var(--color-todo)",
     icon: ReplyIcon,
-    name: "Needs next response",
-    value: 2,
+    id: 2,
+    name: "needs-next-response",
+    value: "Needs next response",
   },
   {
-    id: "close-the-loop",
-    color: "text-blue-500",
+    code: "3",
+    color: "var(--color-todo)",
     icon: RotateCcwIcon,
-    name: "Close the loop",
-    value: 3,
+    id: 3,
+    name: "close-the-loop",
+    value: "Close the loop",
   },
   {
-    id: "waiting-for-customer",
-    color: "text-purple-500",
+    code: "4",
+    color: "var(--color-snoozed)",
     icon: ClockFadingIcon,
-    name: "Waiting for customer",
-    value: 4,
+    id: 4,
+    name: "waiting-for-customer",
+    value: "Waiting for customer",
   },
   {
-    id: "paused-for-later",
-    color: "text-purple-500",
+    code: "5",
+    color: "var(--color-snoozed)",
     icon: CirclePauseIcon,
-    name: "Paused for later",
-    value: 5,
+    id: 5,
+    name: "paused-for-later",
+    value: "Paused for later",
   },
   {
-    id: "ignored",
-    color: "text-green-500",
+    code: "6",
+    color: "var(--color-done)",
     icon: SquareSlashIcon,
-    name: "Ignored",
-    value: 6,
+    id: 6,
+    name: "ignored",
+    value: "Ignored",
   },
   {
-    id: "done-manually-set",
-    color: "text-green-500",
+    code: "7",
+    color: "var(--color-done)",
     icon: CircleCheckIcon,
-    name: "Done manually set",
-    value: 7,
+    id: 7,
+    name: "done-manually-set",
+    value: "Done manually set",
   },
   {
-    id: "done-automatically-set",
-    color: "text-green-500",
+    code: "8",
+    color: "var(--color-done)",
     icon: CircleCheckIcon,
-    name: "Done automatically set",
-    value: 8,
+    id: 8,
+    name: "done-automatically-set",
+    value: "Done automatically set",
   },
 ];

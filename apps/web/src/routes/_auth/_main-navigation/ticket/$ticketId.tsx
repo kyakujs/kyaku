@@ -3,7 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import type { Schema } from "@kyakujs/zero/schema";
 
-import { PrioritySelector } from "~/components/common/tickets/priority-selector";
+import PriorityCombobox from "~/components/common/tickets/priority-combobox";
+import SubStatusCombobox from "~/components/common/tickets/substatus-combobox";
 
 export const Route = createFileRoute(
   "/_auth/_main-navigation/ticket/$ticketId",
@@ -50,8 +51,18 @@ function RouteComponent() {
       <div className="flex w-72 flex-col overflow-y-scroll border-l border-accent bg-sidebar-background p-6">
         <div className="mb-4">{ticket.title}</div>
         <div className="text-xs">{ticket.description}</div>
-        {}
-        <PrioritySelector priority={ticket.priority} />
+        <div className="flex flex-col">
+          <PriorityCombobox
+            onValueChange={(value) => console.log(value)}
+            value={ticket.priority}
+          />
+        </div>
+        <div className="flex flex-col">
+          <SubStatusCombobox
+            onValueChange={(value) => console.log(value)}
+            value={ticket.status}
+          />
+        </div>
       </div>
     </div>
   );

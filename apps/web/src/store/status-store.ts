@@ -1,25 +1,37 @@
 import { CircleCheckIcon, CircleIcon, CirclePauseIcon } from "lucide-react";
 
-export const statuses = [
+export interface Status {
+  code: string;
+  color: string;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  id: number;
+  name: string;
+  value: string;
+}
+
+export const statuses: Status[] = [
   {
-    id: "todo",
-    color: "text-blue-500",
+    code: "0",
+    color: "var(--color-todo)",
     icon: CircleIcon,
-    name: "Todo",
-    value: 0,
+    id: 0,
+    name: "todo",
+    value: "Todo",
   },
   {
-    id: "snoozed",
-    color: "text-purple-500",
+    code: "1",
+    color: "var(--color-snoozed)",
     icon: CirclePauseIcon,
-    name: "Snoozed",
-    value: 1,
+    id: 1,
+    name: "snoozed",
+    value: "Snoozed",
   },
   {
-    id: "done",
-    color: "text-green-500",
+    code: "2",
+    color: "var(--color-done)",
     icon: CircleCheckIcon,
-    name: "Done",
-    value: 2,
+    id: 2,
+    name: "done",
+    value: "Done",
   },
 ];
