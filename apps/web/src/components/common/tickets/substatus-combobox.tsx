@@ -35,7 +35,10 @@ function CustomCombobox(props: {
         <ComboboxValue>
           {(subStatus: SubStatus) => (
             <div className="flex items-center gap-2">
-              <subStatus.icon className="size-4 text-muted-foreground" />
+              <subStatus.icon
+                className="size-4"
+                style={{ color: subStatus.color }}
+              />
               <span>{subStatus.value}</span>
             </div>
           )}
@@ -74,7 +77,10 @@ function CustomCombobox(props: {
                   className="w-(--row-width)"
                 >
                   <div>
-                    <subStatus.icon className="size-4 text-muted-foreground" />
+                    <subStatus.icon
+                      className="size-4 text-muted-foreground"
+                      style={{ color: subStatus.color }}
+                    />
                   </div>
                   <div className="flex flex-1">{subStatus.value}</div>
                   <ComboboxItemIndicator>

@@ -16,7 +16,7 @@ export interface Priority {
 export const priorities: Priority[] = [
   {
     code: "0",
-    color: "text-gray-500",
+    color: "var(--color-low-priority)",
     icon: NoPriorityIcon,
     id: undefined,
     name: "no-priority",
@@ -24,7 +24,7 @@ export const priorities: Priority[] = [
   },
   {
     code: "1",
-    color: "text-orange-500",
+    color: "var(--color-high-priority)",
     icon: UrgentPriorityIcon,
     id: 0,
     name: "urgent",
@@ -32,7 +32,7 @@ export const priorities: Priority[] = [
   },
   {
     code: "2",
-    color: "text-gray-500",
+    color: "var(--color-low-priority)",
     icon: HighPriorityIcon,
     id: 1,
     name: "high",
@@ -40,7 +40,7 @@ export const priorities: Priority[] = [
   },
   {
     code: "3",
-    color: "text-gray-500",
+    color: "var(--color-low-priority)",
     icon: MediumPriorityIcon,
     id: 2,
     name: "medium",
@@ -48,7 +48,7 @@ export const priorities: Priority[] = [
   },
   {
     code: "4",
-    color: "text-gray-500",
+    color: "var(--color-low-priority)",
     icon: LowPriorityIcon,
     id: 3,
     name: "low",

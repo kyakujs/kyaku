@@ -58,6 +58,12 @@
   --color-sidebar-ring: hsl(240 5% 64.9%);
 
   --color-container: hsl(0 0% 100%);
+
+  --color-todo: oklch(0.55 0.2152 262.88);
+  --color-snoozed: oklch(0.56 0.2525 302.32);
+  --color-done: oklch(0.63 0.1699 149.21);
+  --color-high-priority: oklch(0.72 0.19 41.4);
+  --color-low-priority: oklch(0.47 0 0);
 }
 
 .dark {
@@ -105,4 +111,10 @@
   --color-sidebar-ring: hsl(240 4.9% 83.9%);
 
   --color-container: hsl(240 3.03% 6.47%);
+
+  --color-todo: oklch(0.55 0.2152 262.88);
+  --color-snoozed: oklch(0.56 0.2525 302.32);
+  --color-done: oklch(0.63 0.1699 149.21);
+  --color-high-priority: oklch(0.72 0.19 41.4);
+  --color-low-priority: oklch(0.69 0.01 0);
 }

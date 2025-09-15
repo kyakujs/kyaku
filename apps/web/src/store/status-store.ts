@@ -12,7 +12,7 @@ export interface Status {
 export const statuses: Status[] = [
   {
     code: "0",
-    color: "text-blue-500",
+    color: "var(--color-todo)",
     icon: CircleIcon,
     id: 0,
     name: "todo",
@@ -20,7 +20,7 @@ export const statuses: Status[] = [
   },
   {
     code: "1",
-    color: "text-purple-500",
+    color: "var(--color-snoozed)",
     icon: CirclePauseIcon,
     id: 1,
     name: "snoozed",
@@ -28,7 +28,7 @@ export const statuses: Status[] = [
   },
   {
     code: "2",
-    color: "text-green-500",
+    color: "var(--color-done)",
     icon: CircleCheckIcon,
     id: 2,
     name: "done",

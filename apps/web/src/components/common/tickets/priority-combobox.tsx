@@ -35,7 +35,10 @@ function CustomCombobox(props: {
         <ComboboxValue>
           {(priority: Priority) => (
             <div className="flex items-center gap-2">
-              <priority.icon className="size-4 text-muted-foreground" />
+              <priority.icon
+                className="size-4"
+                style={{ color: priority.color }}
+              />
               <span>{priority.value}</span>
             </div>
           )}

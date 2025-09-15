@@ -21,7 +21,7 @@ export interface SubStatus {
 export const subStatuses: SubStatus[] = [
   {
     code: "0",
-    color: "text-blue-500",
+    color: "var(--color-todo)",
     icon: SparkleIcon,
     id: 0,
     name: "needs-first-response",
@@ -29,7 +29,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "1",
-    color: "text-blue-500",
+    color: "var(--color-todo)",
     icon: FocusIcon,
     id: 1,
     name: "investigating",
@@ -37,7 +37,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "2",
-    color: "text-blue-500",
+    color: "var(--color-todo)",
     icon: ReplyIcon,
     id: 2,
     name: "needs-next-response",
@@ -45,7 +45,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "3",
-    color: "text-blue-500",
+    color: "var(--color-todo)",
     icon: RotateCcwIcon,
     id: 3,
     name: "close-the-loop",
@@ -53,7 +53,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "4",
-    color: "text-purple-500",
+    color: "var(--color-snoozed)",
     icon: ClockFadingIcon,
     id: 4,
     name: "waiting-for-customer",
@@ -61,7 +61,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "5",
-    color: "text-purple-500",
+    color: "var(--color-snoozed)",
     icon: CirclePauseIcon,
     id: 5,
     name: "paused-for-later",
@@ -69,7 +69,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "6",
-    color: "text-green-500",
+    color: "var(--color-done)",
     icon: SquareSlashIcon,
     id: 6,
     name: "ignored",
@@ -77,7 +77,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "7",
-    color: "text-green-500",
+    color: "var(--color-done)",
     icon: CircleCheckIcon,
     id: 7,
     name: "done-manually-set",
@@ -85,7 +85,7 @@ export const subStatuses: SubStatus[] = [
   },
   {
     code: "8",
-    color: "text-green-500",
+    color: "var(--color-done)",
     icon: CircleCheckIcon,
     id: 8,
     name: "done-automatically-set",
