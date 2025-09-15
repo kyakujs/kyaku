@@ -88,8 +88,11 @@ function RouteComponent() {
 
         return (
           <div className="flex items-center gap-2">
-            <priority.icon className={cn("size-4", priority.color)} />
-            <span className="text-foreground">{priority.name}</span>
+            <priority.icon
+              className="size-4"
+              style={{ color: priority.color }}
+            />
+            <span className="text-foreground">{priority.value}</span>
           </div>
         );
       },
@@ -102,7 +105,10 @@ function RouteComponent() {
 
         return (
           <div className="flex items-center">
-            <priority.icon className={cn("size-4", priority.color)} />
+            <priority.icon
+              className="size-4"
+              style={{ color: priority.color }}
+            />
           </div>
         );
       },
@@ -113,7 +119,8 @@ function RouteComponent() {
         const width =
           table
             .getRowModel()
-            .rows.toSorted((a, b) => b.original.shortId - a.original.shortId)[0]
+            .flatRows.filter((row) => row.depth === 1)
+            .toSorted((a, b) => b.original.shortId - a.original.shortId)[0]
             ?.original.shortId.toString().length ?? 3;
 
         return (
@@ -137,9 +144,7 @@ function RouteComponent() {
 
         return (
           <div className="flex items-center">
-            <span className={status.color}>
-              <status.icon className="size-4" />
-            </span>
+            <status.icon className="size-4" style={{ color: status.color }} />
           </div>
         );
       },
@@ -155,9 +160,10 @@ function RouteComponent() {
 
         return (
           <div className="flex items-center">
-            <span className={subStatus.color}>
-              <subStatus.icon className="size-4" />
-            </span>
+            <subStatus.icon
+              className="size-4"
+              style={{ color: subStatus.color }}
+            />
           </div>
         );
       },
