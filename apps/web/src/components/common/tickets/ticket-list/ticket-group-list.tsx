@@ -20,7 +20,7 @@ export function TicketGroupList({ rows }: { rows: Row<Ticket>[] }) {
       (rows[index]?.subRows.length ?? 0) * TICKET_GROUP_ITEM_HEIGHT +
       TICKET_GROUP_ITEM_HEIGHT,
     getScrollElement: () => parentRef.current,
-    overscan: 0,
+    overscan: 1,
   });
 
   const virtualItems = virtualizer.getVirtualItems();
