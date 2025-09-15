@@ -17,26 +17,26 @@ import {
   ComboboxValue,
 } from "@kyakujs/ui/combobox";
 
-import type { Priority } from "~/store/priority-store";
-import { priorities } from "~/store/priority-store";
+import type { SubStatus } from "~/store/substatus-store";
+import { subStatuses } from "~/store/substatus-store";
 
 function CustomCombobox(props: {
-  items: Priority[];
-  onValueChange: (value: Priority["id"]) => void;
-  value: Priority["id"];
+  items: SubStatus[];
+  onValueChange: (value: SubStatus["id"]) => void;
+  value: SubStatus["id"];
 }) {
   return (
     <Combobox
       items={props.items}
       defaultValue={props.items.find((item) => item.id === props.value)}
-      onValueChange={(priority) => props.onValueChange(priority.id)}
+      onValueChange={(subStatus) => props.onValueChange(subStatus.id)}
     >
       <ComboboxTrigger>
         <ComboboxValue>
-          {(priority: Priority) => (
+          {(subStatus: SubStatus) => (
             <div className="flex items-center gap-2">
-              <priority.icon className="size-4 text-muted-foreground" />
-              <span>{priority.value}</span>
+              <subStatus.icon className="size-4 text-muted-foreground" />
+              <span>{subStatus.value}</span>
             </div>
           )}
         </ComboboxValue>
@@ -50,39 +50,39 @@ function CustomCombobox(props: {
         >
           <ComboboxPopup
             className="max-h-[min(24rem,var(--available-height))] max-w-[15rem] origin-[var(--transform-origin)]"
-            aria-label="Select priority"
+            aria-label="Select status"
             style={{ "--row-width": "15rem" } as React.CSSProperties}
           >
             <div className="grid w-(--row-width) grid-cols-[1fr_auto] gap-2 p-1 pr-3 pl-3.5 text-center">
               <ComboboxInput
-                placeholder="Set priority to..."
+                placeholder="Set status to..."
                 className="col-start-1"
               />
               <span className="col-start-2 inline-flex items-center justify-center whitespace-nowrap">
                 <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1]">
-                  P
+                  S
                 </kbd>
               </span>
             </div>
             <ComboboxSeparator />
-            <ComboboxEmpty>No priority found.</ComboboxEmpty>
+            <ComboboxEmpty>No status found.</ComboboxEmpty>
             <ComboboxList className="max-h-[min(calc(24rem-var(--input-container-height)),calc(var(--available-height)-var(--input-container-height)))]">
-              {(priority: Priority) => (
+              {(subStatus: SubStatus) => (
                 <ComboboxItem
-                  key={priority.value}
-                  value={priority}
+                  key={subStatus.value}
+                  value={subStatus}
                   className="w-(--row-width)"
                 >
                   <div>
-                    <priority.icon className="size-4 text-muted-foreground" />
+                    <subStatus.icon className="size-4 text-muted-foreground" />
                   </div>
-                  <div className="flex flex-1">{priority.value}</div>
+                  <div className="flex flex-1">{subStatus.value}</div>
                   <ComboboxItemIndicator>
                     <CheckIcon className="size-4" />
                   </ComboboxItemIndicator>
                   <span className="text-mono inline-flex text-center text-xs whitespace-nowrap text-muted-foreground">
                     <kbd aria-hidden="true" className="min-w-2.5">
-                      {priority.code}
+                      {subStatus.code}
                     </kbd>
                   </span>
                 </ComboboxItem>
@@ -95,16 +95,16 @@ function CustomCombobox(props: {
   );
 }
 
-export default function PriorityCombobox({
+export default function SubStatusCombobox({
   onValueChange,
   value,
 }: {
-  onValueChange: (value: Priority["id"]) => void;
-  value: Priority["id"];
+  onValueChange: (value: SubStatus["id"]) => void;
+  value: SubStatus["id"];
 }) {
   return (
     <CustomCombobox
-      items={priorities}
+      items={subStatuses}
       onValueChange={onValueChange}
       value={value}
     />

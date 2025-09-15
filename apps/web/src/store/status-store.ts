@@ -4,7 +4,7 @@ export interface Status {
   code: string;
   color: string;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  id: number | undefined;
+  id: number;
   name: string;
   value: string;
 }
