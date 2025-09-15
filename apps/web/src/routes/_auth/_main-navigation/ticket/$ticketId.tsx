@@ -50,7 +50,9 @@ function RouteComponent() {
       <div className="flex w-72 flex-col overflow-y-scroll border-l border-accent bg-sidebar-background p-6">
         <div className="mb-4">{ticket.title}</div>
         <div className="text-xs">{ticket.description}</div>
-        <PriorityCombobox priority={ticket.priority} />
+        <div className="flex flex-col">
+          <PriorityCombobox priority={ticket.priority} />
+        </div>
       </div>
     </div>
   );

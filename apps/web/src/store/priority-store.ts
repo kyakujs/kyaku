@@ -9,6 +9,7 @@ export interface Priority {
   color: string;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   id: number | undefined;
+  name: string;
   value: string;
 }
 
@@ -18,6 +19,7 @@ export const priorities: Priority[] = [
     color: "text-gray-500",
     icon: NoPriorityIcon,
     id: undefined,
+    name: "no-priority",
     value: "No priority",
   },
   {
@@ -25,6 +27,7 @@ export const priorities: Priority[] = [
     color: "text-orange-500",
     icon: UrgentPriorityIcon,
     id: 0,
+    name: "urgent",
     value: "Urgent",
   },
   {
@@ -32,6 +35,7 @@ export const priorities: Priority[] = [
     color: "text-gray-500",
     icon: HighPriorityIcon,
     id: 1,
+    name: "high",
     value: "High",
   },
   {
@@ -39,6 +43,7 @@ export const priorities: Priority[] = [
     color: "text-gray-500",
     icon: MediumPriorityIcon,
     id: 2,
+    name: "medium",
     value: "Medium",
   },
   {
@@ -46,6 +51,7 @@ export const priorities: Priority[] = [
     color: "text-gray-500",
     icon: LowPriorityIcon,
     id: 3,
+    name: "low",
     value: "Low",
   },
 ];
