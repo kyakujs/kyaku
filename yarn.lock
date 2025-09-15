@@ -439,12 +439,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/utils@npm:0.2.6":
-  version: 0.2.6
-  resolution: "@better-auth/utils@npm:0.2.6"
-  dependencies:
-    uncrypto: "npm:^0.1.3"
-  checksum: 10c0/7fa0f85e4578d5b10227bc074607fd038e5ba7fd1fafccc9465f8cc99dd7908cde309f89edc89f774bfa846c64255f257a061de872ec617e1099382b380c4da8
+"@better-auth/utils@npm:0.3.0, @better-auth/utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@better-auth/utils@npm:0.3.0"
+  checksum: 10c0/f0ab0c49e1f1e6e7b03dd86e0211ecd25026029378ee0008d5e6b156bcb4d198c4604615ad4242a89fc9290644d73adb485b3f8b3976796113db35c8f1a1953c
   languageName: node
   linkType: hard
 
@@ -1550,7 +1548,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.9"
+    better-auth: "npm:^1.3.10"
     eslint: "npm:^9.35.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.2"
@@ -5496,46 +5494,62 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.9":
-  version: 1.3.9
-  resolution: "better-auth@npm:1.3.9"
+"better-auth@npm:^1.3.10":
+  version: 1.3.10
+  resolution: "better-auth@npm:1.3.10"
   dependencies:
-    "@better-auth/utils": "npm:0.2.6"
+    "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:^1.1.18"
     "@noble/ciphers": "npm:^2.0.0"
     "@noble/hashes": "npm:^2.0.0"
     "@simplewebauthn/browser": "npm:^13.1.2"
     "@simplewebauthn/server": "npm:^13.1.2"
-    better-call: "npm:1.0.18"
+    better-call: "npm:1.0.19"
     defu: "npm:^6.1.4"
     jose: "npm:^6.1.0"
     kysely: "npm:^0.28.5"
-    nanostores: "npm:^0.11.4"
+    nanostores: "npm:^1.0.1"
     zod: "npm:^4.1.5"
   peerDependencies:
     "@lynx-js/react": "*"
+    "@sveltejs/kit": ^2.0.0
+    next: ^14.0.0 || ^15.0.0
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
+    solid-js: ^1.0.0
+    svelte: ^4.0.0 || ^5.0.0
+    vue: ^3.0.0
   peerDependenciesMeta:
     "@lynx-js/react":
+      optional: true
+    "@sveltejs/kit":
+      optional: true
+    next:
       optional: true
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/e6a4a1f644dd658a82d2155138da0fd1099676dc10b3f51f1e6d2acac47047e373aa4bcd0f4d7e0cc3c7007b328ad923ee1ebbf27913f3adf3d8eb03aa666314
+    solid-js:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+  checksum: 10c0/b284eb6c527a2d5f759a821bc12a44bbe4ceaf8faf11e8eb9af344939f298912c5c3d0e01920a26d4cf3bd55c9076fb5979d49f1d5912eb92d1046c112c73437
   languageName: node
   linkType: hard
 
-"better-call@npm:1.0.18":
-  version: 1.0.18
-  resolution: "better-call@npm:1.0.18"
+"better-call@npm:1.0.19":
+  version: 1.0.19
+  resolution: "better-call@npm:1.0.19"
   dependencies:
+    "@better-auth/utils": "npm:^0.3.0"
     "@better-fetch/fetch": "npm:^1.1.4"
     rou3: "npm:^0.5.1"
     set-cookie-parser: "npm:^2.7.1"
     uncrypto: "npm:^0.1.3"
-  checksum: 10c0/1ffd2a516099c8d5c5764becd303f20d183c889f62f77e98f8a30b1cc77279994ae58e8d21d4f832d72ad73ef58b0ad0ccd077f2e73ea2e02dc4a3bb74ce6984
+  checksum: 10c0/7a367877f4ed032c319a11d7e776cab503d17387ae44e2c1300b25529ab8ac1759c77233c707faeda66f7aa6f207effcfd77e0f12eedf370798be7a5d7d90509
   languageName: node
   linkType: hard
 
@@ -10276,10 +10290,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanostores@npm:^0.11.4":
-  version: 0.11.4
-  resolution: "nanostores@npm:0.11.4"
-  checksum: 10c0/45ce577ccd96938b756c238e5783b0de3369381905f164e7bd003794d34a3c1eb7bddb049699a48a35bb03d9745bcb3cd6ad549b5e81493b2de22ae2bdccf14c
+"nanostores@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "nanostores@npm:1.0.1"
+  checksum: 10c0/9fa5bd9f4beb1ac7cd83c935357057e4217e2eb0e36ef93ce87ed8a6814590c44e7aa843e9337089222cfb5231fdf0474d207debd12787b4582519393253fe22
   languageName: node
   linkType: hard
 
