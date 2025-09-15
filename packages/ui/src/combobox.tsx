@@ -20,7 +20,7 @@ const ComboboxTrigger: React.FC<
     <ComboboxPrimitive.Trigger
       className={cn(
         className,
-        "inline-flex h-8 cursor-default items-center justify-between rounded-md border border-input bg-transparent px-3 text-sm text-foreground select-none focus-visible:outline-sidebar-ring data-[popup-open]:bg-input/50 dark:bg-input/30 dark:hover:bg-input/50",
+        "inline-flex h-8 cursor-default items-center justify-between rounded-md bg-transparent px-3 text-sm text-foreground select-none hover:bg-sidebar-accent focus-visible:outline-sidebar-ring data-[popup-open]:bg-input/50 dark:bg-input/30 dark:hover:bg-input/50",
       )}
       {...props}
     >
