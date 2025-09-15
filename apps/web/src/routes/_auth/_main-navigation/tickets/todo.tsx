@@ -4,7 +4,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CircleDashedIcon } from "lucide-react";
 
 import type { Schema } from "@kyakujs/zero/schema";
-import { cn } from "@kyakujs/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
 import { Badge } from "@kyakujs/ui/badge";
 import { Checkbox } from "@kyakujs/ui/checkbox";
