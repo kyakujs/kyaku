@@ -12,13 +12,14 @@ type TicketListLineProps = {
   row: Row<Ticket>;
 } & LinkComponentProps;
 
-export function TicketListLine({ row }: TicketListLineProps) {
+export function TicketListLine({ row, ...props }: TicketListLineProps) {
   return (
     <Link
       to="/ticket/$ticketId"
       params={{ ticketId: row.original.id }}
       tabIndex={0}
-      className="block h-[39px] w-full -outline-offset-3 transition-colors hover:bg-muted/50 focus-visible:outline-1 data-[state=selected]:bg-muted"
+      className="block h-[39px] w-full transition-colors outline-none hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:shadow-[0_0_0_1px_var(--color-accent)_inset]"
+      {...props}
     >
       <div className="flex h-full flex-col items-center justify-center p-2">
         <div className="flex w-full flex-[initial] flex-row items-center gap-2 text-sm">

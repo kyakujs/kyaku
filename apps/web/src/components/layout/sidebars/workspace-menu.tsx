@@ -1,17 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { LogOutIcon, SettingsIcon } from "lucide-react";
 
-import {
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-} from "@kyakujs/ui/dropdown-menu";
+import { MenuItem, MenuSeparator } from "@kyakujs/ui/menu";
 
 import { authClient } from "~/libs/auth-client";
 
 export function WorkspaceMenu() {
   return (
     <>
-      <DropdownMenuItem
+      <MenuItem
         render={
           <Link to="/settings">
             <SettingsIcon />
@@ -20,16 +17,16 @@ export function WorkspaceMenu() {
         }
       />
 
-      <DropdownMenuSeparator />
+      <MenuSeparator />
 
-      <DropdownMenuItem
+      <MenuItem
         onClick={() => {
           void authClient.signOut();
         }}
       >
         <LogOutIcon />
         <span>Log out</span>
-      </DropdownMenuItem>
+      </MenuItem>
     </>
   );
 }

@@ -8,8 +8,9 @@ const Avatar: React.FC<React.ComponentProps<typeof AvatarPrimitive.Root>> = ({
   ...props
 }) => (
   <AvatarPrimitive.Root
+    data-slot="avatar"
     className={cn(
-      "relative flex size-10 shrink-0 overflow-hidden rounded-full",
+      "relative flex size-8 shrink-0 overflow-hidden rounded-full",
       className,
     )}
     {...props}
@@ -21,7 +22,8 @@ const AvatarImage: React.FC<
   React.ComponentProps<typeof AvatarPrimitive.Image>
 > = ({ className, ...props }) => (
   <AvatarPrimitive.Image
-    className={cn("aspect-square h-full w-full", className)}
+    data-slot="avatar-image"
+    className={cn("aspect-square size-full", className)}
     {...props}
   />
 );
@@ -31,8 +33,9 @@ const AvatarFallback: React.FC<
   React.ComponentProps<typeof AvatarPrimitive.Fallback>
 > = ({ className, ...props }) => (
   <AvatarPrimitive.Fallback
+    data-slot="avatar-fallback"
     className={cn(
-      "flex h-full w-full items-center justify-center rounded-full bg-muted",
+      "flex size-full items-center justify-center rounded-full bg-muted",
       className,
     )}
     {...props}

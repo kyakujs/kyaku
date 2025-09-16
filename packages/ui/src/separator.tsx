@@ -9,7 +9,11 @@ const Separator: React.FC<
   }
 > = ({ className, ...props }) => (
   <SeparatorPrimitive
-    className={cn("shrink-0 bg-border", className)}
+    data-slot="separator"
+    className={cn(
+      "shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px",
+      className,
+    )}
     {...props}
   />
 );

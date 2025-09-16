@@ -13,10 +13,13 @@ import {
 } from "lucide-react";
 
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@kyakujs/ui/dropdown-menu";
+  Menu,
+  MenuBackdrop,
+  MenuPopup,
+  MenuPortal,
+  MenuPositioner,
+  MenuTrigger,
+} from "@kyakujs/ui/menu";
 import {
   Sidebar,
   SidebarContent,
@@ -105,8 +108,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger
+            <Menu>
+              <MenuTrigger
                 render={
                   <SidebarMenuButton className="w-fit px-1.5">
                     <div className="flex aspect-square size-5 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
@@ -116,11 +119,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <ChevronDownIcon className="opacity-50" />
                   </SidebarMenuButton>
                 }
-              ></DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="min-w-48">
-                <WorkspaceMenu />
-              </DropdownMenuContent>
-            </DropdownMenu>
+              />
+              <MenuPortal>
+                <MenuBackdrop />
+                <MenuPositioner align="start">
+                  <MenuPopup className="min-w-48">
+                    <WorkspaceMenu />
+                  </MenuPopup>
+                </MenuPositioner>
+              </MenuPortal>
+            </Menu>
           </SidebarMenuItem>
           <SidebarMenuButton
             render={
