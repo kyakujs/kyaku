@@ -1548,7 +1548,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.10"
+    better-auth: "npm:^1.3.11"
     eslint: "npm:^9.35.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.2"
@@ -5495,9 +5495,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.10":
-  version: 1.3.10
-  resolution: "better-auth@npm:1.3.10"
+"better-auth@npm:^1.3.11":
+  version: 1.3.11
+  resolution: "better-auth@npm:1.3.11"
   dependencies:
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:^1.1.18"
@@ -5537,7 +5537,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/b284eb6c527a2d5f759a821bc12a44bbe4ceaf8faf11e8eb9af344939f298912c5c3d0e01920a26d4cf3bd55c9076fb5979d49f1d5912eb92d1046c112c73437
+  checksum: 10c0/871732a1540337a7e6ed4acd41c23949bc545afed57e05298cecb050f2efb3c71ac0aa1b90a17b7c438855c11276ea9f58c66e4b1c189e6968dca48f4b1e183a
   languageName: node
   linkType: hard
 
