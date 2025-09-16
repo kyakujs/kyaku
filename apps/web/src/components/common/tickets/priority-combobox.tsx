@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
+import { useHotkeys } from "react-hotkeys-hook";
 
 import {
   Combobox,
@@ -20,18 +22,32 @@ import {
 import type { Priority } from "~/store/priority-store";
 import { priorities } from "~/store/priority-store";
 
+const PRIORITY_SHORTCUT = "p";
+
 function CustomCombobox(props: {
   items: Priority[];
   onValueChange: (value: Priority["id"]) => void;
   value: Priority["id"];
 }) {
+  const ref = useRef<HTMLButtonElement>(null);
+
+  const [open, setOpen] = useState(false);
+
+  useHotkeys(PRIORITY_SHORTCUT, (event) => {
+    event.preventDefault();
+    ref.current?.focus();
+    setOpen(true);
+  });
+
   return (
     <Combobox
       items={props.items}
       defaultValue={props.items.find((item) => item.id === props.value)}
       onValueChange={(priority) => props.onValueChange(priority.id)}
+      open={open}
+      onOpenChange={setOpen}
     >
-      <ComboboxTrigger>
+      <ComboboxTrigger ref={ref}>
         <ComboboxValue>
           {(priority: Priority) => (
             <div className="flex items-center gap-2">
@@ -63,7 +79,7 @@ function CustomCombobox(props: {
               />
               <span className="col-start-2 inline-flex items-center justify-center whitespace-nowrap">
                 <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1]">
-                  P
+                  {PRIORITY_SHORTCUT.toUpperCase()}
                 </kbd>
               </span>
             </div>

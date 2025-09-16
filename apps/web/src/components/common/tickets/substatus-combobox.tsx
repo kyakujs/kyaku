@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
+import { useHotkeys } from "react-hotkeys-hook";
 
 import {
   Combobox,
@@ -20,16 +22,30 @@ import {
 import type { SubStatus } from "~/store/substatus-store";
 import { subStatuses } from "~/store/substatus-store";
 
+const SUBSTATUS_SHORTCUT = "s";
+
 function CustomCombobox(props: {
   items: SubStatus[];
   onValueChange: (value: SubStatus["id"]) => void;
   value: SubStatus["id"];
 }) {
+  const ref = useRef<HTMLButtonElement>(null);
+
+  const [open, setOpen] = useState(false);
+
+  useHotkeys(SUBSTATUS_SHORTCUT, (event) => {
+    event.preventDefault();
+    ref.current?.focus();
+    setOpen(true);
+  });
+
   return (
     <Combobox
       items={props.items}
       defaultValue={props.items.find((item) => item.id === props.value)}
       onValueChange={(subStatus) => props.onValueChange(subStatus.id)}
+      open={open}
+      onOpenChange={setOpen}
     >
       <ComboboxTrigger>
         <ComboboxValue>
@@ -63,7 +79,7 @@ function CustomCombobox(props: {
               />
               <span className="col-start-2 inline-flex items-center justify-center whitespace-nowrap">
                 <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1]">
-                  S
+                  {SUBSTATUS_SHORTCUT.toUpperCase()}
                 </kbd>
               </span>
             </div>

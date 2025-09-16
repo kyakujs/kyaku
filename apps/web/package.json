@@ -29,6 +29,7 @@
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-hotkeys-hook": "^5.1.0",
     "vite": "^7.1.5",
     "zod": "^4.1.8",
     "zustand": "^5.0.8"
