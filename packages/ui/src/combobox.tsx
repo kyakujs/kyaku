@@ -2,9 +2,15 @@ import { Combobox as ComboboxPrimitive } from "@base-ui-components/react";
 
 import { cn } from "@kyakujs/ui";
 
-const Combobox: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Root>
-> = ({ ...props }) => {
+const Combobox = <
+  ItemValue,
+  SelectedValue = ItemValue,
+  Multiple extends boolean | undefined = false,
+>(
+  props: React.ComponentProps<
+    typeof ComboboxPrimitive.Root<ItemValue, SelectedValue, Multiple>
+  >,
+) => {
   return <ComboboxPrimitive.Root data-slot="combobox" {...props} />;
 };
 Combobox.displayName = "Combobox";
