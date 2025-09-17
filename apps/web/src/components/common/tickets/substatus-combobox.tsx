@@ -78,7 +78,7 @@ function CustomCombobox(props: {
                 className="col-start-1"
               />
               <span className="col-start-2 inline-flex items-center justify-center whitespace-nowrap">
-                <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1]">
+                <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1] text-muted-foreground">
                   {SUBSTATUS_SHORTCUT.toUpperCase()}
                 </kbd>
               </span>

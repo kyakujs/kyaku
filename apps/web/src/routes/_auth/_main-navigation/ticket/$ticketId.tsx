@@ -31,7 +31,7 @@ function RouteComponent() {
   return (
     <div className="flex w-full">
       <div className="flex grow flex-col">
-        <header className="flex h-10 w-full items-center gap-2 border-b px-4">
+        <header className="flex h-10 w-full items-center gap-2 border-b border-border px-4">
           <h2 className="text-sm">TIC-{ticket.shortId}</h2>
         </header>
         <div className="flex h-full w-full">

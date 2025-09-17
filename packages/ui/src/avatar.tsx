@@ -10,7 +10,7 @@ const Avatar: React.FC<React.ComponentProps<typeof AvatarPrimitive.Root>> = ({
   <AvatarPrimitive.Root
     data-slot="avatar"
     className={cn(
-      "inline-flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-full",
+      "inline-grid size-8 shrink-0 items-center justify-center overflow-hidden rounded-full outline -outline-offset-1 outline-border *:rounded-full",
       className,
     )}
     {...props}
@@ -34,10 +34,7 @@ const AvatarFallback: React.FC<
 > = ({ className, ...props }) => (
   <AvatarPrimitive.Fallback
     data-slot="avatar-fallback"
-    className={cn(
-      "flex size-full items-center justify-center rounded-full bg-muted",
-      className,
-    )}
+    className={cn("size-full bg-muted", className)}
     {...props}
   />
 );

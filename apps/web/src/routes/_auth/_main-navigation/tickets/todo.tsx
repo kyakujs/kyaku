@@ -185,13 +185,25 @@ function RouteComponent() {
           {row.original.labels.map((label) => (
             <div key={label.id} className="min-w-0 last:min-w-max">
               <Badge
-                className="max-w-[112px] min-w-0 gap-1.5 truncate bg-background"
+                className="max-w-[112px] min-w-0 gap-1.5 truncate"
                 variant="outline"
               >
-                <div
-                  className="size-2 shrink-0 rounded"
-                  style={{ backgroundColor: label.color }}
-                ></div>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  style={{ color: label.color }}
+                >
+                  <circle
+                    cx="4"
+                    cy="4"
+                    r="2.5"
+                    fill="currentColor"
+                    stroke="currentColor"
+                  ></circle>
+                </svg>
+
                 <span className="truncate">{label.name}</span>
               </Badge>
             </div>
@@ -219,9 +231,26 @@ function RouteComponent() {
               src={row.original.assignedTo.image}
               alt={row.original.assignedTo.username}
             />
-            <AvatarFallback>
-              {row.original.assignedTo.firstName?.[0] ?? ""}
-              {row.original.assignedTo.lastName?.[0] ?? ""}
+            <AvatarFallback
+              render={
+                <svg
+                  viewBox="0 0 100 100"
+                  className="fill-current p-[5%] text-[48px] font-medium uppercase"
+                  aria-hidden={true}
+                />
+              }
+            >
+              <text
+                x="50%"
+                y="50%"
+                alignmentBaseline="middle"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                dy=".125em"
+              >
+                {row.original.assignedTo.firstName?.[0] ?? ""}
+                {row.original.assignedTo.lastName?.[0] ?? ""}
+              </text>
             </AvatarFallback>
           </Avatar>
         ) : (

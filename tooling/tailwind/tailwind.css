@@ -6,8 +6,10 @@
 
 @theme {
   --font-sans:
-    "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Inter Variable", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono:
+    ui-monospace, "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
   --text-sm: 0.8125rem;
   --text-regular: 0.9375rem;

@@ -105,7 +105,7 @@ const ComboboxSeparator: React.FC<
   return (
     <ComboboxPrimitive.Separator
       data-slot="combobox-separator"
-      className={cn(className, "border-t bg-border")}
+      className={cn(className, "border-t border-border bg-border")}
       {...props}
     >
       {children}
