@@ -1,22 +1,23 @@
 @import "@kyakujs/tailwind-config/tailwind.css";
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
+  :focus-visible {
+    @apply outline-1 outline-sidebar-ring;
+  }
+
+  .root {
+    isolation: isolate;
+  }
+
   body {
-    @apply overflow-hidden bg-sidebar text-foreground select-none;
+    @apply cursor-default overflow-hidden bg-sidebar text-foreground antialiased select-none;
+    text-rendering: optimizeLegibility;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
   }
-}
-
-* {
-  @apply border-border;
-}
-
-:focus-visible {
-  @apply outline-1 outline-sidebar-ring;
-}
-
-.root {
-  isolation: isolate;
 }

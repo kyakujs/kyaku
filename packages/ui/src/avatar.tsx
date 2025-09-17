@@ -10,7 +10,7 @@ const Avatar: React.FC<React.ComponentProps<typeof AvatarPrimitive.Root>> = ({
   <AvatarPrimitive.Root
     data-slot="avatar"
     className={cn(
-      "relative flex size-8 shrink-0 overflow-hidden rounded-full",
+      "inline-flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-full",
       className,
     )}
     {...props}
@@ -23,7 +23,7 @@ const AvatarImage: React.FC<
 > = ({ className, ...props }) => (
   <AvatarPrimitive.Image
     data-slot="avatar-image"
-    className={cn("aspect-square size-full", className)}
+    className={cn("size-full object-cover", className)}
     {...props}
   />
 );
