@@ -1,8 +1,8 @@
-import { HighPriorityIcon } from "~/components/ui/priorities/high-priority-icon";
-import { LowPriorityIcon } from "~/components/ui/priorities/low-priority-icon";
-import { MediumPriorityIcon } from "~/components/ui/priorities/medium-priority-icon";
-import { NoPriorityIcon } from "~/components/ui/priorities/no-priority-icon";
-import { UrgentPriorityIcon } from "~/components/ui/priorities/urgent-priority-icon";
+import { HighPriorityIcon } from "~/components/ui/icons/priorities/high-priority-icon";
+import { LowPriorityIcon } from "~/components/ui/icons/priorities/low-priority-icon";
+import { MediumPriorityIcon } from "~/components/ui/icons/priorities/medium-priority-icon";
+import { NoPriorityIcon } from "~/components/ui/icons/priorities/no-priority-icon";
+import { UrgentPriorityIcon } from "~/components/ui/icons/priorities/urgent-priority-icon";
 
 export interface Priority {
   code: string;

@@ -18,6 +18,7 @@ async function main() {
         email: "bot@example.com",
         emailVerified: true,
         role: "user",
+        image: "https://api.dicebear.com/9.x/bottts/svg?seed=Kyakujs",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
