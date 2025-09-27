@@ -2,6 +2,8 @@ import { useQuery, useZero } from "@rocicorp/zero/react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import type { Schema } from "@kyakujs/zero/schema";
+import { Separator } from "@kyakujs/ui/separator";
+import { SidebarTrigger } from "@kyakujs/ui/sidebar";
 
 import PriorityCombobox from "~/components/common/tickets/priority-combobox";
 import SubStatusCombobox from "~/components/common/tickets/substatus-combobox";
@@ -32,6 +34,11 @@ function RouteComponent() {
     <div className="flex w-full">
       <div className="flex grow flex-col">
         <header className="flex h-10 w-full items-center gap-2 border-b border-border px-4">
+          <SidebarTrigger className="-ml-1 inline-flex group-has-[[data-state=collapsed]]/sidebar-wrapper:inline-flex lg:hidden [&_svg]:size-4 [&_svg]:shrink-0" />
+          <Separator
+            orientation="vertical"
+            className="mr-2 block h-4 w-[1px] group-has-[[data-state=collapsed]]/sidebar-wrapper:block lg:hidden"
+          />
           <h2 className="text-sm">TIC-{ticket.shortId}</h2>
         </header>
         <div className="flex h-full w-full">
