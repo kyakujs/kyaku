@@ -508,10 +508,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.3.18":
-  version: 1.3.18
-  resolution: "@better-auth/core@npm:1.3.18"
-  checksum: 10c0/70de4486556fe44f0c3634fd1da36e6da865a5a266dc80d199ff6d7748da6a2ad55137afdf10c8792d95d5758bd1026adbdaf23cf1f23e850a37549f8566a340
+"@better-auth/core@npm:1.3.23":
+  version: 1.3.23
+  resolution: "@better-auth/core@npm:1.3.23"
+  checksum: 10c0/a619a0c95ec03bda0db5eefe0c0e3bb34e01c8eef04c80fbdd213d2f850320f5d211a67fb80d8a8dc543918863e64244084d80299dc1ead04db0f3d99c5cab7c
   languageName: node
   linkType: hard
 
@@ -1635,7 +1635,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.18"
+    better-auth: "npm:^1.3.23"
     eslint: "npm:^9.36.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.2"
@@ -5666,11 +5666,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.18":
-  version: 1.3.18
-  resolution: "better-auth@npm:1.3.18"
+"better-auth@npm:^1.3.23":
+  version: 1.3.23
+  resolution: "better-auth@npm:1.3.23"
   dependencies:
-    "@better-auth/core": "npm:1.3.18"
+    "@better-auth/core": "npm:1.3.23"
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:^1.1.18"
     "@noble/ciphers": "npm:^2.0.0"
@@ -5683,15 +5683,6 @@ __metadata:
     kysely: "npm:^0.28.5"
     nanostores: "npm:^1.0.1"
     zod: "npm:^4.1.5"
-  peerDependencies:
-    "@lynx-js/react": "*"
-    "@sveltejs/kit": ^2.0.0
-    next: ^14.0.0 || ^15.0.0
-    react: ^18.0.0 || ^19.0.0
-    react-dom: ^18.0.0 || ^19.0.0
-    solid-js: ^1.0.0
-    svelte: ^4.0.0 || ^5.0.0
-    vue: ^3.0.0
   peerDependenciesMeta:
     "@lynx-js/react":
       optional: true
@@ -5709,7 +5700,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/140fc69015352bbcf8a7d558112f344ebd2a8352f3bd442cd600f362daa73a119e838b21722c160fc4995018b6a97dd4d6a37fdbc23446e025896e7486192b5a
+  checksum: 10c0/1c5648591f493d5ee218724abb7ae754f90ec8395ee38982d3cb62b23d7d272a6389d94d4b8dd7bd64ff5c93b538f8d8d6b562fdbc5d2f8d0fe3b9543c00ed7c
   languageName: node
   linkType: hard
 
