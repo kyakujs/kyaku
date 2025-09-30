@@ -508,10 +508,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.3.23":
-  version: 1.3.23
-  resolution: "@better-auth/core@npm:1.3.23"
-  checksum: 10c0/a619a0c95ec03bda0db5eefe0c0e3bb34e01c8eef04c80fbdd213d2f850320f5d211a67fb80d8a8dc543918863e64244084d80299dc1ead04db0f3d99c5cab7c
+"@better-auth/core@npm:1.3.24":
+  version: 1.3.24
+  resolution: "@better-auth/core@npm:1.3.24"
+  dependencies:
+    better-call: "npm:1.0.19"
+    zod: "npm:^4.1.5"
+  checksum: 10c0/8679b7bb18e0b0322fe833f5b2649fc640af03db308e8687eb436758ec8348b34d10c3ab7ea900df06d0bf0b7bd473a0c89887e0868597f0818266584a22d1de
   languageName: node
   linkType: hard
 
@@ -1635,7 +1638,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.23"
+    better-auth: "npm:^1.3.24"
     eslint: "npm:^9.36.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.2"
@@ -5666,11 +5669,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.23":
-  version: 1.3.23
-  resolution: "better-auth@npm:1.3.23"
+"better-auth@npm:^1.3.24":
+  version: 1.3.24
+  resolution: "better-auth@npm:1.3.24"
   dependencies:
-    "@better-auth/core": "npm:1.3.23"
+    "@better-auth/core": "npm:1.3.24"
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:^1.1.18"
     "@noble/ciphers": "npm:^2.0.0"
@@ -5700,7 +5703,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/1c5648591f493d5ee218724abb7ae754f90ec8395ee38982d3cb62b23d7d272a6389d94d4b8dd7bd64ff5c93b538f8d8d6b562fdbc5d2f8d0fe3b9543c00ed7c
+  checksum: 10c0/6cbff1b35c2d48ba2b03659255cbf40d00f179a8344373e49abd3e8c4e5ba28f7954495155ed53f87506886d87cc2db67ae21c1e7990dafa2e822857e2596c4e
   languageName: node
   linkType: hard
 
