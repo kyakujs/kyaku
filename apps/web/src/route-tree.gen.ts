@@ -8,14 +8,13 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createServerRootRoute } from '@tanstack/react-start/server'
-
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as AuthSettingsNavigationRouteImport } from './routes/_auth/_settings-navigation'
 import { Route as AuthMainNavigationRouteImport } from './routes/_auth/_main-navigation'
 import { Route as AuthMainNavigationIndexRouteImport } from './routes/_auth/_main-navigation/index'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AuthMainNavigationSearchRouteImport } from './routes/_auth/_main-navigation/search'
 import { Route as AuthSettingsNavigationSettingsIndexRouteImport } from './routes/_auth/_settings-navigation/settings/index'
 import { Route as AuthMainNavigationTicketsYoursRouteImport } from './routes/_auth/_main-navigation/tickets/yours'
@@ -33,9 +32,6 @@ import { Route as AuthMainNavigationTicketsAllRouteImport } from './routes/_auth
 import { Route as AuthMainNavigationTicketTicketIdRouteImport } from './routes/_auth/_main-navigation/ticket/$ticketId'
 import { Route as AuthSettingsNavigationSettingsAccountProfileRouteImport } from './routes/_auth/_settings-navigation/settings/account/profile'
 import { Route as AuthSettingsNavigationSettingsAccountPreferencesRouteImport } from './routes/_auth/_settings-navigation/settings/account/preferences'
-import { ServerRoute as ApiAuthSplatServerRouteImport } from './routes/api/auth/$'
-
-const rootServerRouteImport = createServerRootRoute()
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
@@ -58,6 +54,11 @@ const AuthMainNavigationIndexRoute = AuthMainNavigationIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AuthMainNavigationRoute,
+} as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AuthMainNavigationSearchRoute =
   AuthMainNavigationSearchRouteImport.update({
@@ -161,15 +162,11 @@ const AuthSettingsNavigationSettingsAccountPreferencesRoute =
     path: '/settings/account/preferences',
     getParentRoute: () => AuthSettingsNavigationRoute,
   } as any)
-const ApiAuthSplatServerRoute = ApiAuthSplatServerRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
-  getParentRoute: () => rootServerRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -191,6 +188,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -216,6 +214,7 @@ export interface FileRoutesById {
   '/_auth/_main-navigation': typeof AuthMainNavigationRouteWithChildren
   '/_auth/_settings-navigation': typeof AuthSettingsNavigationRouteWithChildren
   '/_auth/_main-navigation/search': typeof AuthMainNavigationSearchRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
   '/_auth/_main-navigation/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -239,6 +238,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/login'
     | '/search'
+    | '/api/auth/$'
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
@@ -260,6 +260,7 @@ export interface FileRouteTypes {
   to:
     | '/login'
     | '/search'
+    | '/api/auth/$'
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
@@ -284,6 +285,7 @@ export interface FileRouteTypes {
     | '/_auth/_main-navigation'
     | '/_auth/_settings-navigation'
     | '/_auth/_main-navigation/search'
+    | '/api/auth/$'
     | '/_auth/_main-navigation/'
     | '/_auth/_main-navigation/ticket/$ticketId'
     | '/_auth/_main-navigation/tickets/all'
@@ -306,27 +308,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   LoginRoute: typeof LoginRoute
-}
-export interface FileServerRoutesByFullPath {
-  '/api/auth/$': typeof ApiAuthSplatServerRoute
-}
-export interface FileServerRoutesByTo {
-  '/api/auth/$': typeof ApiAuthSplatServerRoute
-}
-export interface FileServerRoutesById {
-  __root__: typeof rootServerRouteImport
-  '/api/auth/$': typeof ApiAuthSplatServerRoute
-}
-export interface FileServerRouteTypes {
-  fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/auth/$'
-  fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/auth/$'
-  id: '__root__' | '/api/auth/$'
-  fileServerRoutesById: FileServerRoutesById
-}
-export interface RootServerRouteChildren {
-  ApiAuthSplatServerRoute: typeof ApiAuthSplatServerRoute
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -365,6 +347,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof AuthMainNavigationIndexRouteImport
       parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_auth/_main-navigation/search': {
       id: '/_auth/_main-navigation/search'
@@ -487,17 +476,6 @@ declare module '@tanstack/react-router' {
     }
   }
 }
-declare module '@tanstack/react-start/server' {
-  interface ServerFileRoutesByPath {
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatServerRouteImport
-      parentRoute: typeof rootServerRouteImport
-    }
-  }
-}
 
 interface AuthMainNavigationRouteChildren {
   AuthMainNavigationSearchRoute: typeof AuthMainNavigationSearchRoute
@@ -581,13 +559,17 @@ const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   LoginRoute: LoginRoute,
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-const rootServerRouteChildren: RootServerRouteChildren = {
-  ApiAuthSplatServerRoute: ApiAuthSplatServerRoute,
+
+import type { getRouter } from './router.ts'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
 }
-export const serverRouteTree = rootServerRouteImport
-  ._addFileChildren(rootServerRouteChildren)
-  ._addFileTypes<FileServerRouteTypes>()

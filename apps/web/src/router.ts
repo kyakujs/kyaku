@@ -4,7 +4,7 @@ import {
   createRouter as createTanStackRouter,
   isRedirect,
 } from "@tanstack/react-router";
-import { routerWithQueryClient } from "@tanstack/react-router-with-query";
+import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query";
 
 import { routeTree } from "./route-tree.gen";
 
@@ -12,7 +12,7 @@ export interface RouterContext {
   queryClient: QueryClient;
 }
 
-export function createRouter() {
+export function getRouter() {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -54,18 +54,20 @@ export function createRouter() {
     window.getQueryClient = () => queryClient;
   }
 
-  return routerWithQueryClient(router, queryClient);
+  setupRouterSsrQueryIntegration({ router, queryClient });
+
+  return router;
 }
 
 declare module "@tanstack/react-router" {
   interface Register {
-    router: ReturnType<typeof createRouter>;
+    router: ReturnType<typeof getRouter>;
   }
 }
 
 declare global {
   interface Window {
-    getRouter: () => ReturnType<typeof createRouter>;
+    getRouter: () => ReturnType<typeof getRouter>;
     getQueryClient: () => QueryClient;
   }
 }

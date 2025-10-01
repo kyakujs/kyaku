@@ -11,23 +11,14 @@ export default defineConfig({
     }),
     tailwindcss(),
     tanstackStart({
-      customViteReactPlugin: true,
-      react: {
-        babel: {
-          plugins: [
-            [
-              "babel-plugin-react-compiler",
-              {
-                target: "19",
-              },
-            ],
-          ],
-        },
-      },
-      tsr: {
-        generatedRouteTree: "./src/route-tree.gen.ts",
+      router: {
+        generatedRouteTree: "./route-tree.gen.ts",
       },
     }),
-    viteReact(),
+    viteReact({
+      babel: {
+        plugins: ["babel-plugin-react-compiler"],
+      },
+    }),
   ],
 });

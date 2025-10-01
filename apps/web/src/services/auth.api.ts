@@ -1,8 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
+import { getRequestHeaders } from "@tanstack/react-start/server";
 
 import type { Session } from "@kyakujs/auth";
-
-import sessionMiddleware from "~/session-middleware";
+import { auth } from "@kyakujs/auth";
 
 export interface Authenticated extends Session {
   isAuthenticated: true;
@@ -14,8 +14,17 @@ export interface Unauthenticated {
 
 export type Auth = Authenticated | Unauthenticated;
 
-export const getAuth = createServerFn({ method: "GET" })
-  .middleware([sessionMiddleware])
-  .handler<Auth>((ctx) => {
-    return ctx.context.auth;
+export const getAuth = createServerFn({ method: "GET" }).handler(async () => {
+  const session = await auth.api.getSession({
+    headers: getRequestHeaders(),
   });
+
+  return {
+    auth: session
+      ? {
+          isAuthenticated: true as const,
+          ...session,
+        }
+      : { isAuthenticated: false as const },
+  };
+});

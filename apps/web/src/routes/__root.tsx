@@ -15,7 +15,7 @@ import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   beforeLoad: async () => {
-    const auth = await getAuth();
+    const { auth } = await getAuth();
 
     return {
       auth,
