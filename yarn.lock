@@ -1619,7 +1619,7 @@ __metadata:
     "@tanstack/react-router": "npm:^1.132.27"
     "@tanstack/react-router-devtools": "npm:^1.132.27"
     "@tanstack/react-router-ssr-query": "npm:^1.132.27"
-    "@tanstack/react-start": "npm:^1.132.27"
+    "@tanstack/react-start": "npm:^1.132.28"
     "@tanstack/react-table": "npm:^8.21.3"
     "@tanstack/react-virtual": "npm:^3.13.12"
     "@types/node": "npm:^24.6.1"
@@ -3619,23 +3619,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-start@npm:^1.132.27":
-  version: 1.132.27
-  resolution: "@tanstack/react-start@npm:1.132.27"
+"@tanstack/react-start@npm:^1.132.28":
+  version: 1.132.28
+  resolution: "@tanstack/react-start@npm:1.132.28"
   dependencies:
     "@tanstack/react-router": "npm:1.132.27"
     "@tanstack/react-start-client": "npm:1.132.27"
     "@tanstack/react-start-server": "npm:1.132.27"
     "@tanstack/router-utils": "npm:^1.132.21"
     "@tanstack/start-client-core": "npm:1.132.27"
-    "@tanstack/start-plugin-core": "npm:1.132.27"
+    "@tanstack/start-plugin-core": "npm:1.132.28"
     "@tanstack/start-server-core": "npm:1.132.27"
     pathe: "npm:^2.0.3"
   peerDependencies:
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
     vite: ">=7.0.0"
-  checksum: 10c0/3f0c256d4d0b01e803d079443d8ba37a3afcd845999817e81b12ca17e450b0860045ff6feb2b32cc8bc6fab970f54f3da72fb6075ecddc9cd701ba905d590964
+  checksum: 10c0/51fde59f5cc24e5b162dd417cd5d5e710c9a66e277873a99b685f014545047f23e326e9185388ef23691ca9d8a8bca343cc002b5345f2adce39f85145abc32e0
   languageName: node
   linkType: hard
 
@@ -3823,9 +3823,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/start-plugin-core@npm:1.132.27":
-  version: 1.132.27
-  resolution: "@tanstack/start-plugin-core@npm:1.132.27"
+"@tanstack/start-plugin-core@npm:1.132.28":
+  version: 1.132.28
+  resolution: "@tanstack/start-plugin-core@npm:1.132.28"
   dependencies:
     "@babel/code-frame": "npm:7.26.2"
     "@babel/core": "npm:^7.26.8"
@@ -3849,7 +3849,7 @@ __metadata:
     zod: "npm:^3.24.2"
   peerDependencies:
     vite: ">=7.0.0"
-  checksum: 10c0/ef162fcec6de5709f104cd4db33ce13fad8c3c7f7ea551fcc8aa2edaa2550ccadbe458e4ed2f8dea49d92ff2ce740c547f64e3a8f1c1a1a6ef6cf17c8453c94d
+  checksum: 10c0/ecdbb5eb5ca847ea4258d8ebd48d96bc29fa7ff0a68efd727be8cf0501645ada42edbb3ebcd6250924961a5212ea44b0df5900b3875e956331ee2ac73393eff4
   languageName: node
   linkType: hard
 
