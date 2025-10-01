@@ -382,10 +382,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.28.3":
-  version: 7.28.3
-  resolution: "@babel/runtime@npm:7.28.3"
-  checksum: 10c0/b360f82c2c5114f2a062d4d143d7b4ec690094764853937110585a9497977aed66c102166d0e404766c274e02a50ffb8f6d77fef7251ecf3f607f0e03e6397bc
+"@babel/runtime@npm:^7.28.4":
+  version: 7.28.4
+  resolution: "@babel/runtime@npm:7.28.4"
+  checksum: 10c0/792ce7af9750fb9b93879cc9d1db175701c4689da890e6ced242ea0207c9da411ccf16dc04e689cc01158b28d7898c40d75598f4559109f761c12ce01e959bf7
   languageName: node
   linkType: hard
 
@@ -467,12 +467,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@base-ui-components/react@npm:^1.0.0-beta.3":
-  version: 1.0.0-beta.3
-  resolution: "@base-ui-components/react@npm:1.0.0-beta.3"
+"@base-ui-components/react@npm:^1.0.0-beta.4":
+  version: 1.0.0-beta.4
+  resolution: "@base-ui-components/react@npm:1.0.0-beta.4"
   dependencies:
-    "@babel/runtime": "npm:^7.28.3"
-    "@base-ui-components/utils": "npm:0.1.1"
+    "@babel/runtime": "npm:^7.28.4"
+    "@base-ui-components/utils": "npm:0.1.2"
     "@floating-ui/react-dom": "npm:^2.1.6"
     "@floating-ui/utils": "npm:^0.2.10"
     reselect: "npm:^5.1.1"
@@ -485,15 +485,15 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/5e82b20726f51acdbade71c7ceae75284ba59b43cfa43d135ba2b6b1e3aa68984f4fa709b57f53fbdb34f05507afdd96c2a3148e901c787fe325b99f922f1490
+  checksum: 10c0/4bddb8eec6001edc93c96b4efcfc69fbc3bf153bcdb82c69e4bed067b324d73fea521ec1905f10c4ac7804660ed44929139337202af0cf70240f28350d32815c
   languageName: node
   linkType: hard
 
-"@base-ui-components/utils@npm:0.1.1":
-  version: 0.1.1
-  resolution: "@base-ui-components/utils@npm:0.1.1"
+"@base-ui-components/utils@npm:0.1.2":
+  version: 0.1.2
+  resolution: "@base-ui-components/utils@npm:0.1.2"
   dependencies:
-    "@babel/runtime": "npm:^7.28.3"
+    "@babel/runtime": "npm:^7.28.4"
     "@floating-ui/utils": "npm:^0.2.10"
     reselect: "npm:^5.1.1"
     use-sync-external-store: "npm:^1.5.0"
@@ -504,7 +504,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/1f6dc33f8dd7544f1d84cff61dbbe24c32e0279d77a7ce34cada97e6279420c2789d4ec92f8d41507cd1cc5fb492eea03fc33fc645ebede3d5063cbc1e721e0c
+  checksum: 10c0/d4555f1bcb4245474939093f553104f27af18cd59a5cc78d34a4f199735660a041d0a02d7141bc5ae4646341d4e5130a632209d027f204eeaaac5d3970f33b8f
   languageName: node
   linkType: hard
 
@@ -1733,7 +1733,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/ui@workspace:packages/ui"
   dependencies:
-    "@base-ui-components/react": "npm:^1.0.0-beta.3"
+    "@base-ui-components/react": "npm:^1.0.0-beta.4"
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
