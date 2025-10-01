@@ -1,6 +1,6 @@
 services:
   kyaku_db:
-    image: postgres:17-alpine
+    image: postgres:18-alpine
     shm_size: 1g
     restart: always
     user: postgres
