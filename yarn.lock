@@ -419,13 +419,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.3.26":
-  version: 1.3.26
-  resolution: "@better-auth/core@npm:1.3.26"
+"@better-auth/core@npm:1.3.27":
+  version: 1.3.27
+  resolution: "@better-auth/core@npm:1.3.27"
   dependencies:
     better-call: "npm:1.0.19"
     zod: "npm:^4.1.5"
-  checksum: 10c0/2132fedb7e2085f59776ced26b4511b38d6f84f479524e482491ed96e90990beb06d063d59d40bab2f7af7226e0f62e207b200938806f3225187fb2853e140f8
+  checksum: 10c0/8f9c7e42fcf5ddc22603c757c403e4948de7cb0df6512c3618f317cee5a2b7ed97ab74284d6ca0c61371d6f56b6986ef5676a563158f459d5fd6c46a0eb04b97
   languageName: node
   linkType: hard
 
@@ -436,7 +436,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-fetch/fetch@npm:^1.1.18, @better-fetch/fetch@npm:^1.1.4":
+"@better-fetch/fetch@npm:1.1.18, @better-fetch/fetch@npm:^1.1.4":
   version: 1.1.18
   resolution: "@better-fetch/fetch@npm:1.1.18"
   checksum: 10c0/b8202e4d3dbcd52fd8b5b2f255817606c300f37c60b1d9876f560372b77f66cb6d730e72e2c9b35bca06a1e364ed9d08977c0e8c2ce0ee30fdb4c6f43aae9433
@@ -1481,7 +1481,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.26"
+    better-auth: "npm:^1.3.27"
     eslint: "npm:^9.37.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.3"
@@ -4763,13 +4763,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.26":
-  version: 1.3.26
-  resolution: "better-auth@npm:1.3.26"
+"better-auth@npm:^1.3.27":
+  version: 1.3.27
+  resolution: "better-auth@npm:1.3.27"
   dependencies:
-    "@better-auth/core": "npm:1.3.26"
+    "@better-auth/core": "npm:1.3.27"
     "@better-auth/utils": "npm:0.3.0"
-    "@better-fetch/fetch": "npm:^1.1.18"
+    "@better-fetch/fetch": "npm:1.1.18"
     "@noble/ciphers": "npm:^2.0.0"
     "@noble/hashes": "npm:^2.0.0"
     "@simplewebauthn/browser": "npm:^13.1.2"
@@ -4797,7 +4797,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/76edad0bead15fd098756736cdce9362f6f317217f4dac6b7338968bcf58891516741946d103f07f15185bbbb79f06e39b6727b3cd34592b010742ac65a43f23
+  checksum: 10c0/c6bc2bbea4a32bb949ca89395a533c75e6e9fc7c206a86bce8eff5b2ce4edfc3788d175c768a48418aef2c9235a729347e98f2868d974565b3333f22045af52b
   languageName: node
   linkType: hard
 
