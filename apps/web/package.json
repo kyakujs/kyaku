@@ -40,7 +40,7 @@
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@tailwindcss/vite": "^4.1.14",
-    "@types/node": "^24.6.2",
+    "@types/node": "^24.7.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.4",
