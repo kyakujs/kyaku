@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-"use no memo";
-
 import type { Row } from "@tanstack/react-table";
 import { Fragment, useRef } from "react";
 import { flexRender } from "@tanstack/react-table";

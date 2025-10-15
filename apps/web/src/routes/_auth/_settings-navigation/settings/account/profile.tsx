@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Input } from "@kyakujs/ui/input";
 
-import { useAuth } from "~/components/auth-provider";
 import { Header } from "~/components/layout/headers/settings/header";
+import { authClient } from "~/libs/auth-client";
 
 export const Route = createFileRoute(
   "/_auth/_settings-navigation/settings/account/profile",
@@ -13,9 +13,9 @@ export const Route = createFileRoute(
 });
 
 function RouteComponent() {
-  const { user } = useAuth();
+  const session = authClient.useSession();
 
-  if (!user) {
+  if (!session.data) {
     return <div className="text-red-500">User not found</div>;
   }
 
@@ -45,10 +45,10 @@ function RouteComponent() {
                       name="full-name"
                       type="text"
                       placeholder="janesmith"
-                      value={user.name}
+                      value={session.data.user.name}
                     />
                   </li>
-                  <li className="relative flex flex-col items-stretch justify-between gap-2 px-4 py-3 sm:flex-row sm:items-center sm:gap-4">
+                  {/*<li className="relative flex flex-col items-stretch justify-between gap-2 px-4 py-3 sm:flex-row sm:items-center sm:gap-4">
                     <div className="flex min-w-0 grow flex-col flex-wrap gap-0.5">
                       <label
                         htmlFor="username"
@@ -66,9 +66,9 @@ function RouteComponent() {
                       name="username"
                       type="text"
                       placeholder="johndoe"
-                      value={user.username}
+                      value={session.data.user.username}
                     />
-                  </li>
+                  </li>*/}
                 </ul>
               </section>
             </form>

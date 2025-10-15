@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { admin, jwt, username } from "better-auth/plugins";
+import { admin, username } from "better-auth/plugins";
 
 import { db } from "@kyakujs/db";
 
@@ -21,6 +21,9 @@ const auth = betterAuth({
   },
   advanced: {
     cookiePrefix: "kyaku",
+    crossSubDomainCookies: {
+      enabled: true,
+    },
     defaultCookieAttributes: {
       httpOnly: false,
       secure: true,
@@ -39,7 +42,7 @@ const auth = betterAuth({
       },
     },
   },
-  plugins: [jwt(), username(), admin()],
+  plugins: [username(), admin()],
 });
 
 export { auth };

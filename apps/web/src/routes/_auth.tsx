@@ -2,7 +2,6 @@
 
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
 
-import { AuthProvider, useAuth } from "~/components/auth-provider";
 import { ZeroProvider } from "~/components/zero-provider";
 
 export const Route = createFileRoute("/_auth")({
@@ -22,20 +21,6 @@ export const Route = createFileRoute("/_auth")({
 });
 
 function AuthLayout() {
-  return (
-    <AuthProvider>
-      <Auth />
-    </AuthProvider>
-  );
-}
-
-function Auth() {
-  const { isPending } = useAuth();
-
-  if (isPending) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <ZeroProvider>
       <Outlet />
