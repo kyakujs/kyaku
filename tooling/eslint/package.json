@@ -20,7 +20,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-turbo": "^2.5.8",
-    "typescript-eslint": "^8.46.1"
+    "typescript-eslint": "^8.46.2"
   },
   "devDependencies": {
     "@kyakujs/prettier-config": "workspace:*",
