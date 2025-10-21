@@ -1,10 +1,10 @@
-import type { ExpressionBuilder, Row } from "@rocicorp/zero";
+import type { Row } from "@rocicorp/zero";
 import {
+  createBuilder,
   createSchema,
   definePermissions,
   enumeration,
   json,
-  NOBODY_CAN,
   number,
   relationships,
   string,
@@ -189,10 +189,11 @@ export const schema = createSchema({
     ticketRelationships,
     ticketTimelineEntryRelationships,
   ],
+  enableLegacyMutators: false,
+  enableLegacyQueries: false,
 });
 
 export type Schema = typeof schema;
-type TableName = keyof Schema["tables"];
 
 export type Customer = Row<typeof schema.tables.customer>;
 export type Ticket = Row<typeof schema.tables.ticket>;
@@ -203,79 +204,7 @@ interface AuthData {
   sub: string | null;
 }
 
-export const permissions: ReturnType<typeof definePermissions> =
-  definePermissions<AuthData, Schema>(schema, () => {
-    const allowIfLoggedIn = (
-      authData: AuthData,
-      eb: ExpressionBuilder<Schema, TableName>,
-    ) => eb.cmpLit(authData.sub, "IS NOT", null);
+export const builder = createBuilder(schema);
 
-    return {
-      customer: {
-        row: {
-          select: [allowIfLoggedIn],
-          insert: [allowIfLoggedIn],
-          update: {
-            postMutation: [allowIfLoggedIn],
-            preMutation: [allowIfLoggedIn],
-          },
-          delete: NOBODY_CAN,
-        },
-      },
-      label: {
-        row: {
-          select: [allowIfLoggedIn],
-          insert: [allowIfLoggedIn],
-          update: {
-            postMutation: [allowIfLoggedIn],
-            preMutation: [allowIfLoggedIn],
-          },
-          delete: NOBODY_CAN,
-        },
-      },
-      ticket: {
-        row: {
-          select: [allowIfLoggedIn],
-          insert: [allowIfLoggedIn],
-          update: {
-            postMutation: [allowIfLoggedIn],
-            preMutation: [allowIfLoggedIn],
-          },
-          delete: NOBODY_CAN,
-        },
-      },
-      ticketLabel: {
-        row: {
-          select: [allowIfLoggedIn],
-          insert: [allowIfLoggedIn],
-          update: {
-            postMutation: [allowIfLoggedIn],
-            preMutation: [allowIfLoggedIn],
-          },
-          delete: NOBODY_CAN,
-        },
-      },
-      ticketTimelineEntry: {
-        row: {
-          select: [allowIfLoggedIn],
-          insert: [allowIfLoggedIn],
-          update: {
-            postMutation: [allowIfLoggedIn],
-            preMutation: [allowIfLoggedIn],
-          },
-          delete: NOBODY_CAN,
-        },
-      },
-      user: {
-        row: {
-          select: [allowIfLoggedIn],
-          insert: NOBODY_CAN,
-          update: {
-            postMutation: NOBODY_CAN,
-            preMutation: NOBODY_CAN,
-          },
-          delete: NOBODY_CAN,
-        },
-      },
-    };
-  });
+export const permissions: ReturnType<typeof definePermissions> =
+  definePermissions<AuthData, Schema>(schema, () => ({}));

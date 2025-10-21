@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "exports": {
+    "./queries": {
+      "types": "./dist/queries.d.ts",
+      "default": "./src/queries.ts"
+    },
     "./schema": {
       "types": "./dist/schema.d.ts",
       "default": "./src/schema.ts"

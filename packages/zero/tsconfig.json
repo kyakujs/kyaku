@@ -1,5 +1,9 @@
 {
   "extends": "@kyakujs/tsconfig/internal-package.json",
+  "compilerOptions": {
+    "lib": ["ES2024"],
+    "rootDir": "."
+  },
   "include": ["src"],
   "exclude": ["node_modules"]
 }

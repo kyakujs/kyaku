@@ -14,6 +14,7 @@ import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as AuthSettingsNavigationRouteImport } from './routes/_auth/_settings-navigation'
 import { Route as AuthMainNavigationRouteImport } from './routes/_auth/_main-navigation'
 import { Route as AuthMainNavigationIndexRouteImport } from './routes/_auth/_main-navigation/index'
+import { Route as ApiZeroGetQueriesRouteImport } from './routes/api/zero/get-queries'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AuthMainNavigationSearchRouteImport } from './routes/_auth/_main-navigation/search'
 import { Route as AuthSettingsNavigationSettingsIndexRouteImport } from './routes/_auth/_settings-navigation/settings/index'
@@ -54,6 +55,11 @@ const AuthMainNavigationIndexRoute = AuthMainNavigationIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AuthMainNavigationRoute,
+} as any)
+const ApiZeroGetQueriesRoute = ApiZeroGetQueriesRouteImport.update({
+  id: '/api/zero/get-queries',
+  path: '/api/zero/get-queries',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
@@ -167,6 +173,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/zero/get-queries': typeof ApiZeroGetQueriesRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -189,6 +196,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/zero/get-queries': typeof ApiZeroGetQueriesRoute
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -215,6 +223,7 @@ export interface FileRoutesById {
   '/_auth/_settings-navigation': typeof AuthSettingsNavigationRouteWithChildren
   '/_auth/_main-navigation/search': typeof AuthMainNavigationSearchRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/zero/get-queries': typeof ApiZeroGetQueriesRoute
   '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
   '/_auth/_main-navigation/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
@@ -239,6 +248,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/search'
     | '/api/auth/$'
+    | '/api/zero/get-queries'
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
@@ -261,6 +271,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/search'
     | '/api/auth/$'
+    | '/api/zero/get-queries'
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
@@ -286,6 +297,7 @@ export interface FileRouteTypes {
     | '/_auth/_settings-navigation'
     | '/_auth/_main-navigation/search'
     | '/api/auth/$'
+    | '/api/zero/get-queries'
     | '/_auth/_main-navigation/'
     | '/_auth/_main-navigation/ticket/$ticketId'
     | '/_auth/_main-navigation/tickets/all'
@@ -309,6 +321,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   LoginRoute: typeof LoginRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiZeroGetQueriesRoute: typeof ApiZeroGetQueriesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -347,6 +360,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof AuthMainNavigationIndexRouteImport
       parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/api/zero/get-queries': {
+      id: '/api/zero/get-queries'
+      path: '/api/zero/get-queries'
+      fullPath: '/api/zero/get-queries'
+      preLoaderRoute: typeof ApiZeroGetQueriesRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/auth/$': {
       id: '/api/auth/$'
@@ -560,6 +580,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   LoginRoute: LoginRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiZeroGetQueriesRoute: ApiZeroGetQueriesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

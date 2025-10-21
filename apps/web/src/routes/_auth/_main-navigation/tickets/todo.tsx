@@ -1,12 +1,12 @@
 import type { ColumnDef } from "@tanstack/react-table";
-import { useQuery, useZero } from "@rocicorp/zero/react";
+import { useQuery } from "@rocicorp/zero/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CircleDashedIcon } from "lucide-react";
 
-import type { Schema } from "@kyakujs/zero/schema";
 import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
 import { Badge } from "@kyakujs/ui/badge";
 import { Checkbox } from "@kyakujs/ui/checkbox";
+import { queries } from "@kyakujs/zero/queries";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import { TicketList } from "~/components/common/tickets/ticket-list/ticket-list";
@@ -22,16 +22,7 @@ export const Route = createFileRoute("/_auth/_main-navigation/tickets/todo")({
 });
 
 function RouteComponent() {
-  const z = useZero<Schema>();
-  const [data, result] = useQuery(
-    z.query.ticket
-      .where("status", 0)
-      .related("assignedTo", (assignee) => assignee.one())
-      .related("customer")
-      .related("labels")
-      .orderBy("priority", "asc")
-      .orderBy("createdAt", "asc"),
-  );
+  const [data, result] = useQuery(queries.tickets());
 
   const tickets: Ticket[] = data.map((ticket) => ({
     id: ticket.id,
