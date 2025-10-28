@@ -407,9 +407,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.3.30":
-  version: 1.3.30
-  resolution: "@better-auth/core@npm:1.3.30"
+"@better-auth/core@npm:1.3.32":
+  version: 1.3.32
+  resolution: "@better-auth/core@npm:1.3.32"
   dependencies:
     zod: "npm:^4.1.5"
   peerDependencies:
@@ -419,18 +419,18 @@ __metadata:
     jose: ^6.1.0
     kysely: ^0.28.5
     nanostores: ^1.0.1
-  checksum: 10c0/40c0c8fbc4a2f28b154ca40f4bbc3b23f9262f18d6ba4a8a7be13e53adc3a51f5eed10f29d2ea3abf42b4a7584bac27fcc5926d3dd13ad9f3c20b2124168ee34
+  checksum: 10c0/d2ea23f075839e218a505a9a5496b116dd025d51cb8b1bf70c01b5384ca2a43491522432770edb9de24431b711b71f8b348209b8f586c4e63deecf409b735171
   languageName: node
   linkType: hard
 
-"@better-auth/telemetry@npm:1.3.30":
-  version: 1.3.30
-  resolution: "@better-auth/telemetry@npm:1.3.30"
+"@better-auth/telemetry@npm:1.3.32":
+  version: 1.3.32
+  resolution: "@better-auth/telemetry@npm:1.3.32"
   dependencies:
-    "@better-auth/core": "npm:1.3.30"
+    "@better-auth/core": "npm:1.3.32"
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.18"
-  checksum: 10c0/f22d7c74c3e3a73212a5b5afe09bc7c1852293b394d1c85e6d33e6339a9ff159047e81cd9786a653e9e56ebab77828a590eb9b07dee6e1f24543d69e063c53f9
+  checksum: 10c0/6e7f527c7f3d9fed8b365c4b2cecb697b73509b796753a7b2bdaba3d8bb722d37a25911f289c95c6fa62679202fac6f90b26e89b0e202bdc9b37ec8ba250b045
   languageName: node
   linkType: hard
 
@@ -1505,7 +1505,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.3.30"
+    better-auth: "npm:^1.3.32"
     eslint: "npm:^9.38.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.3"
@@ -4743,12 +4743,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.3.30":
-  version: 1.3.30
-  resolution: "better-auth@npm:1.3.30"
+"better-auth@npm:^1.3.32":
+  version: 1.3.32
+  resolution: "better-auth@npm:1.3.32"
   dependencies:
-    "@better-auth/core": "npm:1.3.30"
-    "@better-auth/telemetry": "npm:1.3.30"
+    "@better-auth/core": "npm:1.3.32"
+    "@better-auth/telemetry": "npm:1.3.32"
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.18"
     "@noble/ciphers": "npm:^2.0.0"
@@ -4778,7 +4778,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/c7f581e0fe77898c0286b6cf44d0e4a1711686c30573d8f1328fbf28de1812ba6c4da086edfe834db07a20a4277943dee5560693bdd2f4bca4a7a22da2dd3912
+  checksum: 10c0/6c84aeb956c33fbda8c1e0c6303833624db8f518c6699b0914d6100fb9fb15a56337af2bcb053c3345e7a9bb73c2b3f63791653b4c5b93f62ed1412a9606148c
   languageName: node
   linkType: hard
 
