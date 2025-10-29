@@ -5,7 +5,7 @@ import { ZeroProvider as ZeroProviderPrimitive } from "@rocicorp/zero/react";
 
 import { schema } from "@kyakujs/zero/schema";
 
-import { authClient } from "~/libs/auth-client";
+import { authClient } from "~/components/auth/client";
 
 export function ZeroProvider({ children }: { children: React.ReactNode }) {
   const session = authClient.useSession();

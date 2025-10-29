@@ -1,9 +1,5 @@
-import { lazy } from "react";
 import { QueryClient } from "@tanstack/react-query";
-import {
-  createRouter as createTanStackRouter,
-  isRedirect,
-} from "@tanstack/react-router";
+import { createRouter } from "@tanstack/react-router";
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query";
 
 import { routeTree } from "./route-tree.gen";
@@ -23,36 +19,17 @@ export function getRouter() {
     },
   });
 
-  const routerContext: RouterContext = {
-    queryClient,
-  };
-
-  const router = createTanStackRouter({
+  const router = createRouter({
     routeTree,
-    context: routerContext,
+    context: {
+      queryClient,
+    },
+    defaultPreload: "intent",
+    scrollRestoration: true,
     search: {
       strict: true,
     },
-    defaultPreload: false,
-    scrollRestoration: true,
   });
-
-  // handle redirect without useServerFn when using tanstack query
-  queryClient.getQueryCache().config.onError = handleRedirectError;
-  queryClient.getMutationCache().config.onError = handleRedirectError;
-
-  function handleRedirectError(error: Error) {
-    if (isRedirect(error)) {
-      error.options._fromLocation = router.state.location;
-      void router.navigate(router.resolveRedirect(error).options);
-    }
-  }
-
-  // expose router and query client to window for use outside React (e.g. for Better Auth)
-  if (typeof window !== "undefined") {
-    window.getRouter = () => router;
-    window.getQueryClient = () => queryClient;
-  }
 
   setupRouterSsrQueryIntegration({ router, queryClient });
 
@@ -64,18 +41,3 @@ declare module "@tanstack/react-router" {
     router: ReturnType<typeof getRouter>;
   }
 }
-
-declare global {
-  interface Window {
-    getRouter: () => ReturnType<typeof getRouter>;
-    getQueryClient: () => QueryClient;
-  }
-}
-
-export const RouterDevtools = import.meta.env.PROD
-  ? () => null
-  : lazy(() =>
-      import("@tanstack/react-router-devtools").then((res) => ({
-        default: res.TanStackRouterDevtools,
-      })),
-    );

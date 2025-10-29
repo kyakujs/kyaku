@@ -3,7 +3,7 @@ import { LogOutIcon, SettingsIcon } from "lucide-react";
 
 import { MenuItem, MenuSeparator } from "@kyakujs/ui/menu";
 
-import { authClient } from "~/libs/auth-client";
+import { authClient } from "~/components/auth/client";
 
 export function WorkspaceMenu() {
   return (

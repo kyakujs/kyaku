@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { Button } from "@kyakujs/ui/button";
 
-import { authClient } from "~/libs/auth-client";
+import { authClient } from "~/components/auth/client";
 
 export const Route = createFileRoute("/login")({
   validateSearch: z.object({

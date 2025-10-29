@@ -7,11 +7,11 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 import type { RouterContext } from "~/router";
-import { RouterDevtools } from "~/router";
 import { getAuth } from "~/services/auth.api";
-import appCss from "~/styles/app.css?url";
+import appCss from "~/styles.css?url";
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   beforeLoad: async () => {
@@ -84,7 +84,7 @@ function RootDocument({ children }: PropsWithChildren) {
       </head>
       <body>
         <div className="root">{children}</div>
-        <RouterDevtools position="bottom-right" />
+        <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
       </body>
     </html>

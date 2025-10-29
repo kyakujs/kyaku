@@ -9,7 +9,6 @@ export default defineConfig({
     tsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
-    tailwindcss(),
     tanstackStart({
       router: {
         generatedRouteTree: "./route-tree.gen.ts",
@@ -20,5 +19,6 @@ export default defineConfig({
         plugins: ["babel-plugin-react-compiler"],
       },
     }),
+    tailwindcss(),
   ],
 });

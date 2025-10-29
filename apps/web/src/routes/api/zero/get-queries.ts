@@ -4,9 +4,10 @@ import { handleGetQueriesRequest } from "@rocicorp/zero/server";
 import { createFileRoute } from "@tanstack/react-router";
 import { json } from "@tanstack/react-start";
 
-import { auth } from "@kyakujs/auth";
 import { queries } from "@kyakujs/zero/queries";
 import { schema } from "@kyakujs/zero/schema";
+
+import { auth } from "~/components/auth/server";
 
 const validated = Object.fromEntries(
   Object.values(queries).map((q) => [q.queryName, withValidation(q)]),

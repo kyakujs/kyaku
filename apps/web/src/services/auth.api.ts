@@ -2,7 +2,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { getRequestHeaders } from "@tanstack/react-start/server";
 
 import type { Session } from "@kyakujs/auth";
-import { auth } from "@kyakujs/auth";
+
+import { auth } from "~/components/auth/server";
 
 export interface Authenticated extends Session {
   isAuthenticated: true;

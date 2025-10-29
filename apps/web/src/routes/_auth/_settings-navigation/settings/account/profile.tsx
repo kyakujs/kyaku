@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Input } from "@kyakujs/ui/input";
 
+import { authClient } from "~/components/auth/client";
 import { Header } from "~/components/layout/headers/settings/header";
-import { authClient } from "~/libs/auth-client";
 
 export const Route = createFileRoute(
   "/_auth/_settings-navigation/settings/account/profile",

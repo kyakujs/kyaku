@@ -9,7 +9,7 @@
     "dev": "yarn with-env vite dev --port 3000",
     "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path .prettierignore",
     "lint": "eslint",
-    "start": "node .output/server/index.mjs",
+    "start": "vite start",
     "typecheck": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --"
   },
@@ -26,6 +26,7 @@
     "@tanstack/react-start": "^1.133.37",
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "^3.13.12",
+    "better-auth": "^1.3.34",
     "lucide-react": "^0.548.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

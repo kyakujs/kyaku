@@ -1,48 +1,44 @@
+import type { BetterAuthOptions, BetterAuthPlugin } from "better-auth";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { admin, username } from "better-auth/plugins";
+import { username } from "better-auth/plugins";
 
 import { db } from "@kyakujs/db";
 
-export type Session = typeof auth.$Infer.Session;
+export function initAuth<
+  TExtraPlugins extends BetterAuthPlugin[] = [],
+>(options: {
+  baseUrl: string;
+  secret: string | undefined;
 
-const auth = betterAuth({
-  baseURL: process.env.VITE_APP_BASE_URL,
-  secret: process.env.AUTH_SECRET,
-  database: drizzleAdapter(db, {
-    provider: "pg",
-  }),
-  account: {
-    // TODO: Manually Linking Accounts: https://www.better-auth.com/docs/concepts/users-accounts#manually-linking-accounts
-    accountLinking: {
-      enabled: true,
-      trustedProviders: ["github"],
-    },
-  },
-  advanced: {
-    cookiePrefix: "kyaku",
-    crossSubDomainCookies: {
-      enabled: true,
-    },
-    defaultCookieAttributes: {
-      httpOnly: false,
-      secure: true,
-    },
-  },
-  socialProviders: {
-    github: {
-      clientId: process.env.AUTH_GITHUB_ID as string,
-      clientSecret: process.env.AUTH_GITHUB_SECRET as string,
-      mapProfileToUser: (profile) => {
-        return {
-          firstName: profile.name.split(" ")[0],
-          lastName: profile.name.split(" ")[1],
-          username: profile.login,
-        };
+  githubClientId: string;
+  githubClientSecret: string;
+  extraPlugins?: TExtraPlugins;
+}) {
+  const config = {
+    database: drizzleAdapter(db, {
+      provider: "pg",
+    }),
+    baseURL: options.baseUrl,
+    secret: options.secret,
+    socialProviders: {
+      github: {
+        clientId: options.githubClientId,
+        clientSecret: options.githubClientSecret,
+        mapProfileToUser: (profile) => {
+          return {
+            firstName: profile.name.split(" ")[0],
+            lastName: profile.name.split(" ")[1],
+            username: profile.login,
+          };
+        },
       },
     },
-  },
-  plugins: [username(), admin()],
-});
+    plugins: [username()],
+  } satisfies BetterAuthOptions;
 
-export { auth };
+  return betterAuth(config);
+}
+
+export type Auth = ReturnType<typeof initAuth>;
+export type Session = Auth["$Infer"]["Session"];
