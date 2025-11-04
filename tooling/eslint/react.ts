@@ -21,7 +21,7 @@ export default defineConfig(
         ...globals.browser,
       },
     },
-  } as any,
+  },
   reactHooks.configs.flat["recommended-latest"]!,
   routerPlugin.configs["flat/recommended"],
 );
