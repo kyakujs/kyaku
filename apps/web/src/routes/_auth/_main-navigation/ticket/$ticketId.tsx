@@ -1,9 +1,9 @@
-import { useQuery, useZero } from "@rocicorp/zero/react";
+import { useQuery } from "@rocicorp/zero/react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import type { Schema } from "@kyakujs/zero/schema";
 import { Separator } from "@kyakujs/ui/separator";
 import { SidebarTrigger } from "@kyakujs/ui/sidebar";
+import { queries } from "@kyakujs/zero/queries";
 
 import PriorityCombobox from "~/components/common/tickets/priority-combobox";
 import SubStatusCombobox from "~/components/common/tickets/substatus-combobox";
@@ -16,13 +16,10 @@ export const Route = createFileRoute(
 });
 
 function RouteComponent() {
-  const z = useZero<Schema>();
   const { ticketId } = Route.useParams();
-  const [ticket, ticketResult] = useQuery(
-    z.query.ticket.related("timelineEntries").where("id", ticketId).one(),
-  );
+  const [ticket, { type }] = useQuery(queries.ticket(ticketId));
 
-  if (ticketResult.type === "unknown") {
+  if (type === "unknown") {
     return null;
   }
 

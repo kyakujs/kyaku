@@ -22,7 +22,7 @@ export const Route = createFileRoute("/_auth/_main-navigation/tickets/todo")({
 });
 
 function RouteComponent() {
-  const [data, result] = useQuery(queries.tickets());
+  const [data, { type }] = useQuery(queries.tickets());
 
   const tickets: Ticket[] = data.map((ticket) => ({
     id: ticket.id,
@@ -256,7 +256,7 @@ function RouteComponent() {
         <h2 className="text-sm">Todo</h2>
       </Header>
       <div className="h-full w-full overflow-auto">
-        {result.type === "complete" ? (
+        {type === "complete" ? (
           <TicketList
             columns={columns}
             data={tickets}
