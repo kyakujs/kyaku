@@ -23,8 +23,12 @@ function RouteComponent() {
     return null;
   }
 
-  if (ticket === undefined) {
+  if (!ticket && type === "complete") {
     return <div>Ticket not found</div>;
+  }
+
+  if (!ticket) {
+    return null;
   }
 
   return (
