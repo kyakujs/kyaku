@@ -15,7 +15,7 @@ function ScrollArea({
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
         className={cn(
-          "focus-visible:ring-ring focus-visible:ring-offset-background size-full overscroll-contain rounded-[inherit] transition-shadow outline-none focus-visible:ring-2 focus-visible:ring-offset-1",
+          "size-full overscroll-contain rounded-[inherit] transition-shadow outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
           className,
         )}
       >
@@ -51,7 +51,7 @@ function ScrollBar({
     >
       <ScrollAreaPrimitive.Thumb
         data-slot="scroll-area-thumb"
-        className="bg-foreground/20 relative flex-1 rounded-full"
+        className="relative flex-1 rounded-full bg-foreground/20"
       />
     </ScrollAreaPrimitive.Scrollbar>
   );
