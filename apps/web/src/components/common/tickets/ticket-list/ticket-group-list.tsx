@@ -60,7 +60,7 @@ export function TicketGroupList({ rows }: { rows: Row<Ticket>[] }) {
             >
               <div
                 data-list-key={`GROUP_${groupedRow.id}`}
-                className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b border-border bg-muted pr-2 pl-8 text-sm"
+                className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b border-border bg-sidebar pr-2 pl-8 text-sm"
               >
                 {groupedRow.getVisibleCells().map((groupedCell) =>
                   groupedCell.getIsAggregated() ? null : (

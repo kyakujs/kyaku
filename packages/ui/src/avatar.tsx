@@ -1,43 +1,44 @@
-import * as React from "react";
 import { Avatar as AvatarPrimitive } from "@base-ui-components/react/avatar";
 
 import { cn } from "@kyakujs/ui";
 
-const Avatar: React.FC<React.ComponentProps<typeof AvatarPrimitive.Root>> = ({
+function Avatar({ className, ...props }: AvatarPrimitive.Root.Props) {
+  return (
+    <AvatarPrimitive.Root
+      data-slot="avatar"
+      className={cn(
+        "inline-flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-background align-middle text-xs font-medium select-none",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function AvatarImage({ className, ...props }: AvatarPrimitive.Image.Props) {
+  return (
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
+      className={cn("size-full object-cover", className)}
+      {...props}
+    />
+  );
+}
+
+function AvatarFallback({
   className,
   ...props
-}) => (
-  <AvatarPrimitive.Root
-    data-slot="avatar"
-    className={cn(
-      "inline-grid size-8 shrink-0 items-center justify-center overflow-hidden rounded-full outline -outline-offset-1 outline-border *:rounded-full",
-      className,
-    )}
-    {...props}
-  />
-);
-Avatar.displayName = AvatarPrimitive.Root.displayName;
-
-const AvatarImage: React.FC<
-  React.ComponentProps<typeof AvatarPrimitive.Image>
-> = ({ className, ...props }) => (
-  <AvatarPrimitive.Image
-    data-slot="avatar-image"
-    className={cn("size-full object-cover", className)}
-    {...props}
-  />
-);
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
-
-const AvatarFallback: React.FC<
-  React.ComponentProps<typeof AvatarPrimitive.Fallback>
-> = ({ className, ...props }) => (
-  <AvatarPrimitive.Fallback
-    data-slot="avatar-fallback"
-    className={cn("size-full bg-muted", className)}
-    {...props}
-  />
-);
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+}: AvatarPrimitive.Fallback.Props) {
+  return (
+    <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
+      className={cn(
+        "flex size-full items-center justify-center rounded-full bg-muted",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
 
 export { Avatar, AvatarImage, AvatarFallback };

@@ -82,7 +82,7 @@ function RootDocument({ children }: PropsWithChildren) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-sidebar font-sans text-foreground antialiased">
         <div className="root">{children}</div>
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />

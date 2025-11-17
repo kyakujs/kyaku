@@ -11,38 +11,44 @@
     ui-monospace, "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 
-  --text-sm: 0.8125rem;
-  --text-regular: 0.9375rem;
-
   --radius: 0.625rem;
 
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.145 0 0);
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-zinc-900);
 
-  --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
+  --color-card: var(--color-white);
+  --color-card-foreground: var(--color-zinc-900);
 
-  --color-popover: oklch(1 0 0);
-  --color-popover-foreground: oklch(0.145 0 0);
+  --color-popover: var(--color-white);
+  --color-popover-foreground: var(--color-zinc-900);
 
-  --color-border: oklch(0.922 0 0);
-  --color-input: oklch(0.922 0 0);
+  --color-primary: var(--color-zinc-800);
+  --color-primary-foreground: var(--color-zinc-50);
 
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
+  --color-secondary: --alpha(var(--color-black) / 4%);
+  --color-secondary-foreground: var(--color-zinc-900);
 
-  --color-primary: oklch(0.205 0 0);
-  --color-primary-foreground: oklch(0.985 0 0);
+  --color-muted: --alpha(var(--color-black) / 4%);
+  --color-muted-foreground: var(--color-zinc-600);
 
-  --color-secondary: oklch(0.97 0 0);
-  --color-secondary-foreground: oklch(0.205 0 0);
+  --color-accent: --alpha(var(--color-black) / 4%);
+  --color-accent-foreground: var(--color-zinc-900);
 
-  --color-accent: oklch(0.97 0 0);
-  --color-accent-foreground: oklch(0.205 0 0);
+  --color-destructive: var(--color-red-500);
+  --color-destructive-foreground: var(--color-red-700);
 
-  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-info: var(--color-blue-500);
+  --color-info-foreground: var(--color-blue-700);
 
-  --color-ring: oklch(0.708 0 0);
+  --color-success: var(--color-emerald-500);
+  --color-success-foreground: var(--color-emerald-700);
+
+  --color-warning: var(--color-amber-500);
+  --color-warning-foreground: var(--color-amber-700);
+
+  --color-border: --alpha(var(--color-black) / 12%);
+  --color-input: --alpha(var(--color-black) / 12%);
+  --color-ring: var(--color-zinc-400);
 
   --color-sidebar: oklch(0.985 0 0);
   --color-sidebar-foreground: oklch(0.145 0 0);
@@ -53,8 +59,6 @@
   --color-sidebar-border: oklch(0.922 0 0);
   --color-sidebar-ring: oklch(0.708 0 0);
 
-  --color-container: oklch(1 0 0);
-
   --color-todo: oklch(0.55 0.2152 262.88);
   --color-snoozed: oklch(0.56 0.2525 302.32);
   --color-done: oklch(0.63 0.1699 149.21);
@@ -63,33 +67,46 @@
 }
 
 .dark {
-  --color-background: oklch(0.145 0 0);
-  --color-foreground: oklch(0.985 0 0);
+  --color-background: var(--color-zinc-950);
+  --color-foreground: var(--color-zinc-100);
 
-  --color-muted: oklch(0.269 0 0);
-  --color-muted-foreground: oklch(0.708 0 0);
+  --color-card: color-mix(
+    in srgb,
+    var(--color-zinc-900) 80%,
+    var(--color-zinc-950)
+  );
+  --color-card-foreground: var(--color-zinc-100);
 
-  --color-accent: oklch(0.371 0 0);
-  --color-accent-foreground: oklch(0.985 0 0);
+  --color-popover: var(--color-zinc-900);
+  --color-popover-foreground: var(--color-zinc-100);
 
-  --color-popover: oklch(0.269 0 0);
-  --color-popover-foreground: oklch(0.985 0 0);
+  --color-primary: var(--color-zinc-100);
+  --color-primary-foreground: var(--color-zinc-900);
 
-  --color-border: oklch(1 0 0 / 10%);
-  --color-input: oklch(1 0 0 / 15%);
+  --color-secondary: --alpha(var(--color-white) / 6%);
+  --color-secondary-foreground: var(--color-zinc-100);
 
-  --color-card: oklch(0.205 0 0);
-  --color-card-foreground: oklch(0.985 0 0);
+  --color-muted: --alpha(var(--color-white) / 6%);
+  --color-muted-foreground: var(--color-zinc-400);
 
-  --color-primary: oklch(0.922 0 0);
-  --color-primary-foreground: oklch(0.205 0 0);
+  --color-accent: --alpha(var(--color-white) / 6%);
+  --color-accent-foreground: var(--color-zinc-100);
 
-  --color-secondary: oklch(0.269 0 0);
-  --color-secondary-foreground: oklch(0.985 0 0);
+  --color-destructive: var(--color-red-500);
+  --color-destructive-foreground: var(--color-red-400);
 
-  --color-destructive: oklch(0.704 0.191 22.216);
+  --color-info: var(--color-blue-500);
+  --color-info-foreground: var(--color-blue-400);
 
-  --color-ring: oklch(0.556 0 0);
+  --color-success: var(--color-emerald-500);
+  --color-success-foreground: var(--color-emerald-400);
+
+  --color-warning: var(--color-amber-500);
+  --color-warning-foreground: var(--color-amber-400);
+
+  --color-border: --alpha(var(--color-white) / 12%);
+  --color-input: --alpha(var(--color-white) / 12%);
+  --color-ring: var(--color-zinc-500);
 
   --color-sidebar: oklch(0.205 0 0);
   --color-sidebar-foreground: oklch(0.985 0 0);
@@ -99,8 +116,6 @@
   --color-sidebar-accent-foreground: oklch(0.985 0 0);
   --color-sidebar-border: oklch(1 0 0 / 10%);
   --color-sidebar-ring: oklch(0.439 0 0);
-
-  --color-container: oklch(0.17 0 0);
 
   --color-todo: oklch(0.55 0.2152 262.88);
   --color-snoozed: oklch(0.56 0.2525 302.32);

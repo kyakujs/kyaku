@@ -46,6 +46,7 @@ function CustomCombobox(props: {
       onValueChange={(priority) => props.onValueChange(priority.id)}
       open={open}
       onOpenChange={setOpen}
+      autoHighlight
     >
       <ComboboxTrigger ref={ref}>
         <ComboboxValue>

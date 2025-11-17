@@ -46,6 +46,7 @@ function CustomCombobox(props: {
       onValueChange={(subStatus) => props.onValueChange(subStatus.id)}
       open={open}
       onOpenChange={setOpen}
+      autoHighlight
     >
       <ComboboxTrigger>
         <ComboboxValue>
