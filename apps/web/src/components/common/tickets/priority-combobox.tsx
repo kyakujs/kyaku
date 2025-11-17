@@ -43,7 +43,7 @@ function CustomCombobox(props: {
     <Combobox
       items={props.items}
       defaultValue={props.items.find((item) => item.id === props.value)}
-      onValueChange={(priority) => props.onValueChange(priority.id)}
+      onValueChange={(priority) => props.onValueChange(priority?.id)}
       open={open}
       onOpenChange={setOpen}
       autoHighlight
@@ -66,7 +66,7 @@ function CustomCombobox(props: {
           align="start"
           side="left"
           sideOffset={4}
-          trackAnchor={false}
+          disableAnchorTracking={true}
         >
           <ComboboxPopup
             className="max-h-[min(24rem,var(--available-height))] max-w-[15rem] origin-[var(--transform-origin)]"

@@ -26,7 +26,7 @@ const SUBSTATUS_SHORTCUT = "s";
 
 function CustomCombobox(props: {
   items: SubStatus[];
-  onValueChange: (value: SubStatus["id"]) => void;
+  onValueChange: (value: SubStatus["id"] | undefined) => void;
   value: SubStatus["id"];
 }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -43,7 +43,7 @@ function CustomCombobox(props: {
     <Combobox
       items={props.items}
       defaultValue={props.items.find((item) => item.id === props.value)}
-      onValueChange={(subStatus) => props.onValueChange(subStatus.id)}
+      onValueChange={(subStatus) => props.onValueChange(subStatus?.id)}
       open={open}
       onOpenChange={setOpen}
       autoHighlight
@@ -66,7 +66,7 @@ function CustomCombobox(props: {
           align="start"
           side="left"
           sideOffset={4}
-          trackAnchor={false}
+          disableAnchorTracking={true}
         >
           <ComboboxPopup
             className="max-h-[min(24rem,var(--available-height))] max-w-[15rem] origin-[var(--transform-origin)]"
@@ -122,7 +122,7 @@ export default function SubStatusCombobox({
   onValueChange,
   value,
 }: {
-  onValueChange: (value: SubStatus["id"]) => void;
+  onValueChange: (value: SubStatus["id"] | undefined) => void;
   value: SubStatus["id"];
 }) {
   return (
