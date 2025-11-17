@@ -366,9 +366,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@base-ui-components/react@npm:^1.0.0-beta.5":
-  version: 1.0.0-beta.5
-  resolution: "@base-ui-components/react@npm:1.0.0-beta.5"
+"@base-ui-components/react@npm:^1.0.0-beta.6":
+  version: 1.0.0-beta.6
+  resolution: "@base-ui-components/react@npm:1.0.0-beta.6"
   dependencies:
     "@babel/runtime": "npm:^7.28.4"
     "@base-ui-components/utils": "npm:0.2.0"
@@ -384,7 +384,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/1ed6e22bd3da000eaed62ac8e310848873c08e66dce143dc192122f2d18bc4637ad85ae94f5fc5a13b60d55d2788b665f5476d1b623c57657b8e791171585d58
+  checksum: 10c0/4922b71a3d20432d495329ef62a2b9d00b511d25d3c493d1651ad44a2a4b3a80072370fb658f7dce61b13316c195e72b662bfd9140c4774940d66f674de2900d
   languageName: node
   linkType: hard
 
@@ -1576,7 +1576,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kyakujs/ui@workspace:packages/ui"
   dependencies:
-    "@base-ui-components/react": "npm:^1.0.0-beta.5"
+    "@base-ui-components/react": "npm:^1.0.0-beta.6"
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
