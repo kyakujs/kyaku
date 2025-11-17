@@ -31,7 +31,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hotkeys-hook": "^5.2.1",
-    "vite": "^7.2.2",
+    "vite": "npm:rolldown-vite@latest",
     "zod": "^4.1.12",
     "zustand": "^5.0.8"
   },
