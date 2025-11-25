@@ -32,7 +32,7 @@
     "react-dom": "^19.2.0",
     "react-hotkeys-hook": "^5.2.1",
     "vite": "npm:rolldown-vite@latest",
-    "zod": "^4.1.12",
+    "zod": "^4.1.13",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
