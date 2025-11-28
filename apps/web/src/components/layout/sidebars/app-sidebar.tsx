@@ -3,9 +3,6 @@ import { Link } from "@tanstack/react-router";
 import {
   ChevronDownIcon,
   CircleArrowOutUpRightIcon,
-  CircleCheckIcon,
-  CircleIcon,
-  CirclePauseIcon,
   InboxIcon,
   MessageCircleDashedIcon,
   MessagesSquareIcon,
@@ -28,9 +25,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
 } from "@kyakujs/ui/sidebar";
 
 import { WorkspaceMenu } from "~/components/layout/sidebars/workspace-menu";
@@ -38,65 +32,21 @@ import { WorkspaceMenu } from "~/components/layout/sidebars/workspace-menu";
 const data = {
   workspace: [
     {
+      title: "My tickets",
+      url: "/tickets/yours",
+      icon: InboxIcon,
+      items: [],
+    },
+    {
       title: "All tickets",
       url: "/tickets/all",
       icon: MessagesSquareIcon,
       items: [],
     },
     {
-      title: "Your tickets",
-      url: "/tickets/yours",
-      icon: InboxIcon,
-      items: [],
-    },
-    {
-      title: "Unassigned tickets",
+      title: "Not assigned",
       url: "/tickets/unassigned",
       icon: MessageCircleDashedIcon,
-      items: [],
-    },
-    {
-      title: "Todo",
-      url: "/tickets/todo",
-      icon: CircleIcon,
-      items: [
-        {
-          title: "Needs first response",
-          url: "/tickets/needs-first-response",
-        },
-        {
-          title: "Needs next response",
-          url: "/tickets/needs-next-response",
-        },
-        {
-          title: "Investigating",
-          url: "/tickets/investigating",
-        },
-        {
-          title: "Close the loop",
-          url: "/tickets/close-the-loop",
-        },
-      ],
-    },
-    {
-      title: "Snoozed",
-      url: "/tickets/snoozed",
-      icon: CirclePauseIcon,
-      items: [
-        {
-          title: "Waiting for customer",
-          url: "/tickets/waiting-for-customer",
-        },
-        {
-          title: "Paused for later",
-          url: "/tickets/paused-for-later",
-        },
-      ],
-    },
-    {
-      title: "Done",
-      url: "/tickets/done",
-      icon: CircleCheckIcon,
       items: [],
     },
   ],
@@ -154,17 +104,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     </Link>
                   }
                 />
-                {item.items.length ? (
-                  <SidebarMenuSub>
-                    {item.items.map((item) => (
-                      <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton
-                          render={<Link to={item.url}>{item.title}</Link>}
-                        />
-                      </SidebarMenuSubItem>
-                    ))}
-                  </SidebarMenuSub>
-                ) : null}
               </SidebarMenuItem>
             ))}
           </SidebarMenu>

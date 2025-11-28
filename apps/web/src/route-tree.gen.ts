@@ -19,16 +19,7 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AuthMainNavigationSearchRouteImport } from './routes/_auth/_main-navigation/search'
 import { Route as AuthSettingsNavigationSettingsIndexRouteImport } from './routes/_auth/_settings-navigation/settings/index'
 import { Route as AuthMainNavigationTicketsYoursRouteImport } from './routes/_auth/_main-navigation/tickets/yours'
-import { Route as AuthMainNavigationTicketsWaitingForCustomerRouteImport } from './routes/_auth/_main-navigation/tickets/waiting-for-customer'
 import { Route as AuthMainNavigationTicketsUnassignedRouteImport } from './routes/_auth/_main-navigation/tickets/unassigned'
-import { Route as AuthMainNavigationTicketsTodoRouteImport } from './routes/_auth/_main-navigation/tickets/todo'
-import { Route as AuthMainNavigationTicketsSnoozedRouteImport } from './routes/_auth/_main-navigation/tickets/snoozed'
-import { Route as AuthMainNavigationTicketsPausedForLaterRouteImport } from './routes/_auth/_main-navigation/tickets/paused-for-later'
-import { Route as AuthMainNavigationTicketsNeedsNextResponseRouteImport } from './routes/_auth/_main-navigation/tickets/needs-next-response'
-import { Route as AuthMainNavigationTicketsNeedsFirstResponseRouteImport } from './routes/_auth/_main-navigation/tickets/needs-first-response'
-import { Route as AuthMainNavigationTicketsInvestigatingRouteImport } from './routes/_auth/_main-navigation/tickets/investigating'
-import { Route as AuthMainNavigationTicketsDoneRouteImport } from './routes/_auth/_main-navigation/tickets/done'
-import { Route as AuthMainNavigationTicketsCloseTheLoopRouteImport } from './routes/_auth/_main-navigation/tickets/close-the-loop'
 import { Route as AuthMainNavigationTicketsAllRouteImport } from './routes/_auth/_main-navigation/tickets/all'
 import { Route as AuthMainNavigationTicketTicketIdRouteImport } from './routes/_auth/_main-navigation/ticket/$ticketId'
 import { Route as AuthSettingsNavigationSettingsAccountProfileRouteImport } from './routes/_auth/_settings-navigation/settings/account/profile'
@@ -84,64 +75,10 @@ const AuthMainNavigationTicketsYoursRoute =
     path: '/tickets/yours',
     getParentRoute: () => AuthMainNavigationRoute,
   } as any)
-const AuthMainNavigationTicketsWaitingForCustomerRoute =
-  AuthMainNavigationTicketsWaitingForCustomerRouteImport.update({
-    id: '/tickets/waiting-for-customer',
-    path: '/tickets/waiting-for-customer',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
 const AuthMainNavigationTicketsUnassignedRoute =
   AuthMainNavigationTicketsUnassignedRouteImport.update({
     id: '/tickets/unassigned',
     path: '/tickets/unassigned',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsTodoRoute =
-  AuthMainNavigationTicketsTodoRouteImport.update({
-    id: '/tickets/todo',
-    path: '/tickets/todo',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsSnoozedRoute =
-  AuthMainNavigationTicketsSnoozedRouteImport.update({
-    id: '/tickets/snoozed',
-    path: '/tickets/snoozed',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsPausedForLaterRoute =
-  AuthMainNavigationTicketsPausedForLaterRouteImport.update({
-    id: '/tickets/paused-for-later',
-    path: '/tickets/paused-for-later',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsNeedsNextResponseRoute =
-  AuthMainNavigationTicketsNeedsNextResponseRouteImport.update({
-    id: '/tickets/needs-next-response',
-    path: '/tickets/needs-next-response',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsNeedsFirstResponseRoute =
-  AuthMainNavigationTicketsNeedsFirstResponseRouteImport.update({
-    id: '/tickets/needs-first-response',
-    path: '/tickets/needs-first-response',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsInvestigatingRoute =
-  AuthMainNavigationTicketsInvestigatingRouteImport.update({
-    id: '/tickets/investigating',
-    path: '/tickets/investigating',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsDoneRoute =
-  AuthMainNavigationTicketsDoneRouteImport.update({
-    id: '/tickets/done',
-    path: '/tickets/done',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsCloseTheLoopRoute =
-  AuthMainNavigationTicketsCloseTheLoopRouteImport.update({
-    id: '/tickets/close-the-loop',
-    path: '/tickets/close-the-loop',
     getParentRoute: () => AuthMainNavigationRoute,
   } as any)
 const AuthMainNavigationTicketsAllRoute =
@@ -177,16 +114,7 @@ export interface FileRoutesByFullPath {
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
-  '/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
-  '/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
-  '/tickets/investigating': typeof AuthMainNavigationTicketsInvestigatingRoute
-  '/tickets/needs-first-response': typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
-  '/tickets/needs-next-response': typeof AuthMainNavigationTicketsNeedsNextResponseRoute
-  '/tickets/paused-for-later': typeof AuthMainNavigationTicketsPausedForLaterRoute
-  '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
-  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
   '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
-  '/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
   '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
   '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
   '/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
@@ -200,16 +128,7 @@ export interface FileRoutesByTo {
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
-  '/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
-  '/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
-  '/tickets/investigating': typeof AuthMainNavigationTicketsInvestigatingRoute
-  '/tickets/needs-first-response': typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
-  '/tickets/needs-next-response': typeof AuthMainNavigationTicketsNeedsNextResponseRoute
-  '/tickets/paused-for-later': typeof AuthMainNavigationTicketsPausedForLaterRoute
-  '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
-  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
   '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
-  '/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
   '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
   '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
   '/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
@@ -227,16 +146,7 @@ export interface FileRoutesById {
   '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
   '/_auth/_main-navigation/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
-  '/_auth/_main-navigation/tickets/close-the-loop': typeof AuthMainNavigationTicketsCloseTheLoopRoute
-  '/_auth/_main-navigation/tickets/done': typeof AuthMainNavigationTicketsDoneRoute
-  '/_auth/_main-navigation/tickets/investigating': typeof AuthMainNavigationTicketsInvestigatingRoute
-  '/_auth/_main-navigation/tickets/needs-first-response': typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
-  '/_auth/_main-navigation/tickets/needs-next-response': typeof AuthMainNavigationTicketsNeedsNextResponseRoute
-  '/_auth/_main-navigation/tickets/paused-for-later': typeof AuthMainNavigationTicketsPausedForLaterRoute
-  '/_auth/_main-navigation/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
-  '/_auth/_main-navigation/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
   '/_auth/_main-navigation/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
-  '/_auth/_main-navigation/tickets/waiting-for-customer': typeof AuthMainNavigationTicketsWaitingForCustomerRoute
   '/_auth/_main-navigation/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
   '/_auth/_settings-navigation/settings/': typeof AuthSettingsNavigationSettingsIndexRoute
   '/_auth/_settings-navigation/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
@@ -252,16 +162,7 @@ export interface FileRouteTypes {
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
-    | '/tickets/close-the-loop'
-    | '/tickets/done'
-    | '/tickets/investigating'
-    | '/tickets/needs-first-response'
-    | '/tickets/needs-next-response'
-    | '/tickets/paused-for-later'
-    | '/tickets/snoozed'
-    | '/tickets/todo'
     | '/tickets/unassigned'
-    | '/tickets/waiting-for-customer'
     | '/tickets/yours'
     | '/settings'
     | '/settings/account/preferences'
@@ -275,16 +176,7 @@ export interface FileRouteTypes {
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
-    | '/tickets/close-the-loop'
-    | '/tickets/done'
-    | '/tickets/investigating'
-    | '/tickets/needs-first-response'
-    | '/tickets/needs-next-response'
-    | '/tickets/paused-for-later'
-    | '/tickets/snoozed'
-    | '/tickets/todo'
     | '/tickets/unassigned'
-    | '/tickets/waiting-for-customer'
     | '/tickets/yours'
     | '/settings'
     | '/settings/account/preferences'
@@ -301,16 +193,7 @@ export interface FileRouteTypes {
     | '/_auth/_main-navigation/'
     | '/_auth/_main-navigation/ticket/$ticketId'
     | '/_auth/_main-navigation/tickets/all'
-    | '/_auth/_main-navigation/tickets/close-the-loop'
-    | '/_auth/_main-navigation/tickets/done'
-    | '/_auth/_main-navigation/tickets/investigating'
-    | '/_auth/_main-navigation/tickets/needs-first-response'
-    | '/_auth/_main-navigation/tickets/needs-next-response'
-    | '/_auth/_main-navigation/tickets/paused-for-later'
-    | '/_auth/_main-navigation/tickets/snoozed'
-    | '/_auth/_main-navigation/tickets/todo'
     | '/_auth/_main-navigation/tickets/unassigned'
-    | '/_auth/_main-navigation/tickets/waiting-for-customer'
     | '/_auth/_main-navigation/tickets/yours'
     | '/_auth/_settings-navigation/settings/'
     | '/_auth/_settings-navigation/settings/account/preferences'
@@ -396,74 +279,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthMainNavigationTicketsYoursRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
-    '/_auth/_main-navigation/tickets/waiting-for-customer': {
-      id: '/_auth/_main-navigation/tickets/waiting-for-customer'
-      path: '/tickets/waiting-for-customer'
-      fullPath: '/tickets/waiting-for-customer'
-      preLoaderRoute: typeof AuthMainNavigationTicketsWaitingForCustomerRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
     '/_auth/_main-navigation/tickets/unassigned': {
       id: '/_auth/_main-navigation/tickets/unassigned'
       path: '/tickets/unassigned'
       fullPath: '/tickets/unassigned'
       preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/todo': {
-      id: '/_auth/_main-navigation/tickets/todo'
-      path: '/tickets/todo'
-      fullPath: '/tickets/todo'
-      preLoaderRoute: typeof AuthMainNavigationTicketsTodoRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/snoozed': {
-      id: '/_auth/_main-navigation/tickets/snoozed'
-      path: '/tickets/snoozed'
-      fullPath: '/tickets/snoozed'
-      preLoaderRoute: typeof AuthMainNavigationTicketsSnoozedRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/paused-for-later': {
-      id: '/_auth/_main-navigation/tickets/paused-for-later'
-      path: '/tickets/paused-for-later'
-      fullPath: '/tickets/paused-for-later'
-      preLoaderRoute: typeof AuthMainNavigationTicketsPausedForLaterRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/needs-next-response': {
-      id: '/_auth/_main-navigation/tickets/needs-next-response'
-      path: '/tickets/needs-next-response'
-      fullPath: '/tickets/needs-next-response'
-      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsNextResponseRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/needs-first-response': {
-      id: '/_auth/_main-navigation/tickets/needs-first-response'
-      path: '/tickets/needs-first-response'
-      fullPath: '/tickets/needs-first-response'
-      preLoaderRoute: typeof AuthMainNavigationTicketsNeedsFirstResponseRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/investigating': {
-      id: '/_auth/_main-navigation/tickets/investigating'
-      path: '/tickets/investigating'
-      fullPath: '/tickets/investigating'
-      preLoaderRoute: typeof AuthMainNavigationTicketsInvestigatingRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/done': {
-      id: '/_auth/_main-navigation/tickets/done'
-      path: '/tickets/done'
-      fullPath: '/tickets/done'
-      preLoaderRoute: typeof AuthMainNavigationTicketsDoneRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/close-the-loop': {
-      id: '/_auth/_main-navigation/tickets/close-the-loop'
-      path: '/tickets/close-the-loop'
-      fullPath: '/tickets/close-the-loop'
-      preLoaderRoute: typeof AuthMainNavigationTicketsCloseTheLoopRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
     '/_auth/_main-navigation/tickets/all': {
@@ -502,16 +322,7 @@ interface AuthMainNavigationRouteChildren {
   AuthMainNavigationIndexRoute: typeof AuthMainNavigationIndexRoute
   AuthMainNavigationTicketTicketIdRoute: typeof AuthMainNavigationTicketTicketIdRoute
   AuthMainNavigationTicketsAllRoute: typeof AuthMainNavigationTicketsAllRoute
-  AuthMainNavigationTicketsCloseTheLoopRoute: typeof AuthMainNavigationTicketsCloseTheLoopRoute
-  AuthMainNavigationTicketsDoneRoute: typeof AuthMainNavigationTicketsDoneRoute
-  AuthMainNavigationTicketsInvestigatingRoute: typeof AuthMainNavigationTicketsInvestigatingRoute
-  AuthMainNavigationTicketsNeedsFirstResponseRoute: typeof AuthMainNavigationTicketsNeedsFirstResponseRoute
-  AuthMainNavigationTicketsNeedsNextResponseRoute: typeof AuthMainNavigationTicketsNeedsNextResponseRoute
-  AuthMainNavigationTicketsPausedForLaterRoute: typeof AuthMainNavigationTicketsPausedForLaterRoute
-  AuthMainNavigationTicketsSnoozedRoute: typeof AuthMainNavigationTicketsSnoozedRoute
-  AuthMainNavigationTicketsTodoRoute: typeof AuthMainNavigationTicketsTodoRoute
   AuthMainNavigationTicketsUnassignedRoute: typeof AuthMainNavigationTicketsUnassignedRoute
-  AuthMainNavigationTicketsWaitingForCustomerRoute: typeof AuthMainNavigationTicketsWaitingForCustomerRoute
   AuthMainNavigationTicketsYoursRoute: typeof AuthMainNavigationTicketsYoursRoute
 }
 
@@ -520,23 +331,8 @@ const AuthMainNavigationRouteChildren: AuthMainNavigationRouteChildren = {
   AuthMainNavigationIndexRoute: AuthMainNavigationIndexRoute,
   AuthMainNavigationTicketTicketIdRoute: AuthMainNavigationTicketTicketIdRoute,
   AuthMainNavigationTicketsAllRoute: AuthMainNavigationTicketsAllRoute,
-  AuthMainNavigationTicketsCloseTheLoopRoute:
-    AuthMainNavigationTicketsCloseTheLoopRoute,
-  AuthMainNavigationTicketsDoneRoute: AuthMainNavigationTicketsDoneRoute,
-  AuthMainNavigationTicketsInvestigatingRoute:
-    AuthMainNavigationTicketsInvestigatingRoute,
-  AuthMainNavigationTicketsNeedsFirstResponseRoute:
-    AuthMainNavigationTicketsNeedsFirstResponseRoute,
-  AuthMainNavigationTicketsNeedsNextResponseRoute:
-    AuthMainNavigationTicketsNeedsNextResponseRoute,
-  AuthMainNavigationTicketsPausedForLaterRoute:
-    AuthMainNavigationTicketsPausedForLaterRoute,
-  AuthMainNavigationTicketsSnoozedRoute: AuthMainNavigationTicketsSnoozedRoute,
-  AuthMainNavigationTicketsTodoRoute: AuthMainNavigationTicketsTodoRoute,
   AuthMainNavigationTicketsUnassignedRoute:
     AuthMainNavigationTicketsUnassignedRoute,
-  AuthMainNavigationTicketsWaitingForCustomerRoute:
-    AuthMainNavigationTicketsWaitingForCustomerRoute,
   AuthMainNavigationTicketsYoursRoute: AuthMainNavigationTicketsYoursRoute,
 }
 
