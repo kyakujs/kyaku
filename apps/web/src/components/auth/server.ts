@@ -1,4 +1,4 @@
-import { reactStartCookies } from "better-auth/react-start";
+import { tanstackStartCookies } from "better-auth/tanstack-start";
 
 import { initAuth } from "@kyakujs/auth";
 
@@ -8,5 +8,5 @@ export const auth = initAuth({
   githubClientId: process.env.AUTH_GITHUB_ID as string,
   githubClientSecret: process.env.AUTH_GITHUB_SECRET as string,
 
-  extraPlugins: [reactStartCookies()],
+  extraPlugins: [tanstackStartCookies()],
 });
