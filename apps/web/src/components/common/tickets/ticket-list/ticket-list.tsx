@@ -21,6 +21,16 @@ import { priorities } from "~/store/priority-store";
 import { statuses } from "~/store/status-store";
 import { subStatuses } from "~/store/substatus-store";
 
+export const TICKET_SELECT_ACCESSOR_KEY = "select";
+export const TICKET_PRIORITY_ACCESSOR_KEY = "priority";
+export const TICKET_SHORTID_ACCESSOR_KEY = "shortId";
+export const TICKET_STATUS_ACCESSOR_KEY = "status";
+export const TICKET_STATUSDETAIL_ACCESSOR_KEY = "statusDetail";
+export const TICKET_TITLE_ACCESSOR_KEY = "title";
+export const TICKET_LABELS_ACCESSOR_KEY = "labels";
+export const TICKET_CREATEDAT_ACCESSOR_KEY = "createdAt";
+export const TICKET_ASSIGNEDTO_ACCESSOR_KEY = "assignedTo";
+
 export interface Ticket {
   id: string;
   title: string;
@@ -53,7 +63,7 @@ export function TicketList({
 }) {
   const columns: ColumnDef<Ticket>[] = [
     {
-      id: "select",
+      id: TICKET_SELECT_ACCESSOR_KEY,
       cell: ({ row }) => (
         <div className="flex items-center">
           <Checkbox
@@ -70,7 +80,7 @@ export function TicketList({
       ),
     },
     {
-      accessorKey: "priority",
+      accessorKey: TICKET_PRIORITY_ACCESSOR_KEY,
       aggregatedCell: ({ cell }) => {
         const priority = priorities.find(
           (p) => p.id === cell.getValue<number | undefined>(),
@@ -106,7 +116,7 @@ export function TicketList({
       },
     },
     {
-      accessorKey: "shortId",
+      accessorKey: TICKET_SHORTID_ACCESSOR_KEY,
       cell: ({ cell, table }) => {
         const width =
           table
@@ -128,7 +138,7 @@ export function TicketList({
       },
     },
     {
-      accessorKey: "status",
+      accessorKey: TICKET_STATUS_ACCESSOR_KEY,
       cell: ({ cell }) => {
         const status = statuses.find((s) => s.id === cell.getValue<number>());
 
@@ -142,7 +152,7 @@ export function TicketList({
       },
     },
     {
-      accessorKey: "statusDetail",
+      accessorKey: TICKET_STATUSDETAIL_ACCESSOR_KEY,
       cell: ({ cell }) => {
         const subStatus = subStatuses.find(
           (s) => s.id === cell.getValue<number>(),
@@ -161,7 +171,7 @@ export function TicketList({
       },
     },
     {
-      accessorKey: "title",
+      accessorKey: TICKET_TITLE_ACCESSOR_KEY,
       cell: ({ cell }) => (
         <span className="flex min-w-0 flex-[initial] shrink-1 flex-row items-center">
           <span title={cell.getValue<string>()} className="truncate text-left">
@@ -171,7 +181,7 @@ export function TicketList({
       ),
     },
     {
-      id: "labels",
+      id: TICKET_LABELS_ACCESSOR_KEY,
       cell: ({ row }) => (
         <div className="mr-0 flex min-w-[150px] flex-[initial] shrink-[1.5] grow-1 flex-row items-center justify-between gap-0.75 overflow-hidden transition-[shrink] hover:max-w-[initial] hover:shrink-[0.3]">
           <div className="flex min-w-0 shrink-[initial] grow-1 basis-[initial] flex-row"></div>
@@ -205,7 +215,7 @@ export function TicketList({
       ),
     },
     {
-      accessorKey: "createdAt",
+      accessorKey: TICKET_CREATEDAT_ACCESSOR_KEY,
       cell: ({ cell }) => (
         <div className="flex shrink-0 items-center">
           <span className="shrink-0">
@@ -215,7 +225,7 @@ export function TicketList({
       ),
     },
     {
-      id: "assignedTo",
+      id: TICKET_ASSIGNEDTO_ACCESSOR_KEY,
       accessorFn: (row) => row.assignedTo?.id ?? null,
       cell: ({ row }) =>
         row.original.assignedTo ? (
@@ -260,6 +270,7 @@ export function TicketList({
     getFilteredRowModel: getFilteredRowModel(),
     getGroupedRowModel: getGroupedRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    groupedColumnMode: false,
     debugTable: true,
   });
 

@@ -9,7 +9,7 @@ export const queries = {
   ),
   tickets: syncedQuery("tickets", z.tuple([]), () =>
     builder.ticket
-      .where("status", 0)
+      .where("status", 0) // Todo
       .related("assignedTo", (assignee) => assignee.one())
       .related("customer")
       .related("labels")
