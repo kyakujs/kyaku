@@ -33,7 +33,7 @@
     "react-hotkeys-hook": "^5.2.1",
     "vite": "npm:rolldown-vite@latest",
     "zod": "^4.1.13",
-    "zustand": "^5.0.8"
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
