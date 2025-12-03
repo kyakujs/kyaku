@@ -37,11 +37,11 @@
     "@types/react": "^19.2.7",
     "eslint": "^9.39.1",
     "prettier": "^3.7.3",
-    "react": "^19.2.0",
+    "react": "^19.2.1",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "react": "^19.2.0"
+    "react": "^19.2.1"
   },
   "prettier": "@kyakujs/prettier-config"
 }
