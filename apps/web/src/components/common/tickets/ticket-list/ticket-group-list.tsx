@@ -143,13 +143,15 @@ export function TicketGroupSubList({
         const row = rows[virtualItem.index];
         if (!row) return null;
 
-        return <TicketListLine
-          key={virtualItem.key}
-          data-list-key={`ITEM_${row.id}`}
-          data-index={virtualItem.index}
-          ref={virtualizer.measureElement}
-          row={row}
-        />
+        return (
+          <TicketListLine
+            key={virtualItem.key}
+            data-list-key={`ITEM_${row.id}`}
+            data-index={virtualItem.index}
+            ref={virtualizer.measureElement}
+            row={row}
+          />
+        );
       })}
       {paddingBottom > 0 ? <div style={{ height: paddingBottom }}></div> : null}
     </div>
