@@ -211,6 +211,7 @@ async function main() {
         1: [4, 5], // Snoozed
         2: [6, 7, 8], // Done
       } as const;
+      const createdAt = faker.date.recent({ days: 90 });
       return {
         id: faker.string.uuid(),
         title: faker.lorem.sentence(),
@@ -224,9 +225,9 @@ async function main() {
           null,
         ]),
         labels: [faker.helpers.arrayElement(labels).id],
-        createdAt: new Date(),
+        createdAt: createdAt,
         createdById: users[0]?.id!,
-        updatedAt: new Date(),
+        updatedAt: faker.date.recent({ refDate: createdAt }),
         updatedById: users[0]?.id,
         customerId: faker.helpers.arrayElement(customers).id,
       };
