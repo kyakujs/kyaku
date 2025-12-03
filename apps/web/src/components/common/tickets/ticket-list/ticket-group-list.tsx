@@ -48,7 +48,6 @@ export function TicketGroupList({ rows }: { rows: Row<Ticket>[] }) {
         {paddingTop > 0 ? <div style={{ height: paddingTop }}></div> : null}
         {virtualItems.map((virtualItem) => {
           const groupedRow = rows[virtualItem.index];
-
           if (!groupedRow) return null;
 
           return (
@@ -140,15 +139,18 @@ export function TicketGroupSubList({
       }}
     >
       {paddingTop > 0 ? <div style={{ height: paddingTop }}></div> : null}
-      {virtualItems.map((virtualItem) => (
-        <TicketListLine
+      {virtualItems.map((virtualItem) => {
+        const row = rows[virtualItem.index];
+        if (!row) return null;
+
+        return <TicketListLine
           key={virtualItem.key}
-          data-list-key={`ITEM_${rows[virtualItem.index]?.id}`}
+          data-list-key={`ITEM_${row.id}`}
           data-index={virtualItem.index}
           ref={virtualizer.measureElement}
-          row={rows[virtualItem.index]!}
+          row={row}
         />
-      ))}
+      })}
       {paddingBottom > 0 ? <div style={{ height: paddingBottom }}></div> : null}
     </div>
   );
