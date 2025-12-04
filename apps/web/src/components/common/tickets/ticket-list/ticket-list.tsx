@@ -1,6 +1,7 @@
 "use no memo";
 
-import type { ColumnDef, TableState } from "@tanstack/react-table";
+import type { ColumnDef, RowData, TableState } from "@tanstack/react-table";
+import { useMemo } from "react";
 import {
   getCoreRowModel,
   getFilteredRowModel,
@@ -54,6 +55,13 @@ export interface Ticket {
   createdAt: number;
 }
 
+declare module "@tanstack/table-core" {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface TableMeta<TData extends RowData> {
+    issueIdLength: number;
+  }
+}
+
 export function TicketList({
   data,
   state,
@@ -61,6 +69,13 @@ export function TicketList({
   data: Ticket[];
   state: Partial<TableState> | undefined;
 }) {
+  const issueIdLength = useMemo(
+    () =>
+      4 /* TIC- */ +
+      (data.toSorted((a, b) => b.shortId - a.shortId)[0]?.shortId.toString()
+        .length ?? 0),
+    [data],
+  );
   const columns: ColumnDef<Ticket>[] = [
     {
       id: TICKET_SELECT_ACCESSOR_KEY,
@@ -118,18 +133,11 @@ export function TicketList({
     {
       accessorKey: TICKET_SHORTID_ACCESSOR_KEY,
       cell: ({ cell, table }) => {
-        const width =
-          table
-            .getRowModel()
-            .flatRows.filter((row) => row.depth === 1)
-            .toSorted((a, b) => b.original.shortId - a.original.shortId)[0]
-            ?.original.shortId.toString().length ?? 3;
-
         return (
           <div
             className="flex shrink-0 items-center text-muted-foreground"
             style={{
-              width: `${width + 4}ch`,
+              width: `${table.options.meta?.issueIdLength}ch`,
             }}
           >
             TIC-{cell.getValue<string>()}
@@ -273,6 +281,9 @@ export function TicketList({
     getSortedRowModel: getSortedRowModel(),
     groupedColumnMode: false,
     debugTable: true,
+    meta: {
+      issueIdLength: issueIdLength,
+    },
   });
 
   if (state?.grouping?.length) {
