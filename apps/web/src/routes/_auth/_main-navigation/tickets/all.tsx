@@ -24,7 +24,13 @@ export const Route = createFileRoute("/_auth/_main-navigation/tickets/all")({
 });
 
 function RouteComponent() {
-  const [data, { type }] = useQuery(queries.tickets());
+  const [data, { type }] = useQuery(
+    queries.tickets({
+      filters: {
+        statuses: [0, 1], // Open and in-progress
+      },
+    }),
+  );
 
   const tickets: Ticket[] = data.map((ticket) => ({
     id: ticket.id,
