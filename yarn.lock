@@ -407,32 +407,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@better-auth/core@npm:1.4.4"
+"@better-auth/core@npm:1.4.5":
+  version: 1.4.5
+  resolution: "@better-auth/core@npm:1.4.5"
   dependencies:
     "@standard-schema/spec": "npm:^1.0.0"
     zod: "npm:^4.1.12"
   peerDependencies:
     "@better-auth/utils": 0.3.0
     "@better-fetch/fetch": 1.1.18
-    better-call: 1.1.3
+    better-call: 1.1.4
     jose: ^6.1.0
     kysely: ^0.28.5
     nanostores: ^1.0.1
-  checksum: 10c0/6e7f1b3b77abf10ae174f16d02e1ad5ce472f15d45ac94192714192b5f0c43b800b09fb0cb57c96924f2f3f4c8d49e35b238b23efc4a8d09161b7a81cf178581
+  checksum: 10c0/f8ad4245db4bfbeea0c9d333c00f86cc7a8937a06cb57852aa3f3393a113efc8a8094cf2f7b199903a08e128d3bbd0bff253887a2b2252676097b983a26c7481
   languageName: node
   linkType: hard
 
-"@better-auth/telemetry@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@better-auth/telemetry@npm:1.4.4"
+"@better-auth/telemetry@npm:1.4.5":
+  version: 1.4.5
+  resolution: "@better-auth/telemetry@npm:1.4.5"
   dependencies:
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.18"
   peerDependencies:
-    "@better-auth/core": 1.4.4
-  checksum: 10c0/f53e51fb81fe1463ee2f7ea28fc713f1df56b77a2beaa56a46607d89ad73ec31ce6053bd9ced5802d4c0846aef93bc001ef9eb78c4a1593be8e991ae05f2c8e2
+    "@better-auth/core": 1.4.5
+  checksum: 10c0/f3308474060b1ed4c854ceb0628a635abffae66a9990d45d797c77d250e73ca414fd67f171b5667974b9fd7bfa840bdafa560df530677423a5feca89f44b2520
   languageName: node
   linkType: hard
 
@@ -1324,7 +1324,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.4.4"
+    better-auth: "npm:^1.4.5"
     eslint: "npm:^9.39.1"
     prettier: "npm:^3.7.3"
     typescript: "npm:^5.9.3"
@@ -1464,7 +1464,7 @@ __metadata:
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react": "npm:^5.1.1"
     babel-plugin-react-compiler: "npm:^1.0.0"
-    better-auth: "npm:^1.4.4"
+    better-auth: "npm:^1.4.5"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^9.39.1"
     lucide-react: "npm:^0.555.0"
@@ -4537,28 +4537,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "better-auth@npm:1.4.4"
+"better-auth@npm:^1.4.5":
+  version: 1.4.5
+  resolution: "better-auth@npm:1.4.5"
   dependencies:
-    "@better-auth/core": "npm:1.4.4"
-    "@better-auth/telemetry": "npm:1.4.4"
+    "@better-auth/core": "npm:1.4.5"
+    "@better-auth/telemetry": "npm:1.4.5"
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.18"
     "@noble/ciphers": "npm:^2.0.0"
     "@noble/hashes": "npm:^2.0.0"
-    "@standard-schema/spec": "npm:^1.0.0"
-    better-call: "npm:1.1.3"
+    better-call: "npm:1.1.4"
     defu: "npm:^6.1.4"
     jose: "npm:^6.1.0"
     kysely: "npm:^0.28.5"
+    ms: "npm:4.0.0-nightly.202508271359"
     nanostores: "npm:^1.0.1"
     zod: "npm:^4.1.12"
   peerDependencies:
     "@lynx-js/react": "*"
     "@sveltejs/kit": ^2.0.0
     "@tanstack/react-start": ^1.0.0
-    next: ^14.0.0 || ^15.0.0
+    next: ^14.0.0 || ^15.0.0 || ^16.0.0
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
     solid-js: ^1.0.0
@@ -4583,24 +4583,24 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/f6253213ca3f6229e51bba1e0041f22672b525dbe458c96b60334054012eb79de7e7ab06dc9ea16d8c077e67cdea0e8a723f329eb549ac1842f5f279ae0e2965
+  checksum: 10c0/ecf67cd58f012072aa20a65a640845ae1a67eddb771506157562d840990d13e03b7c4c11142d5b113110add456b29b63f6ed06b68cff4c212adf3e824d7053b3
   languageName: node
   linkType: hard
 
-"better-call@npm:1.1.3":
-  version: 1.1.3
-  resolution: "better-call@npm:1.1.3"
+"better-call@npm:1.1.4":
+  version: 1.1.4
+  resolution: "better-call@npm:1.1.4"
   dependencies:
     "@better-auth/utils": "npm:^0.3.0"
     "@better-fetch/fetch": "npm:^1.1.4"
-    rou3: "npm:^0.5.1"
+    rou3: "npm:^0.7.10"
     set-cookie-parser: "npm:^2.7.1"
   peerDependencies:
     zod: ^4.0.0
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/12e8ea0804f48ab7de573eab0b7a5f70751f8e80b8c616afa0bb7e591268a6399885f4cc63e84722478218ea5b4b9fb7ecb1a3b8b6db9706e0fa718d18924d9a
+  checksum: 10c0/63d278f42409e9ffbfed7c5d14de761b3c3b7c022267f330223aaafd65af8bd04a3ff9959337102244c31bc5c1a01975bdc99060c5a32dadf5eeda784d1e8169
   languageName: node
   linkType: hard
 
@@ -7792,6 +7792,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ms@npm:4.0.0-nightly.202508271359":
+  version: 4.0.0-nightly.202508271359
+  resolution: "ms@npm:4.0.0-nightly.202508271359"
+  checksum: 10c0/924aadb4a82c2938d72ecc8a80dc0c59ead03467fce20e7d5ef73849bbee126c566a0602b95af2885dbfc4b846a25fe62ec1b0add9cdc1b0ad009f551a042845
+  languageName: node
+  linkType: hard
+
 "ms@npm:^2.1.1, ms@npm:^2.1.3":
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
@@ -8991,14 +8998,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"rou3@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "rou3@npm:0.5.1"
-  checksum: 10c0/4ec56564829fe9b627aa5bbd7ded5d8f4a4c0c5baeda59941cdbd4c9b2336689b0005f28e1c1047bb527c44a5dba7e3b89ef0221b6aa35c790029b6508fb2761
-  languageName: node
-  linkType: hard
-
-"rou3@npm:^0.7.7":
+"rou3@npm:^0.7.10, rou3@npm:^0.7.7":
   version: 0.7.10
   resolution: "rou3@npm:0.7.10"
   checksum: 10c0/3206c778925a3891835b0be04a896670500e153c58c645be6959a89d8991037a23741a494e3e7cbe702009c366ffef004e7bbd020e9abd895b750b53524cd58a
