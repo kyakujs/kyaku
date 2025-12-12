@@ -40,7 +40,7 @@
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
-    "@tailwindcss/vite": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^25.0.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
