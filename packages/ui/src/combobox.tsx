@@ -2,29 +2,30 @@ import { Combobox as ComboboxPrimitive } from "@base-ui/react";
 
 import { cn } from "@kyakujs/ui";
 
-const Combobox = <ItemValue, Multiple extends boolean | undefined = false>(
+function Combobox<ItemValue, Multiple extends boolean | undefined = false>(
   props: React.ComponentProps<
     typeof ComboboxPrimitive.Root<ItemValue, Multiple>
   >,
-) => {
+) {
   return <ComboboxPrimitive.Root data-slot="combobox" {...props} />;
-};
-Combobox.displayName = "Combobox";
+}
 
-const ComboboxValue: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Value>
-> = ({ children, ...props }) => {
+function ComboboxValue({
+  children,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Value>) {
   return (
     <ComboboxPrimitive.Value data-slot="combobox-value" {...props}>
       {children}
     </ComboboxPrimitive.Value>
   );
-};
-ComboboxValue.displayName = "ComboboxValue";
+}
 
-const ComboboxTrigger: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Trigger>
-> = ({ children, className, ...props }) => {
+function ComboboxTrigger({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Trigger>) {
   return (
     <ComboboxPrimitive.Trigger
       className={cn(
@@ -37,34 +38,35 @@ const ComboboxTrigger: React.FC<
       {children}
     </ComboboxPrimitive.Trigger>
   );
-};
-ComboboxTrigger.displayName = "ComboboxTrigger";
+}
 
-const ComboboxPortal: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Portal>
-> = ({ children, ...props }) => {
+function ComboboxPortal({
+  children,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Portal>) {
   return (
     <ComboboxPrimitive.Portal data-slot="combobox-portal" {...props}>
       {children}
     </ComboboxPrimitive.Portal>
   );
-};
-ComboboxPortal.displayName = "ComboboxPortal";
+}
 
-const ComboboxPositioner: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Positioner>
-> = ({ children, ...props }) => {
+function ComboboxPositioner({
+  children,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Positioner>) {
   return (
     <ComboboxPrimitive.Positioner data-slot="combobox-positioner" {...props}>
       {children}
     </ComboboxPrimitive.Positioner>
   );
-};
-ComboboxPositioner.displayName = "ComboboxPositioner";
+}
 
-const ComboboxPopup: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Popup>
-> = ({ children, className, ...props }) => {
+function ComboboxPopup({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Popup>) {
   return (
     <ComboboxPrimitive.Popup
       className={cn(
@@ -77,12 +79,13 @@ const ComboboxPopup: React.FC<
       {children}
     </ComboboxPrimitive.Popup>
   );
-};
-ComboboxPopup.displayName = "ComboboxPopup";
+}
 
-const ComboboxInput: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Input>
-> = ({ children, className, ...props }) => {
+function ComboboxInput({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Input>) {
   return (
     <ComboboxPrimitive.Input
       className={cn(className, "h-8 w-full text-sm font-normal outline-none")}
@@ -92,12 +95,13 @@ const ComboboxInput: React.FC<
       {children}
     </ComboboxPrimitive.Input>
   );
-};
-ComboboxInput.displayName = "ComboboxInput";
+}
 
-const ComboboxSeparator: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Separator>
-> = ({ children, className, ...props }) => {
+function ComboboxSeparator({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Separator>) {
   return (
     <ComboboxPrimitive.Separator
       className={cn(className, "border-t border-border bg-border")}
@@ -107,12 +111,13 @@ const ComboboxSeparator: React.FC<
       {children}
     </ComboboxPrimitive.Separator>
   );
-};
-ComboboxSeparator.displayName = "ComboboxSeparator";
+}
 
-const ComboboxEmpty: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Empty>
-> = ({ children, className, ...props }) => {
+function ComboboxEmpty({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Empty>) {
   return (
     <ComboboxPrimitive.Empty
       className={cn(
@@ -125,12 +130,13 @@ const ComboboxEmpty: React.FC<
       {children}
     </ComboboxPrimitive.Empty>
   );
-};
-ComboboxEmpty.displayName = "ComboboxEmpty";
+}
 
-const ComboboxList: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.List>
-> = ({ children, className, ...props }) => {
+function ComboboxList({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.List>) {
   return (
     <ComboboxPrimitive.List
       className={cn(
@@ -143,12 +149,13 @@ const ComboboxList: React.FC<
       {children}
     </ComboboxPrimitive.List>
   );
-};
-ComboboxList.displayName = "ComboboxList";
+}
 
-const ComboboxItem: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.Item>
-> = ({ children, className, ...props }) => {
+function ComboboxItem({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.Item>) {
   return (
     <ComboboxPrimitive.Item
       className={cn(
@@ -161,12 +168,12 @@ const ComboboxItem: React.FC<
       {children}
     </ComboboxPrimitive.Item>
   );
-};
-ComboboxItem.displayName = "ComboboxItem";
+}
 
-const ComboboxItemIndicator: React.FC<
-  React.ComponentProps<typeof ComboboxPrimitive.ItemIndicator>
-> = ({ children, ...props }) => {
+function ComboboxItemIndicator({
+  children,
+  ...props
+}: React.ComponentProps<typeof ComboboxPrimitive.ItemIndicator>) {
   return (
     <ComboboxPrimitive.ItemIndicator
       data-slot="combobox-item-indicator"
@@ -175,8 +182,7 @@ const ComboboxItemIndicator: React.FC<
       {children}
     </ComboboxPrimitive.ItemIndicator>
   );
-};
-ComboboxItemIndicator.displayName = "ComboboxItemIndicator";
+}
 
 export {
   Combobox,
