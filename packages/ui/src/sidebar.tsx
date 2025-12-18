@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 import * as React from "react";
-import { mergeProps, useRender } from "@base-ui-components/react";
+import { mergeProps, useRender } from "@base-ui/react";
 import { cva } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
 

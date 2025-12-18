@@ -1,5 +1,5 @@
 import type { VariantProps } from "class-variance-authority";
-import { Dialog as SheetPrimitive } from "@base-ui-components/react/dialog";
+import { Dialog as SheetPrimitive } from "@base-ui/react/dialog";
 import { cva } from "class-variance-authority";
 import { XIcon } from "lucide-react";
 

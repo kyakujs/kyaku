@@ -1,4 +1,4 @@
-import { Combobox as ComboboxPrimitive } from "@base-ui-components/react";
+import { Combobox as ComboboxPrimitive } from "@base-ui/react";
 
 import { cn } from "@kyakujs/ui";
 
