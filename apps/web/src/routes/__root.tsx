@@ -36,6 +36,10 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       },
     ],
     links: [
+      {
+        rel: "preconnect",
+        href: import.meta.env.VITE_PUBLIC_ZERO_CACHE_URL as string,
+      },
       { rel: "stylesheet", href: appCss },
       {
         rel: "stylesheet",
