@@ -21,6 +21,7 @@ export const queries = defineQueries({
     ({ args: { filters } }) => {
       let q = zql.ticket;
 
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       q = q.where(({ and, cmp }) =>
         and(
           filters.statuses ? cmp("status", "IN", filters.statuses) : undefined,
