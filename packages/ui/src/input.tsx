@@ -19,8 +19,6 @@ function Input({
 }: InputProps) {
   return (
     <span
-      data-slot="input-control"
-      data-size={size}
       className={
         cn(
           !unstyled &&
@@ -28,9 +26,10 @@ function Input({
           className,
         ) || undefined
       }
+      data-size={size}
+      data-slot="input-control"
     >
       <InputPrimitive
-        data-slot="input"
         className={cn(
           "w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] outline-none placeholder:text-muted-foreground/64",
           size === "sm" &&
@@ -41,6 +40,7 @@ function Input({
           props.type === "file" &&
             "text-muted-foreground file:me-3 file:bg-transparent file:text-sm file:font-medium file:text-foreground",
         )}
+        data-slot="input"
         size={typeof size === "number" ? size : undefined}
         {...props}
       />

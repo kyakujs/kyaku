@@ -27,11 +27,11 @@ const ComboboxTrigger: React.FC<
 > = ({ children, className, ...props }) => {
   return (
     <ComboboxPrimitive.Trigger
-      data-slot="combobox-trigger"
       className={cn(
         className,
-        "inline-flex h-8 cursor-default items-center justify-between rounded-md bg-transparent px-3 text-sm text-foreground select-none hover:bg-sidebar-accent focus-visible:outline-sidebar-ring data-[popup-open]:bg-input/50 dark:bg-input/30 dark:hover:bg-input/50",
+        "inline-flex h-8 cursor-default items-center justify-between rounded-md bg-transparent px-3 text-sm text-foreground select-none hover:bg-sidebar-accent focus-visible:outline-sidebar-ring data-popup-open:bg-input/50 dark:bg-input/30 dark:hover:bg-input/50",
       )}
+      data-slot="combobox-trigger"
       {...props}
     >
       {children}
@@ -67,11 +67,11 @@ const ComboboxPopup: React.FC<
 > = ({ children, className, ...props }) => {
   return (
     <ComboboxPrimitive.Popup
-      data-slot="combobox-popup"
       className={cn(
         className,
-        "rounded-md bg-popover text-foreground shadow-lg outline-1 outline-input transition-[transform,scale,opacity] [--input-container-height:3rem] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0",
+        "rounded-md bg-popover text-foreground shadow-lg outline-1 outline-input transition-[transform,scale,opacity] [--input-container-height:3rem] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0",
       )}
+      data-slot="combobox-popup"
       {...props}
     >
       {children}
@@ -85,8 +85,8 @@ const ComboboxInput: React.FC<
 > = ({ children, className, ...props }) => {
   return (
     <ComboboxPrimitive.Input
-      data-slot="combobox-input"
       className={cn(className, "h-8 w-full text-sm font-normal outline-none")}
+      data-slot="combobox-input"
       {...props}
     >
       {children}
@@ -100,8 +100,8 @@ const ComboboxSeparator: React.FC<
 > = ({ children, className, ...props }) => {
   return (
     <ComboboxPrimitive.Separator
-      data-slot="combobox-separator"
       className={cn(className, "border-t border-border bg-border")}
+      data-slot="combobox-separator"
       {...props}
     >
       {children}
@@ -115,11 +115,11 @@ const ComboboxEmpty: React.FC<
 > = ({ children, className, ...props }) => {
   return (
     <ComboboxPrimitive.Empty
-      data-slot="combobox-empty"
       className={cn(
         className,
         "p-4 text-sm leading-4 text-muted-foreground empty:m-0 empty:p-0",
       )}
+      data-slot="combobox-empty"
       {...props}
     >
       {children}
@@ -133,11 +133,11 @@ const ComboboxList: React.FC<
 > = ({ children, className, ...props }) => {
   return (
     <ComboboxPrimitive.List
-      data-slot="combobox-list"
       className={cn(
         className,
         "scroll-py-1 overflow-y-auto overscroll-contain py-1 empty:p-0",
       )}
+      data-slot="combobox-list"
       {...props}
     >
       {children}
@@ -151,11 +151,11 @@ const ComboboxItem: React.FC<
 > = ({ children, className, ...props }) => {
   return (
     <ComboboxPrimitive.Item
-      data-slot="combobox-item"
       className={cn(
         className,
-        "inline-flex items-center gap-2 py-2 pr-3 pl-3.5 text-sm leading-4 outline-none select-none data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-accent-foreground data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-accent",
+        "inline-flex items-center gap-2 py-2 pr-3 pl-3.5 text-sm leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-accent-foreground data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-accent",
       )}
+      data-slot="combobox-item"
       {...props}
     >
       {children}

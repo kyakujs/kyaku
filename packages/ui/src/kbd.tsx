@@ -5,11 +5,11 @@ import { cn } from "@kyakujs/ui";
 function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
   return (
     <kbd
-      data-slot="kbd"
       className={cn(
         "pointer-events-none inline-flex h-5 min-w-5 items-center justify-center gap-1 rounded bg-muted px-1 font-sans text-xs font-medium text-muted-foreground select-none [&_svg:not([class*='size-'])]:size-3",
         className,
       )}
+      data-slot="kbd"
       {...props}
     />
   );
@@ -18,8 +18,8 @@ function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
 function KbdGroup({ className, ...props }: React.ComponentProps<"kbd">) {
   return (
     <kbd
-      data-slot="kbd-group"
       className={cn("inline-flex items-center gap-1", className)}
+      data-slot="kbd-group"
       {...props}
     />
   );

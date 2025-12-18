@@ -56,15 +56,15 @@ function Button({ className, variant, size, render, ...props }: ButtonProps) {
     render ? undefined : "button";
 
   const defaultProps = {
-    "data-slot": "button",
     className: cn(buttonVariants({ variant, size, className })),
+    "data-slot": "button",
     type: typeValue,
   };
 
   return useRender({
     defaultTagName: "button",
-    render,
     props: mergeProps<"button">(defaultProps, props),
+    render,
   });
 }
 

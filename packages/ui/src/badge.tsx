@@ -44,14 +44,14 @@ interface BadgeProps extends useRender.ComponentProps<"span"> {
 
 function Badge({ className, variant, size, render, ...props }: BadgeProps) {
   const defaultProps = {
-    "data-slot": "badge",
     className: cn(badgeVariants({ variant, size, className })),
+    "data-slot": "badge",
   };
 
   return useRender({
     defaultTagName: "span",
-    render,
     props: mergeProps<"span">(defaultProps, props),
+    render,
   });
 }
 

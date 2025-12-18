@@ -38,8 +38,8 @@ const MenuPositioner: React.FC<
   React.ComponentProps<typeof MenuPrimitive.Positioner>
 > = ({ children, className, ...props }) => (
   <MenuPrimitive.Positioner
-    data-slot="menu-positioner"
     className={cn(className, "outline-none")}
+    data-slot="menu-positioner"
     {...props}
   >
     {children}
@@ -53,11 +53,11 @@ const MenuPopup: React.FC<React.ComponentProps<typeof MenuPrimitive.Popup>> = ({
   ...props
 }) => (
   <MenuPrimitive.Popup
-    data-slot="menu-popup"
     className={cn(
       "origin-(--transform-origin) rounded-md bg-popover p-1 text-popover-foreground shadow-lg outline-1 outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300",
       className,
     )}
+    data-slot="menu-popup"
     {...props}
   >
     {children}
@@ -70,11 +70,11 @@ const MenuItem: React.FC<React.ComponentProps<typeof MenuPrimitive.Item>> = ({
   ...props
 }) => (
   <MenuPrimitive.Item
-    data-slot="menu-item"
     className={cn(
       "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
       className,
     )}
+    data-slot="menu-item"
     {...props}
   />
 );
@@ -93,11 +93,11 @@ const MenuSubmenuTrigger: React.FC<
   React.ComponentProps<typeof MenuPrimitive.SubmenuTrigger>
 > = ({ children, className, ...props }) => (
   <MenuPrimitive.SubmenuTrigger
-    data-slot="menu-submenu-trigger"
     className={cn(
       className,
       "relative flex cursor-default items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     )}
+    data-slot="menu-submenu-trigger"
     {...props}
   >
     {children} <ChevronRightIcon />
@@ -116,8 +116,8 @@ const MenuGroupLabel: React.FC<
   React.ComponentProps<typeof MenuPrimitive.GroupLabel>
 > = ({ className, ...props }) => (
   <MenuPrimitive.GroupLabel
-    data-slot="menu-group-label"
     className={cn("px-2 py-1.5 text-sm font-semibold", className)}
+    data-slot="menu-group-label"
     {...props}
   />
 );
@@ -134,11 +134,11 @@ const MenuRadioItem: React.FC<
   React.ComponentProps<typeof MenuPrimitive.RadioItem>
 > = ({ className, children, ...props }) => (
   <MenuPrimitive.RadioItem
-    data-slot="menu-radio-item"
     className={cn(
       "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
+    data-slot="menu-radio-item"
     {...props}
   >
     <span className="absolute left-2 flex size-3.5 items-center justify-center">
@@ -155,11 +155,11 @@ const MenuCheckboxItem: React.FC<
   React.ComponentProps<typeof MenuPrimitive.CheckboxItem>
 > = ({ className, children, checked, ...props }) => (
   <MenuPrimitive.CheckboxItem
-    data-slot="menu-checkbox-item"
     className={cn(
       "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
+    data-slot="menu-checkbox-item"
     checked={checked}
     {...props}
   >
@@ -177,8 +177,8 @@ const MenuSeparator: React.FC<
   React.ComponentProps<typeof MenuPrimitive.Separator>
 > = ({ className, ...props }) => (
   <MenuPrimitive.Separator
-    data-slot="menu-separator"
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    data-slot="menu-separator"
     {...props}
   />
 );
@@ -190,8 +190,8 @@ const MenuShortcut: React.FC<React.ComponentProps<"span">> = ({
 }) => {
   return (
     <span
-      data-slot="menu-shortcut"
       className={cn("ml-auto text-xs tracking-widest opacity-60", className)}
+      data-slot="menu-shortcut"
       {...props}
     />
   );
