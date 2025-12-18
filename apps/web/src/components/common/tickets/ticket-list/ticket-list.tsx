@@ -1,9 +1,15 @@
 "use no memo";
 
-import type { ColumnDef, RowData, TableState } from "@tanstack/react-table";
-import { useMemo } from "react";
+import type {
+  ColumnDef,
+  ExpandedState,
+  RowData,
+  TableState,
+} from "@tanstack/react-table";
+import { useMemo, useState } from "react";
 import {
   getCoreRowModel,
+  getExpandedRowModel,
   getFilteredRowModel,
   getGroupedRowModel,
   getSortedRowModel,
@@ -264,21 +270,28 @@ export function TicketList({
         .length ?? 0),
     [data],
   );
+  const [expanded, setExpanded] = useState<ExpandedState>(true);
 
   const table = useReactTable({
-    data,
     columns,
-    state,
-    getRowId: (row) => row.id,
+    data,
     getCoreRowModel: getCoreRowModel(),
+    getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getGroupedRowModel: getGroupedRowModel(),
+    getRowId: (row) => row.id,
     getSortedRowModel: getSortedRowModel(),
     groupedColumnMode: false,
-    debugTable: true,
+    manualExpanding: true,
     meta: {
       issueIdLength: issueIdLength,
     },
+    onExpandedChange: setExpanded,
+    state: {
+      ...state,
+      expanded: expanded,
+    },
+    debugTable: true,
   });
 
   if (state?.grouping?.length) {

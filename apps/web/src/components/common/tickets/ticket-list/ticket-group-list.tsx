@@ -3,6 +3,9 @@ import type { Row } from "@tanstack/react-table";
 import { Fragment, useRef } from "react";
 import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
+import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
+
+import { Button } from "@kyakujs/ui/button";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import { TicketListLine } from "~/components/common/tickets/ticket-list/ticket-list-line";
@@ -59,11 +62,26 @@ export function TicketGroupList({ rows }: { rows: Row<Ticket>[] }) {
             >
               <div
                 data-list-key={`GROUP_${groupedRow.id}`}
-                className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b border-border bg-sidebar pr-2 pl-8 text-sm"
+                className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b border-border bg-sidebar pr-2 pl-2 text-sm"
               >
                 {groupedRow.getVisibleCells().map((groupedCell) =>
                   groupedCell.getIsAggregated() ? null : (
                     <Fragment key={groupedCell.id}>
+                      {groupedRow.getCanExpand() ? (
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon-xs"
+                          onClick={groupedRow.getToggleExpandedHandler()}
+                          className="cursor-pointer"
+                        >
+                          {groupedRow.getIsExpanded() ? (
+                            <ChevronDownIcon className="size-4" />
+                          ) : (
+                            <ChevronRightIcon className="size-4" />
+                          )}
+                        </Button>
+                      ) : null}
                       <span>
                         {flexRender(
                           groupedCell.column.columnDef.aggregatedCell,
@@ -78,12 +96,14 @@ export function TicketGroupList({ rows }: { rows: Row<Ticket>[] }) {
                   ),
                 )}
               </div>
-              <TicketGroupSubList
-                getScrollElement={() => parentRef.current}
-                initialOffset={() => virtualizer.scrollOffset ?? 0}
-                scrollMargin={virtualItem.start + TICKET_GROUP_ITEM_HEIGHT}
-                rows={groupedRow.subRows}
-              />
+              {groupedRow.getIsExpanded() ? (
+                <TicketGroupSubList
+                  getScrollElement={() => parentRef.current}
+                  initialOffset={() => virtualizer.scrollOffset ?? 0}
+                  scrollMargin={virtualItem.start + TICKET_GROUP_ITEM_HEIGHT}
+                  rows={groupedRow.subRows}
+                />
+              ) : null}
             </div>
           );
         })}
