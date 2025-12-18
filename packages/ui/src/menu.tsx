@@ -25,43 +25,43 @@ const MenuPortal: React.FC<
 };
 MenuPortal.displayName = "MenuPortal";
 
-const MenuBackdrop: React.FC<
-  React.ComponentProps<typeof MenuPrimitive.Backdrop>
-> = ({ children, ...props }) => (
-  <MenuPrimitive.Backdrop data-slot="menu-backdrop" {...props}>
-    {children}
-  </MenuPrimitive.Backdrop>
-);
-MenuBackdrop.displayName = "MenuBackdrop";
-
-const MenuPositioner: React.FC<
-  React.ComponentProps<typeof MenuPrimitive.Positioner>
-> = ({ children, className, ...props }) => (
-  <MenuPrimitive.Positioner
-    className={cn(className, "outline-none")}
-    data-slot="menu-positioner"
-    {...props}
-  >
-    {children}
-  </MenuPrimitive.Positioner>
-);
-MenuPositioner.displayName = "MenuPositioner";
-
-const MenuPopup: React.FC<React.ComponentProps<typeof MenuPrimitive.Popup>> = ({
+const MenuPopup: React.FC<
+  React.ComponentProps<typeof MenuPrimitive.Popup> & {
+    align?: MenuPrimitive.Positioner.Props["align"];
+    sideOffset?: MenuPrimitive.Positioner.Props["sideOffset"];
+    alignOffset?: MenuPrimitive.Positioner.Props["alignOffset"];
+    side?: MenuPrimitive.Positioner.Props["side"];
+  }
+> = ({
   children,
   className,
+  sideOffset = 4,
+  align = "center",
+  alignOffset,
+  side = "bottom",
   ...props
 }) => (
-  <MenuPrimitive.Popup
-    className={cn(
-      "origin-(--transform-origin) rounded-md bg-popover p-1 text-popover-foreground shadow-lg outline-1 outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300",
-      className,
-    )}
-    data-slot="menu-popup"
-    {...props}
-  >
-    {children}
-  </MenuPrimitive.Popup>
+  <MenuPrimitive.Portal>
+    <MenuPrimitive.Positioner
+      align={align}
+      alignOffset={alignOffset}
+      className="z-50"
+      data-slot="menu-positioner"
+      side={side}
+      sideOffset={sideOffset}
+    >
+      <MenuPrimitive.Popup
+        className={cn(
+          "origin-(--transform-origin) rounded-md bg-popover p-1 text-popover-foreground shadow-lg outline-1 outline-border transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300",
+          className,
+        )}
+        data-slot="menu-popup"
+        {...props}
+      >
+        {children}
+      </MenuPrimitive.Popup>
+    </MenuPrimitive.Positioner>
+  </MenuPrimitive.Portal>
 );
 MenuPopup.displayName = "MenuPopup";
 
@@ -71,7 +71,7 @@ const MenuItem: React.FC<React.ComponentProps<typeof MenuPrimitive.Item>> = ({
 }) => (
   <MenuPrimitive.Item
     className={cn(
-      "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
       className,
     )}
     data-slot="menu-item"
@@ -95,7 +95,7 @@ const MenuSubmenuTrigger: React.FC<
   <MenuPrimitive.SubmenuTrigger
     className={cn(
       className,
-      "relative flex cursor-default items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      "relative flex cursor-default items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     )}
     data-slot="menu-submenu-trigger"
     {...props}
@@ -135,7 +135,7 @@ const MenuRadioItem: React.FC<
 > = ({ className, children, ...props }) => (
   <MenuPrimitive.RadioItem
     className={cn(
-      "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50",
       className,
     )}
     data-slot="menu-radio-item"
@@ -156,7 +156,7 @@ const MenuCheckboxItem: React.FC<
 > = ({ className, children, checked, ...props }) => (
   <MenuPrimitive.CheckboxItem
     className={cn(
-      "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50",
       className,
     )}
     data-slot="menu-checkbox-item"
@@ -202,8 +202,6 @@ export {
   Menu,
   MenuTrigger,
   MenuPortal,
-  MenuBackdrop,
-  MenuPositioner,
   MenuPopup,
   MenuItem,
   MenuSubmenu,

@@ -9,14 +9,7 @@ import {
   SearchIcon,
 } from "lucide-react";
 
-import {
-  Menu,
-  MenuBackdrop,
-  MenuPopup,
-  MenuPortal,
-  MenuPositioner,
-  MenuTrigger,
-} from "@kyakujs/ui/menu";
+import { Menu, MenuPopup, MenuTrigger } from "@kyakujs/ui/menu";
 import {
   Sidebar,
   SidebarContent,
@@ -70,14 +63,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   </SidebarMenuButton>
                 }
               />
-              <MenuPortal>
-                <MenuBackdrop />
-                <MenuPositioner align="start">
-                  <MenuPopup className="min-w-48">
-                    <WorkspaceMenu />
-                  </MenuPopup>
-                </MenuPositioner>
-              </MenuPortal>
+
+              <MenuPopup align="start" className="min-w-48">
+                <WorkspaceMenu />
+              </MenuPopup>
             </Menu>
           </SidebarMenuItem>
           <SidebarMenuButton
