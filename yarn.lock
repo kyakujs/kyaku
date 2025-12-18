@@ -1464,7 +1464,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.24.3000000000"
+    "@rocicorp/zero": "npm:^0.25.4"
     "@tailwindcss/vite": "npm:^4.1.18"
     "@tanstack/react-query": "npm:^5.90.12"
     "@tanstack/react-router": "npm:^1.141.6"
@@ -1503,7 +1503,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.24.3000000000"
+    "@rocicorp/zero": "npm:^0.25.4"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^9.39.2"
     prettier: "npm:^3.7.4"
@@ -2840,22 +2840,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero-sqlite3@npm:^1.0.11":
-  version: 1.0.12
-  resolution: "@rocicorp/zero-sqlite3@npm:1.0.12"
+"@rocicorp/zero-sqlite3@npm:^1.0.12":
+  version: 1.0.13
+  resolution: "@rocicorp/zero-sqlite3@npm:1.0.13"
   dependencies:
     bindings: "npm:^1.5.0"
     node-gyp: "npm:latest"
     prebuild-install: "npm:^7.1.1"
   bin:
     zero-sqlite3: shell.ps1
-  checksum: 10c0/8db8778caff3c2dd61fdad1fb39279f93164443293309b04b226e9ae842ddb53a9fd9d261fa8160aa3d65ed2bb378ea2d76748b952e60465c3a2a3409b46ac5d
+  checksum: 10c0/57026849127748d1d3d89873f8402300cfc76ef77941f2ee1a99a9f9923f07ce0421ecd6d459bfba19318564168229b5808c1636b1a713bbe9705de5ff59d1e5
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.24.3000000000":
-  version: 0.24.3000000000
-  resolution: "@rocicorp/zero@npm:0.24.3000000000"
+"@rocicorp/zero@npm:^0.25.4":
+  version: 0.25.4
+  resolution: "@rocicorp/zero@npm:0.25.4"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -2877,7 +2877,8 @@ __metadata:
     "@rocicorp/lock": "npm:^1.0.4"
     "@rocicorp/logger": "npm:^5.4.0"
     "@rocicorp/resolver": "npm:^1.0.2"
-    "@rocicorp/zero-sqlite3": "npm:^1.0.11"
+    "@rocicorp/zero-sqlite3": "npm:^1.0.12"
+    "@standard-schema/spec": "npm:^1.0.0"
     "@types/basic-auth": "npm:^1.1.8"
     basic-auth: "npm:^2.0.1"
     chalk: "npm:^5.3.0"
@@ -2921,7 +2922,8 @@ __metadata:
     zero-cache: out/zero/src/cli.js
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
-  checksum: 10c0/21117e317e7ac3f59b756402aad0e19af62eee512ba3108baca322560d0874b725c86028c40e7e68dcdf57802ab8070f0e3562986a6db918c385417ae7078df4
+    zero-out: out/zero/src/zero-out.js
+  checksum: 10c0/3a4edc7acc9aef27c8e5b3ff1772f7f5aa2328bc93efa532a64b3ff266980591323a22a9bece2d03b394a2f8f73357cfa88c6ebec905526c791f390d840786e6
   languageName: node
   linkType: hard
 
