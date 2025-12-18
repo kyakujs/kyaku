@@ -14,7 +14,7 @@ export function ZeroProvider({ children }: { children: React.ReactNode }) {
     () => ({
       schema,
       userID: session.data?.user.id ?? "anon",
-      server: import.meta.env.VITE_SYNC_ENGINE_URL as string,
+      cacheURL: import.meta.env.VITE_PUBLIC_ZERO_CACHE_URL as string,
     }),
     [session.data?.user.id],
   );

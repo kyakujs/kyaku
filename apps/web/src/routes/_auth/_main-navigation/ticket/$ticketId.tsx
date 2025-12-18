@@ -17,7 +17,7 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   const { ticketId } = Route.useParams();
-  const [ticket, { type }] = useQuery(queries.ticket(ticketId));
+  const [ticket, { type }] = useQuery(queries.ticket({ ticketId: ticketId }));
 
   if (type === "unknown") {
     return null;

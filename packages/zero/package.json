@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "exports": {
+    "./auth": {
+      "types": "./dist/auth.d.ts",
+      "default": "./src/auth.ts"
+    },
     "./queries": {
       "types": "./dist/queries.d.ts",
       "default": "./src/queries.ts"
@@ -16,7 +20,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "yarn with-env zero-cache-dev -p src/schema.ts",
+    "dev": "yarn with-env zero-cache-dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
@@ -24,7 +28,7 @@
   },
   "dependencies": {
     "@kyakujs/kyaku": "workspace:*",
-    "@rocicorp/zero": "^0.24.3000000000"
+    "@rocicorp/zero": "^0.25.4"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",

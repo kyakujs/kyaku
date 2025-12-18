@@ -2,7 +2,6 @@ import type { Row } from "@rocicorp/zero";
 import {
   createBuilder,
   createSchema,
-  definePermissions,
   enumeration,
   json,
   number,
@@ -199,12 +198,15 @@ export type Customer = Row<typeof schema.tables.customer>;
 export type Ticket = Row<typeof schema.tables.ticket>;
 export type User = Row<typeof schema.tables.user>;
 
-// The contents of your decoded JWT.
-interface AuthData {
-  sub: string | null;
+/**
+ * Represents the ZQL query builder.
+ * This type is auto-generated from your Drizzle schema definition.
+ */
+export const zql = createBuilder(schema);
+
+/** Defines the default types for Zero */
+declare module "@rocicorp/zero" {
+  interface DefaultTypes {
+    schema: Schema;
+  }
 }
-
-export const builder = createBuilder(schema);
-
-export const permissions: ReturnType<typeof definePermissions> =
-  definePermissions<AuthData, Schema>(schema, () => ({}));
