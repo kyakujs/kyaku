@@ -1367,7 +1367,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.0.1"
-    eslint-plugin-turbo: "npm:^2.6.3"
+    eslint-plugin-turbo: "npm:^2.7.0"
     prettier: "npm:^3.7.4"
     typescript: "npm:^5.9.3"
     typescript-eslint: "npm:^8.50.0"
@@ -5852,15 +5852,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-turbo@npm:^2.6.3":
-  version: 2.6.3
-  resolution: "eslint-plugin-turbo@npm:2.6.3"
+"eslint-plugin-turbo@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "eslint-plugin-turbo@npm:2.7.0"
   dependencies:
     dotenv: "npm:16.0.3"
   peerDependencies:
     eslint: ">6.6.0"
     turbo: ">2.0.0"
-  checksum: 10c0/b3c7f70f84baf6d8e729a2b45d15a57fc860699cab5e774012211bb55d9a078b05c92e403f72dce53d47685c3068e12257ce85c2b8895dcca2e56c07a28f3e4c
+  checksum: 10c0/971c1713c6e6009d9a4182b93ded0a313ea4610154036221aee370295517333749965f1ce01acfe6633dc0083337aef8bba159d6b663666c5030a288d64fd8f2
   languageName: node
   linkType: hard
 
@@ -8762,7 +8762,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@kyakujs/prettier-config": "workspace:*"
-    turbo: "npm:^2.6.3"
+    turbo: "npm:^2.7.0"
   languageName: unknown
   linkType: soft
 
@@ -9516,58 +9516,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "turbo-darwin-64@npm:2.6.3"
+"turbo-darwin-64@npm:2.7.0":
+  version: 2.7.0
+  resolution: "turbo-darwin-64@npm:2.7.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "turbo-darwin-arm64@npm:2.6.3"
+"turbo-darwin-arm64@npm:2.7.0":
+  version: 2.7.0
+  resolution: "turbo-darwin-arm64@npm:2.7.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "turbo-linux-64@npm:2.6.3"
+"turbo-linux-64@npm:2.7.0":
+  version: 2.7.0
+  resolution: "turbo-linux-64@npm:2.7.0"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "turbo-linux-arm64@npm:2.6.3"
+"turbo-linux-arm64@npm:2.7.0":
+  version: 2.7.0
+  resolution: "turbo-linux-arm64@npm:2.7.0"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "turbo-windows-64@npm:2.6.3"
+"turbo-windows-64@npm:2.7.0":
+  version: 2.7.0
+  resolution: "turbo-windows-64@npm:2.7.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "turbo-windows-arm64@npm:2.6.3"
+"turbo-windows-arm64@npm:2.7.0":
+  version: 2.7.0
+  resolution: "turbo-windows-arm64@npm:2.7.0"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^2.6.3":
-  version: 2.6.3
-  resolution: "turbo@npm:2.6.3"
+"turbo@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "turbo@npm:2.7.0"
   dependencies:
-    turbo-darwin-64: "npm:2.6.3"
-    turbo-darwin-arm64: "npm:2.6.3"
-    turbo-linux-64: "npm:2.6.3"
-    turbo-linux-arm64: "npm:2.6.3"
-    turbo-windows-64: "npm:2.6.3"
-    turbo-windows-arm64: "npm:2.6.3"
+    turbo-darwin-64: "npm:2.7.0"
+    turbo-darwin-arm64: "npm:2.7.0"
+    turbo-linux-64: "npm:2.7.0"
+    turbo-linux-arm64: "npm:2.7.0"
+    turbo-windows-64: "npm:2.7.0"
+    turbo-windows-arm64: "npm:2.7.0"
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -9583,7 +9583,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 10c0/3dab627a4e0f855c2ea2cc5e7d3d7abed01a7abace1197983c55e0563c413dfe45c80c121e5fa25d2cca013d895bde457d5cdf3a3d47000dc7d432a4cb68e78f
+  checksum: 10c0/59e21ec0f91c3a727223bd9af3f9dd44915316a946b52b883e2c0d772735f292365014532983ac22754e53233dfffd418e974827c586e248b07bfa51b5d2bec4
   languageName: node
   linkType: hard
 
