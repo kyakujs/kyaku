@@ -8,14 +8,6 @@ import { schema } from "@kyakujs/zero/schema";
 
 import { authClient } from "~/components/auth/client";
 
-export type Context = { userId: string };
-
-declare module "@rocicorp/zero" {
-  interface DefaultTypes {
-    context: Context;
-  }
-}
-
 const cacheUrl = import.meta.env.VITE_PUBLIC_ZERO_CACHE_URL as string;
 
 export function ZeroProvider({ children }: { children: React.ReactNode }) {
@@ -41,7 +33,7 @@ export function ZeroProvider({ children }: { children: React.ReactNode }) {
     <ZeroProviderPrimitive
       {...{
         cacheURL: cacheUrl,
-        context,
+        context: context as unknown, // TODO: fix type issue
         init,
         mutators,
         schema,
