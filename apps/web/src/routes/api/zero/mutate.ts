@@ -10,6 +10,7 @@ import { schema } from "@kyakujs/zero/schema";
 
 import { auth } from "~/components/auth/server";
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const dbProvider = zeroPostgresJS(schema, postgres(process.env.POSTGRES_URL!));
 
 export const Route = createFileRoute("/api/zero/mutate")({
