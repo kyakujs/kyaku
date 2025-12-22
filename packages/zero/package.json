@@ -32,7 +32,8 @@
   },
   "dependencies": {
     "@kyakujs/kyaku": "workspace:*",
-    "@rocicorp/zero": "^0.25.6"
+    "@rocicorp/zero": "^0.25.6",
+    "ulid": "^3.0.2"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
