@@ -17,6 +17,7 @@ export type Auth = Authenticated | Unauthenticated;
 
 export const getAuth = createServerFn({ method: "GET" }).handler(async () => {
   const session = await auth.api.getSession({
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     headers: getRequestHeaders(),
   });
 
