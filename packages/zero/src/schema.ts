@@ -82,6 +82,13 @@ const ticketTimelineEntry = table("ticketTimelineEntry")
       (typeof TimelineEntryType)[keyof typeof TimelineEntryType]
     >(),
     entry: json<TicketTimelineEntry>(),
+    customerId: string(),
+    createdAt: number(),
+    customerCreatedById: string().optional(),
+    userCreatedById: string().optional(),
+    updatedAt: number(),
+    customerUpdatedById: string().optional(),
+    userUpdatedById: string().optional(),
   })
   .primaryKey("id");
 
@@ -181,10 +188,35 @@ const ticketRelationships = relationships(ticket, ({ many, one }) => ({
 const ticketTimelineEntryRelationships = relationships(
   ticketTimelineEntry,
   ({ one }) => ({
+    customer: one({
+      sourceField: ["customerId"],
+      destField: ["id"],
+      destSchema: customer,
+    }),
+    customerCreatedBy: one({
+      sourceField: ["customerCreatedById"],
+      destField: ["id"],
+      destSchema: customer,
+    }),
+    userCreatedBy: one({
+      sourceField: ["userCreatedById"],
+      destField: ["id"],
+      destSchema: user,
+    }),
     ticket: one({
       sourceField: ["ticketId"],
       destField: ["id"],
       destSchema: ticket,
+    }),
+    customerUpdatedBy: one({
+      sourceField: ["customerUpdatedById"],
+      destField: ["id"],
+      destSchema: customer,
+    }),
+    userUpdatedBy: one({
+      sourceField: ["userUpdatedById"],
+      destField: ["id"],
+      destSchema: user,
     }),
   }),
 );

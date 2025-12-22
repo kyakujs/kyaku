@@ -13,7 +13,7 @@ async function main() {
     .insert(schema.user)
     .values([
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Bot",
         email: "bot@example.com",
         emailVerified: true,
@@ -23,7 +23,7 @@ async function main() {
         updatedAt: new Date(),
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Lindsay Walton",
         firstName: "Lindsay",
         lastName: "Walton",
@@ -36,7 +36,7 @@ async function main() {
         updatedAt: new Date(),
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Courtney Henry",
         firstName: "Courtney",
         lastName: "Henry",
@@ -49,7 +49,7 @@ async function main() {
         updatedAt: new Date(),
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Tom Cook",
         firstName: "Tom",
         lastName: "Cook",
@@ -62,7 +62,7 @@ async function main() {
         updatedAt: new Date(),
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Whitney Francis",
         firstName: "Whitney",
         lastName: "Francis",
@@ -75,7 +75,7 @@ async function main() {
         updatedAt: new Date(),
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Leonard Krasner",
         firstName: "Leonard",
         lastName: "Krasner",
@@ -88,7 +88,7 @@ async function main() {
         updatedAt: new Date(),
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Floyd Miles",
         firstName: "Floyd",
         lastName: "Miles",
@@ -107,7 +107,7 @@ async function main() {
     .insert(schema.label)
     .values([
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Bug report",
         color: "#EB5757",
         createdAt: new Date(),
@@ -116,7 +116,7 @@ async function main() {
         updatedById: users[0]?.id,
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Feature request",
         color: "#F2994A",
         createdAt: new Date(),
@@ -125,7 +125,7 @@ async function main() {
         updatedById: users[0]?.id,
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "General question",
         color: "#F2C94C",
         createdAt: new Date(),
@@ -134,7 +134,7 @@ async function main() {
         updatedById: users[0]?.id,
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Payment declined",
         color: "#219653",
         createdAt: new Date(),
@@ -143,7 +143,7 @@ async function main() {
         updatedById: users[0]?.id,
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Payment issue",
         color: "#2F80ED",
         createdAt: new Date(),
@@ -152,7 +152,7 @@ async function main() {
         updatedById: users[0]?.id,
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Product feedback",
         color: "#56CCF2",
         createdAt: new Date(),
@@ -161,7 +161,7 @@ async function main() {
         updatedById: users[0]?.id,
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Other",
         color: "#9B51E0",
         createdAt: new Date(),
@@ -170,7 +170,7 @@ async function main() {
         updatedById: users[0]?.id,
       },
       {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         name: "Technical issue",
         color: "#BB6BD9",
         createdAt: new Date(),
@@ -183,7 +183,7 @@ async function main() {
 
   const randomCustomers = faker.helpers.multiple(
     () => ({
-      id: faker.string.uuid(),
+      id: faker.string.ulid(),
       name: faker.person.fullName(),
       firstName: faker.person.firstName(),
       lastName: faker.person.lastName(),
@@ -213,7 +213,7 @@ async function main() {
       } as const;
       const createdAt = faker.date.recent({ days: 90 });
       return {
-        id: faker.string.uuid(),
+        id: faker.string.ulid(),
         title: faker.lorem.sentence(),
         description: faker.lorem.paragraph(),
         priority: faker.number.int({ min: 0, max: 3 }),
