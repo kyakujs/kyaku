@@ -144,6 +144,11 @@ const ticketRelationships = relationships(ticket, ({ many, one }) => ({
     destField: ["id"],
     destSchema: user,
   }),
+  createdBy: one({
+    sourceField: ["createdById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
   customer: one({
     sourceField: ["customerId"],
     destField: ["id"],
@@ -165,6 +170,11 @@ const ticketRelationships = relationships(ticket, ({ many, one }) => ({
     sourceField: ["id"],
     destField: ["ticketId"],
     destSchema: ticketTimelineEntry,
+  }),
+  updatedBy: one({
+    sourceField: ["updatedById"],
+    destField: ["id"],
+    destSchema: user,
   }),
 }));
 

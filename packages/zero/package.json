@@ -8,6 +8,10 @@
       "types": "./dist/auth.d.ts",
       "default": "./src/auth.ts"
     },
+    "./mutators": {
+      "types": "./dist/mutators.d.ts",
+      "default": "./src/mutators.ts"
+    },
     "./queries": {
       "types": "./dist/queries.d.ts",
       "default": "./src/queries.ts"
