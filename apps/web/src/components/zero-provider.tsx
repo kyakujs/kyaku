@@ -33,7 +33,7 @@ export function ZeroProvider({ children }: { children: React.ReactNode }) {
     <ZeroProviderPrimitive
       {...{
         cacheURL: cacheUrl,
-        context: context as unknown, // TODO: fix type issue
+        context: context as never, // TODO: fix type issue
         init,
         mutators,
         schema,

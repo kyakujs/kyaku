@@ -7,6 +7,8 @@ import { TimelineEntryType } from "@kyakujs/kyaku";
 
 import { zql } from "./schema";
 
+import "./auth";
+
 export const mutators = defineMutators({
   ticket: {
     setPriority: defineMutator(

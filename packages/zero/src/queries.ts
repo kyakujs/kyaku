@@ -3,6 +3,8 @@ import z from "zod";
 
 import { zql } from "@kyakujs/zero/schema";
 
+import "./auth";
+
 export const queries = defineQueries({
   ticket: defineQuery(
     z.object({
