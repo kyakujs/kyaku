@@ -18,7 +18,7 @@
     "@kyakujs/auth": "workspace:*",
     "@kyakujs/ui": "workspace:*",
     "@kyakujs/zero": "workspace:*",
-    "@rocicorp/zero": "^0.25.5",
+    "@rocicorp/zero": "^0.25.6",
     "@tanstack/react-query": "^5.90.12",
     "@tanstack/react-router": "^1.144.0",
     "@tanstack/react-router-devtools": "^1.144.0",
