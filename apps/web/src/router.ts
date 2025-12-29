@@ -1,3 +1,4 @@
+import type { Zero } from "@rocicorp/zero";
 import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query";
@@ -6,6 +7,7 @@ import { routeTree } from "./route-tree.gen";
 
 export interface RouterContext {
   queryClient: QueryClient;
+  zero: Zero;
 }
 
 export function getRouter() {
@@ -23,6 +25,7 @@ export function getRouter() {
     routeTree,
     context: {
       queryClient,
+      zero: undefined as unknown as Zero,
     },
     defaultPreload: "intent",
     scrollRestoration: true,

@@ -1,8 +1,9 @@
 import { useQuery } from "@rocicorp/zero/react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 
 import { Separator } from "@kyakujs/ui/separator";
 import { SidebarTrigger } from "@kyakujs/ui/sidebar";
+import { mutators } from "@kyakujs/zero/mutators";
 import { queries } from "@kyakujs/zero/queries";
 
 import PriorityCombobox from "~/components/common/tickets/priority-combobox";
@@ -17,6 +18,7 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   const { ticketId } = Route.useParams();
+  const { zero } = useRouter().options.context;
   const [ticket, { type }] = useQuery(queries.ticket({ ticketId: ticketId }));
 
   if (type === "unknown") {
@@ -61,7 +63,16 @@ function RouteComponent() {
         <div className="text-xs">{ticket.description}</div>
         <div className="flex flex-col">
           <PriorityCombobox
-            onValueChange={(value) => console.log(value)}
+            onValueChange={(value) => {
+              if (!value) return;
+
+              zero.mutate(
+                mutators.ticket.setPriority({
+                  ticketId: ticket.id,
+                  priority: value,
+                }),
+              );
+            }}
             value={ticket.priority}
           />
         </div>

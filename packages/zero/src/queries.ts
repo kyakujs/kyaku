@@ -3,13 +3,23 @@ import z from "zod";
 
 import { zql } from "@kyakujs/zero/schema";
 
+import "./auth";
+
 export const queries = defineQueries({
   ticket: defineQuery(
     z.object({
       ticketId: z.string(),
     }),
     ({ args: { ticketId } }) =>
-      zql.ticket.related("timelineEntries").where("id", ticketId).one(),
+      zql.ticket
+        .related("assignedTo")
+        .related("createdBy")
+        .related("customer")
+        .related("labels")
+        .related("timelineEntries")
+        .related("updatedBy")
+        .where("id", ticketId)
+        .one(),
   ),
   tickets: defineQuery(
     z.object({
@@ -31,7 +41,7 @@ export const queries = defineQueries({
         ),
       );
       return q
-        .related("assignedTo", (assignee) => assignee.one())
+        .related("assignedTo")
         .related("customer")
         .related("labels")
         .orderBy("priority", "asc")
