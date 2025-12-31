@@ -15,6 +15,7 @@ async function main() {
       {
         id: faker.string.ulid(),
         name: "Bot",
+        username: "bot",
         email: "bot@example.com",
         emailVerified: true,
         role: "user",
@@ -25,6 +26,7 @@ async function main() {
       {
         id: faker.string.ulid(),
         name: "Lindsay Walton",
+        username: "lindsay.walton",
         firstName: "Lindsay",
         lastName: "Walton",
         email: "lindsay.walton@example.com",
@@ -38,6 +40,7 @@ async function main() {
       {
         id: faker.string.ulid(),
         name: "Courtney Henry",
+        username: "courtney.henry",
         firstName: "Courtney",
         lastName: "Henry",
         email: "courtney.henry@example.com",
@@ -51,6 +54,7 @@ async function main() {
       {
         id: faker.string.ulid(),
         name: "Tom Cook",
+        username: "tom.cook",
         firstName: "Tom",
         lastName: "Cook",
         email: "tom.cook@example.com",
@@ -64,6 +68,7 @@ async function main() {
       {
         id: faker.string.ulid(),
         name: "Whitney Francis",
+        username: "whitney.francis",
         firstName: "Whitney",
         lastName: "Francis",
         email: "whitney.francis@example.com",
@@ -77,6 +82,7 @@ async function main() {
       {
         id: faker.string.ulid(),
         name: "Leonard Krasner",
+        username: "leonard.krasner",
         firstName: "Leonard",
         lastName: "Krasner",
         email: "leonard.krasner@example.com",
@@ -90,6 +96,7 @@ async function main() {
       {
         id: faker.string.ulid(),
         name: "Floyd Miles",
+        username: "floyd.miles",
         firstName: "Floyd",
         lastName: "Miles",
         email: "floyd.miles@example.com",

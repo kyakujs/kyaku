@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
 import { useHotkeys } from "react-hotkeys-hook";

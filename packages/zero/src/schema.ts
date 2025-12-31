@@ -66,7 +66,7 @@ const ticket = table("ticket")
     status: number(),
     customerId: string(),
     statusDetail: number(),
-    assignedToId: string(),
+    assignedToId: string().optional(),
     createdById: string(),
     createdAt: number(),
     updatedById: string(),

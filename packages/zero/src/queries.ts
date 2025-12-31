@@ -6,6 +6,7 @@ import { zql } from "@kyakujs/zero/schema";
 import "./auth";
 
 export const queries = defineQueries({
+  users: defineQuery(z.object(), () => zql.user.orderBy("username", "asc")),
   ticket: defineQuery(
     z.object({
       ticketId: z.string(),
