@@ -6,6 +6,7 @@ import { SidebarTrigger } from "@kyakujs/ui/sidebar";
 import { mutators } from "@kyakujs/zero/mutators";
 import { queries } from "@kyakujs/zero/queries";
 
+import AssigneeCombobox from "~/components/common/tickets/assignee-combobox";
 import PriorityCombobox from "~/components/common/tickets/priority-combobox";
 import SubStatusCombobox from "~/components/common/tickets/substatus-combobox";
 
@@ -61,6 +62,27 @@ function RouteComponent() {
       <div className="flex w-72 flex-col overflow-y-scroll border-l border-accent bg-sidebar p-6">
         <div className="mb-4">{ticket.title}</div>
         <div className="text-xs">{ticket.description}</div>
+        <div className="flex flex-col">
+          <AssigneeCombobox
+            onValueChange={(value) => {
+              if (value) {
+                zero.mutate(
+                  mutators.ticket.assign({
+                    ticketId: ticket.id,
+                    assigneeId: value,
+                  }),
+                );
+              } else {
+                zero.mutate(
+                  mutators.ticket.unassign({
+                    ticketId: ticket.id,
+                  }),
+                );
+              }
+            }}
+            value={ticket.assignedToId}
+          />
+        </div>
         <div className="flex flex-col">
           <PriorityCombobox
             onValueChange={(value) => {
