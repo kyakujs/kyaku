@@ -1,3 +1,5 @@
+import { ArrowDownWideNarrowIcon, ArrowUpNarrowWideIcon } from "lucide-react";
+
 import { Button } from "@kyakujs/ui/button";
 import { Popover, PopoverPopup, PopoverTrigger } from "@kyakujs/ui/popover";
 import {
@@ -11,7 +13,14 @@ import {
 import { groupings, sortings, useIssuesStore } from "~/store/issues-store";
 
 export function DisplayMenu() {
-  const { grouping, sortBy, setGrouping, setSortBy } = useIssuesStore();
+  const {
+    grouping,
+    sortBy,
+    sortDirection,
+    setGrouping,
+    setSortBy,
+    setSortDirection,
+  } = useIssuesStore();
   return (
     <Popover>
       <PopoverTrigger render={<Button size="sm" />}>Display</PopoverTrigger>
@@ -42,23 +51,34 @@ export function DisplayMenu() {
           <label htmlFor="ordering" className="min-w-20 text-sm">
             Ordering
           </label>
-          <Select
-            id="ordering"
-            items={sortings}
-            onValueChange={setSortBy}
-            value={sortBy}
-          >
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectPopup>
-              {sortings.map(({ label, value }) => (
-                <SelectItem key={value} value={value}>
-                  {label}
-                </SelectItem>
-              ))}
-            </SelectPopup>
-          </Select>
+          <div className="flex items-center gap-1">
+            <Select
+              id="ordering"
+              items={sortings}
+              onValueChange={setSortBy}
+              value={sortBy}
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectPopup>
+                {sortings.map(({ label, value }) => (
+                  <SelectItem key={value} value={value}>
+                    {label}
+                  </SelectItem>
+                ))}
+              </SelectPopup>
+            </Select>
+            {sortDirection === "desc" ? (
+              <Button size="icon" onClick={() => setSortDirection("asc")}>
+                <ArrowDownWideNarrowIcon />
+              </Button>
+            ) : (
+              <Button size="icon" onClick={() => setSortDirection("desc")}>
+                <ArrowUpNarrowWideIcon />
+              </Button>
+            )}
+          </div>
         </div>
       </PopoverPopup>
     </Popover>

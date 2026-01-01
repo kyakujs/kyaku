@@ -39,6 +39,7 @@ export interface IssuesState {
   // Actions
   setGrouping: (type: GroupingType) => void;
   setSortBy: (type: SortingType) => void;
+  setSortDirection: (direction: "asc" | "desc") => void;
 }
 
 const mapGrouping = (type: GroupingType): GroupingState => {
@@ -104,6 +105,11 @@ export const useIssuesStore = create<IssuesState>((set) => ({
   setSortBy: (type) => {
     set(() => ({
       sortBy: type,
+    }));
+  },
+  setSortDirection: (direction) => {
+    set(() => ({
+      sortDirection: direction,
     }));
   },
 }));
