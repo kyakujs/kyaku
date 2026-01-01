@@ -21,6 +21,8 @@ import { Route as AuthMainNavigationSearchRouteImport } from './routes/_auth/_ma
 import { Route as AuthSettingsNavigationSettingsIndexRouteImport } from './routes/_auth/_settings-navigation/settings/index'
 import { Route as AuthMainNavigationTicketsYoursRouteImport } from './routes/_auth/_main-navigation/tickets/yours'
 import { Route as AuthMainNavigationTicketsUnassignedRouteImport } from './routes/_auth/_main-navigation/tickets/unassigned'
+import { Route as AuthMainNavigationTicketsTodoRouteImport } from './routes/_auth/_main-navigation/tickets/todo'
+import { Route as AuthMainNavigationTicketsSnoozedRouteImport } from './routes/_auth/_main-navigation/tickets/snoozed'
 import { Route as AuthMainNavigationTicketsAllRouteImport } from './routes/_auth/_main-navigation/tickets/all'
 import { Route as AuthMainNavigationTicketTicketIdRouteImport } from './routes/_auth/_main-navigation/ticket/$ticketId'
 import { Route as AuthSettingsNavigationSettingsAccountProfileRouteImport } from './routes/_auth/_settings-navigation/settings/account/profile'
@@ -87,6 +89,18 @@ const AuthMainNavigationTicketsUnassignedRoute =
     path: '/tickets/unassigned',
     getParentRoute: () => AuthMainNavigationRoute,
   } as any)
+const AuthMainNavigationTicketsTodoRoute =
+  AuthMainNavigationTicketsTodoRouteImport.update({
+    id: '/tickets/todo',
+    path: '/tickets/todo',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+const AuthMainNavigationTicketsSnoozedRoute =
+  AuthMainNavigationTicketsSnoozedRouteImport.update({
+    id: '/tickets/snoozed',
+    path: '/tickets/snoozed',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
 const AuthMainNavigationTicketsAllRoute =
   AuthMainNavigationTicketsAllRouteImport.update({
     id: '/tickets/all',
@@ -121,6 +135,8 @@ export interface FileRoutesByFullPath {
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
+  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
   '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
   '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
   '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
@@ -136,6 +152,8 @@ export interface FileRoutesByTo {
   '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
+  '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
   '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
   '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
   '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
@@ -155,6 +173,8 @@ export interface FileRoutesById {
   '/_auth/_main-navigation/': typeof AuthMainNavigationIndexRoute
   '/_auth/_main-navigation/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/_auth/_main-navigation/tickets/all': typeof AuthMainNavigationTicketsAllRoute
+  '/_auth/_main-navigation/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
+  '/_auth/_main-navigation/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
   '/_auth/_main-navigation/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
   '/_auth/_main-navigation/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
   '/_auth/_settings-navigation/settings/': typeof AuthSettingsNavigationSettingsIndexRoute
@@ -172,6 +192,8 @@ export interface FileRouteTypes {
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
+    | '/tickets/snoozed'
+    | '/tickets/todo'
     | '/tickets/unassigned'
     | '/tickets/yours'
     | '/settings'
@@ -187,6 +209,8 @@ export interface FileRouteTypes {
     | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
+    | '/tickets/snoozed'
+    | '/tickets/todo'
     | '/tickets/unassigned'
     | '/tickets/yours'
     | '/settings'
@@ -205,6 +229,8 @@ export interface FileRouteTypes {
     | '/_auth/_main-navigation/'
     | '/_auth/_main-navigation/ticket/$ticketId'
     | '/_auth/_main-navigation/tickets/all'
+    | '/_auth/_main-navigation/tickets/snoozed'
+    | '/_auth/_main-navigation/tickets/todo'
     | '/_auth/_main-navigation/tickets/unassigned'
     | '/_auth/_main-navigation/tickets/yours'
     | '/_auth/_settings-navigation/settings/'
@@ -306,6 +332,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
+    '/_auth/_main-navigation/tickets/todo': {
+      id: '/_auth/_main-navigation/tickets/todo'
+      path: '/tickets/todo'
+      fullPath: '/tickets/todo'
+      preLoaderRoute: typeof AuthMainNavigationTicketsTodoRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/snoozed': {
+      id: '/_auth/_main-navigation/tickets/snoozed'
+      path: '/tickets/snoozed'
+      fullPath: '/tickets/snoozed'
+      preLoaderRoute: typeof AuthMainNavigationTicketsSnoozedRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
     '/_auth/_main-navigation/tickets/all': {
       id: '/_auth/_main-navigation/tickets/all'
       path: '/tickets/all'
@@ -342,6 +382,8 @@ interface AuthMainNavigationRouteChildren {
   AuthMainNavigationIndexRoute: typeof AuthMainNavigationIndexRoute
   AuthMainNavigationTicketTicketIdRoute: typeof AuthMainNavigationTicketTicketIdRoute
   AuthMainNavigationTicketsAllRoute: typeof AuthMainNavigationTicketsAllRoute
+  AuthMainNavigationTicketsSnoozedRoute: typeof AuthMainNavigationTicketsSnoozedRoute
+  AuthMainNavigationTicketsTodoRoute: typeof AuthMainNavigationTicketsTodoRoute
   AuthMainNavigationTicketsUnassignedRoute: typeof AuthMainNavigationTicketsUnassignedRoute
   AuthMainNavigationTicketsYoursRoute: typeof AuthMainNavigationTicketsYoursRoute
 }
@@ -351,6 +393,8 @@ const AuthMainNavigationRouteChildren: AuthMainNavigationRouteChildren = {
   AuthMainNavigationIndexRoute: AuthMainNavigationIndexRoute,
   AuthMainNavigationTicketTicketIdRoute: AuthMainNavigationTicketTicketIdRoute,
   AuthMainNavigationTicketsAllRoute: AuthMainNavigationTicketsAllRoute,
+  AuthMainNavigationTicketsSnoozedRoute: AuthMainNavigationTicketsSnoozedRoute,
+  AuthMainNavigationTicketsTodoRoute: AuthMainNavigationTicketsTodoRoute,
   AuthMainNavigationTicketsUnassignedRoute:
     AuthMainNavigationTicketsUnassignedRoute,
   AuthMainNavigationTicketsYoursRoute: AuthMainNavigationTicketsYoursRoute,

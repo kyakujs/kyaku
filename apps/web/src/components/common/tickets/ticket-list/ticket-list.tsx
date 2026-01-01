@@ -347,7 +347,7 @@ export function TicketList({
   });
 
   if (state?.grouping?.length) {
-    return <TicketGroupList rows={table.getRowModel().rows} />;
+    return <TicketGroupList rows={table.getRowModel().rows} table={table} />;
   }
 
   return <TicketSimpleList rows={table.getRowModel().rows} />;

@@ -5,7 +5,7 @@ export const Route = createFileRoute("/_auth/_main-navigation/")({
   beforeLoad: () => {
     // eslint-disable-next-line @typescript-eslint/only-throw-error
     throw redirect({
-      to: "/tickets/all",
+      to: "/tickets/todo",
     });
   },
 });

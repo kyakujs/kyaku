@@ -32,7 +32,7 @@ const data = {
     },
     {
       title: "All tickets",
-      url: "/tickets/all",
+      url: "/tickets/todo",
       icon: MessagesSquareIcon,
       items: [],
     },

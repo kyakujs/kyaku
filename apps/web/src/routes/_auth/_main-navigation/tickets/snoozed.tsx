@@ -24,16 +24,18 @@ import {
   useIssuesTableSorting,
 } from "~/store/issues-store";
 
-export const Route = createFileRoute("/_auth/_main-navigation/tickets/all")({
-  component: RouteComponent,
-  ssr: false,
-});
+export const Route = createFileRoute("/_auth/_main-navigation/tickets/snoozed")(
+  {
+    component: RouteComponent,
+    ssr: false,
+  },
+);
 
 function RouteComponent() {
   const [data, { type }] = useQuery(
     queries.tickets({
       filters: {
-        statuses: [0, 1, 2],
+        statuses: [1],
       },
     }),
   );
@@ -71,7 +73,7 @@ function RouteComponent() {
     <div className="flex w-full flex-col">
       <Header>
         <div className="flex w-full items-center justify-between">
-          <h2 className="text-sm">All tickets</h2>
+          <h2 className="text-sm">Snoozed</h2>
           <DisplayMenu />
         </div>
       </Header>
@@ -83,7 +85,7 @@ function RouteComponent() {
               columnFilters: [
                 {
                   id: TICKET_STATUS_ACCESSOR_KEY,
-                  value: [0, 1, 2],
+                  value: [1],
                 },
               ],
               columnOrder: [

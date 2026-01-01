@@ -1,18 +1,30 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import type { Row } from "@tanstack/react-table";
+import type { Row, Table } from "@tanstack/react-table";
 import { Fragment, useRef } from "react";
 import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
 
 import { Button } from "@kyakujs/ui/button";
+import {
+  ContextMenu,
+  ContextMenuItem,
+  ContextMenuPopup,
+  ContextMenuTrigger,
+} from "@kyakujs/ui/context-menu";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import { TicketListLine } from "~/components/common/tickets/ticket-list/ticket-list-line";
 
 export const TICKET_GROUP_ITEM_HEIGHT = 39;
 
-export function TicketGroupList({ rows }: { rows: Row<Ticket>[] }) {
+export function TicketGroupList({
+  rows,
+  table,
+}: {
+  rows: Row<Ticket>[];
+  table: Table<Ticket>;
+}) {
   const parentRef = useRef<HTMLDivElement>(null);
 
   const virtualizer = useVirtualizer({
@@ -60,42 +72,70 @@ export function TicketGroupList({ rows }: { rows: Row<Ticket>[] }) {
               data-index={virtualItem.index}
               ref={virtualizer.measureElement}
             >
-              <div
-                data-list-key={`GROUP_${groupedRow.id}`}
-                className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b border-border bg-sidebar pr-2 pl-2 text-sm"
-              >
-                {groupedRow.getVisibleCells().map((groupedCell) =>
-                  groupedCell.getIsAggregated() ? null : (
-                    <Fragment key={groupedCell.id}>
-                      {groupedRow.getCanExpand() ? (
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="icon-xs"
-                          onClick={groupedRow.getToggleExpandedHandler()}
-                          className="cursor-pointer"
-                        >
-                          {groupedRow.getIsExpanded() ? (
-                            <ChevronDownIcon className="size-4" />
-                          ) : (
-                            <ChevronRightIcon className="size-4" />
+              <ContextMenu>
+                <ContextMenuTrigger
+                  data-list-key={`GROUP_${groupedRow.id}`}
+                  className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b border-border bg-sidebar pr-2 pl-2 text-sm"
+                >
+                  {groupedRow.getVisibleCells().map((groupedCell) =>
+                    groupedCell.getIsAggregated() ? null : (
+                      <Fragment key={groupedCell.id}>
+                        {groupedRow.getCanExpand() ? (
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="icon-xs"
+                            onClick={groupedRow.getToggleExpandedHandler()}
+                            className="cursor-pointer"
+                          >
+                            {groupedRow.getIsExpanded() ? (
+                              <ChevronDownIcon className="size-4" />
+                            ) : (
+                              <ChevronRightIcon className="size-4" />
+                            )}
+                          </Button>
+                        ) : null}
+                        <span>
+                          {flexRender(
+                            groupedCell.column.columnDef.aggregatedCell,
+                            groupedCell.getContext(),
                           )}
-                        </Button>
-                      ) : null}
-                      <span>
-                        {flexRender(
-                          groupedCell.column.columnDef.aggregatedCell,
-                          groupedCell.getContext(),
-                        )}
-                      </span>
+                        </span>
 
-                      <span className="text-muted-foreground">
-                        {groupedRow.subRows.length}
-                      </span>
-                    </Fragment>
-                  ),
-                )}
-              </div>
+                        <span className="text-muted-foreground">
+                          {groupedRow.subRows.length}
+                        </span>
+                      </Fragment>
+                    ),
+                  )}
+                </ContextMenuTrigger>
+                <ContextMenuPopup>
+                  {groupedRow.getCanExpand() ? (
+                    <ContextMenuItem
+                      inset
+                      onClick={groupedRow.getToggleExpandedHandler()}
+                    >
+                      {groupedRow.getIsExpanded() ? (
+                        <span>Collapse</span>
+                      ) : (
+                        <span>Expand</span>
+                      )}
+                    </ContextMenuItem>
+                  ) : null}
+                  {groupedRow.getCanExpand() ? (
+                    <ContextMenuItem
+                      inset
+                      onClick={table.getToggleAllRowsExpandedHandler()}
+                    >
+                      {groupedRow.getIsExpanded() ? (
+                        <span>Collapse all</span>
+                      ) : (
+                        <span>Expand all</span>
+                      )}
+                    </ContextMenuItem>
+                  ) : null}
+                </ContextMenuPopup>
+              </ContextMenu>
               {groupedRow.getIsExpanded() ? (
                 <TicketGroupSubList
                   getScrollElement={() => parentRef.current}
