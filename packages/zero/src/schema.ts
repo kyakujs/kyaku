@@ -30,8 +30,8 @@ const user = table("user")
   .columns({
     id: string(),
     name: string(),
-    firstName: string(),
-    lastName: string(),
+    firstName: string().optional(),
+    lastName: string().optional(),
     image: string(),
     username: string(),
   })

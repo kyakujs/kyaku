@@ -45,8 +45,8 @@ export interface Ticket {
   assignedTo: {
     id: string;
     name: string;
-    firstName: string | undefined;
-    lastName: string | undefined;
+    firstName: string | null;
+    lastName: string | null;
     username: string;
     image: string;
   } | null;
@@ -147,6 +147,23 @@ const columns: ColumnDef<Ticket>[] = [
   },
   {
     accessorKey: TICKET_STATUSDETAIL_ACCESSOR_KEY,
+    aggregatedCell: ({ cell }) => {
+      const subStatus = subStatuses.find(
+        (s) => s.id === cell.getValue<number>(),
+      );
+
+      if (!subStatus) return null;
+
+      return (
+        <div className="flex items-center gap-2">
+          <subStatus.icon
+            className="size-4"
+            style={{ color: subStatus.color }}
+          />
+          <span>{subStatus.value}</span>
+        </div>
+      );
+    },
     cell: ({ cell }) => {
       const subStatus = subStatuses.find(
         (s) => s.id === cell.getValue<number>(),
@@ -221,6 +238,41 @@ const columns: ColumnDef<Ticket>[] = [
   {
     id: TICKET_ASSIGNEDTO_ACCESSOR_KEY,
     accessorFn: (row) => row.assignedTo?.id ?? null,
+    aggregatedCell: ({ row }) =>
+      row.original.assignedTo ? (
+        <div className="flex items-center gap-2">
+          <Avatar className="size-5">
+            <AvatarImage
+              src={row.original.assignedTo.image}
+              alt={row.original.assignedTo.username}
+            />
+            <AvatarFallback
+              render={
+                <svg
+                  viewBox="0 0 100 100"
+                  className="fill-current p-[5%] text-[48px] font-medium uppercase"
+                  aria-hidden={true}
+                />
+              }
+            >
+              <text
+                x="50%"
+                y="50%"
+                alignmentBaseline="middle"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                dy=".125em"
+              >
+                {row.original.assignedTo.firstName?.[0] ?? ""}
+                {row.original.assignedTo.lastName?.[0] ?? ""}
+              </text>
+            </AvatarFallback>
+          </Avatar>
+          <span>{row.original.assignedTo.username}</span>
+        </div>
+      ) : (
+        <span>No assignee</span>
+      ),
     cell: ({ row }) =>
       row.original.assignedTo ? (
         <Avatar className="size-5">
