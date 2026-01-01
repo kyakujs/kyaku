@@ -4,6 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { queries } from "@kyakujs/zero/queries";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import { DisplayMenu } from "~/components/common/tickets/display-menu";
 import {
   TICKET_ASSIGNEDTO_ACCESSOR_KEY,
   TICKET_CREATEDAT_ACCESSOR_KEY,
@@ -17,6 +18,11 @@ import {
   TicketList,
 } from "~/components/common/tickets/ticket-list/ticket-list";
 import { Header } from "~/components/layout/headers/tickets/header";
+import {
+  useIssuesStore,
+  useIssuesTableGrouping,
+  useIssuesTableSorting,
+} from "~/store/issues-store";
 
 export const Route = createFileRoute("/_auth/_main-navigation/tickets/all")({
   component: RouteComponent,
@@ -31,6 +37,10 @@ function RouteComponent() {
       },
     }),
   );
+
+  const columnVisibility = useIssuesStore((state) => state.columnVisibility);
+  const grouping = useIssuesTableGrouping();
+  const sorting = useIssuesTableSorting();
 
   const tickets: Ticket[] = data.map((ticket) => ({
     id: ticket.id,
@@ -60,14 +70,22 @@ function RouteComponent() {
   return (
     <div className="flex w-full flex-col">
       <Header>
-        <h2 className="text-sm">All tickets</h2>
+        <div className="flex w-full items-center justify-between">
+          <h2 className="text-sm">All tickets</h2>
+          <DisplayMenu />
+        </div>
       </Header>
       <div className="h-full w-full overflow-auto">
         {type === "complete" ? (
           <TicketList
             data={tickets}
             state={{
-              grouping: [TICKET_PRIORITY_ACCESSOR_KEY],
+              columnFilters: [
+                {
+                  id: TICKET_STATUS_ACCESSOR_KEY,
+                  value: [0, 1],
+                },
+              ],
               columnOrder: [
                 TICKET_SELECT_ACCESSOR_KEY,
                 TICKET_PRIORITY_ACCESSOR_KEY,
@@ -78,15 +96,9 @@ function RouteComponent() {
                 TICKET_CREATEDAT_ACCESSOR_KEY,
                 TICKET_ASSIGNEDTO_ACCESSOR_KEY,
               ],
-              columnVisibility: {
-                [TICKET_STATUS_ACCESSOR_KEY]: false,
-              },
-              columnFilters: [
-                {
-                  id: TICKET_STATUS_ACCESSOR_KEY,
-                  value: [0, 1],
-                },
-              ],
+              columnVisibility: columnVisibility,
+              grouping: grouping,
+              sorting: sorting,
             }}
           />
         ) : null}
