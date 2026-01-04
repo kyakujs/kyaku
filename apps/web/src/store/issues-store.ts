@@ -7,9 +7,13 @@ import { create } from "zustand";
 
 import {
   TICKET_ASSIGNEDTO_ACCESSOR_KEY,
+  TICKET_CREATEDAT_ACCESSOR_KEY,
+  TICKET_LABELS_ACCESSOR_KEY,
   TICKET_PRIORITY_ACCESSOR_KEY,
+  TICKET_SHORTID_ACCESSOR_KEY,
   TICKET_STATUS_ACCESSOR_KEY,
   TICKET_STATUSDETAIL_ACCESSOR_KEY,
+  TICKET_UPDATEDAT_ACCESSOR_KEY,
 } from "~/components/common/tickets/ticket-list/ticket-list";
 
 export const groupings = [
@@ -37,6 +41,7 @@ export interface IssuesState {
   sortDirection: "asc" | "desc";
 
   // Actions
+  setColumnVisibility: (column: string, visible: boolean) => void;
   setGrouping: (type: GroupingType) => void;
   setSortBy: (type: SortingType) => void;
   setSortDirection: (direction: "asc" | "desc") => void;
@@ -90,13 +95,28 @@ const mapSortBy = (
 export const useIssuesStore = create<IssuesState>((set) => ({
   // Initial state
   columnVisibility: {
+    [TICKET_ASSIGNEDTO_ACCESSOR_KEY]: true,
+    [TICKET_LABELS_ACCESSOR_KEY]: true,
+    [TICKET_PRIORITY_ACCESSOR_KEY]: true,
+    [TICKET_SHORTID_ACCESSOR_KEY]: true,
+    [TICKET_STATUSDETAIL_ACCESSOR_KEY]: true,
     [TICKET_STATUS_ACCESSOR_KEY]: false,
+    [TICKET_CREATEDAT_ACCESSOR_KEY]: true,
+    [TICKET_UPDATEDAT_ACCESSOR_KEY]: false,
   },
   grouping: "status",
   sortBy: "priority",
   sortDirection: "asc",
 
   // Actions
+  setColumnVisibility: (column, visible) => {
+    set((state) => ({
+      columnVisibility: {
+        ...state.columnVisibility,
+        [column]: visible,
+      },
+    }));
+  },
   setGrouping: (type) => {
     set(() => ({
       grouping: type,

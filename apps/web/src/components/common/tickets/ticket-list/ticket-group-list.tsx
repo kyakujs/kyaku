@@ -77,7 +77,7 @@ export function TicketGroupList({
                   data-list-key={`GROUP_${groupedRow.id}`}
                   className="sticky top-0 z-2 flex h-[39px] items-center gap-2 border-b border-border bg-sidebar pr-2 pl-2 text-sm"
                 >
-                  {groupedRow.getVisibleCells().map((groupedCell) =>
+                  {groupedRow.getAllCells().map((groupedCell) =>
                     groupedCell.getIsAggregated() ? null : (
                       <Fragment key={groupedCell.id}>
                         {groupedRow.getCanExpand() ? (

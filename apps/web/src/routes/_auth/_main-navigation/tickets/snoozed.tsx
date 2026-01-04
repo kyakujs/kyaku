@@ -67,6 +67,7 @@ function RouteComponent() {
       color: label.color,
     })),
     createdAt: ticket.createdAt,
+    updatedAt: ticket.updatedAt,
   }));
 
   return (
@@ -95,8 +96,8 @@ function RouteComponent() {
                 TICKET_STATUSDETAIL_ACCESSOR_KEY,
                 TICKET_TITLE_ACCESSOR_KEY,
                 TICKET_LABELS_ACCESSOR_KEY,
-                TICKET_CREATEDAT_ACCESSOR_KEY,
                 TICKET_ASSIGNEDTO_ACCESSOR_KEY,
+                TICKET_CREATEDAT_ACCESSOR_KEY,
               ],
               columnVisibility: columnVisibility,
               grouping: grouping,

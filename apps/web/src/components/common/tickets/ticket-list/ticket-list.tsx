@@ -36,6 +36,7 @@ export const TICKET_STATUSDETAIL_ACCESSOR_KEY = "statusDetail";
 export const TICKET_TITLE_ACCESSOR_KEY = "title";
 export const TICKET_LABELS_ACCESSOR_KEY = "labels";
 export const TICKET_CREATEDAT_ACCESSOR_KEY = "createdAt";
+export const TICKET_UPDATEDAT_ACCESSOR_KEY = "updatedAt";
 export const TICKET_ASSIGNEDTO_ACCESSOR_KEY = "assignedTo";
 
 export interface Ticket {
@@ -59,6 +60,7 @@ export interface Ticket {
     color: string;
   }[];
   createdAt: number;
+  updatedAt: number;
 }
 
 declare module "@tanstack/table-core" {
@@ -194,7 +196,7 @@ const columns: ColumnDef<Ticket>[] = [
   {
     id: TICKET_LABELS_ACCESSOR_KEY,
     cell: ({ row }) => (
-      <div className="mr-0 flex min-w-37.5 flex-[initial] shrink-[1.5] grow flex-row items-center justify-between gap-0.75 overflow-hidden transition-[shrink] hover:max-w-[initial] hover:shrink-[0.3]">
+      <div className="mr-0 flex flex-[initial] shrink-[1.5] grow flex-row items-center justify-between gap-0.75 overflow-hidden transition-[shrink] not-empty:min-w-37.5 hover:max-w-[initial] hover:shrink-[0.3]">
         <div className="flex min-w-0 shrink-[initial] grow basis-[initial] flex-row"></div>
         {row.original.labels.map((label) => (
           <div key={label.id} className="min-w-0 last:min-w-max">
@@ -222,16 +224,6 @@ const columns: ColumnDef<Ticket>[] = [
             </Badge>
           </div>
         ))}
-      </div>
-    ),
-  },
-  {
-    accessorKey: TICKET_CREATEDAT_ACCESSOR_KEY,
-    cell: ({ cell }) => (
-      <div className="flex shrink-0 items-center">
-        <span className="shrink-0">
-          {getContextualDate(new Date(cell.getValue<number>()), "en-US")}
-        </span>
       </div>
     ),
   },
@@ -305,6 +297,26 @@ const columns: ColumnDef<Ticket>[] = [
       ) : (
         <CircleDashedIcon className="size-5" />
       ),
+  },
+  {
+    accessorKey: TICKET_CREATEDAT_ACCESSOR_KEY,
+    cell: ({ cell }) => (
+      <div className="flex shrink-0 items-center">
+        <span className="shrink-0">
+          {getContextualDate(new Date(cell.getValue<number>()), "en-US")}
+        </span>
+      </div>
+    ),
+  },
+  {
+    accessorKey: TICKET_UPDATEDAT_ACCESSOR_KEY,
+    cell: ({ cell }) => (
+      <div className="flex shrink-0 items-center">
+        <span className="shrink-0">
+          {getContextualDate(new Date(cell.getValue<number>()), "en-US")}
+        </span>
+      </div>
+    ),
   },
 ];
 
