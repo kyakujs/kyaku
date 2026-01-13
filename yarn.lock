@@ -1349,7 +1349,7 @@ __metadata:
     "@tanstack/react-start": "npm:^1.149.2"
     "@tanstack/react-table": "npm:^8.21.3"
     "@tanstack/react-virtual": "npm:^3.13.18"
-    "@types/node": "npm:^25.0.7"
+    "@types/node": "npm:^25.0.8"
     "@types/react": "npm:^19.2.8"
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react": "npm:^5.1.2"
@@ -3636,12 +3636,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^25.0.7":
-  version: 25.0.7
-  resolution: "@types/node@npm:25.0.7"
+"@types/node@npm:^25.0.8":
+  version: 25.0.8
+  resolution: "@types/node@npm:25.0.8"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/a9feeb16a6487621ef96158e7a9759f89e3c1726189c7b19a9e6d3e0d581499c62e441e120e5a334e9eb01bc4d26644f27767fd5931d6d4f177d14f4f8e3f9ab
+  checksum: 10c0/2282464cd928ab184b2310b79899c76bfaa88c8d14640dfab2f9218fdee7e2d916056492de683aa3a26050c8f3bbcade0305616a55277a7c344926c0393149e0
   languageName: node
   linkType: hard
 
