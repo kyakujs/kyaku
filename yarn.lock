@@ -1361,7 +1361,7 @@ __metadata:
     prettier: "npm:^3.7.4"
     react: "npm:^19.2.3"
     react-dom: "npm:^19.2.3"
-    react-hotkeys-hook: "npm:^5.2.1"
+    react-hotkeys-hook: "npm:^5.2.3"
     typescript: "npm:^5.9.3"
     vite: "npm:^8.0.0-beta.7"
     zod: "npm:^4.3.5"
@@ -8432,13 +8432,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hotkeys-hook@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "react-hotkeys-hook@npm:5.2.1"
+"react-hotkeys-hook@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "react-hotkeys-hook@npm:5.2.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 10c0/ccffc5aba9dcab1b4ee1fec5cdae7ad24bf4edda06b1293ba1ae7e4b6e2eaf1f087bc3e3fc413d7a91b1db55145e24c8b45ce51710f2e233a76fb5dcbf034f96
+  checksum: 10c0/24ba0eaa2195bb504628aec7813c9014370ae71ab1489359690fba00f04c06d189ed191be1fbcdc3d1b6119e3e6a4051342c0a30b7c5dacd7f7b8457a1672624
   languageName: node
   linkType: hard
 
