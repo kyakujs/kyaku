@@ -50,7 +50,6 @@ function CustomCombobox(props: {
   });
 
   const itemsWithNull = [noAssigneeUser, ...props.items];
-  console.log(itemsWithNull);
 
   return (
     <Combobox
