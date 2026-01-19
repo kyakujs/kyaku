@@ -127,29 +127,29 @@ const AuthSettingsNavigationSettingsAccountPreferencesRoute =
   } as any)
 
 export interface FileRoutesByFullPath {
+  '/': typeof AuthMainNavigationIndexRoute
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/zero/mutate': typeof ApiZeroMutateRoute
   '/api/zero/query': typeof ApiZeroQueryRoute
-  '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
   '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
   '/tickets/todo': typeof AuthMainNavigationTicketsTodoRoute
   '/tickets/unassigned': typeof AuthMainNavigationTicketsUnassignedRoute
   '/tickets/yours': typeof AuthMainNavigationTicketsYoursRoute
-  '/settings': typeof AuthSettingsNavigationSettingsIndexRoute
+  '/settings/': typeof AuthSettingsNavigationSettingsIndexRoute
   '/settings/account/preferences': typeof AuthSettingsNavigationSettingsAccountPreferencesRoute
   '/settings/account/profile': typeof AuthSettingsNavigationSettingsAccountProfileRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof AuthMainNavigationIndexRoute
   '/login': typeof LoginRoute
   '/search': typeof AuthMainNavigationSearchRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/zero/mutate': typeof ApiZeroMutateRoute
   '/api/zero/query': typeof ApiZeroQueryRoute
-  '/': typeof AuthMainNavigationIndexRoute
   '/ticket/$ticketId': typeof AuthMainNavigationTicketTicketIdRoute
   '/tickets/all': typeof AuthMainNavigationTicketsAllRoute
   '/tickets/snoozed': typeof AuthMainNavigationTicketsSnoozedRoute
@@ -184,29 +184,29 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/'
     | '/login'
     | '/search'
     | '/api/auth/$'
     | '/api/zero/mutate'
     | '/api/zero/query'
-    | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
     | '/tickets/snoozed'
     | '/tickets/todo'
     | '/tickets/unassigned'
     | '/tickets/yours'
-    | '/settings'
+    | '/settings/'
     | '/settings/account/preferences'
     | '/settings/account/profile'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
     | '/login'
     | '/search'
     | '/api/auth/$'
     | '/api/zero/mutate'
     | '/api/zero/query'
-    | '/'
     | '/ticket/$ticketId'
     | '/tickets/all'
     | '/tickets/snoozed'
@@ -258,21 +258,21 @@ declare module '@tanstack/react-router' {
     '/_auth': {
       id: '/_auth'
       path: ''
-      fullPath: ''
+      fullPath: '/'
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_auth/_settings-navigation': {
       id: '/_auth/_settings-navigation'
       path: ''
-      fullPath: ''
+      fullPath: '/'
       preLoaderRoute: typeof AuthSettingsNavigationRouteImport
       parentRoute: typeof AuthRoute
     }
     '/_auth/_main-navigation': {
       id: '/_auth/_main-navigation'
       path: ''
-      fullPath: ''
+      fullPath: '/'
       preLoaderRoute: typeof AuthMainNavigationRouteImport
       parentRoute: typeof AuthRoute
     }
@@ -314,7 +314,7 @@ declare module '@tanstack/react-router' {
     '/_auth/_settings-navigation/settings/': {
       id: '/_auth/_settings-navigation/settings/'
       path: '/settings'
-      fullPath: '/settings'
+      fullPath: '/settings/'
       preLoaderRoute: typeof AuthSettingsNavigationSettingsIndexRouteImport
       parentRoute: typeof AuthSettingsNavigationRoute
     }
