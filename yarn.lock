@@ -286,9 +286,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@better-auth/core@npm:1.4.15"
+"@better-auth/core@npm:1.4.16":
+  version: 1.4.16
+  resolution: "@better-auth/core@npm:1.4.16"
   dependencies:
     "@standard-schema/spec": "npm:^1.0.0"
     zod: "npm:^4.1.12"
@@ -299,19 +299,19 @@ __metadata:
     jose: ^6.1.0
     kysely: ^0.28.5
     nanostores: ^1.0.1
-  checksum: 10c0/20fc6856d173d90ede4f6dd5b4d45d4f39bbc88e8c228fa17259af956a73a345c9504aed1e27e1b95c26be9eacddf86fc11c0d9d3cddf4e9787ecba8535e8f32
+  checksum: 10c0/bf37f1ce1ba92970e7a84b6461afd794dd0a01f53d1edea88a63d5f6c7d605c20a7160e2fea6915d3e945740859f44f6b8801844cf479aa928fce0c2526284cc
   languageName: node
   linkType: hard
 
-"@better-auth/telemetry@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@better-auth/telemetry@npm:1.4.15"
+"@better-auth/telemetry@npm:1.4.16":
+  version: 1.4.16
+  resolution: "@better-auth/telemetry@npm:1.4.16"
   dependencies:
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.21"
   peerDependencies:
-    "@better-auth/core": 1.4.15
-  checksum: 10c0/560751c6ae0868d87ea0f5c4a4a10b7a1a093c7727416582ce53716f2f717a51f749c5d601f576209e125f7168bc3d5706500e6fa38c8598098ea00df9f5ad7d
+    "@better-auth/core": 1.4.16
+  checksum: 10c0/b8a27191a4a98379f6e4c1e5edfefb9d63ef23ddf870144288c079c7ef96de15a4e0d033932a62c149dff1fa6f41d12cab2751a2f4d542d5f5ce0509118f0a6b
   languageName: node
   linkType: hard
 
@@ -1203,7 +1203,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    better-auth: "npm:^1.4.15"
+    better-auth: "npm:^1.4.16"
     eslint: "npm:^9.39.2"
     prettier: "npm:^3.8.0"
     typescript: "npm:^5.9.3"
@@ -1343,7 +1343,7 @@ __metadata:
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react": "npm:^5.1.2"
     babel-plugin-react-compiler: "npm:^1.0.0"
-    better-auth: "npm:^1.4.15"
+    better-auth: "npm:^1.4.16"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^9.39.2"
     lucide-react: "npm:^0.562.0"
@@ -4230,12 +4230,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.4.15":
-  version: 1.4.15
-  resolution: "better-auth@npm:1.4.15"
+"better-auth@npm:^1.4.16":
+  version: 1.4.16
+  resolution: "better-auth@npm:1.4.16"
   dependencies:
-    "@better-auth/core": "npm:1.4.15"
-    "@better-auth/telemetry": "npm:1.4.15"
+    "@better-auth/core": "npm:1.4.16"
+    "@better-auth/telemetry": "npm:1.4.16"
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.21"
     "@noble/ciphers": "npm:^2.0.0"
@@ -4305,7 +4305,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/0bcc0a19aadae584c5bbbb19faabde0d9d6cc07291aeba3965b07b194702b7563038ea8b5ab8d8cdfad8d313580f0a54feb083808560b173dfa3293bd54f9721
+  checksum: 10c0/2fd68aa7eb2f7c552048364ffd46e61f2dfbe23c5afb4344b7d826f45e6cc6a1c8f9b88c9dbad11c86eda4cb9da6991b22c48a5dba5509fb5603319394c2293e
   languageName: node
   linkType: hard
 
