@@ -28,7 +28,7 @@
   "dependencies": {
     "@kyakujs/kyaku": "workspace:*",
     "drizzle-orm": "^0.45.1",
-    "pg": "^8.17.1"
+    "pg": "^8.17.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^10.2.0",
