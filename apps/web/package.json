@@ -27,7 +27,7 @@
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "^3.13.18",
     "better-auth": "^1.4.17",
-    "lucide-react": "^0.562.0",
+    "lucide-react": "^0.563.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-hotkeys-hook": "^5.2.3",
