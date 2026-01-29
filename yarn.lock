@@ -1329,7 +1329,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.25.9"
+    "@rocicorp/zero": "npm:^0.25.11"
     "@tailwindcss/vite": "npm:^4.1.18"
     "@tanstack/react-query": "npm:^5.90.20"
     "@tanstack/react-router": "npm:^1.157.16"
@@ -1367,7 +1367,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.25.9"
+    "@rocicorp/zero": "npm:^0.25.11"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^9.39.2"
     prettier: "npm:^3.8.1"
@@ -2718,9 +2718,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.25.9":
-  version: 0.25.9
-  resolution: "@rocicorp/zero@npm:0.25.9"
+"@rocicorp/zero@npm:^0.25.11":
+  version: 0.25.11
+  resolution: "@rocicorp/zero@npm:0.25.11"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -2764,7 +2764,7 @@ __metadata:
     nanoid: "npm:^5.1.2"
     parse-prometheus-text-format: "npm:^1.1.1"
     pg-format: "npm:pg-format-fix@^1.0.5"
-    postgres: "npm:^3.4.4"
+    postgres: "npm:3.4.7"
     prettier: "npm:^3.5.3"
     semver: "npm:^7.5.4"
     tsx: "npm:^4.19.1"
@@ -2788,7 +2788,7 @@ __metadata:
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
     zero-out: out/zero/src/zero-out.js
-  checksum: 10c0/619f5a85c7964cbe5efd6f825cee2a4872107c45b03bb1dfc3e72d69ac86706adf3abb00820316e0951f1bd81e863a4023e58b88e46ddc874b96e448da38fbdb
+  checksum: 10c0/d4a62d70c094bc8ff46e6bf61cc999882b2e5916e6c85d45fd83a9be61d5e7d46238bb094cad5b5e688b72cbc3cacc6ad1a93bb4c3310fd6ec63de03ad280943
   languageName: node
   linkType: hard
 
@@ -8178,7 +8178,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postgres@npm:^3.4.4":
+"postgres@npm:3.4.7":
   version: 3.4.7
   resolution: "postgres@npm:3.4.7"
   checksum: 10c0/b2e61b1064d38e7e1df8291f6d5a7e11f892a3240e00cf2b5e5542bf9abbfe97f3963164aeb56b42c1ab6b8aae3454c57f5bbc1791df0769375542740a7cde72
