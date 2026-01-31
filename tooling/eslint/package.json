@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@eslint/compat": "^2.0.1",
+    "@eslint/compat": "^2.0.2",
     "@tanstack/eslint-plugin-router": "^1.155.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
