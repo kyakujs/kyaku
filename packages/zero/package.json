@@ -41,7 +41,7 @@
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "dotenv-cli": "^11.0.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3"
   },
