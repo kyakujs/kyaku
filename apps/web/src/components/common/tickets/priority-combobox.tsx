@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
+import { useHotkey } from "@tanstack/react-hotkeys";
 import { CheckIcon } from "lucide-react";
-import { useHotkeys } from "react-hotkeys-hook";
 
 import {
   Combobox,
@@ -31,8 +31,7 @@ function CustomCombobox(props: {
 
   const [open, setOpen] = useState(false);
 
-  useHotkeys(PRIORITY_SHORTCUT, (event) => {
-    event.preventDefault();
+  useHotkey({ key: PRIORITY_SHORTCUT }, () => {
     ref.current?.focus();
     setOpen(true);
   });

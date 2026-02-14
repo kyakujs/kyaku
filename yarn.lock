@@ -1341,6 +1341,7 @@ __metadata:
     "@kyakujs/zero": "workspace:*"
     "@rocicorp/zero": "npm:^0.25.12"
     "@tailwindcss/vite": "npm:^4.1.18"
+    "@tanstack/react-hotkeys": "npm:^0.1.0"
     "@tanstack/react-query": "npm:^5.90.21"
     "@tanstack/react-router": "npm:^1.159.10"
     "@tanstack/react-router-devtools": "npm:^1.159.10"
@@ -1360,7 +1361,6 @@ __metadata:
     prettier: "npm:^3.8.1"
     react: "npm:^19.2.4"
     react-dom: "npm:^19.2.4"
-    react-hotkeys-hook: "npm:^5.2.4"
     typescript: "npm:^5.9.3"
     vite: "npm:^8.0.0-beta.14"
     zod: "npm:^4.3.6"
@@ -3112,10 +3112,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/hotkeys@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@tanstack/hotkeys@npm:0.1.0"
+  dependencies:
+    "@tanstack/store": "npm:^0.8.0"
+  checksum: 10c0/22d847e10cbe06c7b72e9f1de21abcb794d0c5bad59d8f34cbbf91e6ef9d1bae299acd2b05249b9a15da23bc57b8ec5e800d6dbbd62cbab356376358b1c1bc31
+  languageName: node
+  linkType: hard
+
 "@tanstack/query-core@npm:5.90.20":
   version: 5.90.20
   resolution: "@tanstack/query-core@npm:5.90.20"
   checksum: 10c0/70637dfcecd5ed9d810629aa27f1632af8a4bcd083e75cf29408d058c32f8234704a3231ec280e2c4016ea0485b16124fdf70ab97793b5a7b670f43f7659e9fe
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-hotkeys@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@tanstack/react-hotkeys@npm:0.1.0"
+  dependencies:
+    "@tanstack/hotkeys": "npm:0.1.0"
+    "@tanstack/react-store": "npm:^0.8.0"
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 10c0/40ad9f5165b728e175512bc1ebc2cc4c3d93e68bca246064649de8071db2748d5c1b9fc96b6d17c16c2356ec227cc8094589155c212e5902c6b6fe7c6c21ba59
   languageName: node
   linkType: hard
 
@@ -8443,16 +8465,6 @@ __metadata:
   peerDependencies:
     react: ^19.2.4
   checksum: 10c0/f0c63f1794dedb154136d4d0f59af00b41907f4859571c155940296808f4b94bf9c0c20633db75b5b2112ec13d8d7dd4f9bf57362ed48782f317b11d05a44f35
-  languageName: node
-  linkType: hard
-
-"react-hotkeys-hook@npm:^5.2.4":
-  version: 5.2.4
-  resolution: "react-hotkeys-hook@npm:5.2.4"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-  checksum: 10c0/8163a22d5add0033ae30951bb93d48f0a894670d6272668744ef18e98f20df792fff2fb0cb03834a2322bafbc99bca277ac9dacd5676705a65ec4bc13767785b
   languageName: node
   linkType: hard
 

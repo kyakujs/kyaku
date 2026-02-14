@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useQuery } from "@rocicorp/zero/react";
+import { useHotkey } from "@tanstack/react-hotkeys";
 import { CheckIcon, CircleDashedIcon } from "lucide-react";
-import { useHotkeys } from "react-hotkeys-hook";
 
 import type { User } from "@kyakujs/zero/schema";
 import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
@@ -43,8 +43,7 @@ function CustomCombobox(props: {
 
   const [open, setOpen] = useState(false);
 
-  useHotkeys(ASSIGNEE_SHORTCUT, (event) => {
-    event.preventDefault();
+  useHotkey({ key: ASSIGNEE_SHORTCUT }, () => {
     ref.current?.focus();
     setOpen(true);
   });
