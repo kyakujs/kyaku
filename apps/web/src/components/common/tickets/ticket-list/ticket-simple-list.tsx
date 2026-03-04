@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 "use no memo";
 
 import type { Row } from "@tanstack/react-table";
@@ -6,15 +5,17 @@ import { useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
-import { TICKET_GROUP_ITEM_HEIGHT } from "~/components/common/tickets/ticket-list/ticket-group-list";
-import { TicketListLine } from "~/components/common/tickets/ticket-list/ticket-list-line";
+import {
+  TICKET_ITEM_HEIGHT,
+  TicketListLine,
+} from "~/components/common/tickets/ticket-list/ticket-list-line";
 
 export function TicketSimpleList({ rows }: { rows: Row<Ticket>[] }) {
   const parentRef = useRef<HTMLDivElement>(null);
 
   const virtualizer = useVirtualizer({
     count: rows.length,
-    estimateSize: () => TICKET_GROUP_ITEM_HEIGHT,
+    estimateSize: () => TICKET_ITEM_HEIGHT,
     getScrollElement: () => parentRef.current,
     overscan: 25,
   });
@@ -37,22 +38,30 @@ export function TicketSimpleList({ rows }: { rows: Row<Ticket>[] }) {
       : [0, 0];
 
   return (
-    <div ref={parentRef} className="h-full overflow-x-hidden overflow-y-auto">
+    <div
+      ref={parentRef}
+      className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid overflow-x-hidden overflow-y-auto"
+    >
       <div
+        className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid items-start"
         style={{
           height: virtualizer.getTotalSize(),
         }}
       >
         {paddingTop > 0 ? <div style={{ height: paddingTop }}></div> : null}
-        {virtualItems.map((virtualItem) => (
-          <TicketListLine
-            key={virtualItem.key}
-            data-list-key={`ITEM_${rows[virtualItem.index]?.id}`}
-            data-index={virtualItem.index}
-            ref={virtualizer.measureElement}
-            row={rows[virtualItem.index]!}
-          />
-        ))}
+        {virtualItems.map((virtualItem) => {
+          const row = rows[virtualItem.index];
+          if (!row) return null;
+
+          return (
+            <TicketListLine
+              key={virtualItem.key}
+              data-index={virtualItem.index}
+              data-list-key={`ITEM_${row.id}`}
+              row={row}
+            />
+          );
+        })}
         {paddingBottom > 0 ? (
           <div style={{ height: paddingBottom }}></div>
         ) : null}
