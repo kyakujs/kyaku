@@ -1,7 +1,7 @@
 "use no memo";
 
 import type { Row, Table } from "@tanstack/react-table";
-import { Fragment, useRef } from "react";
+import { Fragment, useCallback, useRef } from "react";
 import { flexRender } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
@@ -30,6 +30,7 @@ export function TicketGroupList({
   table: Table<Ticket>;
 }) {
   const parentRef = useRef<HTMLDivElement>(null);
+  const getScrollElement = useCallback(() => parentRef.current, []);
 
   const virtualizer = useVirtualizer({
     count: rows.length,
@@ -38,7 +39,7 @@ export function TicketGroupList({
       if (!row?.getIsExpanded()) return TICKET_GROUP_ITEM_HEIGHT;
       return row.subRows.length * TICKET_ITEM_HEIGHT + TICKET_GROUP_ITEM_HEIGHT;
     },
-    getScrollElement: () => parentRef.current,
+    getScrollElement: getScrollElement,
     overscan: 1,
   });
 
@@ -149,8 +150,8 @@ export function TicketGroupList({
               </ContextMenu>
               {groupedRow.getIsExpanded() ? (
                 <TicketGroupSubList
-                  getScrollElement={() => parentRef.current}
-                  initialOffset={() => virtualizer.scrollOffset ?? 0}
+                  getScrollElement={getScrollElement}
+                  initialOffset={virtualizer.scrollOffset ?? 0}
                   scrollMargin={virtualItem.start}
                   rows={groupedRow.subRows}
                 />
@@ -174,7 +175,7 @@ export function TicketGroupSubList({
   scrollMargin,
 }: {
   getScrollElement: () => HTMLDivElement | null;
-  initialOffset: () => number;
+  initialOffset: number;
   rows: Row<Ticket>[];
   scrollMargin: number;
 }) {

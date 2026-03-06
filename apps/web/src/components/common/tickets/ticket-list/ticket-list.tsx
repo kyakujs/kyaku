@@ -443,18 +443,22 @@ export function TicketList({
     [columnVisibility],
   );
 
+  const gridListStyle = useMemo(
+    () =>
+      ({
+        "--data-list-template": Object.entries(visibilityTemplate)
+          .filter(([_, isVisible]) => isVisible)
+          .map(([template]) => template)
+          .join(" "),
+      }) as React.CSSProperties,
+    [visibilityTemplate],
+  );
+
   if (state?.grouping?.length) {
     return (
       <div
         className="col-[1/_-1] grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
-        style={
-          {
-            "--data-list-template": Object.entries(visibilityTemplate)
-              .filter(([_, isVisible]) => isVisible)
-              .map(([template]) => template)
-              .join(" "),
-          } as React.CSSProperties
-        }
+        style={gridListStyle}
       >
         <TicketGroupList rows={table.getRowModel().rows} table={table} />
       </div>
@@ -464,14 +468,7 @@ export function TicketList({
   return (
     <div
       className="col-[1/_-1] grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
-      style={
-        {
-          "--data-list-template": Object.entries(columnVisibility)
-            .filter(([_, isVisible]) => isVisible)
-            .map(([template]) => template)
-            .join(" "),
-        } as React.CSSProperties
-      }
+      style={gridListStyle}
     >
       <TicketSimpleList rows={table.getRowModel().rows} />
     </div>

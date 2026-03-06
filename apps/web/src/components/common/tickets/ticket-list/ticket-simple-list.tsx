@@ -1,7 +1,7 @@
 "use no memo";
 
 import type { Row } from "@tanstack/react-table";
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
@@ -12,11 +12,12 @@ import {
 
 export function TicketSimpleList({ rows }: { rows: Row<Ticket>[] }) {
   const parentRef = useRef<HTMLDivElement>(null);
+  const getScrollElement = useCallback(() => parentRef.current, []);
 
   const virtualizer = useVirtualizer({
     count: rows.length,
     estimateSize: () => TICKET_ITEM_HEIGHT,
-    getScrollElement: () => parentRef.current,
+    getScrollElement: getScrollElement,
     overscan: 25,
   });
 
