@@ -26,7 +26,7 @@
     "@tanstack/react-router-ssr-query": "^1.166.7",
     "@tanstack/react-start": "^1.166.8",
     "@tanstack/react-table": "^8.21.3",
-    "@tanstack/react-virtual": "^3.13.21",
+    "@tanstack/react-virtual": "^3.13.22",
     "better-auth": "^1.5.5",
     "lucide-react": "^0.577.0",
     "react": "^19.2.4",
