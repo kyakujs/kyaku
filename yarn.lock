@@ -1618,7 +1618,7 @@ __metadata:
     "@tanstack/react-router": "npm:^1.166.7"
     "@tanstack/react-router-devtools": "npm:^1.166.7"
     "@tanstack/react-router-ssr-query": "npm:^1.166.7"
-    "@tanstack/react-start": "npm:^1.166.7"
+    "@tanstack/react-start": "npm:^1.166.8"
     "@tanstack/react-table": "npm:^8.21.3"
     "@tanstack/react-virtual": "npm:^3.13.21"
     "@types/node": "npm:^25.4.0"
@@ -3519,23 +3519,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-start@npm:^1.166.7":
-  version: 1.166.7
-  resolution: "@tanstack/react-start@npm:1.166.7"
+"@tanstack/react-start@npm:^1.166.8":
+  version: 1.166.8
+  resolution: "@tanstack/react-start@npm:1.166.8"
   dependencies:
     "@tanstack/react-router": "npm:1.166.7"
     "@tanstack/react-start-client": "npm:1.166.7"
     "@tanstack/react-start-server": "npm:1.166.7"
     "@tanstack/router-utils": "npm:^1.161.4"
     "@tanstack/start-client-core": "npm:1.166.7"
-    "@tanstack/start-plugin-core": "npm:1.166.7"
+    "@tanstack/start-plugin-core": "npm:1.166.8"
     "@tanstack/start-server-core": "npm:1.166.7"
     pathe: "npm:^2.0.3"
   peerDependencies:
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
     vite: ">=7.0.0"
-  checksum: 10c0/8969d64552ac686b48c3075c2cb7d16d83d52d8b3b52d3238c6ced52eef02ba002931f29352fa24b155cc666abc639d1da001fe8239b4503d993178c3690dad8
+  checksum: 10c0/c55b2767f0ae269a22622f54728ac7081333e9b4ca5330cf36fabc3dc0ef4dea809d50c4c62b430df78649c3dbdab1ceb08c599851635a21eca5bf8a67e7a27e
   languageName: node
   linkType: hard
 
@@ -3723,9 +3723,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/start-plugin-core@npm:1.166.7":
-  version: 1.166.7
-  resolution: "@tanstack/start-plugin-core@npm:1.166.7"
+"@tanstack/start-plugin-core@npm:1.166.8":
+  version: 1.166.8
+  resolution: "@tanstack/start-plugin-core@npm:1.166.8"
   dependencies:
     "@babel/code-frame": "npm:7.27.1"
     "@babel/core": "npm:^7.28.5"
@@ -3750,7 +3750,7 @@ __metadata:
     zod: "npm:^3.24.2"
   peerDependencies:
     vite: ">=7.0.0"
-  checksum: 10c0/7e9fb7a8e705feab8446ec37e1a5d6aced8cb92f3eaca485879d4680e4d16d0457b16411a8f3d8928511c6340d688e0270aaa8279ed5ec8c29a60624752c1eda
+  checksum: 10c0/b0a6f30cac89697e3e85846972805141e159f53f7597e9497818ec33450f22ba843fc3f06f4b1e2c501610ddf2166f6539a2784269a8cce41f9562c4ec0ec653
   languageName: node
   linkType: hard
 
