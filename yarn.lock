@@ -1602,7 +1602,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.25.13"
+    "@rocicorp/zero": "npm:^0.26.1"
     "@tailwindcss/vite": "npm:^4.2.1"
     "@tanstack/react-hotkeys": "npm:^0.4.1"
     "@tanstack/react-query": "npm:^5.90.21"
@@ -1640,7 +1640,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.25.13"
+    "@rocicorp/zero": "npm:^0.26.1"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^10.0.3"
     prettier: "npm:^3.8.1"
@@ -2978,7 +2978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero-sqlite3@npm:^1.0.12":
+"@rocicorp/zero-sqlite3@npm:^1.0.15":
   version: 1.0.15
   resolution: "@rocicorp/zero-sqlite3@npm:1.0.15"
   dependencies:
@@ -2991,9 +2991,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.25.13":
-  version: 0.25.13
-  resolution: "@rocicorp/zero@npm:0.25.13"
+"@rocicorp/zero@npm:^0.26.1":
+  version: 0.26.1
+  resolution: "@rocicorp/zero@npm:0.26.1"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3015,9 +3015,10 @@ __metadata:
     "@rocicorp/lock": "npm:^1.0.4"
     "@rocicorp/logger": "npm:^5.4.0"
     "@rocicorp/resolver": "npm:^1.0.2"
-    "@rocicorp/zero-sqlite3": "npm:^1.0.12"
+    "@rocicorp/zero-sqlite3": "npm:^1.0.15"
     "@standard-schema/spec": "npm:^1.0.0"
     "@types/basic-auth": "npm:^1.1.8"
+    "@types/ws": "npm:^8.5.12"
     basic-auth: "npm:^2.0.1"
     chalk: "npm:^5.3.0"
     chalk-template: "npm:^1.1.0"
@@ -3040,7 +3041,7 @@ __metadata:
     postgres: "npm:3.4.7"
     prettier: "npm:^3.5.3"
     semver: "npm:^7.5.4"
-    tsx: "npm:^4.19.1"
+    tsx: "npm:^4.21.0"
     url-pattern: "npm:^1.0.3"
     urlpattern-polyfill: "npm:^10.1.0"
     ws: "npm:^8.18.1"
@@ -3061,7 +3062,7 @@ __metadata:
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
     zero-out: out/zero/src/zero-out.js
-  checksum: 10c0/1af58b498bb958982aefd8c0dd0dbbedb8483813437651967471aebfa6457d1cd0d6bed52a66e3410c9d7507877e4a89229b4645490fae44f85ae51b648aaa68
+  checksum: 10c0/cd0af4f55a88aa4fe06b140606ae0058bace22e1fe9e7634b99cd6d739129831a0b805b268c69edd458dae60217fc233b9ca88b53771f2fc3aaad8908ef5fc2d
   languageName: node
   linkType: hard
 
@@ -3996,6 +3997,15 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/d2914f8e9b5b998e4275ec5f0130cba1c2fb47e75616b5c125a65ef6c1db2f1dc3f978c7900693856a15d72bbb4f4e94f805537a4ecb6dc126c64415d31c0590
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.5.12":
+  version: 8.18.1
+  resolution: "@types/ws@npm:8.18.1"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/61aff1129143fcc4312f083bc9e9e168aa3026b7dd6e70796276dcfb2c8211c4292603f9c4864fae702f2ed86e4abd4d38aa421831c2fd7f856c931a481afbab
   languageName: node
   linkType: hard
 
@@ -9888,7 +9898,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:^4.19.1, tsx@npm:^4.19.2":
+"tsx@npm:^4.19.2, tsx@npm:^4.21.0":
   version: 4.21.0
   resolution: "tsx@npm:4.21.0"
   dependencies:
