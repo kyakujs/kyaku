@@ -1602,7 +1602,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^0.26.1"
+    "@rocicorp/zero": "npm:^0.26.2"
     "@tailwindcss/vite": "npm:^4.2.2"
     "@tanstack/react-hotkeys": "npm:^0.4.2"
     "@tanstack/react-query": "npm:^5.91.2"
@@ -1640,7 +1640,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^0.26.1"
+    "@rocicorp/zero": "npm:^0.26.2"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^10.0.3"
     prettier: "npm:^3.8.1"
@@ -2984,9 +2984,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^0.26.1":
-  version: 0.26.1
-  resolution: "@rocicorp/zero@npm:0.26.1"
+"@rocicorp/zero@npm:^0.26.2":
+  version: 0.26.2
+  resolution: "@rocicorp/zero@npm:0.26.2"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3032,7 +3032,7 @@ __metadata:
     parse-prometheus-text-format: "npm:^1.1.1"
     pg-format: "npm:pg-format-fix@^1.0.5"
     postgres: "npm:3.4.7"
-    prettier: "npm:^3.5.3"
+    prettier: "npm:^3.8.1"
     semver: "npm:^7.5.4"
     tsx: "npm:^4.21.0"
     url-pattern: "npm:^1.0.3"
@@ -3055,7 +3055,7 @@ __metadata:
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
     zero-out: out/zero/src/zero-out.js
-  checksum: 10c0/cd0af4f55a88aa4fe06b140606ae0058bace22e1fe9e7634b99cd6d739129831a0b805b268c69edd458dae60217fc233b9ca88b53771f2fc3aaad8908ef5fc2d
+  checksum: 10c0/1706071e3fdd4d8d6d431c254a83e40466ef7aad60b9e08fe49015e424457a4a5c0a8994425baa4808ab91470c2af22389ead75dd3f55f84b29c9e25628fd650
   languageName: node
   linkType: hard
 
@@ -8768,7 +8768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.5.0, prettier@npm:^3.5.3, prettier@npm:^3.8.1":
+"prettier@npm:^3.5.0, prettier@npm:^3.8.1":
   version: 3.8.1
   resolution: "prettier@npm:3.8.1"
   bin:
