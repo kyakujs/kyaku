@@ -1588,7 +1588,7 @@ __metadata:
     "@types/react": "npm:^19.2.14"
     class-variance-authority: "npm:^0.7.1"
     eslint: "npm:^10.1.0"
-    lucide-react: "npm:^1.6.0"
+    lucide-react: "npm:^1.7.0"
     prettier: "npm:^3.8.1"
     react: "npm:^19.2.4"
     tailwind-merge: "npm:^3.5.0"
@@ -1628,7 +1628,7 @@ __metadata:
     better-auth: "npm:^1.5.6"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^10.1.0"
-    lucide-react: "npm:^1.6.0"
+    lucide-react: "npm:^1.7.0"
     prettier: "npm:^3.8.1"
     react: "npm:^19.2.4"
     react-dom: "npm:^19.2.4"
@@ -7913,12 +7913,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "lucide-react@npm:1.6.0"
+"lucide-react@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "lucide-react@npm:1.7.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/be26a58285afca37b821cb0572a7ca99a86bde8c5e3a1d752719aa7b6dacccc1ac5d1c6bbaac4f08c5ff1e2b6104076adc32a1890c0c7d8676cb38ca790efbcd
+  checksum: 10c0/bf913e1c9b8438fd1e19dbee602b4c1a596109faadd361b452e210135e51ff1147cbce9c1aa686a9c419f01541540536507a03202bc2cebebc04eb9a3cf8be2e
   languageName: node
   linkType: hard
 
