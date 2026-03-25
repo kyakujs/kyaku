@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@kyakujs/kyaku": "workspace:*",
-    "@rocicorp/zero": "^0.26.2",
+    "@rocicorp/zero": "^1.0.0",
     "ulid": "^3.0.2"
   },
   "devDependencies": {
