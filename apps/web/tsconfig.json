@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["ESNext", "dom", "dom.iterable"],
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
       "~/*": ["./src/*"]
     },
