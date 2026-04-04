@@ -80,12 +80,7 @@ const columns: ColumnDef<Ticket>[] = [
           <Checkbox
             tabIndex={-1}
             checked={row.getIsSelected()}
-            //onCheckedChange={() => row.onRowSelectionChange(row.id)}
-            onClick={(event) => {
-              event.preventDefault();
-
-              row.toggleSelected();
-            }}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
           />
         </div>
       </div>
