@@ -376,7 +376,7 @@ export function TicketList({
   data: Ticket[];
   state: Partial<TableState> | undefined;
 }) {
-  const [expanded, setExpanded] = useState<ExpandedState>(true);
+  const [expandedRows, setExpandedRows] = useState<ExpandedState>(true);
 
   const columnVisibility: VisibilityState = useMemo(
     () => ({
@@ -391,15 +391,15 @@ export function TicketList({
   const table = useReactTable({
     columns,
     data,
+    onExpandedChange: setExpandedRows,
     getCoreRowModel: getCoreRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getGroupedRowModel: getGroupedRowModel(),
-    getRowId: (row) => row.id,
     getSortedRowModel: getSortedRowModel(),
+    getRowId: (row) => row.id,
     groupedColumnMode: false,
     manualExpanding: true,
-    onExpandedChange: setExpanded,
     state: {
       ...state,
       columnVisibility,
@@ -414,7 +414,7 @@ export function TicketList({
         TICKET_CREATEDAT_ACCESSOR_KEY,
         TICKET_UPDATEDAT_ACCESSOR_KEY,
       ],
-      expanded: expanded,
+      expanded: expandedRows,
     },
     debugTable: true,
   });
