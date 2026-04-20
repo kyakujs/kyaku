@@ -393,6 +393,7 @@ const SidebarGroupLabel: React.FC<
 
   const element = useRender({
     render,
+    // eslint-disable-next-line react-hooks/refs
     props: mergeProps<"div">(defaultProps, props),
   });
 
@@ -417,6 +418,7 @@ const SidebarGroupAction: React.FC<
 
   const element = useRender({
     render,
+    // eslint-disable-next-line react-hooks/refs
     props: mergeProps<"button">(defaultProps, props),
   });
 
@@ -502,6 +504,7 @@ const SidebarMenuButton: React.FC<SidebarMenuButtonProps> = ({
 
   const element = useRender({
     render,
+    // eslint-disable-next-line react-hooks/refs
     props: mergeProps<"button">(defaultProps, props),
   });
 
@@ -539,6 +542,7 @@ const SidebarMenuAction: React.FC<SidebarMenuActionProps> = ({
 
   const element = useRender({
     render,
+    // eslint-disable-next-line react-hooks/refs
     props: mergeProps<"button">(defaultProps, props),
   });
 
@@ -615,6 +619,7 @@ const SidebarMenuSubButton: React.FC<SidebarMenuSubButtonProps> = ({
 
   const element = useRender({
     render,
+    // eslint-disable-next-line react-hooks/refs
     props: mergeProps<"a">(defaultProps, props),
   });
 
