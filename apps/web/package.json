@@ -27,7 +27,7 @@
     "@tanstack/react-start": "^1.167.42",
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "^3.13.24",
-    "better-auth": "^1.6.6",
+    "better-auth": "^1.6.7",
     "lucide-react": "^1.8.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
