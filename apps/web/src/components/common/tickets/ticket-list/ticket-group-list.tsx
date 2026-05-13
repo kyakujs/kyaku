@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 "use no memo";
 
 import type { Row, Table } from "@tanstack/react-table";
