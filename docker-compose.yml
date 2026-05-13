@@ -7,11 +7,11 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - kyaku_db_data:/var/lib/postgresql/data
+      - kyaku_db_data:/var/lib/postgresql/docker
     environment:
       - POSTGRES_USER=user
       - POSTGRES_DB=kyaku
-      - POSTGRES_PASSWORD=kyaku
+      - POSTGRES_PASSWORD=password
     command: |
       postgres
       -c wal_level=logical
