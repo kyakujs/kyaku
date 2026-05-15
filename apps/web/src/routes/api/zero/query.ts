@@ -15,14 +15,15 @@ export const Route = createFileRoute("/api/zero/query")({
         const session = await auth.api.getSession(request);
         const ctx = session ? { userId: session.user.id } : undefined;
         return json(
-          await handleQueryRequest(
-            (name, args) => {
+          await handleQueryRequest({
+            handler: (name, args) => {
               const query = mustGetQuery(queries, name);
               return query.fn({ args, ctx });
             },
             schema,
             request,
-          ),
+            userID: session?.user.id ?? null,
+          }),
         );
       },
     },

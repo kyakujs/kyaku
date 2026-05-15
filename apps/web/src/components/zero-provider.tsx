@@ -14,7 +14,7 @@ export function ZeroProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const session = authClient.useSession();
   const context = session.data ? { userId: session.data.user.id } : undefined;
-  const userId = session.data?.user.id ?? "anon";
+  const userId = session.data?.user.id ?? null;
 
   const init = useCallback(
     (zero: Zero) => {
