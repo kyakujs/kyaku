@@ -50,7 +50,7 @@
     "eslint": "^10.4.0",
     "prettier": "^3.8.3",
     "typescript": "^6.0.3",
-    "vite": "^8.0.13"
+    "vite": "^8.0.14"
   },
   "prettier": "@kyakujs/prettier-config"
 }
