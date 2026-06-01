@@ -1620,7 +1620,7 @@ __metadata:
     "@tanstack/react-router-ssr-query": "npm:^1.167.1"
     "@tanstack/react-start": "npm:^1.168.18"
     "@tanstack/react-table": "npm:^8.21.3"
-    "@tanstack/react-virtual": "npm:^3.13.26"
+    "@tanstack/react-virtual": "npm:^3.14.0"
     "@types/node": "npm:^25.9.1"
     "@types/react": "npm:^19.2.15"
     "@types/react-dom": "npm:^19.2.3"
@@ -3731,15 +3731,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-virtual@npm:^3.13.26":
-  version: 3.13.26
-  resolution: "@tanstack/react-virtual@npm:3.13.26"
+"@tanstack/react-virtual@npm:^3.14.0":
+  version: 3.14.0
+  resolution: "@tanstack/react-virtual@npm:3.14.0"
   dependencies:
     "@tanstack/virtual-core": "npm:3.16.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/f993dd0de6566c0f78d58a8183d9fad248c9a6ddf37e8572ea9cbb2a8635da16a368bfb7d44b8a84f6cd23fe927e96b9215927c14ef8381e2da8ed9e02f8e3be
+  checksum: 10c0/9e9e71275c4dfb36e186e90fb0682982202948713be0d9437b06d910720bc880dd832f76f51a102c69aec75b6db6b30542ef1b0dee480f8ee6e26584e4de85a9
   languageName: node
   linkType: hard
 
