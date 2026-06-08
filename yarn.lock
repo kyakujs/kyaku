@@ -1581,7 +1581,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^1.6.0"
+    "@rocicorp/zero": "npm:^1.6.1"
     "@rolldown/plugin-babel": "npm:^0.2.3"
     "@tailwindcss/vite": "npm:^4.3.0"
     "@tanstack/react-hotkeys": "npm:^0.10.0"
@@ -1620,7 +1620,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^1.6.0"
+    "@rocicorp/zero": "npm:^1.6.1"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^10.4.1"
     prettier: "npm:^3.8.3"
@@ -3063,22 +3063,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero-sqlite3@npm:^1.0.18":
-  version: 1.1.1
-  resolution: "@rocicorp/zero-sqlite3@npm:1.1.1"
+"@rocicorp/zero-sqlite3@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@rocicorp/zero-sqlite3@npm:1.1.2"
   dependencies:
     bindings: "npm:^1.5.0"
     node-gyp: "npm:latest"
     prebuild-install: "npm:^7.1.1"
   bin:
     zero-sqlite3: shell.js
-  checksum: 10c0/022c4d0db3f9e87ebfb61a88aa54b0987b7d67d2127f0089cacdfad19aa7b57de7b5b9c3825750aa800dfb8db31f428e005ecb66dafcb5b43abeff48a425b363
+  checksum: 10c0/55b09c586e5b389f546c97d5035421c69cad0a39bd043a771e46fa148a7b0947b5397550dbde977eda7cfe83db6fe2d8ffc0db0bfedb48a535a9ab954e3d60b3
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "@rocicorp/zero@npm:1.6.0"
+"@rocicorp/zero@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@rocicorp/zero@npm:1.6.1"
   dependencies:
     "@badrap/valita": "npm:0.3.11"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3100,7 +3100,7 @@ __metadata:
     "@rocicorp/lock": "npm:^1.0.4"
     "@rocicorp/logger": "npm:^5.4.0"
     "@rocicorp/resolver": "npm:^1.0.2"
-    "@rocicorp/zero-sqlite3": "npm:^1.0.18"
+    "@rocicorp/zero-sqlite3": "npm:^1.1.2"
     "@standard-schema/spec": "npm:^1.0.0"
     "@types/basic-auth": "npm:^1.1.8"
     "@types/ws": "npm:^8.5.12"
@@ -3149,7 +3149,7 @@ __metadata:
     zero-cache-dev: out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: out/zero/src/deploy-permissions.js
     zero-out: out/zero/src/zero-out.js
-  checksum: 10c0/91cfa1845469f9cadd00534f9a8be9a65ba4c244a8288fbfe700c5d91cfd81a83846df5f916c27779f15c2fe9eb11b2dac47d0784c5eb938c49ab68a5a531d8f
+  checksum: 10c0/0ff015dfa1382d6682d27798939d9832599c51ae78100f3718a4dd3fe7b188811df091ef6d4de5e1078a89f0e09cbfd42fd4a0e7eb5d8d14643228e4a0e6876d
   languageName: node
   linkType: hard
 
