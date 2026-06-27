@@ -20,7 +20,7 @@
     "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "prettier": "^3.8.4",
     "typescript": "^6.0.3"
   },
