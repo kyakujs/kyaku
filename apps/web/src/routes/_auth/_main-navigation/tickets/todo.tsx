@@ -6,15 +6,7 @@ import { queries } from "@kyakujs/zero/queries";
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import { DisplayMenu } from "~/components/common/tickets/display-menu";
 import {
-  TICKET_ASSIGNEDTO_ACCESSOR_KEY,
-  TICKET_CREATEDAT_ACCESSOR_KEY,
-  TICKET_LABELS_ACCESSOR_KEY,
-  TICKET_PRIORITY_ACCESSOR_KEY,
-  TICKET_SELECT_ACCESSOR_KEY,
-  TICKET_SHORTID_ACCESSOR_KEY,
   TICKET_STATUS_ACCESSOR_KEY,
-  TICKET_STATUSDETAIL_ACCESSOR_KEY,
-  TICKET_TITLE_ACCESSOR_KEY,
   TicketList,
 } from "~/components/common/tickets/ticket-list/ticket-list";
 import { Header } from "~/components/layout/headers/tickets/header";
@@ -76,33 +68,27 @@ function RouteComponent() {
           <DisplayMenu />
         </div>
       </Header>
-      <div className="h-full w-full overflow-auto">
-        {type === "complete" ? (
-          <TicketList
-            data={tickets}
-            state={{
-              columnFilters: [
-                {
-                  id: TICKET_STATUS_ACCESSOR_KEY,
-                  value: [0],
-                },
-              ],
-              columnOrder: [
-                TICKET_SELECT_ACCESSOR_KEY,
-                TICKET_PRIORITY_ACCESSOR_KEY,
-                TICKET_SHORTID_ACCESSOR_KEY,
-                TICKET_STATUSDETAIL_ACCESSOR_KEY,
-                TICKET_TITLE_ACCESSOR_KEY,
-                TICKET_LABELS_ACCESSOR_KEY,
-                TICKET_ASSIGNEDTO_ACCESSOR_KEY,
-                TICKET_CREATEDAT_ACCESSOR_KEY,
-              ],
-              columnVisibility: columnVisibility,
-              grouping: grouping,
-              sorting: sorting,
-            }}
-          />
-        ) : null}
+      <div className="relative flex h-full grow items-stretch overflow-hidden">
+        <div className="relative flex h-full grow flex-col items-stretch overflow-hidden">
+          <div className="flex grow overflow-x-hidden overflow-y-auto">
+            {type === "complete" ? (
+              <TicketList
+                data={tickets}
+                state={{
+                  columnFilters: [
+                    {
+                      id: TICKET_STATUS_ACCESSOR_KEY,
+                      value: [0],
+                    },
+                  ],
+                  columnVisibility: columnVisibility,
+                  grouping: grouping,
+                  sorting: sorting,
+                }}
+              />
+            ) : null}
+          </div>
+        </div>
       </div>
     </div>
   );
