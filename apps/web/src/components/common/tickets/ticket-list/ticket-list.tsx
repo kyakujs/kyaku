@@ -5,6 +5,7 @@ import type {
   ExpandedState,
   RowData,
   TableState,
+  VisibilityState,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
 import {
@@ -39,6 +40,13 @@ export const TICKET_CREATEDAT_ACCESSOR_KEY = "createdAt";
 export const TICKET_UPDATEDAT_ACCESSOR_KEY = "updatedAt";
 export const TICKET_ASSIGNEDTO_ACCESSOR_KEY = "assignedTo";
 
+declare module "@tanstack/table-core" {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface ColumnMeta<TData extends RowData, TValue> {
+    layout: string;
+  }
+}
+
 export interface Ticket {
   id: string;
   title: string;
@@ -63,30 +71,23 @@ export interface Ticket {
   updatedAt: number;
 }
 
-declare module "@tanstack/table-core" {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface TableMeta<TData extends RowData> {
-    issueIdLength: number;
-  }
-}
-
 const columns: ColumnDef<Ticket>[] = [
   {
     id: TICKET_SELECT_ACCESSOR_KEY,
     cell: ({ row }) => (
-      <div className="flex items-center">
-        <Checkbox
-          tabIndex={-1}
-          checked={row.getIsSelected()}
-          //onCheckedChange={() => row.onRowSelectionChange(row.id)}
-          onClick={(event) => {
-            event.preventDefault();
-
-            row.toggleSelected();
-          }}
-        />
+      <div data-list-grid-column="select">
+        <div className="flex h-full items-center justify-center">
+          <Checkbox
+            tabIndex={-1}
+            checked={row.getIsSelected()}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
+          />
+        </div>
       </div>
     ),
+    meta: {
+      layout: "start",
+    },
   },
   {
     accessorKey: TICKET_PRIORITY_ACCESSOR_KEY,
@@ -112,25 +113,30 @@ const columns: ColumnDef<Ticket>[] = [
       if (!priority) return null;
 
       return (
-        <div className="flex items-center">
+        <div className="flex items-center" data-list-grid-column="priority">
           <priority.icon className="size-4" style={{ color: priority.color }} />
         </div>
       );
     },
+    meta: {
+      layout: "start",
+    },
   },
   {
     accessorKey: TICKET_SHORTID_ACCESSOR_KEY,
-    cell: ({ cell, table }) => {
+    cell: ({ cell }) => {
       return (
-        <div
-          className="flex shrink-0 items-center text-muted-foreground"
-          style={{
-            width: `${table.options.meta?.issueIdLength}ch`,
-          }}
-        >
-          TIC-{cell.getValue<string>()}
+        <div className="flex items-center" data-list-grid-column="shortId">
+          <div className="text-left text-[13px]">
+            <span className="inline-block flex-nowrap font-features-['cpsp','calt'] tracking-[-0.02em] text-muted-foreground tabular-nums">
+              TIC-{cell.getValue<string>()}
+            </span>
+          </div>
         </div>
       );
+    },
+    meta: {
+      layout: "start",
     },
   },
   {
@@ -141,10 +147,13 @@ const columns: ColumnDef<Ticket>[] = [
       if (!status) return null;
 
       return (
-        <div className="flex items-center">
+        <div className="flex items-center" data-list-grid-column="status">
           <status.icon className="size-4" style={{ color: status.color }} />
         </div>
       );
+    },
+    meta: {
+      layout: "start",
     },
   },
   {
@@ -159,7 +168,7 @@ const columns: ColumnDef<Ticket>[] = [
       return (
         <div className="flex items-center gap-2">
           <subStatus.icon
-            className="size-4"
+            className="size-4 shrink-0"
             style={{ color: subStatus.color }}
           />
           <span>{subStatus.value}</span>
@@ -174,7 +183,7 @@ const columns: ColumnDef<Ticket>[] = [
       if (!subStatus) return null;
 
       return (
-        <div className="flex items-center">
+        <div className="flex items-center" data-list-grid-column="statusDetail">
           <subStatus.icon
             className="size-4"
             style={{ color: subStatus.color }}
@@ -182,26 +191,38 @@ const columns: ColumnDef<Ticket>[] = [
         </div>
       );
     },
+    meta: {
+      layout: "start",
+    },
   },
   {
     accessorKey: TICKET_TITLE_ACCESSOR_KEY,
     cell: ({ cell }) => (
-      <span className="flex min-w-0 flex-[initial] shrink flex-row items-center">
-        <span title={cell.getValue<string>()} className="truncate text-left">
+      <span
+        data-list-grid-column="title"
+        className="flex min-w-0 flex-[initial] shrink items-center"
+      >
+        <span className="truncate text-sm" title={cell.getValue<string>()}>
           {cell.getValue<string>()}
         </span>
       </span>
     ),
+    meta: {
+      layout: "title",
+    },
   },
   {
     id: TICKET_LABELS_ACCESSOR_KEY,
     cell: ({ row }) => (
-      <div className="mr-0 flex flex-[initial] shrink-[1.5] grow flex-row items-center justify-between gap-0.75 overflow-hidden transition-[shrink] not-empty:min-w-37.5 hover:max-w-[initial] hover:shrink-[0.3]">
-        <div className="flex min-w-0 shrink-[initial] grow basis-[initial] flex-row"></div>
+      <div
+        className="flex flex-[initial] shrink-[1.5] grow flex-row"
+        data-list-grid-column="labels"
+      >
+        <div className="flex flex-[initial] grow flex-row"></div>
         {row.original.labels.map((label) => (
           <div key={label.id} className="min-w-0 last:min-w-max">
             <Badge
-              className="max-w-28 min-w-0 gap-1.5 truncate"
+              className="max-w-28 min-w-0 gap-1.5 truncate xl:max-w-56"
               variant="outline"
             >
               <svg
@@ -226,6 +247,9 @@ const columns: ColumnDef<Ticket>[] = [
         ))}
       </div>
     ),
+    meta: {
+      layout: "labels",
+    },
   },
   {
     id: TICKET_ASSIGNEDTO_ACCESSOR_KEY,
@@ -265,58 +289,83 @@ const columns: ColumnDef<Ticket>[] = [
       ) : (
         <span>No assignee</span>
       ),
-    cell: ({ row }) =>
-      row.original.assignedTo ? (
-        <Avatar className="size-5">
-          <AvatarImage
-            src={row.original.assignedTo.image}
-            alt={row.original.assignedTo.username}
-          />
-          <AvatarFallback
-            render={
-              <svg
-                viewBox="0 0 100 100"
-                className="fill-current p-[5%] text-[48px] font-medium uppercase"
-                aria-hidden={true}
-              />
-            }
-          >
-            <text
-              x="50%"
-              y="50%"
-              alignmentBaseline="middle"
-              dominantBaseline="middle"
-              textAnchor="middle"
-              dy=".125em"
+    cell: ({ row }) => (
+      <div data-list-grid-column="assignedTo">
+        {row.original.assignedTo ? (
+          <Avatar className="size-5">
+            <AvatarImage
+              src={row.original.assignedTo.image}
+              alt={row.original.assignedTo.username}
+            />
+            <AvatarFallback
+              render={
+                <svg
+                  viewBox="0 0 100 100"
+                  className="fill-current p-[5%] text-[48px] font-medium uppercase"
+                  aria-hidden={true}
+                />
+              }
             >
-              {row.original.assignedTo.firstName?.[0] ?? ""}
-              {row.original.assignedTo.lastName?.[0] ?? ""}
-            </text>
-          </AvatarFallback>
-        </Avatar>
-      ) : (
-        <CircleDashedIcon className="size-5" />
-      ),
+              <text
+                x="50%"
+                y="50%"
+                alignmentBaseline="middle"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                dy=".125em"
+              >
+                {row.original.assignedTo.firstName?.[0] ?? ""}
+                {row.original.assignedTo.lastName?.[0] ?? ""}
+              </text>
+            </AvatarFallback>
+          </Avatar>
+        ) : (
+          <CircleDashedIcon className="size-5" />
+        )}
+      </div>
+    ),
+    meta: {
+      layout: "assignedTo",
+    },
   },
   {
     accessorKey: TICKET_CREATEDAT_ACCESSOR_KEY,
     cell: ({ cell }) => (
-      <div className="flex shrink-0 items-center">
-        <span className="shrink-0">
+      <div
+        className="flex items-center justify-end text-right"
+        data-list-grid-column="createdAt"
+      >
+        <span className="shrink-0 flex-nowrap text-sm">
           {getContextualDate(new Date(cell.getValue<number>()), "en-US")}
         </span>
       </div>
     ),
+    meta: {
+      layout: "end",
+    },
   },
   {
     accessorKey: TICKET_UPDATEDAT_ACCESSOR_KEY,
     cell: ({ cell }) => (
-      <div className="flex shrink-0 items-center">
-        <span className="shrink-0">
+      <div
+        className="flex items-center justify-end text-right"
+        data-list-grid-column="updatedAt"
+      >
+        <span className="shrink-0 flex-nowrap text-sm">
           {getContextualDate(new Date(cell.getValue<number>()), "en-US")}
         </span>
       </div>
     ),
+    meta: {
+      layout: "end",
+    },
+  },
+  {
+    accessorKey: "end-padding",
+    cell: () => <div data-list-grid-column="end-padding"></div>,
+    meta: {
+      layout: "end",
+    },
   },
 ];
 
@@ -327,40 +376,96 @@ export function TicketList({
   data: Ticket[];
   state: Partial<TableState> | undefined;
 }) {
-  const issueIdLength = useMemo(
-    () =>
-      4 /* TIC- */ +
-      (data.toSorted((a, b) => b.shortId - a.shortId)[0]?.shortId.toString()
-        .length ?? 0),
-    [data],
+  const [expandedRows, setExpandedRows] = useState<ExpandedState>(true);
+
+  const columnVisibility: VisibilityState = useMemo(
+    () => ({
+      ...(state?.columnVisibility ?? {}),
+      [TICKET_SELECT_ACCESSOR_KEY]: true,
+      [TICKET_TITLE_ACCESSOR_KEY]: true,
+      ["end-padding"]: true,
+    }),
+    [state?.columnVisibility],
   );
-  const [expanded, setExpanded] = useState<ExpandedState>(true);
 
   const table = useReactTable({
     columns,
     data,
+    onExpandedChange: setExpandedRows,
     getCoreRowModel: getCoreRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getGroupedRowModel: getGroupedRowModel(),
-    getRowId: (row) => row.id,
     getSortedRowModel: getSortedRowModel(),
+    getRowId: (row) => row.id,
     groupedColumnMode: false,
     manualExpanding: true,
-    meta: {
-      issueIdLength: issueIdLength,
-    },
-    onExpandedChange: setExpanded,
     state: {
       ...state,
-      expanded: expanded,
+      columnVisibility,
+      columnOrder: [
+        TICKET_SELECT_ACCESSOR_KEY,
+        TICKET_PRIORITY_ACCESSOR_KEY,
+        TICKET_SHORTID_ACCESSOR_KEY,
+        TICKET_STATUSDETAIL_ACCESSOR_KEY,
+        TICKET_TITLE_ACCESSOR_KEY,
+        TICKET_LABELS_ACCESSOR_KEY,
+        TICKET_ASSIGNEDTO_ACCESSOR_KEY,
+        TICKET_CREATEDAT_ACCESSOR_KEY,
+        TICKET_UPDATEDAT_ACCESSOR_KEY,
+      ],
+      expanded: expandedRows,
     },
     debugTable: true,
   });
 
+  const visibilityTemplate = useMemo(
+    () => ({
+      "[select] 26px": true,
+      "[priority] 16px":
+        columnVisibility[TICKET_PRIORITY_ACCESSOR_KEY] ?? false,
+      "[shortId] minmax(52px, auto)":
+        columnVisibility[TICKET_SHORTID_ACCESSOR_KEY] ?? false,
+      "[statusDetail] 16px":
+        columnVisibility[TICKET_STATUSDETAIL_ACCESSOR_KEY] ?? false,
+      "[title] 1fr": true,
+      "[createdAt] minmax(56px, auto)":
+        columnVisibility[TICKET_CREATEDAT_ACCESSOR_KEY] ?? false,
+      "[updatedAt] minmax(56px, auto)":
+        columnVisibility[TICKET_UPDATEDAT_ACCESSOR_KEY] ?? false,
+      "[end-padding] 12px": true,
+    }),
+    [columnVisibility],
+  );
+
+  const gridListStyle = useMemo(
+    () =>
+      ({
+        "--data-list-template": Object.entries(visibilityTemplate)
+          .filter(([_, isVisible]) => isVisible)
+          .map(([template]) => template)
+          .join(" "),
+      }) as React.CSSProperties,
+    [visibilityTemplate],
+  );
+
   if (state?.grouping?.length) {
-    return <TicketGroupList rows={table.getRowModel().rows} table={table} />;
+    return (
+      <div
+        className="col-[1/_-1] grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
+        style={gridListStyle}
+      >
+        <TicketGroupList rows={table.getRowModel().rows} table={table} />
+      </div>
+    );
   }
 
-  return <TicketSimpleList rows={table.getRowModel().rows} />;
+  return (
+    <div
+      className="col-[1/_-1] grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
+      style={gridListStyle}
+    >
+      <TicketSimpleList rows={table.getRowModel().rows} />
+    </div>
+  );
 }
