@@ -3,14 +3,18 @@
 import { faker } from "@faker-js/faker";
 import { reset } from "drizzle-seed";
 
+import * as authSchema from "@kyakujs/auth/schema";
+
 import { db } from "./client.js";
 import * as schema from "./schema.js";
+
+export * from "@kyakujs/auth/schema";
 
 async function main() {
   await reset(db, schema);
 
   const users = await db
-    .insert(schema.user)
+    .insert(authSchema.user)
     .values([
       {
         id: faker.string.ulid(),
@@ -108,7 +112,7 @@ async function main() {
         updatedAt: new Date(),
       },
     ])
-    .returning({ id: schema.user.id });
+    .returning({ id: authSchema.user.id });
 
   const labels = await db
     .insert(schema.label)

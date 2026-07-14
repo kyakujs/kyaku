@@ -2,6 +2,7 @@ import { mustGetMutator } from "@rocicorp/zero";
 import { handleMutateRequest } from "@rocicorp/zero/server";
 import { zeroPostgresJS } from "@rocicorp/zero/server/adapters/postgresjs";
 import { createFileRoute } from "@tanstack/react-router";
+import { getRequestHeaders } from "@tanstack/react-start/server";
 import postgres from "postgres";
 
 import { mutators } from "@kyakujs/zero/mutators";
@@ -17,7 +18,9 @@ export const Route = createFileRoute("/api/zero/mutate")({
     handlers: {
       POST: async ({ request }) => {
         console.log("mutate called");
-        const session = await auth.api.getSession(request);
+        const session = await auth.api.getSession({
+          headers: getRequestHeaders(),
+        });
 
         if (!session) {
           return Response.json({ error: "Unauthorized" }, { status: 401 });

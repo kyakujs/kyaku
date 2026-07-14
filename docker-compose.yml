@@ -1,25 +1,51 @@
 services:
-  kyaku_db:
-    image: postgres:18-alpine
-    shm_size: 1g
-    restart: always
+  zero-cache:
+    image: rocicorp/zero:1.8.0
+    ports:
+      - 4848:4848
+    stop_grace_period: 10m
+    environment:
+      # Used for replication from postgres
+      # This *must* be a direct connection (not via pgbouncer)
+      ZERO_UPSTREAM_DB: postgres://postgres:pass@upstream-db:5432/zero
+      # Used for storing client view records
+      # Use a pooler in production
+      ZERO_CVR_DB: postgres://postgres:pass@upstream-db:5432/zero
+      # Used for storing recent replication log entries
+      # Use a pooler in production
+      ZERO_CHANGE_DB: postgres://postgres:pass@upstream-db:5432/zero
+      # Path to the SQLite replica
+      ZERO_REPLICA_FILE: /data/replica.db
+      # Password used to access the inspector and /statz
+      ZERO_ADMIN_PASSWORD: pickanewpassword
+      # URLs for your API /query and /mutate endpoints
+      ZERO_QUERY_URL: http://host.docker.internal:3000/api/zero/query
+      ZERO_MUTATE_URL: http://host.docker.internal:3000/api/zero/mutate
+      ZERO_ENABLE_CRUD_MUTATIONS: "false"
+      ZERO_QUERY_FORWARD_COOKIES: "true"
+      ZERO_MUTATE_FORWARD_COOKIES: "true"
+    volumes:
+      - zero-cache-data:/data
+    healthcheck:
+      test: curl -f http://localhost:4848/keepalive
+      interval: 5s
+      start_period: 10m
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  upstream-db:
+    image: postgres:18
     user: postgres
+    environment:
+      POSTGRES_DB: zero
+      POSTGRES_PASSWORD: pass
     ports:
       - 5432:5432
-    volumes:
-      - kyaku_db_data:/var/lib/postgresql/docker
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_DB=kyaku
-      - POSTGRES_PASSWORD=password
-    command: |
-      postgres
-      -c wal_level=logical
-      -c max_wal_senders=10
-      -c max_replication_slots=5
-      -c hot_standby=on
-      -c hot_standby_feedback=on
+    command: postgres -c wal_level=logical
+    healthcheck:
+      test: pg_isready
+      interval: 10s
 
 volumes:
-  kyaku_db_data:
+  zero-cache-data:
     driver: local

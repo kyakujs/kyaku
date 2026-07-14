@@ -17,6 +17,10 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  server: {
+    host: "0.0.0.0",
+    allowedHosts: ["host.docker.internal"],
+  },
   resolve: {
     tsconfigPaths: true,
   },
