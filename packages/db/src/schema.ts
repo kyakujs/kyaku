@@ -12,10 +12,11 @@ import {
 import { relations } from "drizzle-orm/relations";
 
 import type { TicketTimelineEntry } from "@kyakujs/kyaku";
-import * as authSchema from "@kyakujs/auth/schema";
 import { TimelineEntryType } from "@kyakujs/kyaku";
 
-export * from "@kyakujs/auth/schema";
+import * as authSchema from "./authSchema";
+
+export * from "./authSchema";
 
 export const lifecycleFields = {
   createdAt: timestamp("createdAt", { precision: 3, mode: "date" })
