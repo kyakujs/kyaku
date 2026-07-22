@@ -1461,7 +1461,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     better-auth: "npm:^1.6.23"
     eslint: "npm:^10.7.0"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -1483,7 +1483,7 @@ __metadata:
     drizzle-seed: "npm:^0.3.1"
     eslint: "npm:^10.7.0"
     pg: "npm:^8.22.0"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -1504,7 +1504,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.1.1"
     eslint-plugin-turbo: "npm:^2.10.5"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.65.0"
   languageName: unknown
@@ -1519,7 +1519,7 @@ __metadata:
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
     eslint: "npm:^10.7.0"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -1530,7 +1530,7 @@ __metadata:
   dependencies:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.7.1"
     "@kyakujs/tsconfig": "workspace:*"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     prettier-plugin-tailwindcss: "npm:^0.8.1"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -1541,7 +1541,7 @@ __metadata:
   resolution: "@kyakujs/tailwind-config@workspace:tooling/tailwind"
   dependencies:
     "@kyakujs/prettier-config": "workspace:*"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     tailwindcss: "npm:^4.3.3"
   languageName: unknown
   linkType: soft
@@ -1565,7 +1565,7 @@ __metadata:
     class-variance-authority: "npm:^0.7.1"
     eslint: "npm:^10.7.0"
     lucide-react: "npm:^1.25.0"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     react: "npm:^19.2.8"
     tailwind-merge: "npm:^3.6.0"
     typescript: "npm:^6.0.3"
@@ -1606,7 +1606,7 @@ __metadata:
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^10.7.0"
     lucide-react: "npm:^1.25.0"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     react: "npm:^19.2.8"
     react-dom: "npm:^19.2.8"
     typescript: "npm:^6.0.3"
@@ -1628,7 +1628,7 @@ __metadata:
     "@rocicorp/zero": "npm:^1.8.0"
     dotenv-cli: "npm:^11.0.0"
     eslint: "npm:^10.7.0"
-    prettier: "npm:^3.9.5"
+    prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
     ulid: "npm:^3.0.2"
   languageName: unknown
@@ -8639,12 +8639,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.5.0, prettier@npm:^3.9.5":
+"prettier@npm:^3.5.0":
   version: 3.9.5
   resolution: "prettier@npm:3.9.5"
   bin:
     prettier: bin/prettier.cjs
   checksum: 10c0/0349dd9e6d8010965de6f69e6b6ee2484b8caf78c66675afced6c75ad60ff24c3a2a4f41153fb8adeaee4d8f539641b48cebc71d283cec4d146e9962126c5ceb
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.9.6":
+  version: 3.9.6
+  resolution: "prettier@npm:3.9.6"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/9f7ddae234035868f3daab3dc34e6de7e54622185afb017378029f0c09a9c023248ccf6f34def0b17a0538e18c47aa1b3188bab72965d1bf735919baa0747e99
   languageName: node
   linkType: hard
 
