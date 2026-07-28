@@ -1503,7 +1503,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.1.1"
-    eslint-plugin-turbo: "npm:^2.10.6"
+    eslint-plugin-turbo: "npm:^2.10.7"
     prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.65.0"
@@ -3970,44 +3970,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@turbo/darwin-64@npm:2.10.6":
-  version: 2.10.6
-  resolution: "@turbo/darwin-64@npm:2.10.6"
+"@turbo/darwin-64@npm:2.10.7":
+  version: 2.10.7
+  resolution: "@turbo/darwin-64@npm:2.10.7"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@turbo/darwin-arm64@npm:2.10.6":
-  version: 2.10.6
-  resolution: "@turbo/darwin-arm64@npm:2.10.6"
+"@turbo/darwin-arm64@npm:2.10.7":
+  version: 2.10.7
+  resolution: "@turbo/darwin-arm64@npm:2.10.7"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@turbo/linux-64@npm:2.10.6":
-  version: 2.10.6
-  resolution: "@turbo/linux-64@npm:2.10.6"
+"@turbo/linux-64@npm:2.10.7":
+  version: 2.10.7
+  resolution: "@turbo/linux-64@npm:2.10.7"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@turbo/linux-arm64@npm:2.10.6":
-  version: 2.10.6
-  resolution: "@turbo/linux-arm64@npm:2.10.6"
+"@turbo/linux-arm64@npm:2.10.7":
+  version: 2.10.7
+  resolution: "@turbo/linux-arm64@npm:2.10.7"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@turbo/windows-64@npm:2.10.6":
-  version: 2.10.6
-  resolution: "@turbo/windows-64@npm:2.10.6"
+"@turbo/windows-64@npm:2.10.7":
+  version: 2.10.7
+  resolution: "@turbo/windows-64@npm:2.10.7"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@turbo/windows-arm64@npm:2.10.6":
-  version: 2.10.6
-  resolution: "@turbo/windows-arm64@npm:2.10.6"
+"@turbo/windows-arm64@npm:2.10.7":
+  version: 2.10.7
+  resolution: "@turbo/windows-arm64@npm:2.10.7"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
@@ -6225,15 +6225,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-turbo@npm:^2.10.6":
-  version: 2.10.6
-  resolution: "eslint-plugin-turbo@npm:2.10.6"
+"eslint-plugin-turbo@npm:^2.10.7":
+  version: 2.10.7
+  resolution: "eslint-plugin-turbo@npm:2.10.7"
   dependencies:
     dotenv: "npm:16.0.3"
   peerDependencies:
     eslint: ">6.6.0"
     turbo: ">2.0.0"
-  checksum: 10c0/de5046d55dc340690a74f9df85b84d83d3775ab623a83bf889405e563f6fb6e44441792f6f0514a808f3e0be0afc6e546ab8a3f23b7a01f9dda8d0826fbc0707
+  checksum: 10c0/90f550d798b2481e80236e31eda399a9a3ad067a06bcadbc77eef7d7036337709afcfad53e18146998a2bec48d34c862160dc75d93a52cf808a61579ba32d2b0
   languageName: node
   linkType: hard
 
@@ -9054,7 +9054,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@kyakujs/prettier-config": "workspace:*"
-    turbo: "npm:^2.10.6"
+    turbo: "npm:^2.10.7"
   languageName: unknown
   linkType: soft
 
@@ -9741,16 +9741,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo@npm:^2.10.6":
-  version: 2.10.6
-  resolution: "turbo@npm:2.10.6"
+"turbo@npm:^2.10.7":
+  version: 2.10.7
+  resolution: "turbo@npm:2.10.7"
   dependencies:
-    "@turbo/darwin-64": "npm:2.10.6"
-    "@turbo/darwin-arm64": "npm:2.10.6"
-    "@turbo/linux-64": "npm:2.10.6"
-    "@turbo/linux-arm64": "npm:2.10.6"
-    "@turbo/windows-64": "npm:2.10.6"
-    "@turbo/windows-arm64": "npm:2.10.6"
+    "@turbo/darwin-64": "npm:2.10.7"
+    "@turbo/darwin-arm64": "npm:2.10.7"
+    "@turbo/linux-64": "npm:2.10.7"
+    "@turbo/linux-arm64": "npm:2.10.7"
+    "@turbo/windows-64": "npm:2.10.7"
+    "@turbo/windows-arm64": "npm:2.10.7"
   dependenciesMeta:
     "@turbo/darwin-64":
       optional: true
@@ -9766,7 +9766,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 10c0/841434755612bb50081958001d01aa207831c460c76910310bea1f8d5781246e3694b9b699b1ba1ce5d88e51844fe609a0a715853fcbd768f9828da586b3a0fd
+  checksum: 10c0/06230af220cf6f9516286602003aa243840a684b381bffb5240c284d8eaa57d7ea0011af4253f3e8f2a19787c77bfd2e9788275dcf43a120f1aa556bc9ca14e5
   languageName: node
   linkType: hard
 
