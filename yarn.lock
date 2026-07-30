@@ -1594,7 +1594,7 @@ __metadata:
     "@tanstack/react-router": "npm:^1.170.18"
     "@tanstack/react-router-devtools": "npm:^1.167.0"
     "@tanstack/react-router-ssr-query": "npm:^1.167.1"
-    "@tanstack/react-start": "npm:^1.168.32"
+    "@tanstack/react-start": "npm:^1.168.33"
     "@tanstack/react-table": "npm:^8.21.3"
     "@tanstack/react-virtual": "npm:^3.14.9"
     "@types/node": "npm:^26.1.2"
@@ -3629,9 +3629,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-start-rsc@npm:0.1.31":
-  version: 0.1.31
-  resolution: "@tanstack/react-start-rsc@npm:0.1.31"
+"@tanstack/react-start-rsc@npm:0.1.32":
+  version: 0.1.32
+  resolution: "@tanstack/react-start-rsc@npm:0.1.32"
   dependencies:
     "@tanstack/react-router": "npm:1.170.18"
     "@tanstack/router-core": "npm:1.171.15"
@@ -3644,7 +3644,7 @@ __metadata:
     pathe: "npm:^2.0.3"
   peerDependencies:
     "@rspack/core": ">=2.0.0-0"
-    "@vitejs/plugin-rsc": ">=0.5.20"
+    "@vitejs/plugin-rsc": ">=0.5.30"
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
     react-server-dom-rspack: ">=0.0.2"
@@ -3655,7 +3655,7 @@ __metadata:
       optional: true
     react-server-dom-rspack:
       optional: true
-  checksum: 10c0/0446183116cc2f39671b94b15dbf2e8a87139e471b704d640a4d81fbb477c0b50f32990d269951119b237c12912ecaa8f9cc50b1030000fcf696e51c2919e4b6
+  checksum: 10c0/7605acdd6db7ad04fe21385e38c7f14306739e3aaab5d986862bb2ed578f293b19022947fca831500dc98942a55b1bb9f47a53f01fd514af6a34f658312951f5
   languageName: node
   linkType: hard
 
@@ -3673,13 +3673,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-start@npm:^1.168.32":
-  version: 1.168.32
-  resolution: "@tanstack/react-start@npm:1.168.32"
+"@tanstack/react-start@npm:^1.168.33":
+  version: 1.168.33
+  resolution: "@tanstack/react-start@npm:1.168.33"
   dependencies:
     "@tanstack/react-router": "npm:1.170.18"
     "@tanstack/react-start-client": "npm:1.168.16"
-    "@tanstack/react-start-rsc": "npm:0.1.31"
+    "@tanstack/react-start-rsc": "npm:0.1.32"
     "@tanstack/react-start-server": "npm:1.167.22"
     "@tanstack/router-utils": "npm:1.162.2"
     "@tanstack/start-client-core": "npm:1.170.14"
@@ -3698,7 +3698,7 @@ __metadata:
       optional: true
     vite:
       optional: true
-  checksum: 10c0/c4e7219badd62370ad0c0600ec523ea72e7dd5e7f5537c2e494db61273ac01b16f6e28037839c21b8691097443abbcd91f0edd91d1b83138e5a2ef0b804d3353
+  checksum: 10c0/2d6733f7cb678a46193f1972633318b9533c9d4e6a0370efdb2c63f80e59d371285e336b9d7eee88b80fa45296368f7590404604fe5b4b6c28da9056c49b3c6f
   languageName: node
   linkType: hard
 
