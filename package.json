@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@kyakujs/prettier-config": "workspace:*",
-    "turbo": "^2.10.7"
+    "turbo": "^2.10.8"
   },
   "packageManager": "yarn@4.17.1",
   "prettier": "@kyakujs/prettier-config"
