@@ -1476,7 +1476,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@types/pg": "npm:^8.20.2"
+    "@types/pg": "npm:^8.20.3"
     dotenv-cli: "npm:^11.0.0"
     drizzle-kit: "npm:^0.31.10"
     drizzle-orm: "npm:^0.45.2"
@@ -4168,14 +4168,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/pg@npm:^8.20.2":
-  version: 8.20.2
-  resolution: "@types/pg@npm:8.20.2"
+"@types/pg@npm:^8.20.3":
+  version: 8.20.3
+  resolution: "@types/pg@npm:8.20.3"
   dependencies:
     "@types/node": "npm:*"
     pg-protocol: "npm:*"
     pg-types: "npm:^2.2.0"
-  checksum: 10c0/e735264620f8c0ca08b560f8dad3e11a641a1b09327551084fbbbbd142e1635582fbc62e3c5d491165ff3d3bc9c6ddf815c8e3e2a77fc7ce700c51d457f4a312
+  checksum: 10c0/c3582162690a0bd1a5705981825204de071314ce9167bec20c18b8ef8975518cfbf4c8585d744a447dfd41b65cf9a50840b077879d80fbe9ecc69302b844cb23
   languageName: node
   linkType: hard
 
