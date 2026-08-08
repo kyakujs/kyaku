@@ -3,6 +3,8 @@ import pg from "pg";
 
 import * as schema from "./schema.js";
 
+export { schema };
+
 const client = new pg.Pool({
   connectionString: process.env.POSTGRES_URL,
 });

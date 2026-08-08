@@ -24,7 +24,7 @@ export function ZeroProvider({ children }: { children: React.ReactNode }) {
           zero,
         },
       });
-      void router.invalidate();
+      //void router.invalidate();
     },
     [router],
   );

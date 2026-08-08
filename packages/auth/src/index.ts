@@ -3,7 +3,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { username } from "better-auth/plugins";
 
-import { db } from "@kyakujs/db";
+import { db, schema } from "@kyakujs/db";
 
 export function initAuth<
   TExtraPlugins extends BetterAuthPlugin[] = [],
@@ -18,6 +18,7 @@ export function initAuth<
   const config = {
     database: drizzleAdapter(db, {
       provider: "pg",
+      schema: schema,
     }),
     baseURL: options.baseUrl,
     secret: options.secret,
