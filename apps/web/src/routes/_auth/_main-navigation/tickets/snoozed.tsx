@@ -6,15 +6,7 @@ import { queries } from "@kyakujs/zero/queries";
 import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import { DisplayMenu } from "~/components/common/tickets/display-menu";
 import {
-  TICKET_ASSIGNEDTO_ACCESSOR_KEY,
-  TICKET_CREATEDAT_ACCESSOR_KEY,
-  TICKET_LABELS_ACCESSOR_KEY,
-  TICKET_PRIORITY_ACCESSOR_KEY,
-  TICKET_SELECT_ACCESSOR_KEY,
-  TICKET_SHORTID_ACCESSOR_KEY,
   TICKET_STATUS_ACCESSOR_KEY,
-  TICKET_STATUSDETAIL_ACCESSOR_KEY,
-  TICKET_TITLE_ACCESSOR_KEY,
   TicketList,
 } from "~/components/common/tickets/ticket-list/ticket-list";
 import { Header } from "~/components/layout/headers/tickets/header";
@@ -88,16 +80,6 @@ function RouteComponent() {
                   id: TICKET_STATUS_ACCESSOR_KEY,
                   value: [1],
                 },
-              ],
-              columnOrder: [
-                TICKET_SELECT_ACCESSOR_KEY,
-                TICKET_PRIORITY_ACCESSOR_KEY,
-                TICKET_SHORTID_ACCESSOR_KEY,
-                TICKET_STATUSDETAIL_ACCESSOR_KEY,
-                TICKET_TITLE_ACCESSOR_KEY,
-                TICKET_LABELS_ACCESSOR_KEY,
-                TICKET_ASSIGNEDTO_ACCESSOR_KEY,
-                TICKET_CREATEDAT_ACCESSOR_KEY,
               ],
               columnVisibility: columnVisibility,
               grouping: grouping,

@@ -19,3 +19,31 @@
     display: none;
   }
 }
+
+div[data-list-grid-column="select"] {
+  grid-column: select;
+}
+div[data-list-grid-column="priority"] {
+  grid-column: priority;
+}
+div[data-list-grid-column="shortId"] {
+  grid-column: shortId;
+}
+div[data-list-grid-column="status"] {
+  grid-column: status;
+}
+div[data-list-grid-column="statusDetail"] {
+  grid-column: statusDetail;
+}
+div[data-list-grid-column="title"] {
+  grid-column: title;
+}
+div[data-list-grid-column="createdAt"] {
+  grid-column: createdAt;
+}
+div[data-list-grid-column="updatedAt"] {
+  grid-column: updatedAt;
+}
+div[data-list-grid-column="end-padding"] {
+  grid-column: end-padding;
+}

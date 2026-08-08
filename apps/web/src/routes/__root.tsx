@@ -90,6 +90,10 @@ function RootDocument({ children }: PropsWithChildren) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script
+          crossOrigin="anonymous"
+          src="//unpkg.com/react-scan/dist/auto.global.js"
+        ></script>
       </head>
       <body className="bg-sidebar font-sans text-foreground antialiased">
         <div className="root">{children}</div>

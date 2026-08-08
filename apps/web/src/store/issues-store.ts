@@ -95,12 +95,12 @@ const mapSortBy = (
 export const useIssuesStore = create<IssuesState>((set) => ({
   // Initial state
   columnVisibility: {
-    [TICKET_ASSIGNEDTO_ACCESSOR_KEY]: true,
-    [TICKET_LABELS_ACCESSOR_KEY]: true,
     [TICKET_PRIORITY_ACCESSOR_KEY]: true,
     [TICKET_SHORTID_ACCESSOR_KEY]: true,
-    [TICKET_STATUSDETAIL_ACCESSOR_KEY]: true,
     [TICKET_STATUS_ACCESSOR_KEY]: false,
+    [TICKET_STATUSDETAIL_ACCESSOR_KEY]: true,
+    [TICKET_LABELS_ACCESSOR_KEY]: true,
+    [TICKET_ASSIGNEDTO_ACCESSOR_KEY]: true,
     [TICKET_CREATEDAT_ACCESSOR_KEY]: true,
     [TICKET_UPDATEDAT_ACCESSOR_KEY]: false,
   },
