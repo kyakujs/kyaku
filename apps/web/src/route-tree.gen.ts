@@ -9,40 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as LoginRouteImport } from './routes/login'
 import { Route as AuthRouteImport } from './routes/_auth'
-import { Route as AuthSettingsNavigationRouteImport } from './routes/_auth/_settings-navigation'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as AuthMainNavigationRouteImport } from './routes/_auth/_main-navigation'
+import { Route as AuthSettingsNavigationRouteImport } from './routes/_auth/_settings-navigation'
 import { Route as AuthMainNavigationIndexRouteImport } from './routes/_auth/_main-navigation/index'
-import { Route as ApiZeroQueryRouteImport } from './routes/api/zero/query'
-import { Route as ApiZeroMutateRouteImport } from './routes/api/zero/mutate'
-import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AuthMainNavigationSearchRouteImport } from './routes/_auth/_main-navigation/search'
-import { Route as AuthSettingsNavigationSettingsIndexRouteImport } from './routes/_auth/_settings-navigation/settings/index'
-import { Route as AuthMainNavigationTicketsYoursRouteImport } from './routes/_auth/_main-navigation/tickets/yours'
-import { Route as AuthMainNavigationTicketsUnassignedRouteImport } from './routes/_auth/_main-navigation/tickets/unassigned'
-import { Route as AuthMainNavigationTicketsTodoRouteImport } from './routes/_auth/_main-navigation/tickets/todo'
-import { Route as AuthMainNavigationTicketsSnoozedRouteImport } from './routes/_auth/_main-navigation/tickets/snoozed'
-import { Route as AuthMainNavigationTicketsAllRouteImport } from './routes/_auth/_main-navigation/tickets/all'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiZeroMutateRouteImport } from './routes/api/zero/mutate'
+import { Route as ApiZeroQueryRouteImport } from './routes/api/zero/query'
 import { Route as AuthMainNavigationTicketTicketIdRouteImport } from './routes/_auth/_main-navigation/ticket/$ticketId'
-import { Route as AuthSettingsNavigationSettingsAccountProfileRouteImport } from './routes/_auth/_settings-navigation/settings/account/profile'
+import { Route as AuthMainNavigationTicketsAllRouteImport } from './routes/_auth/_main-navigation/tickets/all'
+import { Route as AuthMainNavigationTicketsSnoozedRouteImport } from './routes/_auth/_main-navigation/tickets/snoozed'
+import { Route as AuthMainNavigationTicketsTodoRouteImport } from './routes/_auth/_main-navigation/tickets/todo'
+import { Route as AuthMainNavigationTicketsUnassignedRouteImport } from './routes/_auth/_main-navigation/tickets/unassigned'
+import { Route as AuthMainNavigationTicketsYoursRouteImport } from './routes/_auth/_main-navigation/tickets/yours'
+import { Route as AuthSettingsNavigationSettingsIndexRouteImport } from './routes/_auth/_settings-navigation/settings/index'
 import { Route as AuthSettingsNavigationSettingsAccountPreferencesRouteImport } from './routes/_auth/_settings-navigation/settings/account/preferences'
+import { Route as AuthSettingsNavigationSettingsAccountProfileRouteImport } from './routes/_auth/_settings-navigation/settings/account/profile'
 
+const AuthRoute = AuthRouteImport.update({
+  id: '/_auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthRoute = AuthRouteImport.update({
-  id: '/_auth',
-  getParentRoute: () => rootRouteImport,
+const AuthMainNavigationRoute = AuthMainNavigationRouteImport.update({
+  id: '/_main-navigation',
+  getParentRoute: () => AuthRoute,
 } as any)
 const AuthSettingsNavigationRoute = AuthSettingsNavigationRouteImport.update({
   id: '/_settings-navigation',
-  getParentRoute: () => AuthRoute,
-} as any)
-const AuthMainNavigationRoute = AuthMainNavigationRouteImport.update({
-  id: '/_main-navigation',
   getParentRoute: () => AuthRoute,
 } as any)
 const AuthMainNavigationIndexRoute = AuthMainNavigationIndexRouteImport.update({
@@ -50,9 +50,15 @@ const AuthMainNavigationIndexRoute = AuthMainNavigationIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthMainNavigationRoute,
 } as any)
-const ApiZeroQueryRoute = ApiZeroQueryRouteImport.update({
-  id: '/api/zero/query',
-  path: '/api/zero/query',
+const AuthMainNavigationSearchRoute =
+  AuthMainNavigationSearchRouteImport.update({
+    id: '/search',
+    path: '/search',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiZeroMutateRoute = ApiZeroMutateRouteImport.update({
@@ -60,45 +66,15 @@ const ApiZeroMutateRoute = ApiZeroMutateRouteImport.update({
   path: '/api/zero/mutate',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
+const ApiZeroQueryRoute = ApiZeroQueryRouteImport.update({
+  id: '/api/zero/query',
+  path: '/api/zero/query',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthMainNavigationSearchRoute =
-  AuthMainNavigationSearchRouteImport.update({
-    id: '/search',
-    path: '/search',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthSettingsNavigationSettingsIndexRoute =
-  AuthSettingsNavigationSettingsIndexRouteImport.update({
-    id: '/settings/',
-    path: '/settings/',
-    getParentRoute: () => AuthSettingsNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsYoursRoute =
-  AuthMainNavigationTicketsYoursRouteImport.update({
-    id: '/tickets/yours',
-    path: '/tickets/yours',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsUnassignedRoute =
-  AuthMainNavigationTicketsUnassignedRouteImport.update({
-    id: '/tickets/unassigned',
-    path: '/tickets/unassigned',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsTodoRoute =
-  AuthMainNavigationTicketsTodoRouteImport.update({
-    id: '/tickets/todo',
-    path: '/tickets/todo',
-    getParentRoute: () => AuthMainNavigationRoute,
-  } as any)
-const AuthMainNavigationTicketsSnoozedRoute =
-  AuthMainNavigationTicketsSnoozedRouteImport.update({
-    id: '/tickets/snoozed',
-    path: '/tickets/snoozed',
+const AuthMainNavigationTicketTicketIdRoute =
+  AuthMainNavigationTicketTicketIdRouteImport.update({
+    id: '/ticket/$ticketId',
+    path: '/ticket/$ticketId',
     getParentRoute: () => AuthMainNavigationRoute,
   } as any)
 const AuthMainNavigationTicketsAllRoute =
@@ -107,22 +83,46 @@ const AuthMainNavigationTicketsAllRoute =
     path: '/tickets/all',
     getParentRoute: () => AuthMainNavigationRoute,
   } as any)
-const AuthMainNavigationTicketTicketIdRoute =
-  AuthMainNavigationTicketTicketIdRouteImport.update({
-    id: '/ticket/$ticketId',
-    path: '/ticket/$ticketId',
+const AuthMainNavigationTicketsSnoozedRoute =
+  AuthMainNavigationTicketsSnoozedRouteImport.update({
+    id: '/tickets/snoozed',
+    path: '/tickets/snoozed',
     getParentRoute: () => AuthMainNavigationRoute,
   } as any)
-const AuthSettingsNavigationSettingsAccountProfileRoute =
-  AuthSettingsNavigationSettingsAccountProfileRouteImport.update({
-    id: '/settings/account/profile',
-    path: '/settings/account/profile',
+const AuthMainNavigationTicketsTodoRoute =
+  AuthMainNavigationTicketsTodoRouteImport.update({
+    id: '/tickets/todo',
+    path: '/tickets/todo',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+const AuthMainNavigationTicketsUnassignedRoute =
+  AuthMainNavigationTicketsUnassignedRouteImport.update({
+    id: '/tickets/unassigned',
+    path: '/tickets/unassigned',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+const AuthMainNavigationTicketsYoursRoute =
+  AuthMainNavigationTicketsYoursRouteImport.update({
+    id: '/tickets/yours',
+    path: '/tickets/yours',
+    getParentRoute: () => AuthMainNavigationRoute,
+  } as any)
+const AuthSettingsNavigationSettingsIndexRoute =
+  AuthSettingsNavigationSettingsIndexRouteImport.update({
+    id: '/settings/',
+    path: '/settings/',
     getParentRoute: () => AuthSettingsNavigationRoute,
   } as any)
 const AuthSettingsNavigationSettingsAccountPreferencesRoute =
   AuthSettingsNavigationSettingsAccountPreferencesRouteImport.update({
     id: '/settings/account/preferences',
     path: '/settings/account/preferences',
+    getParentRoute: () => AuthSettingsNavigationRoute,
+  } as any)
+const AuthSettingsNavigationSettingsAccountProfileRoute =
+  AuthSettingsNavigationSettingsAccountProfileRouteImport.update({
+    id: '/settings/account/profile',
+    path: '/settings/account/profile',
     getParentRoute: () => AuthSettingsNavigationRoute,
   } as any)
 
@@ -248,13 +248,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/_auth': {
       id: '/_auth'
       path: ''
@@ -262,18 +255,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_auth/_settings-navigation': {
-      id: '/_auth/_settings-navigation'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AuthSettingsNavigationRouteImport
-      parentRoute: typeof AuthRoute
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_auth/_main-navigation': {
       id: '/_auth/_main-navigation'
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof AuthMainNavigationRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/_settings-navigation': {
+      id: '/_auth/_settings-navigation'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthSettingsNavigationRouteImport
       parentRoute: typeof AuthRoute
     }
     '/_auth/_main-navigation/': {
@@ -283,11 +283,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthMainNavigationIndexRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
-    '/api/zero/query': {
-      id: '/api/zero/query'
-      path: '/api/zero/query'
-      fullPath: '/api/zero/query'
-      preLoaderRoute: typeof ApiZeroQueryRouteImport
+    '/_auth/_main-navigation/search': {
+      id: '/_auth/_main-navigation/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof AuthMainNavigationSearchRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/zero/mutate': {
@@ -297,53 +304,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiZeroMutateRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatRouteImport
+    '/api/zero/query': {
+      id: '/api/zero/query'
+      path: '/api/zero/query'
+      fullPath: '/api/zero/query'
+      preLoaderRoute: typeof ApiZeroQueryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_auth/_main-navigation/search': {
-      id: '/_auth/_main-navigation/search'
-      path: '/search'
-      fullPath: '/search'
-      preLoaderRoute: typeof AuthMainNavigationSearchRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_settings-navigation/settings/': {
-      id: '/_auth/_settings-navigation/settings/'
-      path: '/settings'
-      fullPath: '/settings/'
-      preLoaderRoute: typeof AuthSettingsNavigationSettingsIndexRouteImport
-      parentRoute: typeof AuthSettingsNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/yours': {
-      id: '/_auth/_main-navigation/tickets/yours'
-      path: '/tickets/yours'
-      fullPath: '/tickets/yours'
-      preLoaderRoute: typeof AuthMainNavigationTicketsYoursRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/unassigned': {
-      id: '/_auth/_main-navigation/tickets/unassigned'
-      path: '/tickets/unassigned'
-      fullPath: '/tickets/unassigned'
-      preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/todo': {
-      id: '/_auth/_main-navigation/tickets/todo'
-      path: '/tickets/todo'
-      fullPath: '/tickets/todo'
-      preLoaderRoute: typeof AuthMainNavigationTicketsTodoRouteImport
-      parentRoute: typeof AuthMainNavigationRoute
-    }
-    '/_auth/_main-navigation/tickets/snoozed': {
-      id: '/_auth/_main-navigation/tickets/snoozed'
-      path: '/tickets/snoozed'
-      fullPath: '/tickets/snoozed'
-      preLoaderRoute: typeof AuthMainNavigationTicketsSnoozedRouteImport
+    '/_auth/_main-navigation/ticket/$ticketId': {
+      id: '/_auth/_main-navigation/ticket/$ticketId'
+      path: '/ticket/$ticketId'
+      fullPath: '/ticket/$ticketId'
+      preLoaderRoute: typeof AuthMainNavigationTicketTicketIdRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
     '/_auth/_main-navigation/tickets/all': {
@@ -353,18 +325,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthMainNavigationTicketsAllRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
-    '/_auth/_main-navigation/ticket/$ticketId': {
-      id: '/_auth/_main-navigation/ticket/$ticketId'
-      path: '/ticket/$ticketId'
-      fullPath: '/ticket/$ticketId'
-      preLoaderRoute: typeof AuthMainNavigationTicketTicketIdRouteImport
+    '/_auth/_main-navigation/tickets/snoozed': {
+      id: '/_auth/_main-navigation/tickets/snoozed'
+      path: '/tickets/snoozed'
+      fullPath: '/tickets/snoozed'
+      preLoaderRoute: typeof AuthMainNavigationTicketsSnoozedRouteImport
       parentRoute: typeof AuthMainNavigationRoute
     }
-    '/_auth/_settings-navigation/settings/account/profile': {
-      id: '/_auth/_settings-navigation/settings/account/profile'
-      path: '/settings/account/profile'
-      fullPath: '/settings/account/profile'
-      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountProfileRouteImport
+    '/_auth/_main-navigation/tickets/todo': {
+      id: '/_auth/_main-navigation/tickets/todo'
+      path: '/tickets/todo'
+      fullPath: '/tickets/todo'
+      preLoaderRoute: typeof AuthMainNavigationTicketsTodoRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/unassigned': {
+      id: '/_auth/_main-navigation/tickets/unassigned'
+      path: '/tickets/unassigned'
+      fullPath: '/tickets/unassigned'
+      preLoaderRoute: typeof AuthMainNavigationTicketsUnassignedRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_main-navigation/tickets/yours': {
+      id: '/_auth/_main-navigation/tickets/yours'
+      path: '/tickets/yours'
+      fullPath: '/tickets/yours'
+      preLoaderRoute: typeof AuthMainNavigationTicketsYoursRouteImport
+      parentRoute: typeof AuthMainNavigationRoute
+    }
+    '/_auth/_settings-navigation/settings/': {
+      id: '/_auth/_settings-navigation/settings/'
+      path: '/settings'
+      fullPath: '/settings/'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsIndexRouteImport
       parentRoute: typeof AuthSettingsNavigationRoute
     }
     '/_auth/_settings-navigation/settings/account/preferences': {
@@ -372,6 +365,13 @@ declare module '@tanstack/react-router' {
       path: '/settings/account/preferences'
       fullPath: '/settings/account/preferences'
       preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountPreferencesRouteImport
+      parentRoute: typeof AuthSettingsNavigationRoute
+    }
+    '/_auth/_settings-navigation/settings/account/profile': {
+      id: '/_auth/_settings-navigation/settings/account/profile'
+      path: '/settings/account/profile'
+      fullPath: '/settings/account/profile'
+      preLoaderRoute: typeof AuthSettingsNavigationSettingsAccountProfileRouteImport
       parentRoute: typeof AuthSettingsNavigationRoute
     }
   }
