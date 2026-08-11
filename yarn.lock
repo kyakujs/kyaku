@@ -1460,7 +1460,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
     better-auth: "npm:^1.6.26"
-    eslint: "npm:^10.8.0"
+    eslint: "npm:^10.8.1"
     prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -1481,7 +1481,7 @@ __metadata:
     drizzle-kit: "npm:^0.31.10"
     drizzle-orm: "npm:^0.45.2"
     drizzle-seed: "npm:^0.3.1"
-    eslint: "npm:^10.8.0"
+    eslint: "npm:^10.8.1"
     pg: "npm:^8.22.0"
     prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
@@ -1498,7 +1498,7 @@ __metadata:
     "@tanstack/eslint-plugin-router": "npm:^1.162.0"
     "@types/eslint-plugin-jsx-a11y": "npm:^6.10.1"
     "@types/node": "npm:^26.2.0"
-    eslint: "npm:^10.8.0"
+    eslint: "npm:^10.8.1"
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.5"
@@ -1518,7 +1518,7 @@ __metadata:
     "@kyakujs/prettier-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    eslint: "npm:^10.8.0"
+    eslint: "npm:^10.8.1"
     prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -1563,7 +1563,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@types/react": "npm:^19.2.18"
     class-variance-authority: "npm:^0.7.1"
-    eslint: "npm:^10.8.0"
+    eslint: "npm:^10.8.1"
     lucide-react: "npm:^1.30.0"
     prettier: "npm:^3.9.6"
     react: "npm:^19.2.8"
@@ -1604,7 +1604,7 @@ __metadata:
     babel-plugin-react-compiler: "npm:^1.0.0"
     better-auth: "npm:^1.6.26"
     dotenv-cli: "npm:^11.0.0"
-    eslint: "npm:^10.8.0"
+    eslint: "npm:^10.8.1"
     lucide-react: "npm:^1.30.0"
     prettier: "npm:^3.9.6"
     react: "npm:^19.2.8"
@@ -1627,7 +1627,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@rocicorp/zero": "npm:^1.8.0"
     dotenv-cli: "npm:^11.0.0"
-    eslint: "npm:^10.8.0"
+    eslint: "npm:^10.8.1"
     prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
     ulid: "npm:^3.0.2"
@@ -6279,9 +6279,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^10.8.0":
-  version: 10.8.0
-  resolution: "eslint@npm:10.8.0"
+"eslint@npm:^10.8.1":
+  version: 10.8.1
+  resolution: "eslint@npm:10.8.1"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.2"
@@ -6320,7 +6320,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/2dbc523578834088615f388e08418d2620b25655f7a398f6d415765fa2a3a25d6b8b43bd3293d40f977e12752323a841d52654a2648697a00c0102c9794bb3dc
+  checksum: 10c0/0c4720a43ef2052829db18e37aa79adb5f0a62137bdf4a4f8e9507bbbbf888ba0669fc03e4b7139d8f27b59b051bbbcd0a3988b068c30fa934a766d60a81f599
   languageName: node
   linkType: hard
 
