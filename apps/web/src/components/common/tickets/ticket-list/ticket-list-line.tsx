@@ -4,12 +4,15 @@ import { Fragment } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
 import { flexRender } from "@tanstack/react-table";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import type {
+  features,
+  Ticket,
+} from "~/components/common/tickets/ticket-list/ticket-list";
 
 export const TICKET_ITEM_HEIGHT = 39;
 
 type TicketListLineProps = {
-  row: Row<Ticket>;
+  row: Row<typeof features, Ticket>;
 } & LinkComponentProps;
 
 export function TicketListLine({ row, ...props }: TicketListLineProps) {

@@ -15,7 +15,10 @@ import {
   ContextMenuTrigger,
 } from "@kyakujs/ui/context-menu";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import type {
+  features,
+  Ticket,
+} from "~/components/common/tickets/ticket-list/ticket-list";
 import {
   TICKET_ITEM_HEIGHT,
   TicketListLine,
@@ -27,8 +30,8 @@ export function TicketGroupList({
   rows,
   table,
 }: {
-  rows: Row<Ticket>[];
-  table: Table<Ticket>;
+  rows: Row<typeof features, Ticket>[];
+  table: Table<typeof features, Ticket>;
 }) {
   const parentRef = useRef<HTMLDivElement>(null);
   const getScrollElement = useCallback(() => parentRef.current, []);
@@ -60,6 +63,7 @@ export function TicketGroupList({
           ),
         ]
       : [0, 0];
+      
 
   return (
     <div
@@ -177,7 +181,7 @@ export function TicketGroupSubList({
 }: {
   getScrollElement: () => HTMLDivElement | null;
   initialOffset: number;
-  rows: Row<Ticket>[];
+  rows: Row<typeof features, Ticket>[];
   scrollMargin: number;
 }) {
   const virtualizer = useVirtualizer({

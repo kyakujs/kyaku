@@ -5,13 +5,20 @@ import type { Row } from "@tanstack/react-table";
 import { useCallback, useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import type {
+  features,
+  Ticket,
+} from "~/components/common/tickets/ticket-list/ticket-list";
 import {
   TICKET_ITEM_HEIGHT,
   TicketListLine,
 } from "~/components/common/tickets/ticket-list/ticket-list-line";
 
-export function TicketSimpleList({ rows }: { rows: Row<Ticket>[] }) {
+export function TicketSimpleList({
+  rows,
+}: {
+  rows: Row<typeof features, Ticket>[];
+}) {
   const parentRef = useRef<HTMLDivElement>(null);
   const getScrollElement = useCallback(() => parentRef.current, []);
 
