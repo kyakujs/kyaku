@@ -1599,7 +1599,7 @@ __metadata:
     "@rolldown/plugin-babel": "npm:^0.2.3"
     "@tailwindcss/vite": "npm:^4.3.3"
     "@tanstack/react-hotkeys": "npm:^0.10.0"
-    "@tanstack/react-query": "npm:^5.102.4"
+    "@tanstack/react-query": "npm:^5.102.6"
     "@tanstack/react-router": "npm:^1.170.32"
     "@tanstack/react-router-devtools": "npm:^1.167.1"
     "@tanstack/react-router-ssr-query": "npm:^1.167.1"
@@ -3518,10 +3518,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.102.4":
-  version: 5.102.4
-  resolution: "@tanstack/query-core@npm:5.102.4"
-  checksum: 10c0/a9d8a2eb27c7634d7fb4ce964aa175545d0e091af92fc1ce521ae12f128f3bf8b00d64c1705f807807ad7f478f9d71e3244bde64d07ac8b90161592c103410dd
+"@tanstack/query-core@npm:5.102.6":
+  version: 5.102.6
+  resolution: "@tanstack/query-core@npm:5.102.6"
+  checksum: 10c0/9bca6f7b7a2e8266dd6dd171ff0660d023d9714ac58cf74166b5c02765ba869b76ef3cbedc49d17d3ab996b6fd74c3b7516f4d0a9c61b6291a5c9ddd31dc71de
   languageName: node
   linkType: hard
 
@@ -3538,14 +3538,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.102.4":
-  version: 5.102.4
-  resolution: "@tanstack/react-query@npm:5.102.4"
+"@tanstack/react-query@npm:^5.102.6":
+  version: 5.102.6
+  resolution: "@tanstack/react-query@npm:5.102.6"
   dependencies:
-    "@tanstack/query-core": "npm:5.102.4"
+    "@tanstack/query-core": "npm:5.102.6"
   peerDependencies:
     react: ^18 || ^19
-  checksum: 10c0/872563573e7f508cd7d2051adab1841ac390b06dfe54299adb77bb078225f4309c9fc3a1b7efb6aa27cd16e1c80cf1a188af5d9d45e6eadacde47a5ded0dbeca
+  checksum: 10c0/f5af9c1e105a76f24d17da1f41c1b8e9fab52779e3114f737d81d42689a2d8a03127069462361770b406588ba78846de8cb527f8b233581d173e073a18926868
   languageName: node
   linkType: hard
 
