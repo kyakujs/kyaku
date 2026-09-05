@@ -63,15 +63,14 @@ export function TicketGroupList({
           ),
         ]
       : [0, 0];
-      
 
   return (
     <div
       ref={parentRef}
-      className="col-[1/_-1] grid min-h-0 grid-cols-subgrid overflow-x-hidden overflow-y-auto"
+      className="col-span-full grid min-h-0 grid-cols-subgrid overflow-x-hidden overflow-y-auto"
     >
       <div
-        className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid content-start"
+        className="col-span-full grid min-h-0 w-full grid-cols-subgrid content-start"
         style={{
           height: `${virtualizer.getTotalSize()}px`,
         }}
@@ -87,15 +86,15 @@ export function TicketGroupList({
               data-index={virtualItem.index}
               ref={virtualizer.measureElement}
               data-group-key={`group_GROUP_${groupedRow.id}`}
-              className="col-[1/_-1] grid size-full grid-cols-subgrid"
+              className="col-span-full grid size-full grid-cols-subgrid"
             >
               <ContextMenu>
                 <ContextMenuTrigger
                   data-list-key={`GROUP_${groupedRow.id}`}
-                  className="sticky top-0 z-2 col-[1/_-1] flex h-[39px] items-center gap-2 overflow-visible border-b border-border bg-sidebar text-sm will-change-transform"
+                  className="sticky top-0 z-2 col-span-full flex h-[39px] items-center gap-2 overflow-visible border-b border-border bg-sidebar text-sm will-change-transform"
                 >
                   {groupedRow.getAllCells().map((groupedCell) =>
-                    groupedCell.getIsAggregated() ? null : (
+                    groupedCell.getIsGrouped() ? (
                       <Fragment key={groupedCell.id}>
                         {groupedRow.getCanExpand() ? (
                           <Button
@@ -123,7 +122,7 @@ export function TicketGroupList({
                           {groupedRow.subRows.length}
                         </span>
                       </Fragment>
-                    ),
+                    ) : null,
                   )}
                 </ContextMenuTrigger>
                 <ContextMenuPopup>
@@ -167,7 +166,7 @@ export function TicketGroupList({
         {paddingBottom > 0 ? (
           <div style={{ height: paddingBottom }}></div>
         ) : null}
-        <div className="col-[1/_-1]"></div>
+        <div className="col-span-full"></div>
       </div>
     </div>
   );
@@ -212,7 +211,7 @@ export function TicketGroupSubList({
 
   return (
     <div
-      className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid content-start"
+      className="col-span-full grid min-h-0 w-full grid-cols-subgrid content-start"
       style={{
         height: virtualizer.getTotalSize(),
       }}

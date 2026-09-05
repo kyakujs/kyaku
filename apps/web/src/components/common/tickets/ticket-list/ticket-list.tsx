@@ -13,6 +13,7 @@ import {
   columnOrderingFeature,
   columnVisibilityFeature,
   createColumnHelper,
+  createGroupedRowModel,
   metaHelper,
   rowAggregationFeature,
   rowExpandingFeature,
@@ -80,6 +81,7 @@ export const features = tableFeatures({
   columnMeta: metaHelper<MyColumnMeta>(),
   columnOrderingFeature,
   columnVisibilityFeature,
+  groupedRowModel: createGroupedRowModel(),
   rowAggregationFeature,
   rowExpandingFeature,
   rowSelectionFeature,
@@ -403,7 +405,6 @@ export function TicketList({
     }),
     [state?.columnVisibility],
   );
-  console.log("columnVisibility", columnVisibility);
 
   const table = useTable({
     features,
@@ -412,6 +413,7 @@ export function TicketList({
     onExpandedChange: setExpandedRows,
     getRowId: (row) => row.id,
     manualExpanding: true,
+    groupedColumnMode: false,
     state: {
       ...state,
       columnVisibility,
@@ -476,7 +478,7 @@ export function TicketList({
 
   return (
     <div
-      className="col-[1/_-1] grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
+      className="col-span-full grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
       style={gridListStyle}
     >
       <TicketSimpleList rows={table.getRowModel().rows} />

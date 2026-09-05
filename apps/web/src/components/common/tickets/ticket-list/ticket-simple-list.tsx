@@ -49,10 +49,10 @@ export function TicketSimpleList({
   return (
     <div
       ref={parentRef}
-      className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid overflow-x-hidden overflow-y-auto"
+      className="col-span-full grid min-h-0 w-full grid-cols-subgrid overflow-x-hidden overflow-y-auto"
     >
       <div
-        className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid items-start"
+        className="col-span-full grid min-h-0 w-full grid-cols-subgrid items-start"
         style={{
           height: virtualizer.getTotalSize(),
         }}
@@ -61,6 +61,12 @@ export function TicketSimpleList({
         {virtualItems.map((virtualItem) => {
           const row = rows[virtualItem.index];
           if (!row) return null;
+          console.log(
+            "Rendering virtual item:",
+            virtualItem.index,
+            "row ID:",
+            row.id,
+          );
 
           return (
             <TicketListLine
