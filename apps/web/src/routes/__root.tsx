@@ -63,7 +63,7 @@ function ErrorComponent({ error }: ErrorComponentProps) {
     <RootDocument>
       <div className="text-destructive">
         <h1 className="font-bold">Error</h1>
-        <p>{error.message}</p>
+        <p>{(error as Error).message}</p>
       </div>
     </RootDocument>
   );
