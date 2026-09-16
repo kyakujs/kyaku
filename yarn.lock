@@ -1650,7 +1650,7 @@ __metadata:
     react-dom: "npm:^19.3.0"
     typescript: "npm:^6.0.3"
     vite: "npm:^8.3.0"
-    zod: "npm:^4.6.3"
+    zod: "npm:^4.6.4"
     zustand: "npm:^5.0.15"
   languageName: unknown
   linkType: soft
@@ -10219,10 +10219,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^4.6.3":
-  version: 4.6.3
-  resolution: "zod@npm:4.6.3"
-  checksum: 10c0/d4bd6e29fc59bceb5083841276a6cb923caee4bd4e498f653276338d67f8a21d253bde5015d16b5b9234304828f168090da4ac48c2b2f14104184e67641a2880
+"zod@npm:^4.6.4":
+  version: 4.6.4
+  resolution: "zod@npm:4.6.4"
+  checksum: 10c0/c0b9f14353e7cbd7b984703b28ede906c0b6784ca4d0fdb0e0a371add14d6fc29ec4428ef5234a9189ef9db6cfb936cdc98201fb0d446e7521b81cabf627ea3d
   languageName: node
   linkType: hard
 
