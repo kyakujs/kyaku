@@ -4,12 +4,15 @@ import { Fragment } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
 import { flexRender } from "@tanstack/react-table";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import type {
+  features,
+  Ticket,
+} from "~/components/common/tickets/ticket-list/ticket-list";
 
 export const TICKET_ITEM_HEIGHT = 39;
 
 type TicketListLineProps = {
-  row: Row<Ticket>;
+  row: Row<typeof features, Ticket>;
 } & LinkComponentProps;
 
 export function TicketListLine({ row, ...props }: TicketListLineProps) {
@@ -19,7 +22,7 @@ export function TicketListLine({ row, ...props }: TicketListLineProps) {
       to="/ticket/$ticketId"
       params={{ ticketId: row.original.id }}
       tabIndex={0}
-      className="relative col-[1/_-1] grid h-[39px] w-full min-w-0 grid-cols-subgrid transition-colors will-change-transform contain-style outline-none hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:shadow-[0_0_0_1px_var(--color-accent)_inset]"
+      className="relative col-span-full grid h-[39px] w-full min-w-0 grid-cols-subgrid transition-colors will-change-transform contain-style outline-none hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:shadow-[0_0_0_1px_var(--color-accent)_inset]"
       {...props}
     >
       {visibleCells

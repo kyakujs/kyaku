@@ -5,13 +5,20 @@ import type { Row } from "@tanstack/react-table";
 import { useCallback, useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
+import type {
+  features,
+  Ticket,
+} from "~/components/common/tickets/ticket-list/ticket-list";
 import {
   TICKET_ITEM_HEIGHT,
   TicketListLine,
 } from "~/components/common/tickets/ticket-list/ticket-list-line";
 
-export function TicketSimpleList({ rows }: { rows: Row<Ticket>[] }) {
+export function TicketSimpleList({
+  rows,
+}: {
+  rows: Row<typeof features, Ticket>[];
+}) {
   const parentRef = useRef<HTMLDivElement>(null);
   const getScrollElement = useCallback(() => parentRef.current, []);
 
@@ -42,10 +49,10 @@ export function TicketSimpleList({ rows }: { rows: Row<Ticket>[] }) {
   return (
     <div
       ref={parentRef}
-      className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid overflow-x-hidden overflow-y-auto"
+      className="col-span-full grid min-h-0 w-full grid-cols-subgrid overflow-x-hidden overflow-y-auto"
     >
       <div
-        className="col-[1/_-1] grid min-h-0 w-full grid-cols-subgrid items-start"
+        className="col-span-full grid min-h-0 w-full grid-cols-subgrid items-start"
         style={{
           height: virtualizer.getTotalSize(),
         }}
@@ -54,6 +61,12 @@ export function TicketSimpleList({ rows }: { rows: Row<Ticket>[] }) {
         {virtualItems.map((virtualItem) => {
           const row = rows[virtualItem.index];
           if (!row) return null;
+          console.log(
+            "Rendering virtual item:",
+            virtualItem.index,
+            "row ID:",
+            row.id,
+          );
 
           return (
             <TicketListLine

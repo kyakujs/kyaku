@@ -1,20 +1,26 @@
 "use no memo";
 
 import type {
-  ColumnDef,
+  ColumnVisibilityState,
   ExpandedState,
-  RowData,
   TableState,
-  VisibilityState,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
 import {
-  getCoreRowModel,
-  getExpandedRowModel,
-  getFilteredRowModel,
-  getGroupedRowModel,
-  getSortedRowModel,
-  useReactTable,
+  cellSelectionFeature,
+  columnFilteringFeature,
+  columnGroupingFeature,
+  columnOrderingFeature,
+  columnVisibilityFeature,
+  createColumnHelper,
+  createGroupedRowModel,
+  metaHelper,
+  rowAggregationFeature,
+  rowExpandingFeature,
+  rowSelectionFeature,
+  rowSortingFeature,
+  tableFeatures,
+  useTable,
 } from "@tanstack/react-table";
 import { CircleDashedIcon } from "lucide-react";
 
@@ -40,11 +46,8 @@ export const TICKET_CREATEDAT_ACCESSOR_KEY = "createdAt";
 export const TICKET_UPDATEDAT_ACCESSOR_KEY = "updatedAt";
 export const TICKET_ASSIGNEDTO_ACCESSOR_KEY = "assignedTo";
 
-declare module "@tanstack/table-core" {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface ColumnMeta<TData extends RowData, TValue> {
-    layout: string;
-  }
+interface MyColumnMeta {
+  layout: string;
 }
 
 export interface Ticket {
@@ -71,7 +74,22 @@ export interface Ticket {
   updatedAt: number;
 }
 
-const columns: ColumnDef<Ticket>[] = [
+export const features = tableFeatures({
+  cellSelectionFeature,
+  columnFilteringFeature,
+  columnGroupingFeature,
+  columnMeta: metaHelper<MyColumnMeta>(),
+  columnOrderingFeature,
+  columnVisibilityFeature,
+  groupedRowModel: createGroupedRowModel(),
+  rowAggregationFeature,
+  rowExpandingFeature,
+  rowSelectionFeature,
+  rowSortingFeature,
+});
+
+const columnHelper = createColumnHelper<typeof features, Ticket>();
+const columns = columnHelper.columns([
   {
     id: TICKET_SELECT_ACCESSOR_KEY,
     cell: ({ row }) => (
@@ -367,18 +385,18 @@ const columns: ColumnDef<Ticket>[] = [
       layout: "end",
     },
   },
-];
+]);
 
 export function TicketList({
   data,
   state,
 }: {
   data: Ticket[];
-  state: Partial<TableState> | undefined;
+  state: Partial<TableState<typeof features>> | undefined;
 }) {
   const [expandedRows, setExpandedRows] = useState<ExpandedState>(true);
 
-  const columnVisibility: VisibilityState = useMemo(
+  const columnVisibility: ColumnVisibilityState = useMemo(
     () => ({
       ...(state?.columnVisibility ?? {}),
       [TICKET_SELECT_ACCESSOR_KEY]: true,
@@ -388,18 +406,14 @@ export function TicketList({
     [state?.columnVisibility],
   );
 
-  const table = useReactTable({
+  const table = useTable({
+    features,
     columns,
     data,
     onExpandedChange: setExpandedRows,
-    getCoreRowModel: getCoreRowModel(),
-    getExpandedRowModel: getExpandedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getGroupedRowModel: getGroupedRowModel(),
-    getSortedRowModel: getSortedRowModel(),
     getRowId: (row) => row.id,
-    groupedColumnMode: false,
     manualExpanding: true,
+    groupedColumnMode: false,
     state: {
       ...state,
       columnVisibility,
@@ -449,6 +463,8 @@ export function TicketList({
     [visibilityTemplate],
   );
 
+  console.log(state?.grouping);
+
   if (state?.grouping?.length) {
     return (
       <div
@@ -462,7 +478,7 @@ export function TicketList({
 
   return (
     <div
-      className="col-[1/_-1] grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
+      className="col-span-full grid w-full min-w-0 grow grid-cols-(--data-list-template) gap-2 overflow-hidden"
       style={gridListStyle}
     >
       <TicketSimpleList rows={table.getRowModel().rows} />
