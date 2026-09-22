@@ -1542,7 +1542,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.1.1"
-    eslint-plugin-turbo: "npm:^2.10.13"
+    eslint-plugin-turbo: "npm:^2.11.2"
     prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.70.0"
@@ -3961,44 +3961,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@turbo/darwin-64@npm:2.10.13":
-  version: 2.10.13
-  resolution: "@turbo/darwin-64@npm:2.10.13"
+"@turbo/darwin-64@npm:2.11.2":
+  version: 2.11.2
+  resolution: "@turbo/darwin-64@npm:2.11.2"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@turbo/darwin-arm64@npm:2.10.13":
-  version: 2.10.13
-  resolution: "@turbo/darwin-arm64@npm:2.10.13"
+"@turbo/darwin-arm64@npm:2.11.2":
+  version: 2.11.2
+  resolution: "@turbo/darwin-arm64@npm:2.11.2"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@turbo/linux-64@npm:2.10.13":
-  version: 2.10.13
-  resolution: "@turbo/linux-64@npm:2.10.13"
+"@turbo/linux-64@npm:2.11.2":
+  version: 2.11.2
+  resolution: "@turbo/linux-64@npm:2.11.2"
   conditions: (os=android | os=linux) & cpu=x64
   languageName: node
   linkType: hard
 
-"@turbo/linux-arm64@npm:2.10.13":
-  version: 2.10.13
-  resolution: "@turbo/linux-arm64@npm:2.10.13"
+"@turbo/linux-arm64@npm:2.11.2":
+  version: 2.11.2
+  resolution: "@turbo/linux-arm64@npm:2.11.2"
   conditions: (os=android | os=linux) & cpu=arm64
   languageName: node
   linkType: hard
 
-"@turbo/windows-64@npm:2.10.13":
-  version: 2.10.13
-  resolution: "@turbo/windows-64@npm:2.10.13"
+"@turbo/windows-64@npm:2.11.2":
+  version: 2.11.2
+  resolution: "@turbo/windows-64@npm:2.11.2"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@turbo/windows-arm64@npm:2.10.13":
-  version: 2.10.13
-  resolution: "@turbo/windows-arm64@npm:2.10.13"
+"@turbo/windows-arm64@npm:2.11.2":
+  version: 2.11.2
+  resolution: "@turbo/windows-arm64@npm:2.11.2"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
@@ -6080,15 +6080,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-turbo@npm:^2.10.13":
-  version: 2.10.13
-  resolution: "eslint-plugin-turbo@npm:2.10.13"
+"eslint-plugin-turbo@npm:^2.11.2":
+  version: 2.11.2
+  resolution: "eslint-plugin-turbo@npm:2.11.2"
   dependencies:
     dotenv: "npm:16.0.3"
   peerDependencies:
     eslint: ">6.6.0"
     turbo: ">2.0.0"
-  checksum: 10c0/0fb78358c1cd81bf42a60e44e96b192380a85f2e53e0d4b881473d98f2ede3b4d54b27484f0b5a58633234d5a12625a4285ca6478b604aea3fc5ea8c6b653870
+  checksum: 10c0/3d86a4710cde97b09eebf970d0616672288193a554119ebc3b1819b7625638f7627693929707ae2e4f13d785902eaf2ab684704cfe1c06d2eae9fe9058295b0d
   languageName: node
   linkType: hard
 
@@ -8965,7 +8965,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@kyakujs/prettier-config": "workspace:*"
-    turbo: "npm:^2.10.13"
+    turbo: "npm:^2.11.2"
   languageName: unknown
   linkType: soft
 
@@ -9593,16 +9593,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo@npm:^2.10.13":
-  version: 2.10.13
-  resolution: "turbo@npm:2.10.13"
+"turbo@npm:^2.11.2":
+  version: 2.11.2
+  resolution: "turbo@npm:2.11.2"
   dependencies:
-    "@turbo/darwin-64": "npm:2.10.13"
-    "@turbo/darwin-arm64": "npm:2.10.13"
-    "@turbo/linux-64": "npm:2.10.13"
-    "@turbo/linux-arm64": "npm:2.10.13"
-    "@turbo/windows-64": "npm:2.10.13"
-    "@turbo/windows-arm64": "npm:2.10.13"
+    "@turbo/darwin-64": "npm:2.11.2"
+    "@turbo/darwin-arm64": "npm:2.11.2"
+    "@turbo/linux-64": "npm:2.11.2"
+    "@turbo/linux-arm64": "npm:2.11.2"
+    "@turbo/windows-64": "npm:2.11.2"
+    "@turbo/windows-arm64": "npm:2.11.2"
   dependenciesMeta:
     "@turbo/darwin-64":
       optional: true
@@ -9618,7 +9618,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 10c0/5dfc6bcdd94da180a70a20b6b223b879da1175f93007c62670084f983e21ebccb27b65d92a04ddc02c0b46385aa65e87858c20172dc5a0338584c5c9bb5f0901
+  checksum: 10c0/51efad5766483dc8cef9ebfddea452f68d23d09bcef5488b4f4adcefc655ce878959c0daa9e214382587a38147c8ee25a621973e3e780400e496ea3e80f8c60a
   languageName: node
   linkType: hard
 
