@@ -20,7 +20,8 @@
     "format": "oxfmt --check .",
     "format:fix": "oxfmt .",
     "generate-migration": "yarn with-env drizzle-kit generate",
-    "lint": "eslint",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
     "push-migration": "yarn with-env drizzle-kit push",
     "seed": "yarn build --emitDeclarationOnly false --module nodenext --moduleResolution nodenext && yarn with-env node ./dist/src/seed.js",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
@@ -33,15 +34,14 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^10.6.0",
-    "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@types/pg": "^8.23.1",
     "dotenv-cli": "^11.0.0",
     "drizzle-kit": "^0.31.10",
     "drizzle-seed": "^0.3.1",
-    "eslint": "^10.10.0",
     "oxfmt": "^0.70.0",
+    "oxlint": "^1.85.0",
     "typescript": "^6.0.3"
   }
 }

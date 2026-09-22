@@ -27,10 +27,6 @@ updates:
           - "@tanstack/react-router*"
           - "@tanstack/react-start*"
           - "@tanstack/router*"
-      turbo:
-        patterns:
-          - "turbo"
-          - "eslint-plugin-turbo"
 
   - package-ecosystem: "github-actions"
     directory: "/"
