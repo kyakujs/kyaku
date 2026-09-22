@@ -1,7 +1,7 @@
 import type {
+  ColumnVisibilityState,
   GroupingState,
   SortingState,
-  ColumnVisibilityState,
 } from "@tanstack/react-table";
 import { create } from "zustand";
 
