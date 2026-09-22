@@ -1,13 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-
 import { Input } from "@kyakujs/ui/input";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { authClient } from "~/components/auth/client";
 import { Header } from "~/components/layout/headers/settings/header";
 
-export const Route = createFileRoute(
-  "/_auth/_settings-navigation/settings/account/profile",
-)({
+export const Route = createFileRoute("/_auth/_settings-navigation/settings/account/profile")({
   component: RouteComponent,
   ssr: false,
 });
@@ -24,18 +21,15 @@ function RouteComponent() {
       <Header />
       <div className="mx-4 flex flex-col items-center">
         <div className="flex w-full max-w-160 flex-col gap-8 py-4 md:py-16">
-          <div className="text-2xl font-semibold text-foreground">Profile</div>
+          <div className="text-foreground text-2xl font-semibold">Profile</div>
 
           <div className="flex flex-col gap-6">
             <form>
-              <section className="rounded-md border border-border bg-muted">
+              <section className="border-border bg-muted rounded-md border">
                 <ul>
-                  <li className="relative flex flex-col items-stretch justify-between gap-2 px-4 py-3 after:absolute after:right-4 after:bottom-0 after:left-4 after:h-px after:bg-border sm:flex-row sm:items-center sm:gap-4">
+                  <li className="after:bg-border relative flex flex-col items-stretch justify-between gap-2 px-4 py-3 after:absolute after:right-4 after:bottom-0 after:left-4 after:h-px sm:flex-row sm:items-center sm:gap-4">
                     <div className="flex min-w-0 grow flex-col flex-wrap gap-0.5">
-                      <label
-                        htmlFor="full-name"
-                        className="text-sm font-medium text-foreground"
-                      >
+                      <label htmlFor="full-name" className="text-foreground text-sm font-medium">
                         Full name
                       </label>
                     </div>

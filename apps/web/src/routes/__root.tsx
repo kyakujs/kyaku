@@ -1,16 +1,12 @@
-import type { ErrorComponentProps } from "@tanstack/react-router";
-import type { PropsWithChildren } from "react";
 import fontsourceInter from "@fontsource-variable/inter?url";
-import {
-  createRootRouteWithContext,
-  HeadContent,
-  Outlet,
-  Scripts,
-} from "@tanstack/react-router";
+import type { ErrorComponentProps } from "@tanstack/react-router";
+import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import type { PropsWithChildren } from "react";
 
 import type { RouterContext } from "~/router";
 import { getAuth } from "~/services/auth.api";
+
 import appCss from "~/styles.css?url";
 
 export const Route = createRootRouteWithContext<RouterContext>()({
@@ -90,12 +86,9 @@ function RootDocument({ children }: PropsWithChildren) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
-        <script
-          crossOrigin="anonymous"
-          src="//unpkg.com/react-scan/dist/auto.global.js"
-        ></script>
+        <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js"></script>
       </head>
-      <body className="bg-sidebar font-sans text-foreground antialiased">
+      <body className="bg-sidebar text-foreground font-sans antialiased">
         <div className="root">{children}</div>
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />

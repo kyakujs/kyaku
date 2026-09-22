@@ -1,7 +1,4 @@
-export function HighPriorityIcon({
-  className,
-  ...props
-}: React.SVGProps<SVGSVGElement>) {
+export function HighPriorityIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="16"

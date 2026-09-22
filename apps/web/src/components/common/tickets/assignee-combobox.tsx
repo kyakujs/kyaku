@@ -1,9 +1,3 @@
-import { useRef, useState } from "react";
-import { useQuery } from "@rocicorp/zero/react";
-import { useHotkey } from "@tanstack/react-hotkeys";
-import { CheckIcon, CircleDashedIcon } from "lucide-react";
-
-import type { User } from "@kyakujs/zero/schema";
 import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
 import {
   Combobox,
@@ -20,6 +14,11 @@ import {
   ComboboxValue,
 } from "@kyakujs/ui/combobox";
 import { queries } from "@kyakujs/zero/queries";
+import type { User } from "@kyakujs/zero/schema";
+import { useQuery } from "@rocicorp/zero/react";
+import { useHotkey } from "@tanstack/react-hotkeys";
+import { CheckIcon, CircleDashedIcon } from "lucide-react";
+import { useRef, useState } from "react";
 
 const ASSIGNEE_SHORTCUT = "a";
 
@@ -54,9 +53,7 @@ function CustomCombobox(props: {
     <Combobox
       items={itemsWithNull}
       defaultValue={
-        props.value === ""
-          ? null
-          : itemsWithNull.find((item) => item.id === props.value)
+        props.value === "" ? null : itemsWithNull.find((item) => item.id === props.value)
       }
       onValueChange={(user) => props.onValueChange(user?.id)}
       open={open}
@@ -96,7 +93,7 @@ function CustomCombobox(props: {
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <CircleDashedIcon className="size-4 text-muted-foreground" />
+                <CircleDashedIcon className="text-muted-foreground size-4" />
                 <span>No assignee</span>
               </div>
             )
@@ -104,24 +101,16 @@ function CustomCombobox(props: {
         </ComboboxValue>
       </ComboboxTrigger>
       <ComboboxPortal>
-        <ComboboxPositioner
-          align="start"
-          side="left"
-          sideOffset={4}
-          disableAnchorTracking={true}
-        >
+        <ComboboxPositioner align="start" side="left" sideOffset={4} disableAnchorTracking={true}>
           <ComboboxPopup
             className="max-h-[min(24rem,var(--available-height))] max-w-[15rem] origin-[var(--transform-origin)]"
             aria-label="Select assignee"
             style={{ "--row-width": "15rem" } as React.CSSProperties}
           >
             <div className="grid w-(--row-width) grid-cols-[1fr_auto] gap-2 p-1 pr-3 pl-3.5 text-center">
-              <ComboboxInput
-                placeholder="Set assignee to..."
-                className="col-start-1"
-              />
+              <ComboboxInput placeholder="Set assignee to..." className="col-start-1" />
               <span className="col-start-2 inline-flex items-center justify-center whitespace-nowrap">
-                <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1] text-muted-foreground">
+                <kbd className="border-input text-muted-foreground min-w-4.5 rounded-sm border p-0.5 text-xs leading-[1.1]">
                   {ASSIGNEE_SHORTCUT.toUpperCase()}
                 </kbd>
               </span>
@@ -130,11 +119,7 @@ function CustomCombobox(props: {
             <ComboboxEmpty>No assignee found.</ComboboxEmpty>
             <ComboboxList className="max-h-[min(calc(24rem-var(--input-container-height)),calc(var(--available-height)-var(--input-container-height)))]">
               {(user: AssignableUser) => (
-                <ComboboxItem
-                  key={user.username}
-                  value={user}
-                  className="w-(--row-width)"
-                >
+                <ComboboxItem key={user.username} value={user} className="w-(--row-width)">
                   <div>
                     {user.id ? (
                       <Avatar className="size-4">
@@ -162,7 +147,7 @@ function CustomCombobox(props: {
                         </AvatarFallback>
                       </Avatar>
                     ) : (
-                      <CircleDashedIcon className="size-4 text-muted-foreground" />
+                      <CircleDashedIcon className="text-muted-foreground size-4" />
                     )}
                   </div>
                   <div className="flex flex-1">{user.username}</div>
@@ -192,7 +177,5 @@ export default function AssigneeCombobox({
     return null;
   }
 
-  return (
-    <CustomCombobox items={users} onValueChange={onValueChange} value={value} />
-  );
+  return <CustomCombobox items={users} onValueChange={onValueChange} value={value} />;
 }

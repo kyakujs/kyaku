@@ -1,11 +1,9 @@
 "use no memo";
 
-import type {
-  ColumnVisibilityState,
-  ExpandedState,
-  TableState,
-} from "@tanstack/react-table";
-import { useMemo, useState } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
+import { Badge } from "@kyakujs/ui/badge";
+import { Checkbox } from "@kyakujs/ui/checkbox";
+import type { ColumnVisibilityState, ExpandedState, TableState } from "@tanstack/react-table";
 import {
   cellSelectionFeature,
   columnFilteringFeature,
@@ -23,10 +21,7 @@ import {
   useTable,
 } from "@tanstack/react-table";
 import { CircleDashedIcon } from "lucide-react";
-
-import { Avatar, AvatarFallback, AvatarImage } from "@kyakujs/ui/avatar";
-import { Badge } from "@kyakujs/ui/badge";
-import { Checkbox } from "@kyakujs/ui/checkbox";
+import { useMemo, useState } from "react";
 
 import { TicketGroupList } from "~/components/common/tickets/ticket-list/ticket-group-list";
 import { TicketSimpleList } from "~/components/common/tickets/ticket-list/ticket-simple-list";
@@ -110,9 +105,7 @@ const columns = columnHelper.columns([
   {
     accessorKey: TICKET_PRIORITY_ACCESSOR_KEY,
     aggregatedCell: ({ cell }) => {
-      const priority = priorities.find(
-        (p) => p.id === cell.getValue<number | undefined>(),
-      );
+      const priority = priorities.find((p) => p.id === cell.getValue<number | undefined>());
 
       if (!priority) return null;
 
@@ -124,9 +117,7 @@ const columns = columnHelper.columns([
       );
     },
     cell: ({ cell }) => {
-      const priority = priorities.find(
-        (p) => p.id === cell.getValue<number | undefined>(),
-      );
+      const priority = priorities.find((p) => p.id === cell.getValue<number | undefined>());
 
       if (!priority) return null;
 
@@ -146,7 +137,7 @@ const columns = columnHelper.columns([
       return (
         <div className="flex items-center" data-list-grid-column="shortId">
           <div className="text-left text-[13px]">
-            <span className="inline-block flex-nowrap font-features-['cpsp','calt'] tracking-[-0.02em] text-muted-foreground tabular-nums">
+            <span className="text-muted-foreground inline-block flex-nowrap font-features-['cpsp','calt'] tracking-[-0.02em] tabular-nums">
               TIC-{cell.getValue<string>()}
             </span>
           </div>
@@ -177,35 +168,25 @@ const columns = columnHelper.columns([
   {
     accessorKey: TICKET_STATUSDETAIL_ACCESSOR_KEY,
     aggregatedCell: ({ cell }) => {
-      const subStatus = subStatuses.find(
-        (s) => s.id === cell.getValue<number>(),
-      );
+      const subStatus = subStatuses.find((s) => s.id === cell.getValue<number>());
 
       if (!subStatus) return null;
 
       return (
         <div className="flex items-center gap-2">
-          <subStatus.icon
-            className="size-4 shrink-0"
-            style={{ color: subStatus.color }}
-          />
+          <subStatus.icon className="size-4 shrink-0" style={{ color: subStatus.color }} />
           <span>{subStatus.value}</span>
         </div>
       );
     },
     cell: ({ cell }) => {
-      const subStatus = subStatuses.find(
-        (s) => s.id === cell.getValue<number>(),
-      );
+      const subStatus = subStatuses.find((s) => s.id === cell.getValue<number>());
 
       if (!subStatus) return null;
 
       return (
         <div className="flex items-center" data-list-grid-column="statusDetail">
-          <subStatus.icon
-            className="size-4"
-            style={{ color: subStatus.color }}
-          />
+          <subStatus.icon className="size-4" style={{ color: subStatus.color }} />
         </div>
       );
     },
@@ -239,10 +220,7 @@ const columns = columnHelper.columns([
         <div className="flex flex-[initial] grow flex-row"></div>
         {row.original.labels.map((label) => (
           <div key={label.id} className="min-w-0 last:min-w-max">
-            <Badge
-              className="max-w-28 min-w-0 gap-1.5 truncate xl:max-w-56"
-              variant="outline"
-            >
+            <Badge className="max-w-28 min-w-0 gap-1.5 truncate xl:max-w-56" variant="outline">
               <svg
                 width="8"
                 height="8"
@@ -250,13 +228,7 @@ const columns = columnHelper.columns([
                 fill="none"
                 style={{ color: label.color }}
               >
-                <circle
-                  cx="4"
-                  cy="4"
-                  r="2.5"
-                  fill="currentColor"
-                  stroke="currentColor"
-                ></circle>
+                <circle cx="4" cy="4" r="2.5" fill="currentColor" stroke="currentColor"></circle>
               </svg>
 
               <span className="truncate">{label.name}</span>
@@ -349,10 +321,7 @@ const columns = columnHelper.columns([
   {
     accessorKey: TICKET_CREATEDAT_ACCESSOR_KEY,
     cell: ({ cell }) => (
-      <div
-        className="flex items-center justify-end text-right"
-        data-list-grid-column="createdAt"
-      >
+      <div className="flex items-center justify-end text-right" data-list-grid-column="createdAt">
         <span className="shrink-0 flex-nowrap text-sm">
           {getContextualDate(new Date(cell.getValue<number>()), "en-US")}
         </span>
@@ -365,10 +334,7 @@ const columns = columnHelper.columns([
   {
     accessorKey: TICKET_UPDATEDAT_ACCESSOR_KEY,
     cell: ({ cell }) => (
-      <div
-        className="flex items-center justify-end text-right"
-        data-list-grid-column="updatedAt"
-      >
+      <div className="flex items-center justify-end text-right" data-list-grid-column="updatedAt">
         <span className="shrink-0 flex-nowrap text-sm">
           {getContextualDate(new Date(cell.getValue<number>()), "en-US")}
         </span>
@@ -436,17 +402,12 @@ export function TicketList({
   const visibilityTemplate = useMemo(
     () => ({
       "[select] 26px": true,
-      "[priority] 16px":
-        columnVisibility[TICKET_PRIORITY_ACCESSOR_KEY] ?? false,
-      "[shortId] minmax(52px, auto)":
-        columnVisibility[TICKET_SHORTID_ACCESSOR_KEY] ?? false,
-      "[statusDetail] 16px":
-        columnVisibility[TICKET_STATUSDETAIL_ACCESSOR_KEY] ?? false,
+      "[priority] 16px": columnVisibility[TICKET_PRIORITY_ACCESSOR_KEY] ?? false,
+      "[shortId] minmax(52px, auto)": columnVisibility[TICKET_SHORTID_ACCESSOR_KEY] ?? false,
+      "[statusDetail] 16px": columnVisibility[TICKET_STATUSDETAIL_ACCESSOR_KEY] ?? false,
       "[title] 1fr": true,
-      "[createdAt] minmax(56px, auto)":
-        columnVisibility[TICKET_CREATEDAT_ACCESSOR_KEY] ?? false,
-      "[updatedAt] minmax(56px, auto)":
-        columnVisibility[TICKET_UPDATEDAT_ACCESSOR_KEY] ?? false,
+      "[createdAt] minmax(56px, auto)": columnVisibility[TICKET_CREATEDAT_ACCESSOR_KEY] ?? false,
+      "[updatedAt] minmax(56px, auto)": columnVisibility[TICKET_UPDATEDAT_ACCESSOR_KEY] ?? false,
       "[end-padding] 12px": true,
     }),
     [columnVisibility],

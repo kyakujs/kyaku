@@ -1,7 +1,3 @@
-import { useRef, useState } from "react";
-import { useHotkey } from "@tanstack/react-hotkeys";
-import { CheckIcon } from "lucide-react";
-
 import {
   Combobox,
   ComboboxEmpty,
@@ -16,6 +12,9 @@ import {
   ComboboxTrigger,
   ComboboxValue,
 } from "@kyakujs/ui/combobox";
+import { useHotkey } from "@tanstack/react-hotkeys";
+import { CheckIcon } from "lucide-react";
+import { useRef, useState } from "react";
 
 import type { SubStatus } from "~/store/substatus-store";
 import { subStatuses } from "~/store/substatus-store";
@@ -49,34 +48,23 @@ function CustomCombobox(props: {
         <ComboboxValue>
           {(subStatus: SubStatus) => (
             <div className="flex items-center gap-2">
-              <subStatus.icon
-                className="size-4"
-                style={{ color: subStatus.color }}
-              />
+              <subStatus.icon className="size-4" style={{ color: subStatus.color }} />
               <span>{subStatus.value}</span>
             </div>
           )}
         </ComboboxValue>
       </ComboboxTrigger>
       <ComboboxPortal>
-        <ComboboxPositioner
-          align="start"
-          side="left"
-          sideOffset={4}
-          disableAnchorTracking={true}
-        >
+        <ComboboxPositioner align="start" side="left" sideOffset={4} disableAnchorTracking={true}>
           <ComboboxPopup
             className="max-h-[min(24rem,var(--available-height))] max-w-[15rem] origin-[var(--transform-origin)]"
             aria-label="Select status"
             style={{ "--row-width": "15rem" } as React.CSSProperties}
           >
             <div className="grid w-(--row-width) grid-cols-[1fr_auto] gap-2 p-1 pr-3 pl-3.5 text-center">
-              <ComboboxInput
-                placeholder="Set status to..."
-                className="col-start-1"
-              />
+              <ComboboxInput placeholder="Set status to..." className="col-start-1" />
               <span className="col-start-2 inline-flex items-center justify-center whitespace-nowrap">
-                <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1] text-muted-foreground">
+                <kbd className="border-input text-muted-foreground min-w-4.5 rounded-sm border p-0.5 text-xs leading-[1.1]">
                   {SUBSTATUS_SHORTCUT.toUpperCase()}
                 </kbd>
               </span>
@@ -85,14 +73,10 @@ function CustomCombobox(props: {
             <ComboboxEmpty>No status found.</ComboboxEmpty>
             <ComboboxList className="max-h-[min(calc(24rem-var(--input-container-height)),calc(var(--available-height)-var(--input-container-height)))]">
               {(subStatus: SubStatus) => (
-                <ComboboxItem
-                  key={subStatus.value}
-                  value={subStatus}
-                  className="w-(--row-width)"
-                >
+                <ComboboxItem key={subStatus.value} value={subStatus} className="w-(--row-width)">
                   <div>
                     <subStatus.icon
-                      className="size-4 text-muted-foreground"
+                      className="text-muted-foreground size-4"
                       style={{ color: subStatus.color }}
                     />
                   </div>
@@ -100,7 +84,7 @@ function CustomCombobox(props: {
                   <ComboboxItemIndicator>
                     <CheckIcon className="size-4" />
                   </ComboboxItemIndicator>
-                  <span className="text-mono inline-flex text-center text-xs whitespace-nowrap text-muted-foreground">
+                  <span className="text-mono text-muted-foreground inline-flex text-center text-xs whitespace-nowrap">
                     <kbd aria-hidden="true" className="min-w-2.5">
                       {subStatus.code}
                     </kbd>
@@ -122,11 +106,5 @@ export default function SubStatusCombobox({
   onValueChange: (value: SubStatus["id"] | undefined) => void;
   value: SubStatus["id"];
 }) {
-  return (
-    <CustomCombobox
-      items={subStatuses}
-      onValueChange={onValueChange}
-      value={value}
-    />
-  );
+  return <CustomCombobox items={subStatuses} onValueChange={onValueChange} value={value} />;
 }

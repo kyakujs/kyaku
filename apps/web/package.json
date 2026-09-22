@@ -1,13 +1,14 @@
 {
   "name": "@kyakujs/web",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "build": "vite build",
     "clean": "git clean -xdf .cache .turbo node_modules",
     "dev": "yarn with-env vite dev --port 3000",
-    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path .prettierignore",
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt .",
     "lint": "eslint",
     "start": "vite start",
     "typecheck": "tsc --noEmit",
@@ -36,7 +37,6 @@
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
-    "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@rolldown/plugin-babel": "^0.2.4",
@@ -48,9 +48,8 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "dotenv-cli": "^11.0.0",
     "eslint": "^10.10.0",
-    "prettier": "^3.9.8",
+    "oxfmt": "^0.70.0",
     "typescript": "^6.0.3",
     "vite": "^8.3.0"
-  },
-  "prettier": "@kyakujs/prettier-config"
+  }
 }

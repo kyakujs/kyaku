@@ -1,12 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 "use no memo";
 
-import type { Row, Table } from "@tanstack/react-table";
-import { Fragment, useCallback, useRef } from "react";
-import { flexRender } from "@tanstack/react-table";
-import { useVirtualizer } from "@tanstack/react-virtual";
-import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
-
 import { Button } from "@kyakujs/ui/button";
 import {
   ContextMenu,
@@ -14,11 +8,13 @@ import {
   ContextMenuPopup,
   ContextMenuTrigger,
 } from "@kyakujs/ui/context-menu";
+import type { Row, Table } from "@tanstack/react-table";
+import { flexRender } from "@tanstack/react-table";
+import { useVirtualizer } from "@tanstack/react-virtual";
+import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
+import { Fragment, useCallback, useRef } from "react";
 
-import type {
-  features,
-  Ticket,
-} from "~/components/common/tickets/ticket-list/ticket-list";
+import type { features, Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import {
   TICKET_ITEM_HEIGHT,
   TicketListLine,
@@ -52,15 +48,8 @@ export function TicketGroupList({
   const [paddingTop, paddingBottom] =
     virtualItems.length > 0
       ? [
-          Math.max(
-            0,
-            virtualItems[0]!.start - virtualizer.options.scrollMargin,
-          ),
-          Math.max(
-            0,
-            virtualizer.getTotalSize() -
-              virtualItems[virtualItems.length - 1]!.end,
-          ),
+          Math.max(0, virtualItems[0]!.start - virtualizer.options.scrollMargin),
+          Math.max(0, virtualizer.getTotalSize() - virtualItems[virtualItems.length - 1]!.end),
         ]
       : [0, 0];
 
@@ -91,7 +80,7 @@ export function TicketGroupList({
               <ContextMenu>
                 <ContextMenuTrigger
                   data-list-key={`GROUP_${groupedRow.id}`}
-                  className="sticky top-0 z-2 col-span-full flex h-[39px] items-center gap-2 overflow-visible border-b border-border bg-sidebar text-sm will-change-transform"
+                  className="border-border bg-sidebar sticky top-0 z-2 col-span-full flex h-[39px] items-center gap-2 overflow-visible border-b text-sm will-change-transform"
                 >
                   {groupedRow.getAllCells().map((groupedCell) =>
                     groupedCell.getIsGrouped() ? (
@@ -118,9 +107,7 @@ export function TicketGroupList({
                           )}
                         </span>
 
-                        <span className="text-muted-foreground">
-                          {groupedRow.subRows.length}
-                        </span>
+                        <span className="text-muted-foreground">{groupedRow.subRows.length}</span>
                       </Fragment>
                     ) : null,
                   )}
@@ -128,20 +115,10 @@ export function TicketGroupList({
                 <ContextMenuPopup>
                   {groupedRow.getCanExpand() ? (
                     <>
-                      <ContextMenuItem
-                        inset
-                        onClick={groupedRow.getToggleExpandedHandler()}
-                      >
-                        {groupedRow.getIsExpanded() ? (
-                          <span>Collapse</span>
-                        ) : (
-                          <span>Expand</span>
-                        )}
+                      <ContextMenuItem inset onClick={groupedRow.getToggleExpandedHandler()}>
+                        {groupedRow.getIsExpanded() ? <span>Collapse</span> : <span>Expand</span>}
                       </ContextMenuItem>
-                      <ContextMenuItem
-                        inset
-                        onClick={table.getToggleAllRowsExpandedHandler()}
-                      >
+                      <ContextMenuItem inset onClick={table.getToggleAllRowsExpandedHandler()}>
                         {groupedRow.getIsExpanded() ? (
                           <span>Collapse all</span>
                         ) : (
@@ -163,9 +140,7 @@ export function TicketGroupList({
             </div>
           );
         })}
-        {paddingBottom > 0 ? (
-          <div style={{ height: paddingBottom }}></div>
-        ) : null}
+        {paddingBottom > 0 ? <div style={{ height: paddingBottom }}></div> : null}
         <div className="col-span-full"></div>
       </div>
     </div>
@@ -197,15 +172,8 @@ export function TicketGroupSubList({
   const [paddingTop, paddingBottom] =
     virtualItems.length > 0
       ? [
-          Math.max(
-            0,
-            virtualItems[0]!.start - virtualizer.options.scrollMargin,
-          ),
-          Math.max(
-            0,
-            virtualizer.getTotalSize() -
-              virtualItems[virtualItems.length - 1]!.end,
-          ),
+          Math.max(0, virtualItems[0]!.start - virtualizer.options.scrollMargin),
+          Math.max(0, virtualizer.getTotalSize() - virtualItems[virtualItems.length - 1]!.end),
         ]
       : [0, 0];
 

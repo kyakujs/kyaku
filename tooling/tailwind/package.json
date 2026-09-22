@@ -1,21 +1,20 @@
 {
   "name": "@kyakujs/tailwind-config",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "exports": {
     "./tailwind.css": "./tailwind.css"
   },
   "scripts": {
     "clean": "git clean -xdf .cache .turbo node_modules",
-    "format": "prettier --check . --ignore-path ../../.gitignore"
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt ."
   },
   "dependencies": {
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@kyakujs/prettier-config": "workspace:*",
-    "prettier": "^3.9.8"
-  },
-  "prettier": "@kyakujs/prettier-config"
+    "oxfmt": "^0.70.0"
+  }
 }

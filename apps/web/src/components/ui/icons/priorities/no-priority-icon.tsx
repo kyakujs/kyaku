@@ -1,7 +1,4 @@
-export function NoPriorityIcon({
-  className,
-  ...props
-}: React.SVGProps<SVGSVGElement>) {
+export function NoPriorityIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="16"
@@ -15,30 +12,9 @@ export function NoPriorityIcon({
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <rect
-        x="1.5"
-        y="7.25"
-        width="3"
-        height="1.5"
-        rx="0.5"
-        opacity="0.9"
-      ></rect>
-      <rect
-        x="6.5"
-        y="7.25"
-        width="3"
-        height="1.5"
-        rx="0.5"
-        opacity="0.9"
-      ></rect>
-      <rect
-        x="11.5"
-        y="7.25"
-        width="3"
-        height="1.5"
-        rx="0.5"
-        opacity="0.9"
-      ></rect>
+      <rect x="1.5" y="7.25" width="3" height="1.5" rx="0.5" opacity="0.9"></rect>
+      <rect x="6.5" y="7.25" width="3" height="1.5" rx="0.5" opacity="0.9"></rect>
+      <rect x="11.5" y="7.25" width="3" height="1.5" rx="0.5" opacity="0.9"></rect>
     </svg>
   );
 }

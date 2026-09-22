@@ -1,18 +1,15 @@
-import { useQuery } from "@rocicorp/zero/react";
-import { createFileRoute, useRouter } from "@tanstack/react-router";
-
 import { Separator } from "@kyakujs/ui/separator";
 import { SidebarTrigger } from "@kyakujs/ui/sidebar";
 import { mutators } from "@kyakujs/zero/mutators";
 import { queries } from "@kyakujs/zero/queries";
+import { useQuery } from "@rocicorp/zero/react";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 
 import AssigneeCombobox from "~/components/common/tickets/assignee-combobox";
 import PriorityCombobox from "~/components/common/tickets/priority-combobox";
 import SubStatusCombobox from "~/components/common/tickets/substatus-combobox";
 
-export const Route = createFileRoute(
-  "/_auth/_main-navigation/ticket/$ticketId",
-)({
+export const Route = createFileRoute("/_auth/_main-navigation/ticket/$ticketId")({
   component: RouteComponent,
   ssr: false,
 });
@@ -37,7 +34,7 @@ function RouteComponent() {
   return (
     <div className="flex w-full">
       <div className="flex grow flex-col">
-        <header className="flex h-10 w-full items-center gap-2 border-b border-border px-4">
+        <header className="border-border flex h-10 w-full items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1 inline-flex group-has-[[data-state=collapsed]]/sidebar-wrapper:inline-flex lg:hidden [&_svg]:size-4 [&_svg]:shrink-0" />
           <Separator
             orientation="vertical"
@@ -59,7 +56,7 @@ function RouteComponent() {
         </div>
       </div>
 
-      <div className="flex w-72 flex-col overflow-y-scroll border-l border-accent bg-sidebar p-6">
+      <div className="border-accent bg-sidebar flex w-72 flex-col overflow-y-scroll border-l p-6">
         <div className="mb-4">{ticket.title}</div>
         <div className="text-xs">{ticket.description}</div>
         <div className="flex flex-col">
@@ -99,10 +96,7 @@ function RouteComponent() {
           />
         </div>
         <div className="flex flex-col">
-          <SubStatusCombobox
-            onValueChange={(value) => console.log(value)}
-            value={ticket.status}
-          />
+          <SubStatusCombobox onValueChange={(value) => console.log(value)} value={ticket.status} />
         </div>
       </div>
     </div>

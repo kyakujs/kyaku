@@ -1,7 +1,4 @@
-export function UrgentPriorityIcon({
-  className,
-  ...props
-}: React.SVGProps<SVGSVGElement>) {
+export function UrgentPriorityIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="16"

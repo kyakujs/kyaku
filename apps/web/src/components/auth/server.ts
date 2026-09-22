@@ -1,6 +1,5 @@
-import { tanstackStartCookies } from "better-auth/tanstack-start";
-
 import { initAuth } from "@kyakujs/auth";
+import { tanstackStartCookies } from "better-auth/tanstack-start";
 
 export const auth = initAuth({
   baseUrl: process.env.VITE_APP_BASE_URL as string,

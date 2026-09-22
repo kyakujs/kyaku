@@ -1,13 +1,10 @@
 import type { LinkComponentProps } from "@tanstack/react-router";
-import type { Row } from "@tanstack/react-table";
-import { Fragment } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
+import type { Row } from "@tanstack/react-table";
 import { flexRender } from "@tanstack/react-table";
+import { Fragment } from "react/jsx-runtime";
 
-import type {
-  features,
-  Ticket,
-} from "~/components/common/tickets/ticket-list/ticket-list";
+import type { features, Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 
 export const TICKET_ITEM_HEIGHT = 39;
 
@@ -22,7 +19,7 @@ export function TicketListLine({ row, ...props }: TicketListLineProps) {
       to="/ticket/$ticketId"
       params={{ ticketId: row.original.id }}
       tabIndex={0}
-      className="relative col-span-full grid h-[39px] w-full min-w-0 grid-cols-subgrid transition-colors will-change-transform contain-style outline-none hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:shadow-[0_0_0_1px_var(--color-accent)_inset]"
+      className="hover:bg-muted/50 focus-visible:bg-muted/50 relative col-span-full grid h-[39px] w-full min-w-0 grid-cols-subgrid transition-colors will-change-transform contain-style outline-none focus-visible:shadow-[0_0_0_1px_var(--color-accent)_inset]"
       {...props}
     >
       {visibleCells
@@ -32,10 +29,7 @@ export function TicketListLine({ row, ...props }: TicketListLineProps) {
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </Fragment>
         ))}
-      <div
-        className="flex w-full min-w-0 items-center gap-2"
-        data-list-grid-column="title"
-      >
+      <div className="flex w-full min-w-0 items-center gap-2" data-list-grid-column="title">
         {visibleCells
           .filter((cell) => cell.column.columnDef.meta?.layout === "title")
           .map((cell) => (
@@ -44,9 +38,7 @@ export function TicketListLine({ row, ...props }: TicketListLineProps) {
             </Fragment>
           ))}
         <div className="contents">
-          {visibleCells.filter(
-            (cell) => cell.column.columnDef.meta?.layout === "labels",
-          ).length ? (
+          {visibleCells.filter((cell) => cell.column.columnDef.meta?.layout === "labels").length ? (
             visibleCells
               .filter((cell) => cell.column.columnDef.meta?.layout === "labels")
               .map((cell) => (
@@ -58,9 +50,7 @@ export function TicketListLine({ row, ...props }: TicketListLineProps) {
             <div className="flex flex-[initial] grow flex-row"></div>
           )}
           {visibleCells
-            .filter(
-              (cell) => cell.column.columnDef.meta?.layout === "assignedTo",
-            )
+            .filter((cell) => cell.column.columnDef.meta?.layout === "assignedTo")
             .map((cell) => (
               <Fragment key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}

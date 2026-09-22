@@ -1,12 +1,12 @@
 {
   "name": "root",
   "private": true,
-  "type": "module",
   "workspaces": [
     "apps/*",
     "packages/*",
     "tooling/*"
   ],
+  "type": "module",
   "scripts": {
     "build": "turbo run build",
     "clean": "git clean -xdf node_modules",
@@ -14,16 +14,14 @@
     "db:generate": "turbo -F @kyakujs/db generate-migration",
     "db:push": "turbo -F @kyakujs/db push-migration",
     "dev": "turbo watch dev --continue",
-    "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
-    "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
+    "format": "turbo run format --continue",
+    "format:fix": "turbo run format --continue",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "@kyakujs/prettier-config": "workspace:*",
     "turbo": "^2.11.2"
   },
-  "packageManager": "yarn@4.18.0",
-  "prettier": "@kyakujs/prettier-config"
+  "packageManager": "yarn@4.18.0"
 }

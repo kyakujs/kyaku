@@ -1,15 +1,8 @@
-import { ArrowDownWideNarrowIcon, ArrowUpNarrowWideIcon } from "lucide-react";
-
 import { Button } from "@kyakujs/ui/button";
 import { Popover, PopoverPopup, PopoverTrigger } from "@kyakujs/ui/popover";
-import {
-  Select,
-  SelectItem,
-  SelectPopup,
-  SelectTrigger,
-  SelectValue,
-} from "@kyakujs/ui/select";
+import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from "@kyakujs/ui/select";
 import { Separator } from "@kyakujs/ui/separator";
+import { ArrowDownWideNarrowIcon, ArrowUpNarrowWideIcon } from "lucide-react";
 
 import {
   TICKET_ASSIGNEDTO_ACCESSOR_KEY,
@@ -74,12 +67,7 @@ export function DisplayMenu() {
             <label htmlFor="grouping" className="min-w-20 text-sm">
               Grouping
             </label>
-            <Select
-              id="grouping"
-              items={groupings}
-              onValueChange={setGrouping}
-              value={grouping}
-            >
+            <Select id="grouping" items={groupings} onValueChange={setGrouping} value={grouping}>
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
@@ -97,12 +85,7 @@ export function DisplayMenu() {
               Ordering
             </label>
             <div className="flex items-center gap-1">
-              <Select
-                id="ordering"
-                items={sortings}
-                onValueChange={setSortBy}
-                value={sortBy}
-              >
+              <Select id="ordering" items={sortings} onValueChange={setSortBy} value={sortBy}>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
@@ -138,9 +121,7 @@ export function DisplayMenu() {
                   variant="outline"
                   data-active={columnVisibility[column.id] !== false}
                   className="data-[active=true]:bg-sidebar-accent"
-                  onClick={() =>
-                    setColumnVisibility(column.id, !columnVisibility[column.id])
-                  }
+                  onClick={() => setColumnVisibility(column.id, !columnVisibility[column.id])}
                 >
                   {column.label}
                 </Button>

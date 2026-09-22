@@ -1,7 +1,7 @@
 {
   "name": "@kyakujs/kyaku",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "exports": {
     ".": {
@@ -13,18 +13,17 @@
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsc",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt .",
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
-    "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "eslint": "^10.10.0",
-    "prettier": "^3.9.8",
+    "oxfmt": "^0.70.0",
     "typescript": "^6.0.3"
-  },
-  "prettier": "@kyakujs/prettier-config"
+  }
 }

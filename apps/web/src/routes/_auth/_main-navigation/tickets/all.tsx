@@ -1,10 +1,9 @@
+import { queries } from "@kyakujs/zero/queries";
 import { useQuery } from "@rocicorp/zero/react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import { queries } from "@kyakujs/zero/queries";
-
-import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import { DisplayMenu } from "~/components/common/tickets/display-menu";
+import type { Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import {
   TICKET_STATUS_ACCESSOR_KEY,
   TicketList,

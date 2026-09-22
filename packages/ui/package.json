@@ -1,7 +1,7 @@
 {
   "name": "@kyakujs/ui",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "exports": {
     ".": {
@@ -19,7 +19,8 @@
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsc",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt .",
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
@@ -31,17 +32,15 @@
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
-    "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@types/react": "^19.3.0",
     "eslint": "^10.10.0",
-    "prettier": "^3.9.8",
+    "oxfmt": "^0.70.0",
     "react": "^19.3.0",
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "react": "^19.3.0"
-  },
-  "prettier": "@kyakujs/prettier-config"
+  }
 }

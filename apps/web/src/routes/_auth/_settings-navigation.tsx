@@ -1,6 +1,5 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
-
 import { SidebarInset, SidebarProvider } from "@kyakujs/ui/sidebar";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 import { SettingsSidebar } from "~/components/layout/sidebars/settings-sidebar";
 

@@ -1,7 +1,3 @@
-import { useRef, useState } from "react";
-import { useHotkey } from "@tanstack/react-hotkeys";
-import { CheckIcon } from "lucide-react";
-
 import {
   Combobox,
   ComboboxEmpty,
@@ -16,6 +12,9 @@ import {
   ComboboxTrigger,
   ComboboxValue,
 } from "@kyakujs/ui/combobox";
+import { useHotkey } from "@tanstack/react-hotkeys";
+import { CheckIcon } from "lucide-react";
+import { useRef, useState } from "react";
 
 import type { Priority } from "~/store/priority-store";
 import { priorities } from "~/store/priority-store";
@@ -49,34 +48,23 @@ function CustomCombobox(props: {
         <ComboboxValue>
           {(priority: Priority) => (
             <div className="flex items-center gap-2">
-              <priority.icon
-                className="size-4"
-                style={{ color: priority.color }}
-              />
+              <priority.icon className="size-4" style={{ color: priority.color }} />
               <span>{priority.value}</span>
             </div>
           )}
         </ComboboxValue>
       </ComboboxTrigger>
       <ComboboxPortal>
-        <ComboboxPositioner
-          align="start"
-          side="left"
-          sideOffset={4}
-          disableAnchorTracking={true}
-        >
+        <ComboboxPositioner align="start" side="left" sideOffset={4} disableAnchorTracking={true}>
           <ComboboxPopup
             className="max-h-[min(24rem,var(--available-height))] max-w-[15rem] origin-[var(--transform-origin)]"
             aria-label="Select priority"
             style={{ "--row-width": "15rem" } as React.CSSProperties}
           >
             <div className="grid w-(--row-width) grid-cols-[1fr_auto] gap-2 p-1 pr-3 pl-3.5 text-center">
-              <ComboboxInput
-                placeholder="Set priority to..."
-                className="col-start-1"
-              />
+              <ComboboxInput placeholder="Set priority to..." className="col-start-1" />
               <span className="col-start-2 inline-flex items-center justify-center whitespace-nowrap">
-                <kbd className="min-w-4.5 rounded-sm border border-input p-0.5 text-xs leading-[1.1] text-muted-foreground">
+                <kbd className="border-input text-muted-foreground min-w-4.5 rounded-sm border p-0.5 text-xs leading-[1.1]">
                   {PRIORITY_SHORTCUT.toUpperCase()}
                 </kbd>
               </span>
@@ -85,19 +73,15 @@ function CustomCombobox(props: {
             <ComboboxEmpty>No priority found.</ComboboxEmpty>
             <ComboboxList className="max-h-[min(calc(24rem-var(--input-container-height)),calc(var(--available-height)-var(--input-container-height)))]">
               {(priority: Priority) => (
-                <ComboboxItem
-                  key={priority.value}
-                  value={priority}
-                  className="w-(--row-width)"
-                >
+                <ComboboxItem key={priority.value} value={priority} className="w-(--row-width)">
                   <div>
-                    <priority.icon className="size-4 text-muted-foreground" />
+                    <priority.icon className="text-muted-foreground size-4" />
                   </div>
                   <div className="flex flex-1">{priority.value}</div>
                   <ComboboxItemIndicator>
                     <CheckIcon className="size-4" />
                   </ComboboxItemIndicator>
-                  <span className="text-mono inline-flex text-center text-xs whitespace-nowrap text-muted-foreground">
+                  <span className="text-mono text-muted-foreground inline-flex text-center text-xs whitespace-nowrap">
                     <kbd aria-hidden="true" className="min-w-2.5">
                       {priority.code}
                     </kbd>
@@ -119,11 +103,5 @@ export default function PriorityCombobox({
   onValueChange: (value: Priority["id"]) => void;
   value: Priority["id"];
 }) {
-  return (
-    <CustomCombobox
-      items={priorities}
-      onValueChange={onValueChange}
-      value={value}
-    />
-  );
+  return <CustomCombobox items={priorities} onValueChange={onValueChange} value={value} />;
 }

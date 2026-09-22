@@ -1,14 +1,3 @@
-import * as React from "react";
-import { Link } from "@tanstack/react-router";
-import {
-  ChevronDownIcon,
-  CircleArrowOutUpRightIcon,
-  InboxIcon,
-  MessageCircleDashedIcon,
-  MessagesSquareIcon,
-  SearchIcon,
-} from "lucide-react";
-
 import { Menu, MenuPopup, MenuTrigger } from "@kyakujs/ui/menu";
 import {
   Sidebar,
@@ -19,6 +8,16 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@kyakujs/ui/sidebar";
+import { Link } from "@tanstack/react-router";
+import {
+  ChevronDownIcon,
+  CircleArrowOutUpRightIcon,
+  InboxIcon,
+  MessageCircleDashedIcon,
+  MessagesSquareIcon,
+  SearchIcon,
+} from "lucide-react";
+import * as React from "react";
 
 import { WorkspaceMenu } from "~/components/layout/sidebars/workspace-menu";
 
@@ -55,7 +54,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <MenuTrigger
                 render={
                   <SidebarMenuButton className="w-fit px-1.5">
-                    <div className="flex aspect-square size-5 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
+                    <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-5 items-center justify-center rounded-md">
                       <CircleArrowOutUpRightIcon className="size-3" />
                     </div>
                     <span className="truncate font-semibold">Kyaku</span>

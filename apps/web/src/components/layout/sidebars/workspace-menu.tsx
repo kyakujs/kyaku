@@ -1,7 +1,6 @@
+import { MenuItem, MenuSeparator } from "@kyakujs/ui/menu";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { LogOutIcon, SettingsIcon } from "lucide-react";
-
-import { MenuItem, MenuSeparator } from "@kyakujs/ui/menu";
 
 import { authClient } from "~/components/auth/client";
 

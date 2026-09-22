@@ -2,23 +2,16 @@
 "use no memo";
 
 import type { Row } from "@tanstack/react-table";
-import { useCallback, useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
+import { useCallback, useRef } from "react";
 
-import type {
-  features,
-  Ticket,
-} from "~/components/common/tickets/ticket-list/ticket-list";
+import type { features, Ticket } from "~/components/common/tickets/ticket-list/ticket-list";
 import {
   TICKET_ITEM_HEIGHT,
   TicketListLine,
 } from "~/components/common/tickets/ticket-list/ticket-list-line";
 
-export function TicketSimpleList({
-  rows,
-}: {
-  rows: Row<typeof features, Ticket>[];
-}) {
+export function TicketSimpleList({ rows }: { rows: Row<typeof features, Ticket>[] }) {
   const parentRef = useRef<HTMLDivElement>(null);
   const getScrollElement = useCallback(() => parentRef.current, []);
 
@@ -34,15 +27,8 @@ export function TicketSimpleList({
   const [paddingTop, paddingBottom] =
     virtualItems.length > 0
       ? [
-          Math.max(
-            0,
-            virtualItems[0]!.start - virtualizer.options.scrollMargin,
-          ),
-          Math.max(
-            0,
-            virtualizer.getTotalSize() -
-              virtualItems[virtualItems.length - 1]!.end,
-          ),
+          Math.max(0, virtualItems[0]!.start - virtualizer.options.scrollMargin),
+          Math.max(0, virtualizer.getTotalSize() - virtualItems[virtualItems.length - 1]!.end),
         ]
       : [0, 0];
 
@@ -61,12 +47,7 @@ export function TicketSimpleList({
         {virtualItems.map((virtualItem) => {
           const row = rows[virtualItem.index];
           if (!row) return null;
-          console.log(
-            "Rendering virtual item:",
-            virtualItem.index,
-            "row ID:",
-            row.id,
-          );
+          console.log("Rendering virtual item:", virtualItem.index, "row ID:", row.id);
 
           return (
             <TicketListLine
@@ -77,9 +58,7 @@ export function TicketSimpleList({
             />
           );
         })}
-        {paddingBottom > 0 ? (
-          <div style={{ height: paddingBottom }}></div>
-        ) : null}
+        {paddingBottom > 0 ? <div style={{ height: paddingBottom }}></div> : null}
       </div>
     </div>
   );

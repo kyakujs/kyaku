@@ -1,8 +1,4 @@
-import type {
-  ColumnVisibilityState,
-  GroupingState,
-  SortingState,
-} from "@tanstack/react-table";
+import type { ColumnVisibilityState, GroupingState, SortingState } from "@tanstack/react-table";
 import { create } from "zustand";
 
 import {
@@ -61,10 +57,7 @@ const mapGrouping = (type: GroupingType): GroupingState => {
   }
 };
 
-const mapSortBy = (
-  type: SortingType,
-  sortDirection: "asc" | "desc",
-): SortingState => {
+const mapSortBy = (type: SortingType, sortDirection: "asc" | "desc"): SortingState => {
   switch (type) {
     case "assignee":
       return [

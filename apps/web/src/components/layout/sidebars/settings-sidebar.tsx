@@ -1,7 +1,3 @@
-import * as React from "react";
-import { Link } from "@tanstack/react-router";
-import { ChevronLeftIcon } from "lucide-react";
-
 import {
   Sidebar,
   SidebarContent,
@@ -15,6 +11,9 @@ import {
   SidebarMenuSubButton,
   SidebarRail,
 } from "@kyakujs/ui/sidebar";
+import { Link } from "@tanstack/react-router";
+import { ChevronLeftIcon } from "lucide-react";
+import * as React from "react";
 
 const data = {
   navMain: [
@@ -34,9 +33,7 @@ const data = {
   ],
 };
 
-export function SettingsSidebar({
-  ...props
-}: React.ComponentProps<typeof Sidebar>) {
+export function SettingsSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -65,9 +62,7 @@ export function SettingsSidebar({
                   <SidebarMenu>
                     {item.items.map((item) => (
                       <SidebarMenuItem key={item.title}>
-                        <SidebarMenuSubButton
-                          render={<Link to={item.url}>{item.title}</Link>}
-                        />
+                        <SidebarMenuSubButton render={<Link to={item.url}>{item.title}</Link>} />
                       </SidebarMenuItem>
                     ))}
                   </SidebarMenu>

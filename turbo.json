@@ -15,7 +15,10 @@
       "persistent": false
     },
     "format": {
-      "outputs": [".cache/.prettiercache"],
+      "outputLogs": "new-only"
+    },
+    "format:fix": {
+      "cache": false,
       "outputLogs": "new-only"
     },
     "generate-migration": {

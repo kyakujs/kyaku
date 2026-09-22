@@ -1,7 +1,6 @@
+import { Button } from "@kyakujs/ui/button";
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-
-import { Button } from "@kyakujs/ui/button";
 
 import { authClient } from "~/components/auth/client";
 

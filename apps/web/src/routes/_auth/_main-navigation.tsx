@@ -1,6 +1,5 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
-
 import { SidebarProvider } from "@kyakujs/ui/sidebar";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 import { AppSidebar } from "~/components/layout/sidebars/app-sidebar";
 
@@ -14,7 +13,7 @@ function RouteComponent() {
     <SidebarProvider>
       <AppSidebar />
       <main className="h-svh w-full overflow-hidden lg:p-2">
-        <div className="flex h-full w-full overflow-hidden border-border bg-background lg:rounded-md lg:border">
+        <div className="border-border bg-background flex h-full w-full overflow-hidden lg:rounded-md lg:border">
           <Outlet />
         </div>
       </main>

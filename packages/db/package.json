@@ -1,7 +1,7 @@
 {
   "name": "@kyakujs/db",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "exports": {
     ".": {
@@ -17,7 +17,8 @@
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsc",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt .",
     "generate-migration": "yarn with-env drizzle-kit generate",
     "lint": "eslint",
     "push-migration": "yarn with-env drizzle-kit push",
@@ -33,7 +34,6 @@
   "devDependencies": {
     "@faker-js/faker": "^10.6.0",
     "@kyakujs/eslint-config": "workspace:*",
-    "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@types/pg": "^8.23.1",
@@ -41,8 +41,7 @@
     "drizzle-kit": "^0.31.10",
     "drizzle-seed": "^0.3.1",
     "eslint": "^10.10.0",
-    "prettier": "^3.9.8",
+    "oxfmt": "^0.70.0",
     "typescript": "^6.0.3"
-  },
-  "prettier": "@kyakujs/prettier-config"
+  }
 }

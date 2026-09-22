@@ -1,7 +1,6 @@
+import type { Session } from "@kyakujs/auth";
 import { createServerFn } from "@tanstack/react-start";
 import { getRequestHeaders } from "@tanstack/react-start/server";
-
-import type { Session } from "@kyakujs/auth";
 
 import { auth } from "~/components/auth/server";
 

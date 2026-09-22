@@ -1,0 +1,5 @@
+{
+  "ignorePatterns": ["route-tree.gen.ts"],
+  "sortImports": true,
+  "sortTailwindcss": true
+}

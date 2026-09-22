@@ -1,7 +1,7 @@
 {
   "name": "@kyakujs/zero",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "exports": {
     "./auth": {
@@ -25,7 +25,8 @@
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "yarn with-env zero-cache-dev",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt .",
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --"
@@ -37,13 +38,11 @@
   },
   "devDependencies": {
     "@kyakujs/eslint-config": "workspace:*",
-    "@kyakujs/prettier-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "dotenv-cli": "^11.0.0",
     "eslint": "^10.10.0",
-    "prettier": "^3.9.8",
+    "oxfmt": "^0.70.0",
     "typescript": "^6.0.3"
-  },
-  "prettier": "@kyakujs/prettier-config"
+  }
 }
