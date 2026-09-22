@@ -1,7 +1,7 @@
 import type {
   GroupingState,
   SortingState,
-  VisibilityState,
+  ColumnVisibilityState,
 } from "@tanstack/react-table";
 import { create } from "zustand";
 
@@ -35,7 +35,7 @@ type SortingType = GroupingType;
 
 export interface IssuesState {
   // State
-  columnVisibility: VisibilityState;
+  columnVisibility: ColumnVisibilityState;
   grouping: GroupingType;
   sortBy: SortingType;
   sortDirection: "asc" | "desc";
