@@ -26,8 +26,11 @@
       "interactive": true
     },
     "lint": {
+      "dependsOn": ["^topo", "^build"]
+    },
+    "lint:fix": {
       "dependsOn": ["^topo", "^build"],
-      "outputs": [".cache/.eslintcache"]
+      "cache": false
     },
     "push-migration": {
       "cache": false,

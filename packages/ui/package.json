@@ -21,7 +21,8 @@
     "dev": "tsc",
     "format": "oxfmt --check .",
     "format:fix": "oxfmt .",
-    "lint": "eslint",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
@@ -31,12 +32,11 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@types/react": "^19.3.0",
-    "eslint": "^10.10.0",
     "oxfmt": "^0.70.0",
+    "oxlint": "^1.85.0",
     "react": "^19.3.0",
     "typescript": "^6.0.3"
   },

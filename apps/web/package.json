@@ -9,7 +9,8 @@
     "dev": "yarn with-env vite dev --port 3000",
     "format": "oxfmt --check .",
     "format:fix": "oxfmt .",
-    "lint": "eslint",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
     "start": "vite start",
     "typecheck": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --"
@@ -36,7 +37,6 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
-    "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
     "@rolldown/plugin-babel": "^0.2.4",
@@ -47,8 +47,8 @@
     "@vitejs/plugin-react": "^6.1.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "dotenv-cli": "^11.0.0",
-    "eslint": "^10.10.0",
     "oxfmt": "^0.70.0",
+    "oxlint": "^1.85.0",
     "typescript": "^6.0.3",
     "vite": "^8.3.0"
   }
