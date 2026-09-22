@@ -1,22 +1,17 @@
-import * as React from "react";
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
-
 import { cn } from "@kyakujs/ui";
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
+import * as React from "react";
 
 function Menu({ ...props }: React.ComponentProps<typeof MenuPrimitive.Root>) {
   return <MenuPrimitive.Root data-slot="menu" {...props} />;
 }
 
-function MenuTrigger({
-  ...props
-}: React.ComponentProps<typeof MenuPrimitive.Trigger>) {
+function MenuTrigger({ ...props }: React.ComponentProps<typeof MenuPrimitive.Trigger>) {
   return <MenuPrimitive.Trigger data-slot="menu-trigger" {...props} />;
 }
 
-function MenuPortal({
-  ...props
-}: React.ComponentProps<typeof MenuPrimitive.Portal>) {
+function MenuPortal({ ...props }: React.ComponentProps<typeof MenuPrimitive.Portal>) {
   return <MenuPrimitive.Portal data-slot="menu-portal" {...props} />;
 }
 
@@ -59,10 +54,7 @@ function MenuPopup({
   );
 }
 
-function MenuItem({
-  className,
-  ...props
-}: React.ComponentProps<typeof MenuPrimitive.Item>) {
+function MenuItem({ className, ...props }: React.ComponentProps<typeof MenuPrimitive.Item>) {
   return (
     <MenuPrimitive.Item
       className={cn(
@@ -105,9 +97,7 @@ const MenuSubmenuTrigger = ({
   );
 };
 
-function MenuGroup({
-  ...props
-}: React.ComponentProps<typeof MenuPrimitive.Group>) {
+function MenuGroup({ ...props }: React.ComponentProps<typeof MenuPrimitive.Group>) {
   return <MenuPrimitive.Group data-slot="menu-group" {...props} />;
 }
 
@@ -124,9 +114,7 @@ function MenuGroupLabel({
   );
 }
 
-function MenuRadioGroup({
-  ...props
-}: React.ComponentProps<typeof MenuPrimitive.RadioGroup>) {
+function MenuRadioGroup({ ...props }: React.ComponentProps<typeof MenuPrimitive.RadioGroup>) {
   return <MenuPrimitive.RadioGroup data-slot="menu-radio-group" {...props} />;
 }
 

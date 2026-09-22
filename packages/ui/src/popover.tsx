@@ -1,5 +1,4 @@
 import { Popover as PopoverPrimitive } from "@base-ui/react/popover";
-
 import { cn } from "@kyakujs/ui";
 
 const PopoverCreateHandle = PopoverPrimitive.createHandle;
@@ -77,10 +76,7 @@ function PopoverTitle({ className, ...props }: PopoverPrimitive.Title.Props) {
   );
 }
 
-function PopoverDescription({
-  className,
-  ...props
-}: PopoverPrimitive.Description.Props) {
+function PopoverDescription({ className, ...props }: PopoverPrimitive.Description.Props) {
   return (
     <PopoverPrimitive.Description
       className={cn("text-sm text-muted-foreground", className)}

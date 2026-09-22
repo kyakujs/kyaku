@@ -1,8 +1,7 @@
+import { zql } from "@kyakujs/zero/schema";
 import type { Condition } from "@rocicorp/zero";
 import { defineQueries, defineQuery } from "@rocicorp/zero";
 import z from "zod";
-
-import { zql } from "@kyakujs/zero/schema";
 
 import "./auth";
 
@@ -37,9 +36,7 @@ export const queries = defineQueries({
       q = q.where(({ and, or, cmp }) => {
         let assigneeCondition: Condition | undefined = undefined;
         if (filters.assignees) {
-          const nonNullAssignees = filters.assignees.filter(
-            (assignee) => assignee !== null,
-          );
+          const nonNullAssignees = filters.assignees.filter((assignee) => assignee !== null);
           const nullAssigneeIncluded = filters.assignees.includes(null);
 
           if (nonNullAssignees.length > 0 && nullAssigneeIncluded) {

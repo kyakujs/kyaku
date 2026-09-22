@@ -1,3 +1,4 @@
+import type { TicketTimelineEntry, TimelineEntryType } from "@kyakujs/kyaku";
 import type { Row } from "@rocicorp/zero";
 import {
   createBuilder,
@@ -9,8 +10,6 @@ import {
   string,
   table,
 } from "@rocicorp/zero";
-
-import type { TicketTimelineEntry, TimelineEntryType } from "@kyakujs/kyaku";
 
 const customer = table("customer")
   .columns({
@@ -78,9 +77,7 @@ const ticketTimelineEntry = table("ticketTimelineEntry")
   .columns({
     id: string(),
     ticketId: string(),
-    type: enumeration<
-      (typeof TimelineEntryType)[keyof typeof TimelineEntryType]
-    >(),
+    type: enumeration<(typeof TimelineEntryType)[keyof typeof TimelineEntryType]>(),
     entry: json<TicketTimelineEntry>(),
     customerId: string(),
     createdAt: number(),
@@ -119,31 +116,28 @@ export const labelRelationships = relationships(label, ({ one }) => ({
   }),
 }));
 
-export const ticketLabelRelationships = relationships(
-  ticketLabel,
-  ({ one }) => ({
-    ticket: one({
-      sourceField: ["ticketId"],
-      destField: ["id"],
-      destSchema: ticket,
-    }),
-    label: one({
-      sourceField: ["labelId"],
-      destField: ["id"],
-      destSchema: label,
-    }),
-    createdBy: one({
-      sourceField: ["createdById"],
-      destField: ["id"],
-      destSchema: user,
-    }),
-    updatedBy: one({
-      sourceField: ["updatedById"],
-      destField: ["id"],
-      destSchema: user,
-    }),
+export const ticketLabelRelationships = relationships(ticketLabel, ({ one }) => ({
+  ticket: one({
+    sourceField: ["ticketId"],
+    destField: ["id"],
+    destSchema: ticket,
   }),
-);
+  label: one({
+    sourceField: ["labelId"],
+    destField: ["id"],
+    destSchema: label,
+  }),
+  createdBy: one({
+    sourceField: ["createdById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+  updatedBy: one({
+    sourceField: ["updatedById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+}));
 
 const ticketRelationships = relationships(ticket, ({ many, one }) => ({
   assignedTo: one({
@@ -185,41 +179,38 @@ const ticketRelationships = relationships(ticket, ({ many, one }) => ({
   }),
 }));
 
-const ticketTimelineEntryRelationships = relationships(
-  ticketTimelineEntry,
-  ({ one }) => ({
-    customer: one({
-      sourceField: ["customerId"],
-      destField: ["id"],
-      destSchema: customer,
-    }),
-    customerCreatedBy: one({
-      sourceField: ["customerCreatedById"],
-      destField: ["id"],
-      destSchema: customer,
-    }),
-    userCreatedBy: one({
-      sourceField: ["userCreatedById"],
-      destField: ["id"],
-      destSchema: user,
-    }),
-    ticket: one({
-      sourceField: ["ticketId"],
-      destField: ["id"],
-      destSchema: ticket,
-    }),
-    customerUpdatedBy: one({
-      sourceField: ["customerUpdatedById"],
-      destField: ["id"],
-      destSchema: customer,
-    }),
-    userUpdatedBy: one({
-      sourceField: ["userUpdatedById"],
-      destField: ["id"],
-      destSchema: user,
-    }),
+const ticketTimelineEntryRelationships = relationships(ticketTimelineEntry, ({ one }) => ({
+  customer: one({
+    sourceField: ["customerId"],
+    destField: ["id"],
+    destSchema: customer,
   }),
-);
+  customerCreatedBy: one({
+    sourceField: ["customerCreatedById"],
+    destField: ["id"],
+    destSchema: customer,
+  }),
+  userCreatedBy: one({
+    sourceField: ["userCreatedById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+  ticket: one({
+    sourceField: ["ticketId"],
+    destField: ["id"],
+    destSchema: ticket,
+  }),
+  customerUpdatedBy: one({
+    sourceField: ["customerUpdatedById"],
+    destField: ["id"],
+    destSchema: customer,
+  }),
+  userUpdatedBy: one({
+    sourceField: ["userUpdatedById"],
+    destField: ["id"],
+    destSchema: user,
+  }),
+}));
 
 export const schema = createSchema({
   tables: [customer, label, ticket, ticketLabel, ticketTimelineEntry, user],

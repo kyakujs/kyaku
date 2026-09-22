@@ -15,7 +15,7 @@
     "db:push": "turbo -F @kyakujs/db push-migration",
     "dev": "turbo watch dev --continue",
     "format": "turbo run format --continue",
-    "format:fix": "turbo run format --continue",
+    "format:fix": "turbo run format:fix --continue",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "typecheck": "turbo run typecheck"

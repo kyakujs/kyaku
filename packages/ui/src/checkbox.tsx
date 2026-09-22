@@ -1,5 +1,4 @@
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
-
 import { cn } from "@kyakujs/ui";
 
 function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
@@ -13,7 +12,7 @@ function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
       {...props}
     >
       <CheckboxPrimitive.Indicator
-        className="absolute -inset-px flex items-center justify-center rounded-sm text-primary-foreground data-checked:bg-primary data-indeterminate:text-foreground data-unchecked:hidden"
+        className="text-primary-foreground data-checked:bg-primary data-indeterminate:text-foreground absolute -inset-px flex items-center justify-center rounded-sm data-unchecked:hidden"
         data-slot="checkbox-indicator"
         render={(props, state) => (
           <span {...props}>

@@ -1,6 +1,5 @@
-import * as React from "react";
-
 import { cn } from "@kyakujs/ui";
+import * as React from "react";
 
 function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
   return (

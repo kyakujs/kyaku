@@ -1,6 +1,7 @@
 /// <reference types="./types.d.ts" />
 
 import * as path from "node:path";
+
 import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
 import importPlugin from "eslint-plugin-import";
@@ -34,10 +35,7 @@ export default defineConfig(
         "warn",
         { prefer: "type-imports", fixStyle: "separate-type-imports" },
       ],
-      "@typescript-eslint/no-misused-promises": [
-        2,
-        { checksVoidReturn: { attributes: false } },
-      ],
+      "@typescript-eslint/no-misused-promises": [2, { checksVoidReturn: { attributes: false } }],
       "@typescript-eslint/no-unnecessary-condition": [
         "error",
         {

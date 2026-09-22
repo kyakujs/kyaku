@@ -1,22 +1,13 @@
-import * as React from "react";
 import { Input as InputPrimitive } from "@base-ui/react/input";
-
 import { cn } from "@kyakujs/ui";
+import * as React from "react";
 
-type InputProps = Omit<
-  InputPrimitive.Props & React.RefAttributes<HTMLInputElement>,
-  "size"
-> & {
+type InputProps = Omit<InputPrimitive.Props & React.RefAttributes<HTMLInputElement>, "size"> & {
   size?: "sm" | "default" | "lg" | number;
   unstyled?: boolean;
 };
 
-function Input({
-  className,
-  size = "default",
-  unstyled = false,
-  ...props
-}: InputProps) {
+function Input({ className, size = "default", unstyled = false, ...props }: InputProps) {
   return (
     <span
       className={
@@ -32,8 +23,7 @@ function Input({
       <InputPrimitive
         className={cn(
           "w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] outline-none placeholder:text-muted-foreground/64",
-          size === "sm" &&
-            "px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)]",
+          size === "sm" && "px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)]",
           size === "lg" && "py-[calc(--spacing(2)-1px)]",
           props.type === "search" &&
             "[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none",

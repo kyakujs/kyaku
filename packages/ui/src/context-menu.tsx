@@ -1,23 +1,18 @@
-import * as React from "react";
 import { ContextMenu as ContextMenuPrimitive } from "@base-ui/react/context-menu";
-import { CheckIcon, ChevronRightIcon } from "lucide-react";
-
 import { cn } from "@kyakujs/ui";
+import { CheckIcon, ChevronRightIcon } from "lucide-react";
+import * as React from "react";
 
 function ContextMenu({ ...props }: ContextMenuPrimitive.Root.Props) {
   return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />;
 }
 
 function ContextMenuPortal({ ...props }: ContextMenuPrimitive.Portal.Props) {
-  return (
-    <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />
-  );
+  return <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />;
 }
 
 function ContextMenuTrigger({ ...props }: ContextMenuPrimitive.Trigger.Props) {
-  return (
-    <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />
-  );
+  return <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />;
 }
 
 function ContextMenuPopup({
@@ -28,10 +23,7 @@ function ContextMenuPopup({
   sideOffset = 0,
   ...props
 }: ContextMenuPrimitive.Popup.Props &
-  Pick<
-    ContextMenuPrimitive.Positioner.Props,
-    "align" | "alignOffset" | "side" | "sideOffset"
-  >) {
+  Pick<ContextMenuPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">) {
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Positioner
@@ -55,9 +47,7 @@ function ContextMenuPopup({
 }
 
 function ContextMenuGroup({ ...props }: ContextMenuPrimitive.Group.Props) {
-  return (
-    <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />
-  );
+  return <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />;
 }
 
 function ContextMenuLabel({
@@ -101,9 +91,7 @@ function ContextMenuItem({
 }
 
 function ContextMenuSub({ ...props }: ContextMenuPrimitive.SubmenuRoot.Props) {
-  return (
-    <ContextMenuPrimitive.SubmenuRoot data-slot="context-menu-sub" {...props} />
-  );
+  return <ContextMenuPrimitive.SubmenuRoot data-slot="context-menu-sub" {...props} />;
 }
 
 function ContextMenuSubTrigger({
@@ -130,16 +118,8 @@ function ContextMenuSubTrigger({
   );
 }
 
-function ContextMenuSubContent({
-  ...props
-}: React.ComponentProps<typeof ContextMenuPopup>) {
-  return (
-    <ContextMenuPopup
-      data-slot="context-menu-sub-content"
-      side="right"
-      {...props}
-    />
-  );
+function ContextMenuSubContent({ ...props }: React.ComponentProps<typeof ContextMenuPopup>) {
+  return <ContextMenuPopup data-slot="context-menu-sub-content" side="right" {...props} />;
 }
 
 function ContextMenuCheckboxItem({
@@ -168,15 +148,8 @@ function ContextMenuCheckboxItem({
   );
 }
 
-function ContextMenuRadioGroup({
-  ...props
-}: ContextMenuPrimitive.RadioGroup.Props) {
-  return (
-    <ContextMenuPrimitive.RadioGroup
-      data-slot="context-menu-radio-group"
-      {...props}
-    />
-  );
+function ContextMenuRadioGroup({ ...props }: ContextMenuPrimitive.RadioGroup.Props) {
+  return <ContextMenuPrimitive.RadioGroup data-slot="context-menu-radio-group" {...props} />;
 }
 
 function ContextMenuRadioItem({
@@ -203,10 +176,7 @@ function ContextMenuRadioItem({
   );
 }
 
-function ContextMenuSeparator({
-  className,
-  ...props
-}: ContextMenuPrimitive.Separator.Props) {
+function ContextMenuSeparator({ className, ...props }: ContextMenuPrimitive.Separator.Props) {
   return (
     <ContextMenuPrimitive.Separator
       data-slot="context-menu-separator"
@@ -216,10 +186,7 @@ function ContextMenuSeparator({
   );
 }
 
-function ContextMenuShortcut({
-  className,
-  ...props
-}: React.ComponentProps<"span">) {
+function ContextMenuShortcut({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <span
       data-slot="context-menu-shortcut"

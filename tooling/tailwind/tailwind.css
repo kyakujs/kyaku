@@ -5,11 +5,10 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans:
-    "Inter Variable", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-sans: "Inter Variable", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono:
-    ui-monospace, "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+    ui-monospace, "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 
   --radius: 0.625rem;
 
@@ -70,11 +69,7 @@
   --color-background: var(--color-zinc-950);
   --color-foreground: var(--color-zinc-100);
 
-  --color-card: color-mix(
-    in srgb,
-    var(--color-zinc-900) 80%,
-    var(--color-zinc-950)
-  );
+  --color-card: color-mix(in srgb, var(--color-zinc-900) 80%, var(--color-zinc-950));
   --color-card-foreground: var(--color-zinc-100);
 
   --color-popover: var(--color-zinc-900);

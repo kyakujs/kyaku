@@ -1,11 +1,8 @@
 import { Combobox as ComboboxPrimitive } from "@base-ui/react";
-
 import { cn } from "@kyakujs/ui";
 
 function Combobox<ItemValue, Multiple extends boolean | undefined = false>(
-  props: React.ComponentProps<
-    typeof ComboboxPrimitive.Root<ItemValue, Multiple>
-  >,
+  props: React.ComponentProps<typeof ComboboxPrimitive.Root<ItemValue, Multiple>>,
 ) {
   return <ComboboxPrimitive.Root data-slot="combobox" {...props} />;
 }
@@ -120,10 +117,7 @@ function ComboboxEmpty({
 }: React.ComponentProps<typeof ComboboxPrimitive.Empty>) {
   return (
     <ComboboxPrimitive.Empty
-      className={cn(
-        className,
-        "p-4 text-sm leading-4 text-muted-foreground empty:m-0 empty:p-0",
-      )}
+      className={cn(className, "p-4 text-sm leading-4 text-muted-foreground empty:m-0 empty:p-0")}
       data-slot="combobox-empty"
       {...props}
     >
@@ -139,10 +133,7 @@ function ComboboxList({
 }: React.ComponentProps<typeof ComboboxPrimitive.List>) {
   return (
     <ComboboxPrimitive.List
-      className={cn(
-        className,
-        "scroll-py-1 overflow-y-auto overscroll-contain py-1 empty:p-0",
-      )}
+      className={cn(className, "scroll-py-1 overflow-y-auto overscroll-contain py-1 empty:p-0")}
       data-slot="combobox-list"
       {...props}
     >
@@ -175,10 +166,7 @@ function ComboboxItemIndicator({
   ...props
 }: React.ComponentProps<typeof ComboboxPrimitive.ItemIndicator>) {
   return (
-    <ComboboxPrimitive.ItemIndicator
-      data-slot="combobox-item-indicator"
-      {...props}
-    >
+    <ComboboxPrimitive.ItemIndicator data-slot="combobox-item-indicator" {...props}>
       {children}
     </ComboboxPrimitive.ItemIndicator>
   );

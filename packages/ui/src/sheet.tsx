@@ -1,9 +1,8 @@
-import type { VariantProps } from "class-variance-authority";
 import { Dialog as SheetPrimitive } from "@base-ui/react/dialog";
+import { cn } from "@kyakujs/ui";
+import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import { XIcon } from "lucide-react";
-
-import { cn } from "@kyakujs/ui";
 
 const Sheet = SheetPrimitive.Root;
 
@@ -75,7 +74,7 @@ function SheetPopup({
       >
         {children}
         {showCloseButton && (
-          <SheetPrimitive.Close className="absolute end-2 top-2 inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md border border-transparent opacity-72 transition-[color,background-color,box-shadow,opacity] outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background pointer-coarse:after:absolute pointer-coarse:after:size-full pointer-coarse:after:min-h-11 pointer-coarse:after:min-w-11 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+          <SheetPrimitive.Close className="focus-visible:ring-ring focus-visible:ring-offset-background absolute end-2 top-2 inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md border border-transparent opacity-72 transition-[color,background-color,box-shadow,opacity] outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-offset-1 pointer-coarse:after:absolute pointer-coarse:after:size-full pointer-coarse:after:min-h-11 pointer-coarse:after:min-w-11 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
             <XIcon />
             <span className="sr-only">Close</span>
           </SheetPrimitive.Close>
@@ -115,10 +114,7 @@ function SheetTitle({ className, ...props }: SheetPrimitive.Title.Props) {
   );
 }
 
-function SheetDescription({
-  className,
-  ...props
-}: SheetPrimitive.Description.Props) {
+function SheetDescription({ className, ...props }: SheetPrimitive.Description.Props) {
   return (
     <SheetPrimitive.Description
       className={cn("text-sm text-muted-foreground", className)}

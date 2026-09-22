@@ -227,10 +227,7 @@ async function main() {
         status: status,
         statusDetail: faker.helpers.arrayElement(subStatusMapping[status]),
         customer: faker.helpers.arrayElement(customers).id,
-        assignedToId: faker.helpers.arrayElement([
-          ...users.map((user) => user.id),
-          null,
-        ]),
+        assignedToId: faker.helpers.arrayElement([...users.map((user) => user.id), null]),
         labels: [faker.helpers.arrayElement(labels).id],
         createdAt: createdAt,
         createdById: users[0]?.id!,

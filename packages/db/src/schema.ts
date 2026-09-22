@@ -1,3 +1,5 @@
+import type { TicketTimelineEntry } from "@kyakujs/kyaku";
+import { TimelineEntryType } from "@kyakujs/kyaku";
 import {
   integer,
   json,
@@ -11,17 +13,12 @@ import {
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm/relations";
 
-import type { TicketTimelineEntry } from "@kyakujs/kyaku";
-import { TimelineEntryType } from "@kyakujs/kyaku";
-
 import * as authSchema from "./authSchema";
 
 export * from "./authSchema";
 
 export const lifecycleFields = {
-  createdAt: timestamp("createdAt", { precision: 3, mode: "date" })
-    .defaultNow()
-    .notNull(),
+  createdAt: timestamp("createdAt", { precision: 3, mode: "date" }).defaultNow().notNull(),
   createdById: varchar("createdById")
     .notNull()
     .references(() => authSchema.user.id, {
@@ -144,69 +141,52 @@ export const ticketTimelineEntry = pgTable("ticketTimelineEntry", {
       onDelete: "restrict",
       onUpdate: "cascade",
     }),
-  createdAt: timestamp("createdAt", { precision: 3, mode: "date" })
-    .defaultNow()
-    .notNull(),
-  customerCreatedById: varchar("customerCreatedById").references(
-    () => customer.id,
-    {
-      onDelete: "restrict",
-      onUpdate: "cascade",
-    },
-  ),
-  userCreatedById: varchar("userCreatedById").references(
-    () => authSchema.user.id,
-    {
-      onDelete: "restrict",
-      onUpdate: "cascade",
-    },
-  ),
+  createdAt: timestamp("createdAt", { precision: 3, mode: "date" }).defaultNow().notNull(),
+  customerCreatedById: varchar("customerCreatedById").references(() => customer.id, {
+    onDelete: "restrict",
+    onUpdate: "cascade",
+  }),
+  userCreatedById: varchar("userCreatedById").references(() => authSchema.user.id, {
+    onDelete: "restrict",
+    onUpdate: "cascade",
+  }),
   updatedAt: timestamp("updatedAt", { precision: 3, mode: "date" }),
-  customerUpdatedById: varchar("customerUpdatedById").references(
-    () => customer.id,
-    {
-      onDelete: "restrict",
-      onUpdate: "cascade",
-    },
-  ),
-  userUpdatedById: varchar("userUpdatedById").references(
-    () => authSchema.user.id,
-    {
-      onDelete: "restrict",
-      onUpdate: "cascade",
-    },
-  ),
+  customerUpdatedById: varchar("customerUpdatedById").references(() => customer.id, {
+    onDelete: "restrict",
+    onUpdate: "cascade",
+  }),
+  userUpdatedById: varchar("userUpdatedById").references(() => authSchema.user.id, {
+    onDelete: "restrict",
+    onUpdate: "cascade",
+  }),
 });
 
-export const ticketTimelineEntryRelations = relations(
-  ticketTimelineEntry,
-  ({ one }) => ({
-    customer: one(customer, {
-      fields: [ticketTimelineEntry.customerId],
-      references: [customer.id],
-    }),
-    customerCreatedBy: one(customer, {
-      fields: [ticketTimelineEntry.customerCreatedById],
-      references: [customer.id],
-    }),
-    userCreatedBy: one(authSchema.user, {
-      fields: [ticketTimelineEntry.userCreatedById],
-      references: [authSchema.user.id],
-    }),
-    customerUpdatedBy: one(authSchema.user, {
-      fields: [ticketTimelineEntry.customerUpdatedById],
-      references: [authSchema.user.id],
-    }),
-    userUpdatedBy: one(authSchema.user, {
-      fields: [ticketTimelineEntry.userUpdatedById],
-      references: [authSchema.user.id],
-    }),
-    ticket: one(ticket, {
-      fields: [ticketTimelineEntry.ticketId],
-      references: [ticket.id],
-    }),
+export const ticketTimelineEntryRelations = relations(ticketTimelineEntry, ({ one }) => ({
+  customer: one(customer, {
+    fields: [ticketTimelineEntry.customerId],
+    references: [customer.id],
   }),
-);
+  customerCreatedBy: one(customer, {
+    fields: [ticketTimelineEntry.customerCreatedById],
+    references: [customer.id],
+  }),
+  userCreatedBy: one(authSchema.user, {
+    fields: [ticketTimelineEntry.userCreatedById],
+    references: [authSchema.user.id],
+  }),
+  customerUpdatedBy: one(authSchema.user, {
+    fields: [ticketTimelineEntry.customerUpdatedById],
+    references: [authSchema.user.id],
+  }),
+  userUpdatedBy: one(authSchema.user, {
+    fields: [ticketTimelineEntry.userUpdatedById],
+    references: [authSchema.user.id],
+  }),
+  ticket: one(ticket, {
+    fields: [ticketTimelineEntry.ticketId],
+    references: [ticket.id],
+  }),
+}));
 
 export const ticket = pgTable("ticket", {
   id: text("id").primaryKey().notNull(),
@@ -217,13 +197,10 @@ export const ticket = pgTable("ticket", {
   status: integer("status").notNull().default(0),
   statusDetail: integer("statusDetail").default(0),
   statusChangedAt: timestamp("statusChangedAt", { precision: 3, mode: "date" }),
-  statusChangedById: varchar("statusChangedById").references(
-    () => authSchema.user.id,
-    {
-      onDelete: "restrict",
-      onUpdate: "cascade",
-    },
-  ),
+  statusChangedById: varchar("statusChangedById").references(() => authSchema.user.id, {
+    onDelete: "restrict",
+    onUpdate: "cascade",
+  }),
   assignedToId: varchar("assignedToId").references(() => authSchema.user.id, {
     onDelete: "restrict",
     onUpdate: "cascade",

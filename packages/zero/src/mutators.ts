@@ -1,16 +1,14 @@
-import { defineMutator, defineMutators } from "@rocicorp/zero";
-import { ulid } from "ulid";
-import z from "zod";
-
 import type {
   TicketAssignmentChanged,
   TicketPriority,
   TicketPriorityChanged,
 } from "@kyakujs/kyaku";
 import { TimelineEntryType } from "@kyakujs/kyaku";
+import { defineMutator, defineMutators } from "@rocicorp/zero";
+import { ulid } from "ulid";
+import z from "zod";
 
 import { zql } from "./schema";
-
 import "./auth";
 
 export const mutators = defineMutators({
@@ -83,10 +81,8 @@ export const mutators = defineMutators({
         });
 
         const entry: TicketPriorityChanged = {
-          oldPriority:
-            ticket.priority as (typeof TicketPriority)[keyof typeof TicketPriority],
-          newPriority:
-            priority as (typeof TicketPriority)[keyof typeof TicketPriority],
+          oldPriority: ticket.priority as (typeof TicketPriority)[keyof typeof TicketPriority],
+          newPriority: priority as (typeof TicketPriority)[keyof typeof TicketPriority],
         };
         await tx.mutate.ticketTimelineEntry.insert({
           id: ulid(),

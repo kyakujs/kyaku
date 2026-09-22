@@ -1,13 +1,10 @@
+import { db, schema } from "@kyakujs/db";
 import type { BetterAuthOptions, BetterAuthPlugin } from "better-auth";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { username } from "better-auth/plugins";
 
-import { db, schema } from "@kyakujs/db";
-
-export function initAuth<
-  TExtraPlugins extends BetterAuthPlugin[] = [],
->(options: {
+export function initAuth<TExtraPlugins extends BetterAuthPlugin[] = []>(options: {
   baseUrl: string;
   secret: string | undefined;
 
