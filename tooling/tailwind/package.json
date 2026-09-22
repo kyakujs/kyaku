@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@kyakujs/prettier-config": "workspace:*",
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.8"
   },
   "prettier": "@kyakujs/prettier-config"
 }
