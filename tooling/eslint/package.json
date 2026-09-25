@@ -27,7 +27,7 @@
     "@kyakujs/tsconfig": "workspace:*",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "^26.6.2",
-    "eslint": "^10.10.0",
+    "eslint": "^10.11.0",
     "oxfmt": "^0.70.0",
     "typescript": "^6.0.3"
   }
