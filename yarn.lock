@@ -1505,7 +1505,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@tanstack/eslint-plugin-router": "npm:^1.162.0"
     "@types/eslint-plugin-jsx-a11y": "npm:^6.10.1"
-    "@types/node": "npm:^26.6.1"
+    "@types/node": "npm:^26.6.2"
     eslint: "npm:^10.10.0"
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
@@ -1588,7 +1588,7 @@ __metadata:
     "@tanstack/react-start": "npm:^1.168.57"
     "@tanstack/react-table": "npm:^9.2.4"
     "@tanstack/react-virtual": "npm:^3.14.13"
-    "@types/node": "npm:^26.6.1"
+    "@types/node": "npm:^26.6.2"
     "@types/react": "npm:^19.3.0"
     "@types/react-dom": "npm:^19.3.0"
     "@vitejs/plugin-react": "npm:^6.1.1"
@@ -4298,12 +4298,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=13.7.0, @types/node@npm:^26.6.1":
+"@types/node@npm:*, @types/node@npm:>=13.7.0":
   version: 26.6.1
   resolution: "@types/node@npm:26.6.1"
   dependencies:
     undici-types: "npm:~8.9.0"
   checksum: 10c0/c90d3db40e7c9c92f0854ecdcaabd9c1923b7e2a43cf2c97cf147a5aba7e18a1c80034088edfb1bb2153ceffdd87be7ce0a256b80ec7cd92e619c564133ae5fe
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^26.6.2":
+  version: 26.6.2
+  resolution: "@types/node@npm:26.6.2"
+  dependencies:
+    undici-types: "npm:~8.9.0"
+  checksum: 10c0/bb411ff5863a79a28ffa4ebadf2499d44046aa114d25a7a6c78f57def118123a0a7dea99e8fe38849099e9dba2b41b8853a7a282037618559f58653c35e7c5c5
   languageName: node
   linkType: hard
 
