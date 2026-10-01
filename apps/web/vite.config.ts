@@ -11,7 +11,7 @@ export default defineConfig({
       },
     }),
     react({
-      compiler: true
+      compiler: true,
     }),
     tailwindcss(),
   ],
