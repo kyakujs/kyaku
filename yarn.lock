@@ -1580,7 +1580,7 @@ __metadata:
     "@kyakujs/zero": "workspace:*"
     "@rocicorp/zero": "npm:^1.9.0"
     "@tailwindcss/vite": "npm:^4.3.3"
-    "@tanstack/react-hotkeys": "npm:^0.12.1"
+    "@tanstack/react-hotkeys": "npm:^0.13.0"
     "@tanstack/react-query": "npm:^5.104.1"
     "@tanstack/react-router": "npm:^1.170.41"
     "@tanstack/react-router-devtools": "npm:^1.167.2"
@@ -3734,12 +3734,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/hotkeys@npm:0.10.1":
-  version: 0.10.1
-  resolution: "@tanstack/hotkeys@npm:0.10.1"
+"@tanstack/hotkeys@npm:0.11.0":
+  version: 0.11.0
+  resolution: "@tanstack/hotkeys@npm:0.11.0"
   dependencies:
-    "@tanstack/store": "npm:^0.11.1"
-  checksum: 10c0/4be84e98f9327239d63f32cc14cfa248fdbef0aa53919710a35188e4274116945c4f2b68de92e08634028f5d7f3d80e812526a53f8c7cca3224a843ffcbfb4a8
+    "@tanstack/store": "npm:^0.11.2"
+  checksum: 10c0/ced70638e838febf4b6f3d2edbe1ddc01f62470b89d6870c164472c8ab5a596225adb7d320c2d21cae67afd08d62bae05a6df112d1ee1e30bbc8f4ce14cc19a8
   languageName: node
   linkType: hard
 
@@ -3750,16 +3750,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-hotkeys@npm:^0.12.1":
-  version: 0.12.1
-  resolution: "@tanstack/react-hotkeys@npm:0.12.1"
+"@tanstack/react-hotkeys@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "@tanstack/react-hotkeys@npm:0.13.0"
   dependencies:
-    "@tanstack/hotkeys": "npm:0.10.1"
-    "@tanstack/react-store": "npm:^0.11.1"
+    "@tanstack/hotkeys": "npm:0.11.0"
+    "@tanstack/react-store": "npm:^0.11.2"
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: 10c0/b21136eae94657cbfc25501998613d916c0044e5b82b439d8f8e1d4a7ba1aef9ae8d255646a6b21510e0b9462113c4a7bdc92208aa0006369d1c6f3b4d3021eb
+  checksum: 10c0/479d6bb166e026fb20d6c31e5fa86f9fc1f60c96ae9126c3230364e411d3cf828361fc3b67cd827e7610273141f9c67d071fc8b45fec86e40181d70cb16e024f
   languageName: node
   linkType: hard
 
@@ -4148,7 +4148,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/store@npm:0.11.2":
+"@tanstack/store@npm:0.11.2, @tanstack/store@npm:^0.11.2":
   version: 0.11.2
   resolution: "@tanstack/store@npm:0.11.2"
   checksum: 10c0/5422149c853c16e642a0ddfb51c2b4a867a11516069d3b9647659212e9762b86d609144de6ac6ec099b0360c3b198d1243f613148d69c1028dee56382f0430cd
