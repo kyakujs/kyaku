@@ -1586,7 +1586,7 @@ __metadata:
     "@tanstack/react-router-devtools": "npm:^1.167.2"
     "@tanstack/react-router-ssr-query": "npm:^1.167.3"
     "@tanstack/react-start": "npm:^1.168.61"
-    "@tanstack/react-table": "npm:^9.2.6"
+    "@tanstack/react-table": "npm:^9.2.8"
     "@tanstack/react-virtual": "npm:^3.14.13"
     "@types/node": "npm:^26.6.4"
     "@types/react": "npm:^19.3.0"
@@ -3920,15 +3920,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-table@npm:^9.2.6":
-  version: 9.2.6
-  resolution: "@tanstack/react-table@npm:9.2.6"
+"@tanstack/react-table@npm:^9.2.8":
+  version: 9.2.8
+  resolution: "@tanstack/react-table@npm:9.2.8"
   dependencies:
     "@tanstack/react-store": "npm:^0.11.2"
-    "@tanstack/table-core": "npm:9.2.6"
+    "@tanstack/table-core": "npm:9.2.8"
   peerDependencies:
     react: ">=18"
-  checksum: 10c0/cd270379c52df81ff8182aff9a10f68defe8610162ccc603d6629e62eace4c2d515b7517a6a4728423dc9fd69110deb158c1f4b598f5436ade719db876862200
+  checksum: 10c0/bc72fe599de3cf4edc120952ddab05225a1d1533060ffec2e4fde00b9aa394ee96052e09fd399685d52e1b56b18500488b15960c65aa5f9273f641b61c2ca29f
   languageName: node
   linkType: hard
 
@@ -4135,12 +4135,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/table-core@npm:9.2.6":
-  version: 9.2.6
-  resolution: "@tanstack/table-core@npm:9.2.6"
+"@tanstack/table-core@npm:9.2.8":
+  version: 9.2.8
+  resolution: "@tanstack/table-core@npm:9.2.8"
   dependencies:
     "@tanstack/store": "npm:^0.11.2"
-  checksum: 10c0/6834b8501981fb670cf99a18c5b0480d11f5deb5ad19739c0d3c0acb9f6990135623d7674c7bdbfb6b03c11cddfa8af9d98ba2d7a098f48446f2af66dffff244
+  checksum: 10c0/a57aeaadd0779dfeea7eb05d7babeb1d740200dad1294efd6fb1476be723122fb6a0bc169d2ba0f022d2d064f4aa4af3850df9d8b6739fcd97d77695601d6db9
   languageName: node
   linkType: hard
 
