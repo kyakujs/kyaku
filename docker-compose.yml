@@ -1,6 +1,6 @@
 services:
   zero-cache:
-    image: rocicorp/zero:1.11.0
+    image: rocicorp/zero:1.11.3
     ports:
       - 4848:4848
     stop_grace_period: 10m
