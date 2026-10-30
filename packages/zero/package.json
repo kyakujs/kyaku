@@ -42,7 +42,7 @@
     "@kyakujs/tsconfig": "workspace:*",
     "dotenv-cli": "^11.0.0",
     "eslint": "^10.13.0",
-    "oxfmt": "^0.74.0",
+    "oxfmt": "^0.75.0",
     "typescript": "^6.0.3"
   }
 }
