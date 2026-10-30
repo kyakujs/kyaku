@@ -46,7 +46,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "dotenv-cli": "^11.0.0",
     "eslint": "^10.13.0",
-    "oxc-transform-react": "^0.155.0",
+    "oxc-transform-react": "^0.156.0",
     "oxfmt": "^0.75.0",
     "typescript": "^6.0.3",
     "vite": "^8.3.5"
