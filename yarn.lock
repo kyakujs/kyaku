@@ -1337,7 +1337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanfs/node@npm:^0.16.6":
+"@humanfs/node@npm:^0.16.6, @humanfs/node@npm:^0.16.8":
   version: 0.16.8
   resolution: "@humanfs/node@npm:0.16.8"
   dependencies:
@@ -1470,7 +1470,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
     better-auth: "npm:^1.6.30"
-    eslint: "npm:^10.13.0"
+    eslint: "npm:^10.14.0"
     oxfmt: "npm:^0.75.0"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -1490,7 +1490,7 @@ __metadata:
     drizzle-kit: "npm:^0.31.11"
     drizzle-orm: "npm:^0.45.4"
     drizzle-seed: "npm:^0.3.1"
-    eslint: "npm:^10.13.0"
+    eslint: "npm:^10.14.0"
     oxfmt: "npm:^0.75.0"
     pg: "npm:^8.23.1"
     typescript: "npm:^6.0.3"
@@ -1506,7 +1506,7 @@ __metadata:
     "@tanstack/eslint-plugin-router": "npm:^1.162.0"
     "@types/eslint-plugin-jsx-a11y": "npm:^6.10.1"
     "@types/node": "npm:^26.6.5"
-    eslint: "npm:^10.13.0"
+    eslint: "npm:^10.14.0"
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.5"
@@ -1525,7 +1525,7 @@ __metadata:
     "@kyakujs/eslint-config": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    eslint: "npm:^10.13.0"
+    eslint: "npm:^10.14.0"
     oxfmt: "npm:^0.75.0"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -1556,7 +1556,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@types/react": "npm:^19.3.0"
     class-variance-authority: "npm:^0.7.1"
-    eslint: "npm:^10.13.0"
+    eslint: "npm:^10.14.0"
     lucide-react: "npm:^1.65.0"
     oxfmt: "npm:^0.75.0"
     react: "npm:^19.3.1"
@@ -1594,7 +1594,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^6.1.2"
     better-auth: "npm:^1.6.30"
     dotenv-cli: "npm:^11.0.0"
-    eslint: "npm:^10.13.0"
+    eslint: "npm:^10.14.0"
     lucide-react: "npm:^1.65.0"
     oxc-transform-react: "npm:^0.156.0"
     oxfmt: "npm:^0.75.0"
@@ -1617,7 +1617,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@rocicorp/zero": "npm:^1.11.3"
     dotenv-cli: "npm:^11.0.0"
-    eslint: "npm:^10.13.0"
+    eslint: "npm:^10.14.0"
     oxfmt: "npm:^0.75.0"
     typescript: "npm:^6.0.3"
     ulid: "npm:^3.0.2"
@@ -6312,9 +6312,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^10.13.0":
-  version: 10.13.0
-  resolution: "eslint@npm:10.13.0"
+"eslint@npm:^10.14.0":
+  version: 10.14.0
+  resolution: "eslint@npm:10.14.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.2"
@@ -6322,7 +6322,7 @@ __metadata:
     "@eslint/config-helpers": "npm:^0.7.0"
     "@eslint/core": "npm:^1.2.1"
     "@eslint/plugin-kit": "npm:^0.7.3"
-    "@humanfs/node": "npm:^0.16.6"
+    "@humanfs/node": "npm:^0.16.8"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
     "@humanwhocodes/retry": "npm:^0.4.2"
     "@types/estree": "npm:^1.0.6"
@@ -6343,7 +6343,7 @@ __metadata:
     imurmurhash: "npm:^0.1.4"
     is-glob: "npm:^4.0.0"
     json-stable-stringify-without-jsonify: "npm:^1.0.1"
-    minimatch: "npm:^10.2.5"
+    minimatch: "npm:^10.2.6"
     natural-compare: "npm:^1.4.0"
     optionator: "npm:^0.9.3"
   peerDependencies:
@@ -6353,7 +6353,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/4a28e85de458f13306d30f07df21b58109056bd8bd691b6158952d95e126cf742db2eb09562e3f1c1cc0154ee44dedc789f8ced8d0d8da48e82a689aa9cb1c0d
+  checksum: 10c0/738cdd0a1aa37b8bddefb5c89206f9f202540e8fce57f7ef82649b5bdf0acd67f7b9f2724f538b11149bd9bfdd14605125568cf73b319baec007866677af72dd
   languageName: node
   linkType: hard
 
@@ -8031,7 +8031,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^10.2.2, minimatch@npm:^10.2.4, minimatch@npm:^10.2.5":
+"minimatch@npm:^10.2.2, minimatch@npm:^10.2.4, minimatch@npm:^10.2.6":
   version: 10.2.6
   resolution: "minimatch@npm:10.2.6"
   dependencies:
