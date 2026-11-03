@@ -1486,7 +1486,7 @@ __metadata:
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
     "@types/pg": "npm:^8.23.1"
-    dotenv-cli: "npm:^11.0.0"
+    dotenv-cli: "npm:^11.1.0"
     drizzle-kit: "npm:^0.31.11"
     drizzle-orm: "npm:^0.45.4"
     drizzle-seed: "npm:^0.3.1"
@@ -1593,7 +1593,7 @@ __metadata:
     "@types/react-dom": "npm:^19.3.0"
     "@vitejs/plugin-react": "npm:^6.1.2"
     better-auth: "npm:^1.6.30"
-    dotenv-cli: "npm:^11.0.0"
+    dotenv-cli: "npm:^11.1.0"
     eslint: "npm:^10.14.0"
     lucide-react: "npm:^1.65.0"
     oxc-transform-react: "npm:^0.156.0"
@@ -1616,7 +1616,7 @@ __metadata:
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
     "@rocicorp/zero": "npm:^1.11.3"
-    dotenv-cli: "npm:^11.0.0"
+    dotenv-cli: "npm:^11.1.0"
     eslint: "npm:^10.14.0"
     oxfmt: "npm:^0.75.0"
     typescript: "npm:^6.0.3"
@@ -5474,9 +5474,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-cli@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "dotenv-cli@npm:11.0.0"
+"dotenv-cli@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "dotenv-cli@npm:11.1.0"
   dependencies:
     cross-spawn: "npm:^7.0.6"
     dotenv: "npm:^17.1.0"
@@ -5484,7 +5484,8 @@ __metadata:
     minimist: "npm:^1.2.6"
   bin:
     dotenv: cli.js
-  checksum: 10c0/c3e6e58a484b3204eeb167a8f78c9cb04c4bae951069e7860eccbbbf96964e3bd808b3632dfe841e5d882b2c5d77c447f20abd06edd4db623ce719d94a7fb44e
+    dotenv-cli: cli.js
+  checksum: 10c0/fad9deb2933973600c47053e00fa3f58f1dd820eec8eb28ae0b90308cf748da511730fbeae5bf0ff7b786e33a0c3add9680faa691860a56956ebaac46eb2e8ea
   languageName: node
   linkType: hard
 
