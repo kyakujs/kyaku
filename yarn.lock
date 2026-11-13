@@ -1585,7 +1585,7 @@ __metadata:
     "@kyakujs/tsconfig": "workspace:*"
     "@kyakujs/ui": "workspace:*"
     "@kyakujs/zero": "workspace:*"
-    "@rocicorp/zero": "npm:^1.11.3"
+    "@rocicorp/zero": "npm:^1.11.4"
     "@tailwindcss/vite": "npm:^4.3.5"
     "@tanstack/react-hotkeys": "npm:^0.22.3"
     "@tanstack/react-query": "npm:^5.107.1"
@@ -1622,7 +1622,7 @@ __metadata:
     "@kyakujs/kyaku": "workspace:*"
     "@kyakujs/tailwind-config": "workspace:*"
     "@kyakujs/tsconfig": "workspace:*"
-    "@rocicorp/zero": "npm:^1.11.3"
+    "@rocicorp/zero": "npm:^1.11.4"
     dotenv-cli: "npm:^11.1.0"
     eslint: "npm:^10.14.0"
     oxfmt: "npm:^0.78.0"
@@ -3312,9 +3312,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rocicorp/zero@npm:^1.11.3":
-  version: 1.11.3
-  resolution: "@rocicorp/zero@npm:1.11.3"
+"@rocicorp/zero@npm:^1.11.4":
+  version: 1.11.4
+  resolution: "@rocicorp/zero@npm:1.11.4"
   dependencies:
     "@badrap/valita": "npm:0.5.5"
     "@databases/escape-identifier": "npm:^1.0.3"
@@ -3373,7 +3373,7 @@ __metadata:
     zero-cache-dev: ./out/zero/src/zero-cache-dev.js
     zero-deploy-permissions: ./out/zero/src/deploy-permissions.js
     zero-out: ./out/zero/src/zero-out.js
-  checksum: 10c0/618f17f7522ee5de17418086e0881fd8d1aaa05f1192083c01fc0f623cd6d95e5b980c3c2bb09285c8939fabe0506bae765ffafa3018a8d51c43eeed60ad7916
+  checksum: 10c0/be5d57d211190056fcf65bffa745b8dfd9e0b2ae1aa556edc1268499248c6c8c43e6a383a0d6466ed8097fa37f054d0f43b58a542b853aa172c1ecc4064e1869
   languageName: node
   linkType: hard
 
