@@ -28,7 +28,7 @@
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "^26.6.6",
     "eslint": "^10.14.0",
-    "oxfmt": "^0.77.0",
+    "oxfmt": "^0.78.0",
     "typescript": "^6.0.3"
   }
 }
