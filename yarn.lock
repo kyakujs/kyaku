@@ -1587,7 +1587,7 @@ __metadata:
     "@kyakujs/zero": "workspace:*"
     "@rocicorp/zero": "npm:^1.11.3"
     "@tailwindcss/vite": "npm:^4.3.5"
-    "@tanstack/react-hotkeys": "npm:^0.23.1"
+    "@tanstack/react-hotkeys": "npm:^0.25.0"
     "@tanstack/react-query": "npm:^5.107.1"
     "@tanstack/react-router": "npm:^1.170.46"
     "@tanstack/react-router-devtools": "npm:^1.167.3"
@@ -3685,10 +3685,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/hotkeys@npm:0.27.1":
-  version: 0.27.1
-  resolution: "@tanstack/hotkeys@npm:0.27.1"
-  checksum: 10c0/81e35c6952666ed3b7389d5519bf4568af21471598676980f63d63ff73f1b97fa6328f5912a5b975e032249f4734d934aded35192bc4c0487e918c05a6368162
+"@tanstack/hotkeys@npm:0.29.0":
+  version: 0.29.0
+  resolution: "@tanstack/hotkeys@npm:0.29.0"
+  checksum: 10c0/6b438049820ac79b83f7b783f8ac9c361bc01a7e32b28f02950f788a2b4eb3458c8f5631278298f98f872d79292775b2f6b09fa8533bfb10055f7515a9cc1168
   languageName: node
   linkType: hard
 
@@ -3699,15 +3699,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-hotkeys@npm:^0.23.1":
-  version: 0.23.1
-  resolution: "@tanstack/react-hotkeys@npm:0.23.1"
+"@tanstack/react-hotkeys@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "@tanstack/react-hotkeys@npm:0.25.0"
   dependencies:
-    "@tanstack/hotkeys": "npm:0.27.1"
+    "@tanstack/hotkeys": "npm:0.29.0"
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-  checksum: 10c0/50c0729e7b01bf8ba59620b2fd4a0b2511950f87602d5e0529c1dba7836d1e4d68ded523c17a5fff01e528376986f1aa08c55abed2124b33c877b9c6a5a3c1d0
+  checksum: 10c0/ed3886e38d64663eaf98c7f3f1719c32815efe7b3173c7ea0a87a4e4c3d07d1173117d53cf107358236810b512505a370b73f6f71d92fc562fd46001c066b180
   languageName: node
   linkType: hard
 
