@@ -1603,7 +1603,7 @@ __metadata:
     "@types/react": "npm:^19.3.0"
     class-variance-authority: "npm:^0.7.1"
     eslint: "npm:^10.15.0"
-    lucide-react: "npm:^1.77.0"
+    lucide-react: "npm:^1.79.0"
     oxfmt: "npm:^0.79.0"
     react: "npm:^19.3.1"
     tailwind-merge: "npm:^3.7.1"
@@ -1641,7 +1641,7 @@ __metadata:
     better-auth: "npm:^1.6.30"
     dotenv-cli: "npm:^11.1.0"
     eslint: "npm:^10.15.0"
-    lucide-react: "npm:^1.77.0"
+    lucide-react: "npm:^1.79.0"
     oxc-transform-react: "npm:^0.158.0"
     oxfmt: "npm:^0.79.0"
     react: "npm:^19.3.1"
@@ -8153,16 +8153,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^1.77.0":
-  version: 1.77.0
-  resolution: "lucide-react@npm:1.77.0"
+"lucide-react@npm:^1.79.0":
+  version: 1.79.0
+  resolution: "lucide-react@npm:1.79.0"
   peerDependencies:
     "@types/react": "*"
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/602824e6080ae948bfeb875fef90b6ae341edaf9991d434405245460699ef3a7ed8aacb5c604cc2211794f4941179c13b1e43c0a9c0858964705b1b673a16f74
+  checksum: 10c0/d8e8e6ea867c0c6e6afaa3205155a5284197cd5630a3ea811c833ae1433261c1e81e6122156b16741ea92d92c769534649197833507e47fa8c89a917ef467b64
   languageName: node
   linkType: hard
 
