@@ -34,7 +34,7 @@
     "@kyakujs/eslint-config": "workspace:*",
     "@kyakujs/tailwind-config": "workspace:*",
     "@kyakujs/tsconfig": "workspace:*",
-    "@types/react": "^19.3.0",
+    "@types/react": "^19.3.2",
     "eslint": "^10.15.0",
     "oxfmt": "^0.80.0",
     "react": "^19.3.1",
